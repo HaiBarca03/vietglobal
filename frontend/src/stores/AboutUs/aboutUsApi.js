@@ -22,7 +22,6 @@ const getAboutUsId = () => async (dispatch) => {
     if (res.data.message) {
       dispatch(getFailed(res.data.message))
     } else {
-      console.log('res.data', res.data)
       dispatch(doneSuccess(res.data))
     }
   } catch (error) {

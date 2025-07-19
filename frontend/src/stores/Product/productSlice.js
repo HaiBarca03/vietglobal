@@ -22,7 +22,6 @@ const productSlice = createSlice({
       state.response = null
     },
     getProductSuccess: (state, action) => {
-      console.log('>>> Reducer received products:', action.payload)
       state.productList = action.payload
       state.loading = false
       state.error = null
