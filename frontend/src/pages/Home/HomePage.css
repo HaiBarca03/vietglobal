@@ -1,0 +1,47 @@
+.contact-map-wrapper {
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  background: antiquewhite;
+}
+
+.contact-left {
+  flex: 0 0 50%;
+  min-width: 300px;
+}
+
+.contact-right {
+  flex: 0 0 50%;
+  min-width: 300px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .contact-left,
+  .contact-right {
+    flex: 0 0 100%;
+  }
+}
+
+.product-slider {
+  margin: 0 auto;
+  width: 1200px;
+  max-width: 1200px;
+  padding: 40px;
+}
+.all-product {
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.all-product:hover {
+  color: blue;
+}
+.tit-product-hot {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+}

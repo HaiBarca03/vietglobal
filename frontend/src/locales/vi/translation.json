@@ -1,0 +1,40 @@
+{
+  "home": "Trang chủ",
+  "category": "Danh mục",
+  "products": "Sản phẩm",
+  "aboutUs": "Về chúng tôi",
+  "admin": "Quản trị",
+  "signup": "Đăng ký",
+  "signin": "Đăng nhập",
+  "email": "Email",
+  "phone": "Số điện thoại",
+  "address": "Địa chỉ",
+  "description": "VietGlobal là nền tảng thương mại điện tử uy tín, cung cấp đa dạng sản phẩm chất lượng với giá tốt nhất, giao hàng nhanh và dịch vụ khách hàng tuyệt vời.",
+  "links": {
+    "title": "Liên kết",
+    "home": "Trang chủ",
+    "products": "Tất cả sản phẩm",
+    "categories": "Danh mục",
+    "deals": "Ưu đãi & khuyến mãi"
+  },
+  "policies": {
+    "title": "Chính sách",
+    "privacy": "Chính sách bảo mật",
+    "terms": "Điều khoản sử dụng",
+    "shipping": "Chính sách giao hàng",
+    "returnPolicy": "Chính sách đổi trả"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "address": "456 Đường TMĐT, Quận 3, TP.HCM",
+    "phone": "0987 654 321",
+    "email": "support@vietglobal.vn"
+  },
+  "allRights": "Đã đăng ký bản quyền.",
+  "productdes": "Mô tả",
+  "productcode": "Mã sản phẩm",
+  "productcate": "Danh mục",
+  "productday": "Ngày tạo",
+  "producttitle": "Thông tin sản phẩm",
+  "homeTitle": "Sản phẩm nổi bật"
+}

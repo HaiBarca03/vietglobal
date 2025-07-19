@@ -1,0 +1,54 @@
+.why-choose-us-section {
+  position: relative;
+  padding: 80px 40px;
+  background-image: url('https://sunriseins.com/assets/images/bg_visao.jpg'); /* Đặt đúng đường dẫn hình ảnh */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.overlay-choose-us {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, -0.1);
+}
+
+.section-title {
+  position: relative;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 60px;
+  z-index: 1;
+  color: white;
+}
+
+.choose-item {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.choose-item .icon {
+  margin-bottom: 16px;
+}
+
+.choose-item .title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.choose-item .description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #f0f0f0;
+}

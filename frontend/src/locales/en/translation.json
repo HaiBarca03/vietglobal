@@ -1,0 +1,40 @@
+{
+  "home": "Home",
+  "category": "Category",
+  "products": "Products",
+  "aboutUs": "About Us",
+  "admin": "Admin",
+  "signup": "Sign up",
+  "signin": "Sign in",
+  "email": "Email",
+  "phone": "Phone",
+  "address": "Address",
+  "description": "VietGlobal is a trusted e-commerce platform, offering a wide variety of quality products at the best prices, fast delivery and excellent customer service.",
+  "links": {
+    "title": "Links",
+    "home": "Home",
+    "products": "All Products",
+    "categories": "Categories",
+    "deals": "Deals & Promotions"
+  },
+  "policies": {
+    "title": "Policies",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "shipping": "Shipping Policy",
+    "returnPolicy": "Return Policy"
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "456 Ecom Street, District 3, HCMC",
+    "phone": "0987 654 321",
+    "email": "support@vietglobal.vn"
+  },
+  "allRights": "All rights reserved.",
+  "productdes": "Description",
+  "productcode": "Code",
+  "productcate": "Categories",
+  "productday": "Created",
+  "producttitle": "Product infomation",
+  "homeTitle": "Best product"
+}

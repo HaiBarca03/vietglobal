@@ -1,0 +1,24 @@
+{
+  "description": "CineZone is a fast and convenient online movie ticket booking system, bringing you and your family a great entertainment experience.",
+  "links": {
+    "title": "Links",
+    "home": "Home",
+    "nowShowing": "Now Showing",
+    "comingSoon": "Coming Soon",
+    "promotions": "Promotions"
+  },
+  "policies": {
+    "title": "Policies",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "paymentGuide": "Payment Guide",
+    "refundPolicy": "Refund Policy"
+  },
+  "contact": {
+    "title": "Contact",
+    "address": "123 Movie Street, District 1, HCMC",
+    "phone": "0123 456 789",
+    "email": "support@cinezone.vn"
+  },
+  "allRights": "All rights reserved."
+}
