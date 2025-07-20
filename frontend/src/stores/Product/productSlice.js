@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   productList: [],
   productDetails: [],
+  productByCategory: [],
   loading: false,
   error: null,
   response: null
@@ -17,6 +18,12 @@ const productSlice = createSlice({
     },
     doneSuccess: (state, action) => {
       state.productDetails = action.payload
+      state.loading = false
+      state.error = null
+      state.response = null
+    },
+    doneSuccessProdCate: (state, action) => {
+      state.productByCategory = action.payload
       state.loading = false
       state.error = null
       state.response = null
@@ -86,7 +93,8 @@ export const {
   postDone,
   deleteSuccess,
   createSuccess,
-  updateSuccess
+  updateSuccess,
+  doneSuccessProdCate
 } = productSlice.actions
 
 export const productReducer = productSlice.reducer

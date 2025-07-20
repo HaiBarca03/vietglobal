@@ -24,6 +24,30 @@ const getAllProducts = async (req, res) => {
   }
 }
 
+const getProductsByCategorySlugLang = async (req, res) => {
+  try {
+    const { slug, lang } = req.params
+
+    const category = await Category.findOne({ [`slug.${lang}`]: slug })
+
+    if (!category) {
+      return res
+        .status(404)
+        .json({ success: false, message: 'Category not found' })
+    }
+
+    const products = await Product.find({ categories: category._id }).populate(
+      'categories'
+    )
+
+    res.status(200).json({ success: true, data: products })
+  } catch (err) {
+    res
+      .status(500)
+      .json({ success: false, message: 'Server error', error: err.message })
+  }
+}
+
 const getProductById = async (req, res) => {
   try {
     const { id } = req.params
@@ -198,5 +222,6 @@ module.exports = {
   deleteProduct,
   getAllProducts,
   getProductById,
-  getProductBySlug
+  getProductBySlug,
+  getProductsByCategorySlugLang
 }

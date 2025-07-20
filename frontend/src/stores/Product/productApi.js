@@ -9,7 +9,8 @@ import {
   getRequest,
   getProductSuccess,
   postDone,
-  updateSuccess
+  updateSuccess,
+  doneSuccessProdCate
 } from './productSlice'
 import { getAuthConfig } from '../authConfig'
 
@@ -39,6 +40,15 @@ const getProductDetail = (lang, slug) => async (dispatch) => {
   }
 }
 
-const getProductByCategory = (lang, category) => async (dispatch) => {}
+const getProductByCategory = (lang, slug) => async (dispatch) => {
+  dispatch(getRequest())
+  try {
+    const config = getAuthConfig()
+    const res = await axios.get(`/product/category/${lang}/${slug}`, config)
+    dispatch(doneSuccessProdCate(res.data))
+  } catch (error) {
+    dispatch(getError(error.message))
+  }
+}
 
 export { getAllProduct, getProductDetail, getProductByCategory }

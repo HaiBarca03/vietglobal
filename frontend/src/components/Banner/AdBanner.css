@@ -1,11 +1,12 @@
+/* Base styles */
 .ad-banner-container {
   width: 100%;
-  max-height: 1000px;
+  max-height: 800px;
   overflow: hidden;
   border-radius: 12px;
   position: relative;
-  /* margin-bottom: 40px;s */
   padding-top: 63px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .ad-slide {
@@ -16,9 +17,10 @@
 
 .ad-slide-bg {
   width: 100%;
-  height: 100%;
+  height: 800px;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
 }
 
@@ -26,44 +28,210 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 800px;
   width: 100%;
-  /* background: rgba(0, 0, 0, 0.5); */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
 }
-/* 
+
 .ad-content {
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 60px;
   transform: translateY(-50%);
   color: white;
   max-width: 600px;
   z-index: 2;
-} */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
 .ad-content h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
 }
 
 .ad-content p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  opacity: 0.95;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+.ad-content .ant-btn {
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.ad-content .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Tablet styles */
+@media (max-width: 1024px) {
+  .ad-banner-container {
+    padding-top: 50px;
+  }
+
+  .ad-slide {
+    height: 600px;
+  }
+
   .ad-content {
-    left: 20px;
-    max-width: 90%;
+    left: 40px;
+    max-width: 500px;
   }
 
   .ad-content h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .ad-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) {
+  .ad-banner-container {
+    border-radius: 8px;
+    padding-top: 40px;
+  }
+
+  .ad-slide {
+    height: 500px;
+  }
+
+  .ad-content {
+    left: 30px;
+    right: 30px;
+    max-width: none;
+    width: calc(100% - 60px);
+  }
+
+  .ad-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
   }
 
   .ad-content p {
     font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .ad-content .ant-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 480px) {
+  .ad-banner-container {
+    border-radius: 6px;
+    padding-top: 20px;
+  }
+
+  .ad-slide {
+    height: 400px;
+  }
+
+  .ad-content {
+    left: 20px;
+    right: 20px;
+    width: calc(100% - 40px);
+    top: 60%;
+  }
+
+  .ad-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .ad-content p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+  }
+
+  .ad-content .ant-btn {
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .ad-banner-container {
+    padding-top: 15px;
+  }
+
+  .ad-slide {
+    height: 350px;
+  }
+
+  .ad-content {
+    left: 15px;
+    right: 15px;
+    width: calc(100% - 30px);
+  }
+
+  .ad-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .ad-content p {
+    font-size: 0.85rem;
+  }
+}
+
+/* High-resolution displays */
+@media (min-width: 1200px) {
+  .ad-banner-container {
+    max-height: 1000px;
+  }
+
+  .ad-slide {
+    height: 800px;
+  }
+
+  .ad-content {
+    left: 80px;
+    max-width: 700px;
+  }
+
+  .ad-content h2 {
+    font-size: 3rem;
+  }
+
+  .ad-content p {
+    font-size: 1.3rem;
+  }
+}
+
+/* Custom carousel styles for better mobile experience */
+@media (max-width: 768px) {
+  .ad-banner-container .ant-carousel .slick-dots {
+    bottom: 20px;
+  }
+
+  .ad-banner-container .ant-carousel .slick-dots li button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .ad-banner-container .ant-carousel .slick-dots li.slick-active button {
+    background-color: #fff;
   }
 }

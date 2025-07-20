@@ -40,13 +40,13 @@ const AdBanner = () => {
               style={{ backgroundImage: `url(${banner.image})` }}
             >
               <div className="ad-overlay" />
-              {/* <div className="ad-content">
+              <div className="ad-content">
                 <h2>{banner.title}</h2>
                 <p>{banner.description}</p>
                 <Button type="primary" size="large">
                   {banner.buttonText}
                 </Button>
-              </div> */}
+              </div>
             </div>
           </div>
         ))}

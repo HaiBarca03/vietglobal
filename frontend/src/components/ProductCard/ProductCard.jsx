@@ -10,7 +10,7 @@ const ProductCard = ({ product, lang }) => {
   }
   return (
     <div
-      className="product-card"
+      className="product-card-1"
       style={{
         cursor: 'pointer',
         border: '1px solid #ddd',

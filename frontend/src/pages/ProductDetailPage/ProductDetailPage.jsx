@@ -12,7 +12,8 @@ import {
   Rate,
   InputNumber,
   Breadcrumb,
-  Badge
+  Badge,
+  Skeleton
 } from 'antd'
 import {
   ShoppingCartOutlined,
@@ -25,19 +26,30 @@ import './ProductDetailPage.css'
 import { useTranslation } from 'react-i18next'
 import { getProductDetail } from '../../stores/Product/productApi'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const { Title, Text, Paragraph } = Typography
 
 const ProductDetailPage = () => {
   const [isFavorite, setIsFavorite] = useState(false)
   const [selectedImage, setSelectedImage] = useState(0)
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
   const { t, i18n } = useTranslation()
   const lang = i18n.language || 'vi'
   const productDetail = useSelector((state) => state.product.productDetails)
   const dispatch = useDispatch()
   const { slug } = useParams()
   const [loading, setLoading] = useState(true)
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     if (!productDetail || productDetail.slug !== slug) {
@@ -47,6 +59,7 @@ const ProductDetailPage = () => {
       setLoading(false)
     }
   }, [lang, slug, dispatch])
+
   const formatPrice = (price) => {
     return new Intl.NumberFormat('vi-VN', {
       style: 'currency',
@@ -69,67 +82,107 @@ const ProductDetailPage = () => {
       })
     } else {
       navigator.clipboard.writeText(window.location.href)
+      // You might want to show a toast notification here
     }
   }
 
-  return loading ? (
-    'Dang load'
-  ) : (
+  const handleAllProduct = () => {
+    navigate('/all-product')
+  }
+
+  if (loading) {
+    return (
+      <div className="main-wrapper-prod">
+        <div className="wrapper-productdt">
+          <div className="container-responsive">
+            <Skeleton active />
+            <Row gutter={[24, 24]} className="mt-6">
+              <Col xs={24} lg={12}>
+                <Skeleton.Image style={{ width: '100%', height: '400px' }} />
+              </Col>
+              <Col xs={24} lg={12}>
+                <Skeleton active paragraph={{ rows: 8 }} />
+              </Col>
+            </Row>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
     <div className="main-wrapper-prod">
-      <div className="min-h-screen bg-gray-50 wrapper-productdt">
-        <div className="max-w-7xl mx-auto p-4 md:p-6">
-          <Breadcrumb className="mb-6">
+      <div className="wrapper-productdt">
+        <div className="container-responsive">
+          <Breadcrumb className="breadcrumb-custom">
             <Breadcrumb.Item href="/">
               <HomeOutlined />
+              {!isMobile && <span className="ml-1">Trang chủ</span>}
             </Breadcrumb.Item>
-            <Breadcrumb.Item href="/products">Sản phẩm</Breadcrumb.Item>
-            <Breadcrumb.Item>{productDetail.title?.[lang]}</Breadcrumb.Item>
+            <Breadcrumb.Item onClick={handleAllProduct}>
+              Sản phẩm
+            </Breadcrumb.Item>
+            <Breadcrumb.Item className="breadcrumb-current">
+              {productDetail.title?.[lang]}
+            </Breadcrumb.Item>
           </Breadcrumb>
 
-          <Row gutter={[40, 32]}>
-            <Col xs={24} lg={12}>
-              <div className="space-y-4">
-                <Card className="shadow-lg border-0" bodyStyle={{ padding: 0 }}>
-                  <div className="relative">
-                    <Badge.Ribbon text="Mới" color="red">
+          <Row gutter={[24, 24]} className="product-detail-row">
+            {/* Image Column */}
+            <Col xs={24} lg={12} className="image-column">
+              <div className="image-section">
+                <Card className="main-image-card" bodyStyle={{ padding: 0 }}>
+                  <div className="main-image-wrapper">
+                    <Badge.Ribbon
+                      text="Mới"
+                      color="red"
+                      className="product-badge"
+                    >
                       <Image
                         width="100%"
-                        height={500}
+                        height={isMobile ? 300 : 500}
                         style={{ objectFit: 'cover', borderRadius: '8px' }}
                         src={productDetail?.image?.[selectedImage]}
                         alt={productDetail?.title?.[lang]}
                         fallback="https://via.placeholder.com/500x500?text=No+Image"
+                        placeholder={<Skeleton.Image />}
                       />
                     </Badge.Ribbon>
 
-                    <div className="absolute top-4 right-4 flex flex-col gap-2">
+                    <div className="action-buttons">
                       <Button
                         type={isFavorite ? 'primary' : 'default'}
                         shape="circle"
                         icon={<HeartOutlined />}
                         onClick={toggleFavorite}
-                        className="bg-white/90 shadow-lg backdrop-blur-sm"
+                        className="action-btn favorite-btn"
+                        size={isMobile ? 'small' : 'middle'}
                       />
                       <Button
                         shape="circle"
                         icon={<ShareAltOutlined />}
                         onClick={handleShare}
-                        className="bg-white/90 shadow-lg backdrop-blur-sm"
+                        className="action-btn share-btn"
+                        size={isMobile ? 'small' : 'middle'}
                       />
                     </div>
                   </div>
                 </Card>
 
-                <div className="grid grid-cols-5 gap-3 image_small">
+                <div className="image-thumbnails">
                   {productDetail.image?.map((img, index) => (
-                    <div key={index} onClick={() => setSelectedImage(index)}>
+                    <div
+                      key={index}
+                      onClick={() => setSelectedImage(index)}
+                      className={`thumbnail-wrapper ${
+                        selectedImage === index ? 'active' : ''
+                      }`}
+                    >
                       <Image
-                        width="100px"
-                        height="100px"
-                        style={{ objectFit: 'cover', aspectRatio: '1/1' }}
                         src={img}
                         alt={`${productDetail.title[lang]} ${index + 1}`}
                         preview={false}
+                        className="thumbnail-image"
                       />
                     </div>
                   ))}
@@ -137,17 +190,17 @@ const ProductDetailPage = () => {
               </div>
             </Col>
 
-            {/* Cột thông tin sản phẩm */}
-            <Col xs={24} lg={12}>
-              <div className="space-y-6">
+            {/* Product Info Column */}
+            <Col xs={24} lg={12} className="info-column">
+              <div className="product-info-section">
                 {/* Categories */}
-                <div>
-                  <Space wrap className="mb-4">
+                <div className="categories-section">
+                  <Space wrap>
                     {productDetail.categories?.map((category) => (
                       <Tag
                         key={category._id}
                         color="blue"
-                        className="text-sm px-3 py-1 rounded-full"
+                        className="category-tag"
                       >
                         {category.name[lang]}
                       </Tag>
@@ -156,37 +209,53 @@ const ProductDetailPage = () => {
                 </div>
 
                 {/* Title */}
-                <div>
-                  <Title level={1} className="mb-3 text-gray-800 leading-tight">
+                <div className="title-section">
+                  <Title level={isMobile ? 2 : 1} className="product-title">
                     {productDetail.title?.[lang]}
                   </Title>
                 </div>
 
-                <Card size="small" title={t('producttitle')}>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                      <Text strong>{t('productcode')}:</Text>
-                      <Text copyable className="text-gray-600">
+                {/* Product Details Card */}
+                <Card
+                  size="small"
+                  title={t('producttitle')}
+                  className="product-details-card"
+                >
+                  <div className="product-details-content">
+                    <div className="detail-row">
+                      <Text strong className="detail-label">
+                        {t('productcode')}:
+                      </Text>
+                      <Text copyable className="detail-value">
                         {productDetail._id}
                       </Text>
                     </div>
-                    <div>
-                      <Paragraph className="text-gray-600 text-base leading-relaxed">
-                        <Text strong>{t('productdes')}:</Text>
-                        <Text copyable className="text-gray-600">
-                          {productDetail?.description?.[lang]}
+
+                    <div className="detail-row description-row">
+                      <div className="description-content">
+                        <Text strong className="detail-label">
+                          {t('productdes')}:
                         </Text>
-                      </Paragraph>
+                        <Paragraph className="description-text">
+                          {productDetail?.description?.[lang]}
+                        </Paragraph>
+                      </div>
                     </div>
-                    <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                      <Text strong>{t('productcate')}:</Text>
-                      <Text className="text-blue-600">
+
+                    <div className="detail-row">
+                      <Text strong className="detail-label">
+                        {t('productcate')}:
+                      </Text>
+                      <Text className="detail-value category-value">
                         {productDetail?.categories[0].name?.[lang]}
                       </Text>
                     </div>
-                    <div className="flex justify-between items-center py-2">
-                      <Text strong>{t('productday')}:</Text>
-                      <Text className="text-gray-600">
+
+                    <div className="detail-row">
+                      <Text strong className="detail-label">
+                        {t('productday')}:
+                      </Text>
+                      <Text className="detail-value">
                         {new Date(productDetail.createdAt).toLocaleDateString(
                           'vi-VN'
                         )}

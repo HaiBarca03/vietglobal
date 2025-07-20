@@ -2,7 +2,7 @@ import AboutUs from '../pages/AboutUs/AboutUs'
 import HomePage from '../pages/Home/HomePage'
 import Login from '../pages/Login/Login'
 import NotPoundPage from '../pages/NotPoundPage/NotPoundPage'
-import ProductByCate from '../pages/ProductByCate/ProductByCate'
+import ProductCategory from '../pages/ProductCategory/ProductCategory'
 import ProductDetailPage from '../pages/ProductDetailPage/ProductDetailPage'
 import ProductList from '../pages/ProductList/ProductList'
 import Register from '../pages/Register/Register'
@@ -33,7 +33,7 @@ export const routes = [
   },
   {
     path: '/category/:slug',
-    page: ProductByCate,
+    page: ProductCategory,
     isShowHeader: true
   },
   {

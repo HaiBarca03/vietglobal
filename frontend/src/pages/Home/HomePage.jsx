@@ -9,6 +9,7 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import { getAllProduct } from '../../stores/Product/productApi'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
   const productLists = useSelector((state) => state.product.productList)
@@ -33,27 +34,25 @@ const HomePage = () => {
             {Array.from(
               { length: Math.ceil(productLists.length / 3) },
               (_, i) => (
-                <div
-                  key={i}
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '20px'
-                  }}
-                >
+                <div key={i} className="product-slide-group">
                   {productLists.slice(i * 3, i * 3 + 3).map((product) => (
-                    <ProductCard
-                      key={product._id}
-                      product={product}
-                      lang={lang}
-                    />
+                    <div className="product-slide-item" key={product._id}>
+                      <ProductCard product={product} lang={lang} />
+                    </div>
                   ))}
                 </div>
               )
             )}
           </Carousel>
         )}
-        <p className="all-product">Xem thêm </p>
+        <p className="all-product">
+          <Link
+            to="/all-product"
+            style={{ color: 'inherit', textDecoration: 'none' }}
+          >
+            {t('readmore')}
+          </Link>
+        </p>
       </div>
       <div className="contact-map-wrapper">
         <div className="contact-left">

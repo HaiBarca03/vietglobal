@@ -1,22 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import './ProductList.css'
-import { getAllProduct } from '../../stores/Product/productApi'
+import './ProductCategory.css'
+import {
+  getAllProduct,
+  getProductByCategory
+} from '../../stores/Product/productApi'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import ProductCard2 from '../../components/ProductCard/ProductCard2'
 import { Breadcrumb } from 'antd'
 import { HomeOutlined } from '@ant-design/icons'
+import { useParams } from 'react-router-dom'
 
-const ProductList = () => {
-  const productLists = useSelector((state) => state.product.productList)
+const ProductCategory = () => {
+  const productLists = useSelector((state) => state.product.productByCategory)
   const dispatch = useDispatch()
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
   const { t, i18n } = useTranslation()
   const lang = i18n.language || 'vi'
+  const { slug } = useParams()
 
   useEffect(() => {
-    dispatch(getAllProduct())
-  }, [dispatch])
+    dispatch(getProductByCategory(lang, slug))
+  }, [lang, slug, dispatch])
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,7 +44,9 @@ const ProductList = () => {
           </Breadcrumb>
         </div> */}
 
-        <h1 className="product-list-title">{t('allProduct')}</h1>
+        <h1 className="product-list-title">
+          {t('productByCate')} <i> {slug}</i>
+        </h1>
 
         {productLists.length === 0 ? (
           <div className="no-products">Không có sản phẩm nào</div>
@@ -64,4 +71,4 @@ const ProductList = () => {
   )
 }
 
-export default ProductList
+export default ProductCategory
