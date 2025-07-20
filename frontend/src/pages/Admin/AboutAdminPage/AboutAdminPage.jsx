@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Form, Input, Button, Card, Row, Col, message } from 'antd'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAboutUsId, updateAboutUs } from '../../../stores/AboutUs/AboutUsApi'
+import { getAboutUsId, updateAboutUs } from '../../../stores/AboutUs/aboutUsApi'
 
 import SunEditor from 'suneditor-react'
 import 'suneditor/dist/css/suneditor.min.css'
