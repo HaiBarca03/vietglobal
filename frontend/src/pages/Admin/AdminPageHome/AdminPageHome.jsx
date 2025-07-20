@@ -13,7 +13,11 @@ import {
 } from '@ant-design/icons'
 import './AdminPageHome.css'
 import { useNavigate } from 'react-router-dom'
+import CategoryAdminPage from '../CategoryAdminPage/CategoryAdminPage'
+import ContactAdminPage from '../ContactAdminPage/ContactAdminPage'
+import AboutAdminPage from '../AboutAdminPage/AboutAdminPage'
 const { Header, Sider, Content } = Layout
+import logo from '../../../assets/logo.png'
 
 const AdminPageHome = () => {
   const navigate = useNavigate()
@@ -27,18 +31,14 @@ const AdminPageHome = () => {
   }
   const renderContent = () => {
     switch (selectedKey) {
-      case 'articles':
-        return
-      case 'health':
-        return
-      case 'users':
-        return
       case 'products':
         return
-      case 'orders':
-        return
+      case 'contactus':
+        return <ContactAdminPage />
+      case 'aboutus':
+        return <AboutAdminPage />
       case 'categories':
-        return
+        return <CategoryAdminPage />
       case 'logout':
         navigate('/')
         return null
@@ -51,7 +51,10 @@ const AdminPageHome = () => {
   return (
     <Layout className="admin-layout">
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="ad-logo">{}</div>
+        <div className="ad-logo">
+          {' '}
+          <img className="logo-web-my" src={logo} alt="VietGlobal Logo" />
+        </div>
         <Menu
           theme="dark"
           mode="inline"
@@ -61,20 +64,14 @@ const AdminPageHome = () => {
           <Menu.Item key="homepage" icon={<FileTextOutlined />}>
             Trang chủ
           </Menu.Item>
-          <Menu.Item key="articles" icon={<FileTextOutlined />}>
-            Bài viết
-          </Menu.Item>
-          <Menu.Item key="health" icon={<CommentOutlined />}>
-            Hỏi đáp
-          </Menu.Item>
-          <Menu.Item key="users" icon={<UserOutlined />}>
-            Người dùng
-          </Menu.Item>
           <Menu.Item key="products" icon={<AppstoreOutlined />}>
             Sản phẩm
           </Menu.Item>
-          <Menu.Item key="orders" icon={<ShoppingOutlined />}>
-            Đơn hàng
+          <Menu.Item key="contactus" icon={<ShoppingOutlined />}>
+            Liên hệ
+          </Menu.Item>
+          <Menu.Item key="aboutus" icon={<ShoppingOutlined />}>
+            Về chúng tôi
           </Menu.Item>
           <Menu.Item key="categories" icon={<UnorderedListOutlined />}>
             Danh mục
@@ -96,7 +93,7 @@ const AdminPageHome = () => {
             onClick={() => setCollapsed(!collapsed)}
             style={{ fontSize: '18px', width: 48, height: 48 }}
           />
-          <h1>Admin Dashboard</h1>
+          <h1 className="admin-title">Admin Dashboard</h1>
         </Header>
         <Content className="admin-content">{renderContent()}</Content>
       </Layout>

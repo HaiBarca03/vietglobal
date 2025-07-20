@@ -63,7 +63,7 @@ const login = (data) => async (dispatch) => {
       }
     }
 
-    const response = await axios.post('/auth/login', data, config)
+    const response = await axios.post('/user/login', data, config)
     const resData = response.data
 
     // Kiểm tra token
@@ -72,16 +72,16 @@ const login = (data) => async (dispatch) => {
       dispatch(getFailed(message))
       throw new Error(message)
     }
-
+    console.log('resData', resData)
     // Format lại dữ liệu user lưu vào localStorage
     const userData = {
-      id: resData.id,
-      username: resData.username,
-      email: resData.email,
-      phone: resData.phone,
-      role: resData.role,
-      token: resData.token,
-      isAdmin: resData.role === 'admin'
+      // id: resData.id,
+      // username: resData.username,
+      // email: resData.email,
+      // phone: resData.phone,
+      // role: resData.role,
+      // token: resData.token,
+      // isAdmin: resData.role === 'admin'
     }
 
     // Lưu vào localStorage
@@ -101,71 +101,4 @@ const login = (data) => async (dispatch) => {
   }
 }
 
-const getUserProfile = () => async (dispatch) => {
-  dispatch(getRequest())
-
-  try {
-    const config = getAuthConfig()
-    const result = await axios.get(`/users/me`, config)
-
-    if (result.data.message) {
-      dispatch(getFailed(result.data.message))
-      throw new Error(result.data.message)
-    }
-
-    dispatch(getProfile(result.data))
-  } catch (error) {
-    const errorMessage =
-      error.response?.data?.message || 'Search failed. Please try again.'
-    dispatch(getFailed(errorMessage))
-    console.error('Search user error:', errorMessage)
-    throw error
-  }
-}
-
-const updateUser = (id, userData) => async (dispatch) => {
-  dispatch(getRequest())
-  try {
-    const config = getAuthConfig()
-    const res = await axios.patch(`/users/${id}`, userData, config)
-    if (res.data.message) {
-      dispatch(getFailed(res.data.message))
-    } else {
-      dispatch(updateSuccess(res.data))
-    }
-  } catch (error) {
-    dispatch(getError(error.message))
-  }
-}
-
-const getAllUser = () => async (dispatch) => {
-  dispatch(getRequest())
-  try {
-    const config = getAuthConfig()
-    const res = await axios.get('/users')
-    if (res.data.message) {
-      dispatch(getFailed(res.data.message))
-    } else {
-      dispatch(getSuccess(res.data))
-    }
-  } catch (error) {
-    dispatch(getError(error.message))
-  }
-}
-
-const deleteUser = (id) => async (dispatch) => {
-  dispatch(getRequest())
-  try {
-    const config = getAuthConfig()
-    const res = await axios.delete(`/users/${id}`, config)
-    if (res.data.message) {
-      dispatch(getFailed(res.data.message))
-    } else {
-      dispatch(deleteSuccess(res.data))
-    }
-  } catch (error) {
-    dispatch(getError(error.message))
-  }
-}
-
-export { register, login, getUserProfile, updateUser, getAllUser, deleteUser }
+export { register, login }

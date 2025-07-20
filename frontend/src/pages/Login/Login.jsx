@@ -8,9 +8,10 @@ import TextInput from '../../components/Icons/TextInput'
 import PasswordInput from '../../components/Icons/PasswordInput'
 import { useDispatch } from 'react-redux'
 import logo from '../../assets/logo.png'
+import { login } from '../../stores/Users/userApis'
 
 const Login = ({ setIsAdmin }) => {
-  const [identifier, setIdentifier] = useState('')
+  const [email, setIdentifier] = useState('')
   const [password, setPassword] = useState('')
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -18,11 +19,11 @@ const Login = ({ setIsAdmin }) => {
     event.preventDefault()
 
     const values = {
-      identifier,
+      email,
       password
     }
     try {
-      // await dispatch(login(values))
+      await dispatch(login(values))
       toast.success('Đăng nhập thành công!')
       const storedUser = localStorage.getItem('user')
       const parsedUser = JSON.parse(storedUser)
@@ -82,7 +83,7 @@ const Login = ({ setIsAdmin }) => {
             <TextInput
               label="Email or Phone"
               placeholder="Enter your email or phone"
-              value={identifier}
+              value={email}
               onChange={(e) => setIdentifier(e.target.value)}
             />
             <PasswordInput

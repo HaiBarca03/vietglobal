@@ -29,4 +29,19 @@ const getAboutUsId = () => async (dispatch) => {
   }
 }
 
-export { getAboutUsId }
+const updateAboutUs = (id, data) => async (dispatch) => {
+  dispatch(getRequest())
+  try {
+    const config = getAuthConfig()
+    const res = await axios.put(`/about-us/${id}`, data, config)
+    if (res.data.message) {
+      dispatch(getFailed(res.data.message))
+    } else {
+      dispatch(updateSuccess(res.data))
+    }
+  } catch (error) {
+    dispatch(getError(error.message))
+  }
+}
+
+export { getAboutUsId, updateAboutUs }

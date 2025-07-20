@@ -42,15 +42,13 @@ const Navbar = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('user')
-    setIsMobileMenuOpen(false) // Close mobile menu on logout
+    setIsMobileMenuOpen(false)
     navigate('/')
   }
 
-  // Mobile menu toggle
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
 
-    // Prevent body scroll when mobile menu is open
     if (!isMobileMenuOpen) {
       document.body.style.overflow = 'hidden'
     } else {
@@ -58,13 +56,11 @@ const Navbar = () => {
     }
   }
 
-  // Close mobile menu when navigating
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false)
     document.body.style.overflow = 'unset'
   }
 
-  // Handle window resize - close mobile menu on desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 767 && isMobileMenuOpen) {
