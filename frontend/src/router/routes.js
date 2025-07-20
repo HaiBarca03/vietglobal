@@ -1,4 +1,5 @@
 import AboutUs from '../pages/AboutUs/AboutUs'
+import AdminPageHome from '../pages/Admin/AdminPageHome/AdminPageHome'
 import HomePage from '../pages/Home/HomePage'
 import Login from '../pages/Login/Login'
 import NotPoundPage from '../pages/NotPoundPage/NotPoundPage'
@@ -40,6 +41,10 @@ export const routes = [
     path: '/all-product',
     page: ProductList,
     isShowHeader: true
+  },
+  {
+    path: '/admin',
+    page: AdminPageHome
   },
   {
     path: '*',
