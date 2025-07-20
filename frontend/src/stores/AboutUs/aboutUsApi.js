@@ -17,7 +17,7 @@ const getAboutUsId = () => async (dispatch) => {
   dispatch(getRequest())
   try {
     const config = getAuthConfig()
-    const id = '687b6b4587d30718f65d04d4'
+    const id = '687cc242d6ed9e5825699f79'
     const res = await axios.get(`/about-us/${id}`, config)
     if (res.data.message) {
       dispatch(getFailed(res.data.message))

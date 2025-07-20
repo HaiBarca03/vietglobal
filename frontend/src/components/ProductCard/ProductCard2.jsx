@@ -1,16 +1,17 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const ProductCard2 = ({ product, lang, index }) => {
   const navigate = useNavigate()
   if (!product) return null
+  const { t, i18n } = useTranslation()
 
   const handleProductDt = () => {
     const slug = product.slug?.[lang]
     navigate(`/product-detail/${slug}`)
   }
 
-  // Xác định layout dựa trên index
   const isEven = index % 2 === 0
   const imageOnLeft = isEven
 
@@ -90,7 +91,7 @@ const ProductCard2 = ({ product, lang, index }) => {
             fontWeight: 'bold'
           }}
         >
-          Xem thêm
+          {t('readmore')}
         </button>
       </div>
     </div>

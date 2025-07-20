@@ -17,7 +17,7 @@ const getAllContactUs = () => async (dispatch) => {
   dispatch(getRequest())
   try {
     const config = getAuthConfig()
-    const id = '687b70f25b1f4b14be58b7ad'
+    const id = '687cc272d6ed9e5825699f7b'
     const res = await axios.get(`/contact-us/${id}`, config)
     if (res.data.message) {
       dispatch(getFailed(res.data.message))

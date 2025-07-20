@@ -1,4 +1,5 @@
 const Product = require('../models/product.model')
+const Category = require('../models/category.model')
 const cloudinary = require('../config/cloudinary.config')
 const fs = require('fs')
 
@@ -85,6 +86,15 @@ const createProduct = async (req, res) => {
     })
 
     await product.save()
+
+    await Promise.all(
+      parsedCategories.map(async (categoryId) => {
+        await Category.findByIdAndUpdate(categoryId, {
+          $addToSet: { products: product._id }
+        })
+      })
+    )
+
     res.status(201).json({ message: 'Product created successfully', product })
   } catch (err) {
     res.status(500).json({ error: err.message })
@@ -105,10 +115,36 @@ const updateProduct = async (req, res) => {
       return res.status(404).json({ message: 'Product not found' })
     }
 
+    const oldCategoryIds = product.categories.map((catId) => catId.toString())
+
     if (title) product.title = title
     if (description) product.description = description
     if (price) product.price = price
-    if (categories) product.categories = categories
+
+    if (categories) {
+      const newCategoryIds = categories.map((catId) => catId.toString())
+      product.categories = newCategoryIds
+
+      const categoriesToRemove = oldCategoryIds.filter(
+        (oldId) => !newCategoryIds.includes(oldId)
+      )
+      console.log('categoryId', categoryId)
+      await Promise.all(
+        categoriesToRemove.map((categoryId) =>
+          Category.findByIdAndUpdate(categoryId, {
+            $pull: { products: product._id }
+          })
+        )
+      )
+
+      await Promise.all(
+        newCategoryIds.map((categoryId) =>
+          Category.findByIdAndUpdate(categoryId, {
+            $addToSet: { products: product._id }
+          })
+        )
+      )
+    }
 
     if (req.files && req.files.length > 0) {
       const imageUrls = await Promise.all(
@@ -118,6 +154,7 @@ const updateProduct = async (req, res) => {
     }
 
     await product.save()
+
     res.status(200).json({
       message: 'Product updated successfully',
       product
