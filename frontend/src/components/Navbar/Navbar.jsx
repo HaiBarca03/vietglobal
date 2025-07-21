@@ -13,7 +13,8 @@ import { getAllCategory } from '../../stores/Category/categoryApis'
 
 const Navbar = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'))
-  const isLoggedIn = storedUser && storedUser.token
+  const token = localStorage.getItem('token')
+  const isLoggedIn = storedUser && token
   const categoryList = useSelector((state) => state.category.categoryList || [])
   const [isAdmin, setIsAdmin] = useState(false)
   const [loading, setLoading] = useState(true)
@@ -123,7 +124,6 @@ const Navbar = () => {
 
   return (
     <header className="navbar-header">
-      {/* Mobile Menu Button */}
       <button
         className={`btn-menu ${isMobileMenuOpen ? 'active' : ''}`}
         onClick={toggleMobileMenu}
@@ -193,7 +193,7 @@ const Navbar = () => {
           <div className="nav-signup">
             <p className="nav-signed-name">{storedUser.username}</p>
             <Link
-              to="/profile"
+              to="/"
               className="customer-profile-btn"
               onClick={closeMobileMenu}
             >
@@ -208,6 +208,112 @@ const Navbar = () => {
                 cursor: 'pointer'
               }}
             />
+
+            <div className="language-switcher">
+              <div
+                className="language-dropdown"
+                style={{ position: 'relative', display: 'inline-block' }}
+              >
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="dropdown-toggle"
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: '8px 12px',
+                    borderRadius: '4px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                    transition: 'background-color 0.2s'
+                  }}
+                >
+                  <img
+                    src={currentLanguage?.flag}
+                    alt={currentLanguage?.alt}
+                    style={{
+                      width: '24px',
+                      height: '16px',
+                      objectFit: 'cover',
+                      borderRadius: '2px'
+                    }}
+                  />
+                  <span
+                    style={{
+                      fontSize: '12px',
+                      color: '#000',
+                      transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                      transition: 'transform 0.2s'
+                    }}
+                  >
+                    ▼
+                  </span>
+                </button>
+
+                {isOpen && (
+                  <div
+                    className="dropdown-menu"
+                    style={{
+                      position: 'absolute',
+                      top: '100%',
+                      right: 0,
+                      color: '#000',
+                      backgroundColor: 'white',
+                      border: '1px solid #ccc',
+                      borderRadius: '4px',
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                      zIndex: 1000,
+                      minWidth: '150px',
+                      overflow: 'hidden'
+                    }}
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => handleLanguageChange(lang.code)}
+                        className="dropdown-item"
+                        style={{
+                          width: '100%',
+                          padding: '8px 12px',
+                          border: 'none',
+                          background:
+                            currentLang === lang.code ? '#f0f0f0' : 'white',
+                          cursor: 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          fontSize: '14px',
+                          transition: 'background-color 0.2s'
+                        }}
+                        onMouseEnter={(e) => {
+                          if (currentLang !== lang.code) {
+                            e.target.style.backgroundColor = '#f8f8f8'
+                          }
+                        }}
+                        onMouseLeave={(e) => {
+                          if (currentLang !== lang.code) {
+                            e.target.style.backgroundColor = 'white'
+                          }
+                        }}
+                      >
+                        <img
+                          src={lang.flag}
+                          alt={lang.alt}
+                          style={{
+                            width: '20px',
+                            height: '14px',
+                            objectFit: 'cover',
+                            borderRadius: '2px'
+                          }}
+                        />
+                        <span>{lang.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         ) : (
           <div className="location-and-sign">

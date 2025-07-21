@@ -9,7 +9,9 @@ import {
   UnorderedListOutlined,
   LogoutOutlined,
   MenuFoldOutlined,
-  MenuUnfoldOutlined
+  MenuUnfoldOutlined,
+  ContactsOutlined,
+  UsergroupAddOutlined
 } from '@ant-design/icons'
 import './AdminPageHome.css'
 import { useNavigate } from 'react-router-dom'
@@ -18,6 +20,7 @@ import ContactAdminPage from '../ContactAdminPage/ContactAdminPage'
 import AboutAdminPage from '../AboutAdminPage/AboutAdminPage'
 const { Header, Sider, Content } = Layout
 import logo from '../../../assets/logo.png'
+import ProductAdminPage from '../ProductAdminPage/ProductAdminPage'
 
 const AdminPageHome = () => {
   const navigate = useNavigate()
@@ -32,7 +35,7 @@ const AdminPageHome = () => {
   const renderContent = () => {
     switch (selectedKey) {
       case 'products':
-        return
+        return <ProductAdminPage />
       case 'contactus':
         return <ContactAdminPage />
       case 'aboutus':
@@ -67,10 +70,10 @@ const AdminPageHome = () => {
           <Menu.Item key="products" icon={<AppstoreOutlined />}>
             Sản phẩm
           </Menu.Item>
-          <Menu.Item key="contactus" icon={<ShoppingOutlined />}>
+          <Menu.Item key="contactus" icon={<ContactsOutlined />}>
             Liên hệ
           </Menu.Item>
-          <Menu.Item key="aboutus" icon={<ShoppingOutlined />}>
+          <Menu.Item key="aboutus" icon={<UsergroupAddOutlined />}>
             Về chúng tôi
           </Menu.Item>
           <Menu.Item key="categories" icon={<UnorderedListOutlined />}>

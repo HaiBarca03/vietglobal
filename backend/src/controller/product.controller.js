@@ -93,26 +93,33 @@ const getProductBySlug = async (req, res) => {
   }
 }
 
+const parseIfString = (value) =>
+  typeof value === 'string' ? JSON.parse(value) : value
+
 const createProduct = async (req, res) => {
   try {
-    const { title, description, price, categories } = req.body
-
-    const imageUrls = await Promise.all(
-      req.files.map((file) => uploadToCloudinary(file.path))
-    )
+    const title = parseIfString(req.body.title)
+    const description = parseIfString(req.body.description)
+    const categories = parseIfString(req.body.categories)
+    const price = req.body.price
+    const imageUrls = req.files
+      ? await Promise.all(
+          req.files.map((file) => uploadToCloudinary(file.path))
+        )
+      : []
 
     const product = new Product({
       image: imageUrls,
-      title: JSON.parse(title),
-      description: JSON.parse(description),
+      title,
+      description,
       price,
-      categories: JSON.parse(categories)
+      categories
     })
 
     await product.save()
 
     await Promise.all(
-      parsedCategories.map(async (categoryId) => {
+      categories.map(async (categoryId) => {
         await Category.findByIdAndUpdate(categoryId, {
           $addToSet: { products: product._id }
         })
@@ -152,7 +159,6 @@ const updateProduct = async (req, res) => {
       const categoriesToRemove = oldCategoryIds.filter(
         (oldId) => !newCategoryIds.includes(oldId)
       )
-      console.log('categoryId', categoryId)
       await Promise.all(
         categoriesToRemove.map((categoryId) =>
           Category.findByIdAndUpdate(categoryId, {

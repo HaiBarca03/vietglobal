@@ -4,9 +4,12 @@ require('dotenv').config()
 
 const authorizeUser = async (req, res, next) => {
   try {
-    const authHeader = req.headers.authorization || req.headers.token
+    const authHeader =
+      req.headers.authorization ||
+      req.headers.token ||
+      req.headers.Authorization
     const token = authHeader && authHeader.split(' ')[1]
-    console.log('token', token)
+    // console.log('token', token)
     if (!token) {
       return res.status(401).json({
         success: false,
@@ -23,7 +26,7 @@ const authorizeUser = async (req, res, next) => {
     req.user = user
     next()
   } catch (error) {
-    console.error('Authorization error:', error.message)
+    // console.error('Authorization error:', error.message)
     return res.status(401).json({
       success: false,
       message: 'Invalid access token. Authorization denied.'
@@ -33,9 +36,15 @@ const authorizeUser = async (req, res, next) => {
 
 const isAdmin = async (req, res, next) => {
   try {
-    const authHeader = req.headers.authorization || req.headers.token
-    const token = authHeader && authHeader.split(' ')[1]
+    const authHeader =
+      req.headers.authorization ||
+      req.headers.token ||
+      req.headers.Authorization
 
+    // console.log('authHeader', authHeader)
+
+    const token = authHeader && authHeader.split(' ')[1]
+    // console.log('token', token)
     if (!token) {
       return res.status(401).json({
         success: false,

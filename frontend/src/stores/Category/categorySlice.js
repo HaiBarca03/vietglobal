@@ -60,8 +60,9 @@ const categorySlice = createSlice({
     },
     updateSuccess: (state, action) => {
       if (Array.isArray(state.categoryList)) {
+        console.log('state.categoryList', state.categoryList)
         const index = state.categoryList.findIndex(
-          (item) => item.user_id === action.payload.user_id
+          (item) => item.id === action.payload.id
         )
         if (index !== -1) {
           state.categoryList[index] = action.payload

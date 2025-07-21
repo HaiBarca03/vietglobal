@@ -20,7 +20,7 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(getAllProduct())
   }, [dispatch])
-
+  console.log('productLists', productLists)
   return (
     <div>
       <AdBanner />

@@ -57,6 +57,7 @@ const updateCategory = (id, data) => async (dispatch) => {
     dispatch(getError(error.message))
   }
 }
+
 const deleteCategory = (id) => async (dispatch) => {
   dispatch(getRequest())
   try {

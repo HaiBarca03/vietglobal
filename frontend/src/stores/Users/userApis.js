@@ -72,16 +72,13 @@ const login = (data) => async (dispatch) => {
       dispatch(getFailed(message))
       throw new Error(message)
     }
-    console.log('resData', resData)
-    // Format lại dữ liệu user lưu vào localStorage
     const userData = {
-      // id: resData.id,
-      // username: resData.username,
-      // email: resData.email,
-      // phone: resData.phone,
-      // role: resData.role,
-      // token: resData.token,
-      // isAdmin: resData.role === 'admin'
+      id: resData.user.id,
+      username: resData.user.name,
+      email: resData.user.email,
+      role: resData.user.role,
+      token: resData.token,
+      isAdmin: resData.user.role === 'admin'
     }
 
     // Lưu vào localStorage
