@@ -57,7 +57,6 @@ const getProductById = (id) => async (dispatch) => {
     const config = getAuthConfig()
     const res = await axios.get(`/product/${id}`, config)
     dispatch(doneSuccess(res.data.product))
-    console.log('res.data', res.data)
   } catch (error) {
     dispatch(getError(error.message))
   }
@@ -68,7 +67,6 @@ const updateProductId = (id, data) => async (dispatch) => {
   try {
     const config = getAuthConfig()
     const res = await axios.put(`/product/${id}`, data, config)
-    console.log('res.data', res)
     if (res.data) {
       dispatch(getFailed(res.data.message))
     } else {
@@ -89,7 +87,6 @@ const updateProductId = (id, data) => async (dispatch) => {
 const createProduct = (data) => async (dispatch) => {
   dispatch(getRequest())
   const token = localStorage.getItem('token')
-  console.log('data', data)
   try {
     const res = await axios.post('/product', data, {
       headers: {

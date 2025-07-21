@@ -9,7 +9,6 @@ const authorizeUser = async (req, res, next) => {
       req.headers.token ||
       req.headers.Authorization
     const token = authHeader && authHeader.split(' ')[1]
-    // console.log('token', token)
     if (!token) {
       return res.status(401).json({
         success: false,
@@ -26,7 +25,6 @@ const authorizeUser = async (req, res, next) => {
     req.user = user
     next()
   } catch (error) {
-    // console.error('Authorization error:', error.message)
     return res.status(401).json({
       success: false,
       message: 'Invalid access token. Authorization denied.'
@@ -41,10 +39,7 @@ const isAdmin = async (req, res, next) => {
       req.headers.token ||
       req.headers.Authorization
 
-    // console.log('authHeader', authHeader)
-
     const token = authHeader && authHeader.split(' ')[1]
-    // console.log('token', token)
     if (!token) {
       return res.status(401).json({
         success: false,

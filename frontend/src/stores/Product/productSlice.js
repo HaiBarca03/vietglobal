@@ -67,7 +67,6 @@ const productSlice = createSlice({
     },
     updateSuccess: (state, action) => {
       if (Array.isArray(state.productList)) {
-        console.log('action.payload', action.payload)
         const index = state.productList.findIndex(
           (item) => item.id === action.payload.id
         )
