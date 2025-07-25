@@ -5,27 +5,31 @@ import './AdBanner.css'
 const banners = [
   {
     id: 1,
-    title: 'Mua vé xem phim online',
-    description: 'Nhanh chóng - Tiện lợi - Không cần xếp hàng!',
+    title: 'VietGlobal',
+    description: 'Kết nối nông lâm sản Việt với thế giới',
     image:
-      'https://oriagency.vn/wp-content/uploads/2024/12/kich-thuoc-banner-shopee-1.png',
-    buttonText: 'Xem ngay'
+      'https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2025/7/14/e151df377d5e4819aa761b11f228941b'
   },
   {
     id: 2,
-    title: 'Ưu đãi thành viên',
-    description: 'Giảm giá 50% cho lần mua đầu tiên',
+    title: 'Đảm bảo',
+    description: 'Uy tín – Bền vững – Chất lượng hàng đầu',
     image:
-      'https://pos.nvncdn.com/14f951-12134/art/artCT/20230723_Vne80hqk.jpg',
-    buttonText: 'Đăng ký'
+      'https://cdn.pixabay.com/photo/2016/11/21/13/20/port-1845350_1280.jpg'
   },
   {
     id: 3,
-    title: 'Suất chiếu đặc biệt',
-    description: 'Chỉ có vào cuối tuần! Số lượng có hạn!',
+    title: 'Sứ mệnh',
+    description: 'Đồng hành cùng nông sản Việt vươn ra toàn cầu',
     image:
-      'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhX49R1h2sYl1-4SDeYkru_NdSNh_ac71AU4vj2KCumAmtlPC223bSNcZr-L-3pgIo0ota_jbBFlGzBjWvhMTK1PM97xOaQZF-0P_cECxGdTyc6twe0SVVMzt6_wGuui6uMd63hLvn-NTYAVDxZU4vU7bvgNQiK88rjsW2EJEUSvHqQUkSSe_IfR8LlFQ/s1920/cong-dong-thiet-ke-shopee.jpg',
-    buttonText: 'Đặt vé'
+      'https://nld.mediacdn.vn/291774122806476800/2022/1/30/xk2-16435297552741167554561.jpeg'
+  },
+  {
+    id: 3,
+    title: 'Giá trị quốc tế',
+    description: 'Tiêu chuẩn quốc tế – Giá trị Việt Nam',
+    image:
+      'https://moit.gov.vn/upload/2005517/fck/files/Ng__nh-xu___t-nh___p-kh___u-l__-g___99d98.jpg'
   }
 ]
 
@@ -43,9 +47,9 @@ const AdBanner = () => {
               <div className="ad-content">
                 <h2>{banner.title}</h2>
                 <p>{banner.description}</p>
-                <Button type="primary" size="large">
+                {/* <Button type="primary" size="large">
                   {banner.buttonText}
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>
