@@ -18,6 +18,7 @@ const Navbar = () => {
   const categoryList = useSelector((state) => state.category.categoryList || [])
   const [isAdmin, setIsAdmin] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [activeSubmenu, setActiveSubmenu] = useState(null)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -40,6 +41,7 @@ const Navbar = () => {
       setLoading(false)
     }
   }, [categoryList])
+  console.log('categoryList', categoryList)
 
   const handleLogout = () => {
     localStorage.removeItem('user')
@@ -121,6 +123,9 @@ const Navbar = () => {
       </div>
     )
   }
+  const toggleSubmenu = (id) => {
+    setActiveSubmenu((prev) => (prev === id ? null : id))
+  }
 
   return (
     <header className="navbar-header">
@@ -148,19 +153,52 @@ const Navbar = () => {
           </li>
           <li className="nav-item dropdown-container">
             <Link className="nav-item dropdown-trigger">{t('category')}</Link>
-
             <ul className="dropdown-menu-category">
-              {categoryList.map((cat) => (
-                <li key={cat._id}>
-                  <Link
-                    className="dropdown-link"
-                    to={`/category/${cat.slug[i18n.language] || cat.slug.vi}`}
-                    onClick={closeMobileMenu}
-                  >
-                    {cat.name[i18n.language] || cat.name.vi}
-                  </Link>
-                </li>
-              ))}
+              {categoryList
+                .filter((cat) => !cat.parent)
+                .map((parent) => (
+                  <li key={parent._id} className="dropdown-submenu">
+                    <Link
+                      className="dropdown-link"
+                      onClick={(e) => {
+                        e.preventDefault() // Ngăn chuyển hướng mặc định khi click
+                        toggleSubmenu(parent._id) // Xử lý mở submenu khi click
+                      }}
+                      onDoubleClick={() => {
+                        const slug =
+                          parent.slug[i18n.language] || parent.slug.vi
+                        navigate(`/category/${slug}`) // Chuyển hướng khi double-click
+                      }}
+                      to="#"
+                    >
+                      {parent.name[i18n.language] || parent.name.vi}
+                    </Link>
+
+                    <ul
+                      className={`dropdown-menu-sub ${
+                        activeSubmenu === parent._id ? 'show' : ''
+                      }`}
+                    >
+                      {categoryList
+                        .filter(
+                          (cat) => cat.parent && cat.parent._id === parent._id
+                        )
+                        .map((child) => (
+                          <li className="dropdown-menu-sub-li" key={child._id}>
+                            <Link
+                              className="dropdown-link"
+                              to={`/category/${
+                                child.slug[i18n.language] || child.slug.vi
+                              }`}
+                              onClick={closeMobileMenu}
+                            >
+                              {child.name[i18n.language] || child.name.vi}
+                            </Link>
+                          </li>
+                        ))}
+                    </ul>
+                  </li>
+                ))}
             </ul>
           </li>
 

@@ -7,7 +7,8 @@ import {
   Form,
   Input,
   Popconfirm,
-  message
+  message,
+  Select
 } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
 import axios from 'axios'
@@ -52,7 +53,10 @@ const CategoryAdminPage = () => {
 
   const openEditModal = (category) => {
     setEditingCategory(category)
-    form.setFieldsValue(category)
+    form.setFieldsValue({
+      ...category,
+      parent: category.parent?._id
+    })
     setModalVisible(true)
   }
 
@@ -105,6 +109,20 @@ const CategoryAdminPage = () => {
       title: 'Slug (EN)',
       dataIndex: ['slug', 'en'],
       key: 'slugEn'
+    },
+    {
+      title: 'Danh mục cha (VI-EN)',
+      key: 'parent',
+      render: (_, record) => {
+        const parentVi = record.parent?.name?.vi
+        const parentEn = record.parent?.name?.en
+
+        if (parentVi && parentEn) {
+          return `${parentVi} - ${parentEn}`
+        }
+
+        return '—'
+      }
     },
     {
       title: 'Hành động',
@@ -187,6 +205,19 @@ const CategoryAdminPage = () => {
           </Form.Item>
           <Form.Item label="Mô tả (EN)" name={['description', 'en']}>
             <Input.TextArea rows={3} />
+          </Form.Item>
+          <Form.Item label="Danh mục cha" name="parent">
+            <Select allowClear placeholder="Chọn danh mục cha">
+              {categories
+                .filter(
+                  (cat) => !editingCategory || cat._id !== editingCategory._id
+                )
+                .map((cat) => (
+                  <Select.Option key={cat._id} value={cat._id}>
+                    {cat.name?.vi} - {cat.name?.en}
+                  </Select.Option>
+                ))}
+            </Select>
           </Form.Item>
         </Form>
       </Modal>

@@ -16,6 +16,11 @@ const categorySchema = new mongoose.Schema(
       vi: { type: String },
       en: { type: String }
     },
+    parent: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Category',
+      default: null
+    },
     products: [
       {
         type: mongoose.Schema.Types.ObjectId,

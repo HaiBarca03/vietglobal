@@ -21,7 +21,7 @@ const getAllCategories = async (req, res) => {
       {
         page,
         limit,
-        populate: 'products'
+        populate: [{ path: 'products' }, { path: 'parent' }]
       }
     )
 
@@ -43,11 +43,25 @@ const getCategoryById = async (req, res) => {
 
 const updateCategory = async (req, res) => {
   try {
-    const updated = await Category.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true
-    })
-    if (!updated) return res.status(404).json({ message: 'Not found' })
+    const category = await Category.findById(req.params.id)
+    if (!category) {
+      return res.status(404).json({ message: 'Category not found' })
+    }
+
+    if (req.body.name?.vi) category.name.vi = req.body.name.vi
+    if (req.body.name?.en) category.name.en = req.body.name.en
+
+    if (req.body.description?.vi !== undefined)
+      category.description.vi = req.body.description.vi
+    if (req.body.description?.en !== undefined)
+      category.description.en = req.body.description.en
+
+    if (req.body.hasOwnProperty('parent')) {
+      category.parent = req.body.parent === '' ? null : req.body.parent
+    }
+
+    const updated = await category.save()
+
     res.json({ message: 'Category updated', category: updated })
   } catch (err) {
     res.status(500).json({ message: 'Update failed', error: err.message })
@@ -57,8 +71,14 @@ const updateCategory = async (req, res) => {
 const deleteCategory = async (req, res) => {
   try {
     const deleted = await Category.findByIdAndDelete(req.params.id)
-    if (!deleted) return res.status(404).json({ message: 'Not found' })
-    res.json({ message: 'Category deleted' })
+    if (!deleted) return res.status(404).json({ message: 'Category not found' })
+
+    await Category.updateMany(
+      { parent: req.params.id },
+      { $set: { parent: null } }
+    )
+
+    res.json({ message: 'Category deleted and child categories updated' })
   } catch (err) {
     res.status(500).json({ message: 'Delete failed', error: err.message })
   }

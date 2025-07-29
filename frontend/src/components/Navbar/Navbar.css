@@ -254,12 +254,14 @@ img.logo-web-my {
   border-radius: 20px;
 }
 
+/* Trigger */
 .dropdown-trigger {
   cursor: pointer;
   display: inline-block;
   padding: 10px;
 }
 
+/* Danh sách cha */
 .dropdown-menu-category {
   display: none;
   position: absolute;
@@ -276,28 +278,51 @@ img.logo-web-my {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.dropdown-container:hover .dropdown-menu-category {
+  display: block;
+}
+
 .dropdown-menu-category li {
+  position: relative;
   border-bottom: 1px solid #eee;
 }
 
 .dropdown-menu-category li:last-child {
   border-bottom: none;
 }
+.dropdown-menu-sub {
+  display: none;
+}
 
-.dropdown-menu-category .dropdown-link {
+.dropdown-submenu {
+  cursor: pointer;
+}
+
+.dropdown-menu-sub.show {
+  display: block;
+  padding-left: 20px;
+}
+
+/* Submenu */
+.dropdown-menu-category {
+  list-style: none;
+  padding: 1px;
+  margin: 0;
+}
+
+.dropdown-link {
   display: block;
   padding: 10px 15px;
   text-decoration: none;
   color: #333;
+  background-color: #fff;
+  /* border: solid #ddd; */
+  border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
-.dropdown-menu-category .dropdown-link:hover {
+.dropdown-link:hover {
   background-color: #f0f0f0;
-}
-
-.dropdown-container:hover .dropdown-menu-category {
-  display: block;
 }
 
 /* RESPONSIVE BREAKPOINTS */
