@@ -2,7 +2,7 @@ import AboutUs from '../pages/AboutUs/AboutUs'
 import AdminPageHome from '../pages/Admin/AdminPageHome/AdminPageHome'
 import HomePage from '../pages/Home/HomePage'
 import Login from '../pages/Login/Login'
-import NotPoundPage from '../pages/NotPoundPage/NotPoundPage'
+import NotFoundPage from '../pages/NotPoundPage/NotPoundPage'
 import ProductCategory from '../pages/ProductCategory/ProductCategory'
 import ProductDetailPage from '../pages/ProductDetailPage/ProductDetailPage'
 import ProductList from '../pages/ProductList/ProductList'
@@ -48,6 +48,6 @@ export const routes = [
   },
   {
     path: '*',
-    page: NotPoundPage
+    page: NotFoundPage
   }
 ]
