@@ -7,7 +7,8 @@ import {
   LinkedinOutlined,
   InstagramOutlined,
   FacebookOutlined,
-  GlobalOutlined
+  GlobalOutlined,
+  WhatsAppOutlined
 } from '@ant-design/icons'
 import './ContactUs.css'
 import { getAllContactUs } from '../../stores/ContactUs/ContactUsApi'
@@ -81,7 +82,7 @@ const ContactUs = () => {
 
       <p>
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo_app.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/2048px-Icon_of_Zalo.svg.png"
           alt="Zalo"
         />
         <strong>Zalo:</strong>
@@ -95,10 +96,10 @@ const ContactUs = () => {
       </p>
 
       <p>
-        <LinkedinOutlined />
-        <strong>LinkedIn:</strong>
+        <WhatsAppOutlined />
+        <strong>Whatsapp:</strong>
         <a
-          href={info.social_links?.linkedin}
+          href={info.social_links?.zalo}
           target="_blank"
           rel="noopener noreferrer"
         >

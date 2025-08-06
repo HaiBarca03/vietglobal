@@ -21,8 +21,8 @@ const WhyChooseUs = () => {
         en: 'Progressive Farmers'
       },
       description: {
-        vi: 'Sunrise là nhà cung cấp sản phẩm nông nghiệp hàng đầu tại Việt Nam.',
-        en: 'Sunrise ins Group is the largest manufacturer and supplier of all agricultural products from Vietnam.'
+        vi: 'VietGlobal là nhà cung cấp sản phẩm nông nghiệp hàng đầu tại Việt Nam.',
+        en: 'VietGlobal ins Group is the largest manufacturer and supplier of all agricultural products from Vietnam.'
       }
     },
     {

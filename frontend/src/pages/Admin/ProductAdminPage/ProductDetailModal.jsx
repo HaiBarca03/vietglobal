@@ -28,11 +28,23 @@ const ProductDetailModal = ({ visible, onClose, product }) => {
         </Descriptions.Item>
 
         <Descriptions.Item label="Mô tả (VI)" span={2}>
-          {product.description?.vi}
+          <div
+            className="description-text"
+            style={{ marginTop: 8 }}
+            dangerouslySetInnerHTML={{
+              __html: product.description?.vi || ''
+            }}
+          />
         </Descriptions.Item>
 
         <Descriptions.Item label="Mô tả (EN)" span={2}>
-          {product.description?.en}
+          <div
+            className="description-text"
+            style={{ marginTop: 8 }}
+            dangerouslySetInnerHTML={{
+              __html: product.description?.en || ''
+            }}
+          />
         </Descriptions.Item>
 
         <Descriptions.Item label="Giá">

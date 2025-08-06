@@ -134,7 +134,22 @@ const ProductAdminPage = () => {
       title: 'Mô tả (VI)',
       dataIndex: ['description', 'vi'],
       key: 'desc_vi',
-      ellipsis: true
+      ellipsis: true,
+      render: (desc) => (
+        <div
+          style={{
+            maxWidth: 300,
+            display: '-webkit-box',
+            WebkitLineClamp: 1,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            lineHeight: '20px',
+            height: '20px'
+          }}
+          dangerouslySetInnerHTML={{ __html: desc }}
+        />
+      )
     },
     {
       title: 'Giá (VNĐ)',

@@ -1,42 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import { Form, Input, Button, Card, Row, Col, message } from 'antd'
-import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
-import { getAboutUsId, updateAboutUs } from '../../../stores/AboutUs/aboutUsApi'
-
 import SunEditor from 'suneditor-react'
 import 'suneditor/dist/css/suneditor.min.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { getAllPolicy, updatePolicy } from '../../../stores/Policy/PolicyApi'
 
-const AboutAdminPage = () => {
+const PolicyAdminPage = () => {
   const [form] = Form.useForm()
-  const [loading, setLoading] = useState(false)
-  const [aboutId, setAboutId] = useState(null)
-
-  const aboutUsDetails = useSelector(
-    (state) => state.aboutUs.aboutUsDetails || []
-  )
   const dispatch = useDispatch()
 
   const [descVI, setDescVI] = useState('')
   const [descEN, setDescEN] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [policyId, setPolicyId] = useState(null)
+
+  const policyList = useSelector((state) => state.policy.policyList || [])
+  const firstPolicy = policyList.length > 0 ? policyList[0] : null
 
   useEffect(() => {
-    dispatch(getAboutUsId())
+    dispatch(getAllPolicy())
   }, [dispatch])
 
   useEffect(() => {
-    if (aboutUsDetails) {
-      setAboutId(aboutUsDetails._id)
+    if (firstPolicy) {
+      setPolicyId(firstPolicy._id)
       form.setFieldsValue({
         name: {
-          vi: aboutUsDetails.name?.vi || '',
-          en: aboutUsDetails.name?.en || ''
+          vi: firstPolicy.name?.vi || '',
+          en: firstPolicy.name?.en || ''
         }
       })
-      setDescVI(aboutUsDetails.description?.vi || '')
-      setDescEN(aboutUsDetails.description?.en || '')
+      setDescVI(firstPolicy.description?.vi || '')
+      setDescEN(firstPolicy.description?.en || '')
     }
-  }, [aboutUsDetails, form])
+  }, [firstPolicy, form])
 
   const handleSubmit = async (values) => {
     try {
@@ -48,20 +45,19 @@ const AboutAdminPage = () => {
           en: descEN
         }
       }
-      await dispatch(updateAboutUs(aboutId, updatedData))
-      await dispatch(getAboutUsId())
-
+      await dispatch(updatePolicy(policyId, updatedData))
+      await dispatch(getAllPolicy())
       message.success('Cập nhật thành công!')
-    } catch (err) {
-      console.error(err)
-      message.error('Cập nhật thất bại')
+    } catch (error) {
+      console.error(error)
+      message.error('Cập nhật thất bại!')
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <Card title="Quản lý Giới Thiệu (About Us)" bordered={false}>
+    <Card title="Quản lý Chính sách (Policy)" bordered={false}>
       <Form
         form={form}
         layout="vertical"
@@ -81,7 +77,7 @@ const AboutAdminPage = () => {
           </Col>
 
           <Col span={24}>
-            <Form.Item label="Nội dung (VI)">
+            <Form.Item label="Mô tả (VI)">
               <SunEditor
                 setContents={descVI}
                 onChange={setDescVI}
@@ -127,10 +123,10 @@ const AboutAdminPage = () => {
           </Col>
 
           <Col span={24}>
-            <Form.Item label="Nội dung (EN)">
+            <Form.Item label="Mô tả (EN)">
               <SunEditor
-                setContents={descVI}
-                onChange={setDescVI}
+                setContents={descEN}
+                onChange={setDescEN}
                 setOptions={{
                   height: 300,
                   buttonList: [
@@ -183,4 +179,4 @@ const AboutAdminPage = () => {
   )
 }
 
-export default AboutAdminPage
+export default PolicyAdminPage

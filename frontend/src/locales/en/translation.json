@@ -9,7 +9,7 @@
   "email": "Email",
   "phone": "Phone",
   "address": "Address",
-  "description": "VietGlobal is a trusted e-commerce platform, offering a wide variety of quality products at the best prices, fast delivery and excellent customer service.",
+  "description": "VietGlobal is a reliable exporter, offering a wide variety of quality products at the best prices, fast delivery and excellent customer service.",
   "links": {
     "title": "Links",
     "home": "Home",
@@ -39,5 +39,6 @@
   "homeTitle": "Best product",
   "readmore": "Read more",
   "allProduct": "All products",
-  "productByCate": "Products by categories"
+  "productByCate": "Products by categories",
+  "followUs": "Follow us"
 }

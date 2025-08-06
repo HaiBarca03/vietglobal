@@ -21,6 +21,7 @@ import AboutAdminPage from '../AboutAdminPage/AboutAdminPage'
 const { Header, Sider, Content } = Layout
 import logo from '../../../assets/logo.png'
 import ProductAdminPage from '../ProductAdminPage/ProductAdminPage'
+import PolicyAdminPage from '../PolicyAdminPage/PolicyAdminPage'
 
 const AdminPageHome = () => {
   const navigate = useNavigate()
@@ -42,6 +43,8 @@ const AdminPageHome = () => {
         return <AboutAdminPage />
       case 'categories':
         return <CategoryAdminPage />
+      case 'policies':
+        return <PolicyAdminPage />
       case 'logout':
         navigate('/')
         return null
@@ -78,6 +81,9 @@ const AdminPageHome = () => {
           </Menu.Item>
           <Menu.Item key="categories" icon={<UnorderedListOutlined />}>
             Danh mục
+          </Menu.Item>
+          <Menu.Item key="policies" icon={<CommentOutlined />}>
+            Chính sách
           </Menu.Item>
           <Menu.Item
             key="logout"

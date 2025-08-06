@@ -236,9 +236,13 @@ const ProductDetailPage = () => {
                         <Text strong className="detail-label">
                           {t('productdes')}:
                         </Text>
-                        <Paragraph className="description-text">
-                          {productDetail?.description?.[lang]}
-                        </Paragraph>
+                        <div
+                          className="description-text"
+                          style={{ marginTop: 8 }}
+                          dangerouslySetInnerHTML={{
+                            __html: productDetail?.description?.[lang] || ''
+                          }}
+                        />
                       </div>
                     </div>
 
@@ -247,7 +251,7 @@ const ProductDetailPage = () => {
                         {t('productcate')}:
                       </Text>
                       <Text className="detail-value category-value">
-                        {productDetail?.categories[0].name?.[lang]}
+                        {productDetail?.categories[0]?.name?.[lang]}
                       </Text>
                     </div>
 

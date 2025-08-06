@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { Modal, Form, Input, InputNumber, Select, Button, Upload } from 'antd'
+import SunEditor from 'suneditor-react'
+import 'suneditor/dist/css/suneditor.min.css'
 
 const ProductCreateModal = ({
   visible,
@@ -9,6 +11,8 @@ const ProductCreateModal = ({
 }) => {
   const [form] = Form.useForm()
   const [fileList, setFileList] = useState([])
+  const [descVI, setDescVI] = useState('')
+  const [descEN, setDescEN] = useState('')
   const normFile = (e) => {
     return Array.isArray(e) ? e : e?.fileList
   }
@@ -19,7 +23,15 @@ const ProductCreateModal = ({
         formData.append('image', file.originFileObj)
       })
 
-      Object.entries(values).forEach(([key, val]) => {
+      const fullValues = {
+        ...values,
+        description: {
+          vi: descVI,
+          en: descEN
+        }
+      }
+
+      Object.entries(fullValues).forEach(([key, val]) => {
         if (typeof val === 'object' && !Array.isArray(val)) {
           Object.entries(val).forEach(([subKey, subVal]) => {
             formData.append(`${key}[${subKey}]`, subVal)
@@ -36,6 +48,8 @@ const ProductCreateModal = ({
       onCreate(formData)
       form.resetFields()
       setFileList([])
+      setDescVI('')
+      setDescEN('')
     })
   }
 
@@ -68,20 +82,92 @@ const ProductCreateModal = ({
           <Input />
         </Form.Item>
 
-        <Form.Item
-          name={['description', 'vi']}
-          label="Mô tả (VI)"
-          rules={[{ required: true, message: 'Nhập mô tả' }]}
-        >
-          <Input.TextArea rows={3} />
+        <Form.Item label="Mô tả (VI)" required>
+          <SunEditor
+            setContents={descVI}
+            onChange={setDescVI}
+            setOptions={{
+              height: 300,
+              buttonList: [
+                [
+                  'undo',
+                  'redo',
+                  'font',
+                  'fontSize',
+                  'formatBlock',
+                  'bold',
+                  'underline',
+                  'italic',
+                  'strike',
+                  'fontColor',
+                  'hiliteColor',
+                  'align',
+                  'list',
+                  'table',
+                  'link',
+                  'image',
+                  'video',
+                  'fullScreen',
+                  'codeView',
+                  'removeFormat'
+                ]
+              ],
+              defaultStyle: 'font-size: 16px;',
+              font: [
+                'Arial',
+                'Comic Sans MS',
+                'Courier New',
+                'Georgia',
+                'Tahoma',
+                'Trebuchet MS',
+                'Verdana'
+              ]
+            }}
+          />
         </Form.Item>
 
-        <Form.Item
-          name={['description', 'en']}
-          label="Mô tả (EN)"
-          rules={[{ required: true, message: 'Nhập mô tả' }]}
-        >
-          <Input.TextArea rows={3} />
+        <Form.Item label="Mô tả (EN)" required>
+          <SunEditor
+            setContents={descEN}
+            onChange={setDescEN}
+            setOptions={{
+              height: 300,
+              buttonList: [
+                [
+                  'undo',
+                  'redo',
+                  'font',
+                  'fontSize',
+                  'formatBlock',
+                  'bold',
+                  'underline',
+                  'italic',
+                  'strike',
+                  'fontColor',
+                  'hiliteColor',
+                  'align',
+                  'list',
+                  'table',
+                  'link',
+                  'image',
+                  'video',
+                  'fullScreen',
+                  'codeView',
+                  'removeFormat'
+                ]
+              ],
+              defaultStyle: 'font-size: 16px;',
+              font: [
+                'Arial',
+                'Comic Sans MS',
+                'Courier New',
+                'Georgia',
+                'Tahoma',
+                'Trebuchet MS',
+                'Verdana'
+              ]
+            }}
+          />
         </Form.Item>
 
         <Form.Item

@@ -15,12 +15,22 @@ const { Footer } = Layout
 
 const AppFooter = () => {
   const { t } = useTranslation()
-
+  const handlePolicy = () => {
+    window.location.href = '/policy'
+  }
+  const handleHome = () => {
+    window.location.href = '/'
+  }
+  const handleProduct = () => {
+    window.location.href = '/all-product'
+  }
+  const handleCate = () => {
+    window.location.href = '/'
+  }
   return (
     <Footer className="footer">
       <div className="footer-container">
         <Row gutter={[32, 32]}>
-          {/* Company Info Section */}
           <Col xs={24} sm={24} md={8} lg={8}>
             <div className="footer-section">
               <h3 className="footer-logo">VietGlobal</h3>
@@ -34,33 +44,44 @@ const AppFooter = () => {
           </Col>
 
           {/* Navigation Links */}
-          <Col xs={12} sm={8} md={5} lg={5}>
+          <Col xs={12} sm={8} md={4} lg={4}>
             <div className="footer-section">
               <h4>{t('links.title')}</h4>
               <ul className="footer-links">
-                <li>{t('links.home')}</li>
-                <li>{t('links.products')}</li>
-                <li>{t('links.categories')}</li>
-                <li>{t('links.deals')}</li>
+                <li onClick={() => handleHome()}>{t('links.home')}</li>
+                <li onClick={() => handleProduct()}>{t('links.products')}</li>
+                <li onClick={() => handleCate()}>{t('links.categories')}</li>
+                <li onClick={() => handlePolicy()}>{t('policies.title')}</li>
               </ul>
             </div>
           </Col>
 
           {/* Policies */}
-          <Col xs={12} sm={8} md={5} lg={5}>
+          <Col xs={10} sm={6} md={4} lg={4}>
             <div className="footer-section">
-              <h4>{t('policies.title')}</h4>
+              <h4>{t('followUs')}</h4>
               <ul className="footer-links">
-                <li>{t('policies.privacy')}</li>
-                <li>{t('policies.terms')}</li>
-                <li>{t('policies.shipping')}</li>
-                <li>{t('policies.returnPolicy')}</li>
+                <li>
+                  {' '}
+                  <FacebookOutlined />
+                  &nbsp; Facebook
+                </li>
+                <li>
+                  {' '}
+                  <YoutubeOutlined />
+                  &nbsp; Youtube
+                </li>
+                <li>
+                  {' '}
+                  <MailOutlined />
+                  &nbsp; Email
+                </li>
               </ul>
             </div>
           </Col>
 
           {/* Contact Info */}
-          <Col xs={24} sm={8} md={6} lg={6}>
+          <Col xs={14} sm={10} md={7} lg={7}>
             <div className="footer-section">
               <h4>{t('contact.title')}</h4>
               <div className="footer-contact">

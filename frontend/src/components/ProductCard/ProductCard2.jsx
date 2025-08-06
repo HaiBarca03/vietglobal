@@ -65,7 +65,7 @@ const ProductCard2 = ({ product, lang, index }) => {
           {product.title?.[lang]}
         </h5>
 
-        <p
+        <div
           style={{
             fontSize: '14px',
             color: '#555',
@@ -75,9 +75,10 @@ const ProductCard2 = ({ product, lang, index }) => {
             overflow: 'hidden',
             lineHeight: '1.4'
           }}
-        >
-          {product.description?.[lang]}
-        </p>
+          dangerouslySetInnerHTML={{
+            __html: product.description?.[lang] || ''
+          }}
+        />
 
         <button
           style={{

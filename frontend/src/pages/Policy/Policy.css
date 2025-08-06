@@ -1,0 +1,66 @@
+.policy-container {
+  padding: 70px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.policy-header {
+  margin-bottom: 24px;
+}
+
+.breadcrumb {
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+.policy-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #222;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+  text-align: center;
+  word-break: break-word;
+}
+
+/* Nội dung mô tả HTML */
+.policy-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #333;
+  word-break: break-word;
+}
+
+/* Responsive cho tablet */
+@media (max-width: 768px) {
+  .policy-container {
+    padding: 60px 20px;
+    width: 100%;
+  }
+
+  .policy-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 480px) {
+  .policy-container {
+    padding: 40px 16px;
+  }
+
+  .policy-title {
+    font-size: 1.25rem;
+  }
+
+  .breadcrumb {
+    font-size: 0.75rem;
+  }
+
+  .policy-description {
+    font-size: 0.95rem;
+  }
+}

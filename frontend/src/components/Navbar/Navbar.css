@@ -125,7 +125,7 @@ img.logo-web-my {
   display: flex;
   align-items: center;
   backdrop-filter: blur(8px);
-  padding: 1rem;
+  /* padding: 1rem; */
   border-radius: 20px;
 }
 

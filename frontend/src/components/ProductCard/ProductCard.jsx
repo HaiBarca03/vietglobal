@@ -39,18 +39,20 @@ const ProductCard = ({ product, lang }) => {
         >
           {product.title?.[lang]}
         </h5>
-        <p
+        <div
           style={{
             fontSize: '14px',
             color: '#555',
             display: '-webkit-box',
-            WebkitLineClamp: 2,
+            WebkitLineClamp: 1,
             WebkitBoxOrient: 'vertical',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            lineHeight: '1.4'
           }}
-        >
-          {product.description?.[lang]}
-        </p>
+          dangerouslySetInnerHTML={{
+            __html: product.description?.[lang] || ''
+          }}
+        />
         <p
           style={{
             fontWeight: 'bold',

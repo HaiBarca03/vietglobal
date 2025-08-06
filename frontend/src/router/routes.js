@@ -3,6 +3,7 @@ import AdminPageHome from '../pages/Admin/AdminPageHome/AdminPageHome'
 import HomePage from '../pages/Home/HomePage'
 import Login from '../pages/Login/Login'
 import NotFoundPage from '../pages/NotPoundPage/NotPoundPage'
+import Policy from '../pages/Policy/Policy'
 import ProductCategory from '../pages/ProductCategory/ProductCategory'
 import ProductDetailPage from '../pages/ProductDetailPage/ProductDetailPage'
 import ProductList from '../pages/ProductList/ProductList'
@@ -40,6 +41,11 @@ export const routes = [
   {
     path: '/all-product',
     page: ProductList,
+    isShowHeader: true
+  },
+  {
+    path: '/policy',
+    page: Policy,
     isShowHeader: true
   },
   {

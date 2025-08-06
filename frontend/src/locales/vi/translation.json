@@ -9,7 +9,7 @@
   "email": "Email",
   "phone": "Số điện thoại",
   "address": "Địa chỉ",
-  "description": "VietGlobal là nền tảng thương mại điện tử uy tín, cung cấp đa dạng sản phẩm chất lượng với giá tốt nhất, giao hàng nhanh và dịch vụ khách hàng tuyệt vời.",
+  "description": "VietGlobal là nhà xuất khẩu uy tín, cung cấp đa dạng sản phẩm chất lượng với giá tốt nhất, giao hàng nhanh và dịch vụ khách hàng tuyệt vời.",
   "links": {
     "title": "Liên kết",
     "home": "Trang chủ",
@@ -39,5 +39,6 @@
   "homeTitle": "Sản phẩm nổi bật",
   "readmore": "Xem thêm",
   "allProduct": "Tất cả sản phẩm",
-  "productByCate": "Sản phẩm theo danh mục"
+  "productByCate": "Sản phẩm theo danh mục",
+  "followUs": "Theo dõi chúng tôi"
 }
