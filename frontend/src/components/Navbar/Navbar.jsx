@@ -41,7 +41,6 @@ const Navbar = () => {
       setLoading(false)
     }
   }, [categoryList])
-  console.log('categoryList', categoryList)
 
   const handleLogout = () => {
     localStorage.removeItem('user')

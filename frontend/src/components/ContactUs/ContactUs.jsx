@@ -103,7 +103,7 @@ const ContactUs = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {info.social_links?.linkedin}
+          {info.social_links?.zalo}
         </a>
       </p>
     </div>
