@@ -104,9 +104,8 @@ const AppFooter = () => {
 
         <div className="footer-bottom">
           <p>
-            © {new Date().getFullYear()} VietGlobal. {t('allRights')}
+            © {new Date().getFullYear()} VietGlobal
           </p>
-          <p>© Author: DoanDucHai. {t('allRights')}</p>
         </div>
       </div>
     </Footer>
