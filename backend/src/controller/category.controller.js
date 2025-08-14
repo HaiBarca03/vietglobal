@@ -31,6 +31,29 @@ const getAllCategories = async (req, res) => {
   }
 }
 
+const getAllCategoriesMenu = async (req, res) => {
+  try {
+    const categories = await Category.find({}).select('name slug parent').lean()
+    const parents = categories.filter((cat) => !cat.parent)
+
+    const result = parents.map((parent) => ({
+      _id: parent._id,
+      name: parent.name,
+      slug: parent.slug,
+      children: categories
+        .filter((cat) => String(cat.parent) === String(parent._id))
+        .map((child) => ({
+          _id: child._id,
+          name: child.name,
+          slug: child.slug
+        }))
+    }))
+    res.json(result)
+  } catch (err) {
+    res.status(500).json({ message: 'Fetch failed', error: err.message })
+  }
+}
+
 const getCategoryById = async (req, res) => {
   try {
     const category = await Category.findById(req.params.id).populate('products')
@@ -89,5 +112,6 @@ module.exports = {
   getAllCategories,
   getCategoryById,
   updateCategory,
-  deleteCategory
+  deleteCategory,
+  getAllCategoriesMenu
 }

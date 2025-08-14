@@ -101,7 +101,6 @@ const createProduct = async (req, res) => {
     const title = parseIfString(req.body.title)
     const description = parseIfString(req.body.description)
     const categories = parseIfString(req.body.categories)
-    const price = req.body.price
     const imageUrls = req.files
       ? await Promise.all(
           req.files.map((file) => uploadToCloudinary(file.path))
@@ -112,7 +111,7 @@ const createProduct = async (req, res) => {
       image: imageUrls,
       title,
       description,
-      price,
+      price: 0,
       categories
     })
 
@@ -135,7 +134,7 @@ const createProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
   try {
     const { id } = req.params
-    let { title, description, price, categories } = req.body
+    let { title, description, categories } = req.body
 
     if (typeof title === 'string') title = JSON.parse(title)
     if (typeof description === 'string') description = JSON.parse(description)
@@ -150,7 +149,6 @@ const updateProduct = async (req, res) => {
 
     if (title) product.title = title
     if (description) product.description = description
-    if (price) product.price = price
 
     if (categories) {
       const newCategoryIds = categories.map((catId) => catId.toString())

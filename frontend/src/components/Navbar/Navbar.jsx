@@ -1,21 +1,24 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './Navbar.css'
-import { LogoutOutlined, UserOutlined } from '@ant-design/icons'
+import { LogoutOutlined, RightOutlined, UserOutlined } from '@ant-design/icons'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Select, Spin } from 'antd'
 const { Option } = Select
 import logo from '../../assets/logo.png'
 import { useTranslation } from 'react-i18next'
 import vietnamFlag from '../../assets/Flag_of_Vietnam.svg'
 import ukFlag from '../../assets/Flag_of_the_United_Kingdom.png'
-import { getAllCategory } from '../../stores/Category/categoryApis'
+import {
+  getAllCategory,
+  getAllCategoryMenu
+} from '../../stores/Category/categoryApis'
 
 const Navbar = () => {
   const storedUser = JSON.parse(localStorage.getItem('user'))
   const token = localStorage.getItem('token')
   const isLoggedIn = storedUser && token
-  const categoryList = useSelector((state) => state.category.categoryList || [])
+  const categoryList = useSelector((state) => state.category.cateMenu || [])
   const [isAdmin, setIsAdmin] = useState(false)
   const [loading, setLoading] = useState(true)
   const [activeSubmenu, setActiveSubmenu] = useState(null)
@@ -33,7 +36,7 @@ const Navbar = () => {
   }, [storedUser])
 
   useEffect(() => {
-    dispatch(getAllCategory())
+    dispatch(getAllCategoryMenu())
   }, [dispatch])
 
   useEffect(() => {
@@ -41,6 +44,7 @@ const Navbar = () => {
       setLoading(false)
     }
   }, [categoryList])
+  console.log('categoryList', categoryList)
 
   const handleLogout = () => {
     localStorage.removeItem('user')
@@ -153,55 +157,39 @@ const Navbar = () => {
           <li className="nav-item dropdown-container">
             <Link className="nav-item dropdown-trigger">{t('category')}</Link>
             <ul className="dropdown-menu-category">
-              {categoryList
-                .filter((cat) => !cat.parent)
-                .map((parent) => (
-                  <li key={parent._id} className="dropdown-submenu">
+              {categoryList.map((parent) => (
+                <Fragment key={parent._id}>
+                  <li className="dropdown-item-parent">
                     <Link
                       className="dropdown-link"
-                      onClick={(e) => {
-                        e.preventDefault() // Ngăn chuyển hướng mặc định khi click
-                        toggleSubmenu(parent._id) // Xử lý mở submenu khi click
-                      }}
-                      onDoubleClick={() => {
-                        const slug =
-                          parent.slug[i18n.language] || parent.slug.vi
-                        navigate(`/category/${slug}`) // Chuyển hướng khi double-click
-                      }}
-                      to="#"
+                      to={`/category/${
+                        parent.slug[i18n.language] || parent.slug.vi
+                      }`}
+                      onClick={closeMobileMenu}
                     >
                       {parent.name[i18n.language] || parent.name.vi}
                     </Link>
-
-                    <ul
-                      className={`dropdown-menu-sub ${
-                        activeSubmenu === parent._id ? 'show' : ''
-                      }`}
-                    >
-                      {categoryList
-                        .filter(
-                          (cat) => cat.parent && cat.parent._id === parent._id
-                        )
-                        .map((child) => (
-                          <li className="dropdown-menu-sub-li" key={child._id}>
-                            <Link
-                              className="dropdown-link"
-                              to={`/category/${
-                                child.slug[i18n.language] || child.slug.vi
-                              }`}
-                              onClick={closeMobileMenu}
-                            >
-                              {child.name[i18n.language] || child.name.vi}
-                            </Link>
-                          </li>
-                        ))}
-                    </ul>
                   </li>
-                ))}
+                  {parent.children.length > 0 &&
+                    parent.children.map((child) => (
+                      <li className="dropdown-item-child" key={child._id}>
+                        <Link
+                          className="dropdown-link"
+                          to={`/category/${
+                            child.slug[i18n.language] || child.slug.vi
+                          }`}
+                          onClick={closeMobileMenu}
+                        >
+                          <RightOutlined className="child-arrow" />
+                          {child.name[i18n.language] || child.name.vi}
+                        </Link>
+                      </li>
+                    ))}
+                </Fragment>
+              ))}
             </ul>
           </li>
-
-          <li>
+          {/* <li>
             <Link
               className="nav-item"
               to="/all-product"
@@ -209,7 +197,7 @@ const Navbar = () => {
             >
               {t('products')}
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link className="nav-item" to="/about-us" onClick={closeMobileMenu}>
               {t('aboutUs')}

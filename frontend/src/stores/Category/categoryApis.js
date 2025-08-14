@@ -9,7 +9,8 @@ import {
   getRequest,
   getCategorySuccess,
   postDone,
-  updateSuccess
+  updateSuccess,
+  getCategoryMenuSuccess
 } from './categorySlice'
 import { getAuthConfig } from '../authConfig'
 
@@ -22,6 +23,21 @@ const getAllCategory = () => async (dispatch) => {
       dispatch(getFailed(res.data.message))
     } else {
       dispatch(getCategorySuccess(res.data))
+    }
+  } catch (error) {
+    dispatch(getError(error.message))
+  }
+}
+
+const getAllCategoryMenu = () => async (dispatch) => {
+  dispatch(getRequest())
+  try {
+    const config = getAuthConfig()
+    const res = await axios.get(`/category/menu`, config)
+    if (res.data.message) {
+      dispatch(getFailed(res.data.message))
+    } else {
+      dispatch(getCategoryMenuSuccess(res.data))
     }
   } catch (error) {
     dispatch(getError(error.message))
@@ -73,4 +89,10 @@ const deleteCategory = (id) => async (dispatch) => {
   }
 }
 
-export { getAllCategory, createCategory, updateCategory, deleteCategory }
+export {
+  getAllCategory,
+  createCategory,
+  updateCategory,
+  deleteCategory,
+  getAllCategoryMenu
+}

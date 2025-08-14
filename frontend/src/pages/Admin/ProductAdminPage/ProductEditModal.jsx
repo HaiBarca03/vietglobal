@@ -30,7 +30,7 @@ const ProductEditModal = ({
         titleEn: product.title?.en,
         slugVi: product.slug?.vi,
         slugEn: product.slug?.en,
-        price: product.price,
+        // price: product.price,
         categories: product.categories?.map((cat) => cat._id)
       })
       setDescVi(product.description?.vi || '')
@@ -192,7 +192,7 @@ const ProductEditModal = ({
             </Form.Item>
           </Col>
 
-          <Col span={12}>
+          {/* <Col span={12}>
             <Form.Item
               label="Giá (VNĐ)"
               name="price"
@@ -200,7 +200,7 @@ const ProductEditModal = ({
             >
               <InputNumber style={{ width: '100%' }} min={0} step={1000} />
             </Form.Item>
-          </Col>
+          </Col> */}
 
           <Col span={12}>
             <Form.Item

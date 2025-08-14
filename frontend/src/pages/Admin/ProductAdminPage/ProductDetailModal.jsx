@@ -47,9 +47,9 @@ const ProductDetailModal = ({ visible, onClose, product }) => {
           />
         </Descriptions.Item>
 
-        <Descriptions.Item label="Giá">
+        {/* <Descriptions.Item label="Giá">
           {product.price?.toLocaleString()} ₫
-        </Descriptions.Item>
+        </Descriptions.Item> */}
 
         <Descriptions.Item label="Danh mục">
           {product.categories?.map((cat) => (

@@ -5,12 +5,14 @@ const {
   getAllCategories,
   getCategoryById,
   updateCategory,
-  deleteCategory
+  deleteCategory,
+  getAllCategoriesMenu
 } = require('../controller/category.controller')
 const { isAdmin } = require('../middleware/auth')
 
 router.post('/', createCategory)
 router.get('/', getAllCategories)
+router.get('/menu', getAllCategoriesMenu)
 router.get('/:id', getCategoryById)
 router.put('/:id', updateCategory)
 router.delete('/:id', deleteCategory)

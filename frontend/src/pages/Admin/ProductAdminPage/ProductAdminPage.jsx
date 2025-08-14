@@ -151,16 +151,16 @@ const ProductAdminPage = () => {
         />
       )
     },
-    {
-      title: 'Giá (VNĐ)',
-      dataIndex: 'price',
-      key: 'price',
-      render: (price) => (
-        <Text strong type="success">
-          {price.toLocaleString()} ₫
-        </Text>
-      )
-    },
+    // {
+    //   title: 'Giá (VNĐ)',
+    //   dataIndex: 'price',
+    //   key: 'price',
+    //   render: (price) => (
+    //     <Text strong type="success">
+    //       {price.toLocaleString()} ₫
+    //     </Text>
+    //   )
+    // },
     {
       title: 'Danh mục',
       dataIndex: 'categories',

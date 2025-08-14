@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   categoryList: [],
+  cateMenu: [],
   seatDetails: [],
   loading: false,
   error: null,
@@ -27,6 +28,12 @@ const categorySlice = createSlice({
       state.error = null
       state.response = null
     },
+    getCategoryMenuSuccess: (state, action) => {
+      state.cateMenu = action.payload
+      state.loading = false
+      state.error = null
+      state.response = null
+    },
     getFailed: (state, action) => {
       state.response = action.payload
       state.loading = false
@@ -45,6 +52,9 @@ const categorySlice = createSlice({
       state.categoryList = state.categoryList.filter(
         (item) => item.user_id !== action.payload
       )
+      state.cateMenu = state.cateMenu.filter(
+        (item) => item.user_id !== action.payload
+      )
       state.loading = false
       state.error = null
       state.response = 'Deleted successfully'
@@ -54,6 +64,10 @@ const categorySlice = createSlice({
         state.categoryList = []
       }
       state.categoryList.push(action.payload)
+      if (!Array.isArray(state.cateMenu)) {
+        state.cateMenu = []
+      }
+      state.cateMenu.push(action.payload)
       state.loading = false
       state.error = null
       state.response = 'Created successfully'
@@ -68,6 +82,17 @@ const categorySlice = createSlice({
         }
       } else {
         console.warn('categoryList is not an array!', state.categoryList)
+      }
+
+      if (Array.isArray(state.cateMenu)) {
+        const index = state.cateMenu.findIndex(
+          (item) => item.id === action.payload.id
+        )
+        if (index !== -1) {
+          state.cateMenu[index] = action.payload
+        }
+      } else {
+        console.warn('cateMenu is not an array!', state.cateMenu)
       }
 
       state.loading = false
@@ -86,7 +111,8 @@ export const {
   postDone,
   deleteSuccess,
   createSuccess,
-  updateSuccess
+  updateSuccess,
+  getCategoryMenuSuccess
 } = categorySlice.actions
 
 export const categoryReducer = categorySlice.reducer

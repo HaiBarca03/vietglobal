@@ -193,13 +193,13 @@ const ProductCreateModal = ({
           </Upload>
         </Form.Item>
 
-        <Form.Item
+        {/* <Form.Item
           name="price"
           label="Giá (VNĐ)"
           rules={[{ required: true, message: 'Nhập giá sản phẩm' }]}
         >
           <InputNumber min={0} style={{ width: '100%' }} />
-        </Form.Item>
+        </Form.Item> */}
 
         <Form.Item
           name="categories"
