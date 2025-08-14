@@ -24,6 +24,10 @@ const PORT = process.env.PORT || 3000
 app.get('/', (req, res) => {
   res.json({ message: 'Hello World' })
 })
+app.get('/health', (req, res) => {
+  res.status(204).send()
+})
+
 app.use(API_PREFIX, indexRouter)
 
 // error handler
