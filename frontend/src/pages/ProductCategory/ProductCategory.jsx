@@ -44,9 +44,10 @@ const ProductCategory = () => {
           </Breadcrumb>
         </div> */}
 
-        <h1 className="product-list-title">
+        <p className="product-list-title-cate">
           {t('productByCate')} <i> {slug}</i>
-        </h1>
+        </p>
+        <div className="title-divider"></div>
 
         {productLists.length === 0 ? (
           <div className="no-products">Không có sản phẩm nào</div>

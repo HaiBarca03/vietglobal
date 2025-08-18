@@ -38,6 +38,7 @@ const ProductList = () => {
         </div> */}
 
         <h1 className="product-list-title">{t('allProduct')}</h1>
+        <div className="title-divider"></div>
 
         {productLists.length === 0 ? (
           <div className="no-products">Không có sản phẩm nào</div>
