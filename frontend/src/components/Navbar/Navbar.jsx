@@ -84,7 +84,7 @@ const Navbar = () => {
   }, [isMobileMenuOpen])
 
   const [isOpen, setIsOpen] = useState(false)
-  const [currentLang, setCurrentLang] = useState(i18n.language || 'vi')
+  const [currentLang, setCurrentLang] = useState(i18n.language || 'en')
 
   const languages = [
     {
