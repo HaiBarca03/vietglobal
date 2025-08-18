@@ -15,7 +15,7 @@ const HomePage = () => {
   const productLists = useSelector((state) => state.product.productList)
   const dispatch = useDispatch()
   const { t, i18n } = useTranslation()
-  const lang = i18n.language || 'vi'
+  const lang = i18n.language || 'en'
   const { lang: currentLang } = useParams()
   useEffect(() => {
     dispatch(getAllProduct())

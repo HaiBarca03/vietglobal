@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 const MapLocation = () => {
   const { i18n } = useTranslation()
-  const lang = i18n.language || 'vi'
+  const lang = i18n.language || 'en'
 
   return (
     <div className="map-location-section">

@@ -88,16 +88,16 @@ const Navbar = () => {
 
   const languages = [
     {
-      code: 'vi',
-      flag: vietnamFlag,
-      name: 'Tiếng Việt',
-      alt: 'Vietnam Flag'
-    },
-    {
       code: 'en',
       flag: ukFlag,
       name: 'English',
       alt: 'UK Flag'
+    },
+    {
+      code: 'vi',
+      flag: vietnamFlag,
+      name: 'Tiếng Việt',
+      alt: 'Vietnam Flag'
     }
   ]
 
