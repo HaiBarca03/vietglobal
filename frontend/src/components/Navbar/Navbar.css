@@ -201,11 +201,12 @@ img.logo-web-my {
 
 .btn-login {
   background-color: #eb3656;
-  color: #0af35e;
+  color: white;
 }
 
 .btn-login:hover {
-  background-color: #ff4b6b;
+  background-color: #eb3656;
+  color: yellow;
 }
 
 .location-and-sign {

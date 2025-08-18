@@ -1,79 +1,90 @@
-.product-list-title {
+.product-list-title-cate {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin: 20px auto 30px auto; /* căn giữa và margin bottom */
   color: #333;
   line-height: 1.4;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: center; /* căn giữa theo chiều dọc */
+  gap: 6px;
+  width: 100%;
+  max-width: 800px; /* giới hạn chiều rộng tối đa */
 }
 
-.product-list-title i {
+.product-list-title-cate i {
   font-style: italic;
   color: #007bff;
   font-weight: 500;
-  font-size: 0.85em;
+  font-size: 0.9rem;
   text-transform: capitalize;
+  text-align: center;
   position: relative;
+  display: block; /* đảm bảo căn giữa hoàn toàn */
 }
 
-.product-list-title i::before {
+.product-list-title-cate i::before,
+.product-list-title-cate i::after {
   content: '"';
   color: #666;
-  font-size: 1.2em;
-  margin-right: 4px;
+  font-size: 1em;
 }
 
-.product-list-title i::after {
-  content: '"';
-  color: #666;
-  font-size: 1.2em;
-  margin-left: 4px;
-}
-
-/* Desktop - 2 columns */
+/* Desktop - layout ngang */
 @media (min-width: 1024px) {
-  .product-list-title {
+  .product-list-title-cate {
     font-size: 2rem;
     margin-bottom: 40px;
+    margin-top: 20px;
     flex-direction: row;
     gap: 12px;
+    justify-content: center; /* căn giữa ngang */
     align-items: center;
-    display: flex;
   }
 
-  .product-list-title i {
+  .product-list-title-cate i {
     font-size: 0.8em;
   }
 }
 
-/* Tablet - 1 column */
+/* Tablet - layout ngang */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .product-list-title {
+  .product-list-title-cate {
     font-size: 2.2rem;
+    margin-top: 20px;
     flex-direction: row;
     gap: 10px;
+    justify-content: center;
   }
 
-  .product-list-title i {
+  .product-list-title-cate i {
     font-size: 0.82em;
   }
 }
 
-/* Mobile - 1 column */
+/* Mobile - layout dọc */
 @media (max-width: 767px) {
-  .product-list-title {
+  .product-list-title-cate {
     font-size: 1.8rem;
+    margin-top: 20px;
     margin-bottom: 20px;
     flex-direction: column;
     gap: 6px;
   }
 
-  .product-list-title i {
+  .product-list-title-cate i {
     font-size: 0.85em;
+  }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+  .product-list-title-cate {
+    font-size: 1.6rem;
+    margin-top: 20px;
+    padding: 0 10px; /* thêm padding để tránh sát lề */
   }
 }
 
@@ -83,10 +94,6 @@
   padding: 60px 20px;
   color: #666;
   font-size: 1.2rem;
-}
-
-@media (max-width: 480px) {
-  .product-list-title {
-    font-size: 1.6rem;
-  }
+  margin: 0 auto;
+  max-width: 600px;
 }
