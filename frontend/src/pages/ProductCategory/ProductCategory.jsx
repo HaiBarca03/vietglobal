@@ -16,7 +16,7 @@ const ProductCategory = () => {
   const dispatch = useDispatch()
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
   const { t, i18n } = useTranslation()
-  const lang = i18n.language || 'vi'
+  const lang = i18n.language || 'en'
   const { slug } = useParams()
 
   useEffect(() => {

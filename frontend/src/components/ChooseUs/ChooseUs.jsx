@@ -11,7 +11,7 @@ import './ChooseUs.css'
 
 const WhyChooseUs = () => {
   const { i18n, t } = useTranslation()
-  const lang = i18n.language || 'vi'
+  const lang = i18n.language || 'en'
 
   const items = [
     {

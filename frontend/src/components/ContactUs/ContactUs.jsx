@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const ContactUs = () => {
   const { t, i18n } = useTranslation()
-  const lang = i18n.language || 'vi'
+  const lang = i18n.language || 'en'
   const dispatch = useDispatch()
   const contactUsDetails = useSelector(
     (state) => state.contactUs.contactUsDetails || []

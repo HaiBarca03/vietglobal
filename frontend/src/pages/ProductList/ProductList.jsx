@@ -4,15 +4,13 @@ import { getAllProduct } from '../../stores/Product/productApi'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import ProductCard2 from '../../components/ProductCard/ProductCard2'
-import { Breadcrumb } from 'antd'
-import { HomeOutlined } from '@ant-design/icons'
 
 const ProductList = () => {
   const productLists = useSelector((state) => state.product.productList)
   const dispatch = useDispatch()
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
   const { t, i18n } = useTranslation()
-  const lang = i18n.language || 'vi'
+  const lang = i18n.language || 'en'
 
   useEffect(() => {
     dispatch(getAllProduct())
