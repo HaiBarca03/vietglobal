@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import './Navbar.css'
 import { LogoutOutlined, RightOutlined, UserOutlined } from '@ant-design/icons'
 import { useDispatch, useSelector } from 'react-redux'
@@ -27,6 +27,8 @@ const Navbar = () => {
   const dispatch = useDispatch()
   const { t, i18n } = useTranslation()
 
+  const { lang } = useParams()
+
   useEffect(() => {
     if (storedUser?.isAdmin === true) {
       setIsAdmin(true)
@@ -44,12 +46,11 @@ const Navbar = () => {
       setLoading(false)
     }
   }, [categoryList])
-  console.log('categoryList', categoryList)
 
   const handleLogout = () => {
     localStorage.removeItem('user')
     setIsMobileMenuOpen(false)
-    navigate('/')
+    navigate(`/${lang}/`)
   }
 
   const toggleMobileMenu = () => {
@@ -106,6 +107,12 @@ const Navbar = () => {
     i18n.changeLanguage(langCode)
     setCurrentLang(langCode)
     setIsOpen(false)
+
+    const newPath = window.location.pathname.replace(
+      /^\/(vi|en)/,
+      `/${langCode}`
+    )
+    navigate(newPath)
   }
 
   useEffect(() => {
@@ -142,7 +149,11 @@ const Navbar = () => {
         <span></span>
       </button>
 
-      <Link className="logo-container-nav" to="/" onClick={closeMobileMenu}>
+      <Link
+        className="logo-container-nav"
+        to={`/${lang}/`}
+        onClick={closeMobileMenu}
+      >
         <img className="logo-web-my" src={logo} alt="VietGlobal Logo" />
         <h1 className="logo-text">VietGlobal</h1>
       </Link>
@@ -150,7 +161,11 @@ const Navbar = () => {
       <nav>
         <ul className={`nav-items ${isMobileMenuOpen ? 'open' : ''}`}>
           <li>
-            <Link className="nav-item" to="/" onClick={closeMobileMenu}>
+            <Link
+              className="nav-item"
+              to={`/${lang}/`}
+              onClick={closeMobileMenu}
+            >
               {t('home')}
             </Link>
           </li>
@@ -162,7 +177,7 @@ const Navbar = () => {
                   <li className="dropdown-item-parent">
                     <Link
                       className="dropdown-link"
-                      to={`/category/${
+                      to={`/${lang}/category/${
                         parent.slug[i18n.language] || parent.slug.vi
                       }`}
                       onClick={closeMobileMenu}
@@ -175,7 +190,7 @@ const Navbar = () => {
                       <li className="dropdown-item-child" key={child._id}>
                         <Link
                           className="dropdown-link"
-                          to={`/category/${
+                          to={`/${lang}/category/${
                             child.slug[i18n.language] || child.slug.vi
                           }`}
                           onClick={closeMobileMenu}
@@ -199,7 +214,11 @@ const Navbar = () => {
             </Link>
           </li> */}
           <li>
-            <Link className="nav-item" to="/about-us" onClick={closeMobileMenu}>
+            <Link
+              className="nav-item"
+              to={`/${lang}/about-us`}
+              onClick={closeMobileMenu}
+            >
               {t('aboutUs')}
             </Link>
           </li>

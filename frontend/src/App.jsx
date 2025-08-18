@@ -1,8 +1,14 @@
 import { Fragment, Suspense, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from 'react-router-dom'
 import Default from './components/Default/Default'
-import { routes } from './router/routes'
+import { globalRoutes, langRoutes } from './router/routes'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import LanguageWrapper from './locales/LanguageWrapper'
 
 function App() {
   const getInitialAdminState = () => {
@@ -26,30 +32,51 @@ function App() {
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          {routes.map(({ path, page: Page, isPrivate, isShowHeader }, idx) => {
-            const Layout = isShowHeader ? Default : Fragment
-            const element = (
-              <Layout>
-                <Page setIsAdmin={setIsAdmin} />
-              </Layout>
-            )
+          <Route path="/" element={<Navigate to="/en" replace />} />
 
-            return (
-              <Route
-                key={idx}
-                path={path}
-                element={
-                  isPrivate ? (
-                    <ProtectedRoute isAllowed={isAdmin}>
-                      {element}
-                    </ProtectedRoute>
-                  ) : (
-                    element
-                  )
-                }
-              />
-            )
-          })}
+          <Route
+            path="/:lang/*"
+            element={
+              <LanguageWrapper>
+                <Routes>
+                  {langRoutes.map(
+                    ({ path, page: Page, isPrivate, isShowHeader }, idx) => {
+                      const Layout = isShowHeader ? Default : Fragment
+                      const element = (
+                        <Layout>
+                          <Page setIsAdmin={setIsAdmin} />
+                        </Layout>
+                      )
+
+                      return (
+                        <Route
+                          key={idx}
+                          path={path}
+                          element={
+                            isPrivate ? (
+                              <ProtectedRoute isAllowed={isAdmin}>
+                                {element}
+                              </ProtectedRoute>
+                            ) : (
+                              element
+                            )
+                          }
+                        />
+                      )
+                    }
+                  )}
+                </Routes>
+              </LanguageWrapper>
+            }
+          />
+
+          {globalRoutes.map(({ path, page: Page }, idx) => (
+            <Route
+              key={idx}
+              path={path}
+              element={<Page setIsAdmin={setIsAdmin} />}
+            />
+          ))}
         </Routes>
       </Suspense>
     </Router>

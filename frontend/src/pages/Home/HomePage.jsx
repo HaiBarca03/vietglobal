@@ -9,14 +9,14 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import { getAllProduct } from '../../stores/Product/productApi'
 import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const HomePage = () => {
   const productLists = useSelector((state) => state.product.productList)
   const dispatch = useDispatch()
   const { t, i18n } = useTranslation()
   const lang = i18n.language || 'vi'
-
+  const { lang: currentLang } = useParams()
   useEffect(() => {
     dispatch(getAllProduct())
   }, [dispatch])
@@ -46,7 +46,7 @@ const HomePage = () => {
         )}
         <p className="all-product">
           <Link
-            to="/all-product"
+            to={`/${currentLang}/all-product`}
             style={{ color: 'inherit', textDecoration: 'none' }}
           >
             {t('readmore')}

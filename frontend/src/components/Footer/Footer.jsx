@@ -7,25 +7,31 @@ import {
   PhoneOutlined,
   EnvironmentOutlined
 } from '@ant-design/icons'
-import logo from '../../assets/logo.png'
 import { useTranslation } from 'react-i18next'
 import './Footer.css'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const { Footer } = Layout
 
 const AppFooter = () => {
   const { t } = useTranslation()
+  const { lang } = useParams()
+  const navigate = useNavigate()
+
   const handlePolicy = () => {
-    window.location.href = '/policy'
+    navigate(`/${lang}/policy`)
   }
+
   const handleHome = () => {
-    window.location.href = '/'
+    navigate(`/${lang}/`)
   }
+
   const handleProduct = () => {
-    window.location.href = '/all-product'
+    navigate(`/${lang}/all-product`)
   }
+
   const handleCate = () => {
-    window.location.href = '/'
+    navigate(`/${lang}/`)
   }
   return (
     <Footer className="footer">
@@ -103,9 +109,7 @@ const AppFooter = () => {
         </Row>
 
         <div className="footer-bottom">
-          <p>
-            © {new Date().getFullYear()} VietGlobal
-          </p>
+          <p>© {new Date().getFullYear()} VietGlobal</p>
         </div>
       </div>
     </Footer>
