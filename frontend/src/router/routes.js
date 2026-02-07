@@ -1,6 +1,7 @@
 // routes.js
 import AboutUs from '../pages/AboutUs/AboutUs'
 import AdminPageHome from '../pages/Admin/AdminPageHome/AdminPageHome'
+import HomeLogitics from '../pages/Home-Logitics/HomeLogitics'
 import HomePage from '../pages/Home/HomePage'
 import Login from '../pages/Login/Login'
 import NotFoundPage from '../pages/NotPoundPage/NotPoundPage'
@@ -13,6 +14,11 @@ import Register from '../pages/Register/Register'
 export const langRoutes = [
   {
     path: '',
+    page: HomeLogitics,
+    isShowHeader: true
+  },
+  {
+    path: '/import-export',
     page: HomePage,
     isShowHeader: true
   },

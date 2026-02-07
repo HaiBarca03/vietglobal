@@ -1,0 +1,92 @@
+.stats-section {
+  padding: 100px 20px;
+  /* Gradient nền từ xanh nhạt sang trắng/xanh rất nhẹ y hệt ảnh */
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #bddaee 35%,
+    #8cc1e9 100%
+  );
+  position: relative;
+  text-align: center;
+}
+
+/* Header trang trí với 2 đường kẻ 2 bên */
+.stats-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 80px;
+}
+
+.stats-main-title {
+  color: #00468c !important;
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  margin: 0 !important;
+}
+
+.line-decoration {
+  height: 2px;
+  width: 100px;
+  background: linear-gradient(90deg, transparent, #ff7a18, transparent);
+  position: relative;
+}
+
+.line-decoration::before {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ff7a18;
+  border-radius: 50%;
+  top: -2px;
+}
+
+.left::before { right: 0; }
+.right::before { left: 0; }
+
+/* Thông số con số */
+.stat-item {
+  margin-bottom: 60px;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ff7a18; /* Màu cam đặc trưng của con số */
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 500;
+  margin-top: 10px;
+  display: block;
+}
+
+/* Hình ảnh trung tâm */
+.stats-image-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-boxes-img {
+  width: 100%;
+  max-width: 500px;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+}
+
+.left-side { text-align: right; }
+.right-side { text-align: left; }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .left-side, .right-side { text-align: center; }
+  .stat-number { font-size: 2.8rem; }
+  .stats-header { flex-direction: column; }
+  .line-decoration { width: 100%; }
+}

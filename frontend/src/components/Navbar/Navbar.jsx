@@ -169,6 +169,15 @@ const Navbar = () => {
               {t('home')}
             </Link>
           </li>
+          <li>
+            <Link
+              className="nav-item"
+              to={`/${lang}/import-export`}
+              onClick={closeMobileMenu}
+            >
+              {t('import-export')}
+            </Link>
+          </li>
           <li className="nav-item dropdown-container">
             <Link className="nav-item dropdown-trigger">{t('category')}</Link>
             <ul className="dropdown-menu-category">
