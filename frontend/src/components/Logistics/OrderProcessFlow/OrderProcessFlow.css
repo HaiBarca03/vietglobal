@@ -1,0 +1,238 @@
+.process-container {
+  padding: 80px 20px;
+  /* Gradient từ trên xuống: Xanh da trời đậm sang nhạt dần */
+  background: linear-gradient(180deg, #0076ad 0%, #1e90ff 40%, #74b9ff 100%);
+  min-height: 80vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: 400px;
+  border-bottom-right-radius: 400px;
+}
+
+/* Hiệu ứng mây/sáng nhẹ để nền sinh động hơn */
+.process-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 50% -20%, rgba(255,255,255,0.3) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Chữ trắng bóng bẩy */
+  color: #ffffff;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.flow-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.connecting-lines {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  z-index: -1;
+  opacity: 0.6;
+  /* Đường nối màu trắng sáng như vệt mây */
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px 30px;
+}
+
+.step-card {
+  /* Hiệu ứng kính trắng nhẹ trên nền xanh */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 24px;
+  padding: 40px 20px 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.step-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.step-number {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  /* Số màu trắng trên nền xanh đặc trưng của bước */
+  background: var(--step-color);
+  color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.4rem;
+  border: 3px solid #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.step-icon {
+  font-size: 3.8rem;
+  margin-bottom: 20px;
+  /* Icon luôn trắng để nổi bật trên nền xanh */
+  color: white;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  transition: transform 0.3s ease;
+}
+
+.step-card:hover .step-icon {
+  transform: scale(1.1) rotate(-5deg);
+  filter: drop-shadow(0 0 12px var(--step-color));
+}
+
+.step-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+  line-height: 1.4;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .main-title {
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+  }
+  .step-card {
+    margin: 0 20px;
+  }
+}
+
+/* Thêm hiệu ứng bong bóng lơ lửng */
+.decor-bubbles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.bubble:nth-child(1) { width: 300px; height: 300px; top: 10%; left: -5%; background: #00d2ff; }
+.bubble:nth-child(2) { width: 200px; height: 200px; bottom: 10%; right: -5%; background: #74b9ff; }
+.bubble:nth-child(3) { width: 150px; height: 150px; top: 40%; left: 45%; background: #ffffff; opacity: 0.2; }
+
+/* Nâng cấp Card */
+.step-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 30px; /* Tròn trịa hơn cho thân thiện */
+  padding: 40px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  /* Hiệu ứng mượt mà khi ra vào */
+  will-change: transform;
+}
+
+/* Số thứ tự bay bổng */
+.step-number {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--step-color), #fff);
+  color: #005a8d;
+  border-radius: 50% 50% 50% 10%; /* Hình giọt nước */
+  /* rotate: -45deg;  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1.6rem;
+  border: 4px solid #fff;
+}
+
+/* Chỉnh cho số không bị nghiêng theo giọt nước */
+.step-number::after {
+  content: attr(data-number); /* Nếu dùng attr, còn không thì cứ để text */
+  rotate: 45deg;
+}
+
+/* Icon nhảy múa */
+.step-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: white;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+  animation: bounce-slow 4s infinite ease-in-out;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.step-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+/* Đường nối uốn lượn động */
+.connecting-lines {
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
+
+/* Responsive tinh chỉnh */
+@media (max-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 40px;
+  }
+}
