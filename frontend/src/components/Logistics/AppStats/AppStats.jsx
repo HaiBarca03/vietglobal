@@ -60,7 +60,7 @@ const AppStats = () => {
           </Col>
 
           {/* Cột phải: 2 thông số */}
-          <Col xs={24} lg={7} className="stats-column right-side">
+          <Col xs={24} lg={7} className="stats-column right-side" style={{padding: 0}}>
             {statsData.slice(2, 4).map((item) => (
               <motion.div 
                 key={item.id} 
