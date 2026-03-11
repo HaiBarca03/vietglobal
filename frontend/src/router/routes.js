@@ -10,42 +10,77 @@ import ProductCategory from '../pages/ProductCategory/ProductCategory'
 import ProductDetailPage from '../pages/ProductDetailPage/ProductDetailPage'
 import ProductList from '../pages/ProductList/ProductList'
 import Register from '../pages/Register/Register'
+import PartnersPage from '../pages/Shipping/PartnersPage'
+import ServiceDetailPage from '../pages/Shipping/ServiceDetailPage'
+import ContactForm from '../pages/Shipping/ShippingContactForm'
+import ShippingHome from '../pages/Shipping/ShippingHome'
 
 export const langRoutes = [
   {
     path: '',
     page: HomeLogitics,
-    isShowHeader: true
+    isShowHeader: true,
+    footerType: ""
   },
   {
     path: '/import-export',
     page: HomePage,
-    isShowHeader: true
+    isShowHeader: true,
+    footerType: ""
+  },
+  {
+    path: '/shipping',
+    page: ShippingHome,
+    isShowHeader: true,
+    footerType: "shipping" 
+  },
+  {
+    path: '/partners',
+    page: PartnersPage,
+    isShowHeader: true,
+    footerType: "shipping" 
+  },
+  {
+    path: '/shipping-contact-us',
+    page: ContactForm,
+    isShowHeader: true,
+    footerType: "shipping"
+  },
+  {
+    path: "/service/:slug",
+    page: ServiceDetailPage,
+    isShowHeader: true,
+    footerType: "shipping"
   },
   {
     path: 'about-us',
     page: AboutUs,
-    isShowHeader: true
+    isShowHeader: true,
+        footerType: ""
   },
   {
     path: 'product-detail/:slug',
     page: ProductDetailPage,
-    isShowHeader: true
+    isShowHeader: true,
+        footerType: ""
   },
   {
     path: 'category/:slug',
     page: ProductCategory,
-    isShowHeader: true
+    isShowHeader: true,
+        footerType: ""
   },
   {
     path: 'all-product',
     page: ProductList,
-    isShowHeader: true
+    isShowHeader: true,
+        footerType: ""
   },
   {
     path: 'policy',
     page: Policy,
-    isShowHeader: true
+    isShowHeader: true,
+        footerType: ""
   }
 ]
 

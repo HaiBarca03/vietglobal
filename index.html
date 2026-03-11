@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Base64 to PDF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Chuyển Base64 thành PDF</h2>
+
+    <textarea id="base64Input" placeholder="Dán chuỗi base64 PDF vào đây..."></textarea>
+
+    <br>
+
+    <button onclick="downloadPDF()">Tải PDF</button>
+    <button onclick="openPDF()">Mở PDF</button>
+
+    <script>
+        function cleanBase64(base64) {
+            // Nếu có dạng data:application/pdf;base64,...
+            if (base64.includes(",")) {
+                return base64.split(",")[1];
+            }
+            return base64;
+        }
+
+        function base64ToBlob(base64) {
+            const cleaned = cleanBase64(base64);
+            const byteCharacters = atob(cleaned);
+            const byteNumbers = new Array(byteCharacters.length);
+
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+
+            const byteArray = new Uint8Array(byteNumbers);
+            return new Blob([byteArray], { type: "application/pdf" });
+        }
+
+        function downloadPDF() {
+            const base64 = document.getElementById("base64Input").value.trim();
+            if (!base64) {
+                alert("Vui lòng nhập Base64!");
+                return;
+            }
+
+            const blob = base64ToBlob(base64);
+            const url = URL.createObjectURL(blob);
+
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "output.pdf";
+            link.click();
+
+            URL.revokeObjectURL(url);
+        }
+
+        function openPDF() {
+            const base64 = document.getElementById("base64Input").value.trim();
+            if (!base64) {
+                alert("Vui lòng nhập Base64!");
+                return;
+            }
+
+            const blob = base64ToBlob(base64);
+            const url = URL.createObjectURL(blob);
+            window.open(url, "_blank");
+        }
+    </script>
+
+</body>
+</html>
