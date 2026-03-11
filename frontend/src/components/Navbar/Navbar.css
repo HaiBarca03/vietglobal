@@ -1,5 +1,6 @@
 /* Base styles - Desktop first */
 .navbar-header {
+  background-color: antiquewhite;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,7 +62,7 @@
   align-items: center;
   text-decoration: none;
   gap: 0.6rem;
-  backdrop-filter: blur(8px);
+  /* backdrop-filter: blur(8px); */
   padding: 1rem;
   border-radius: 20px;
 }
@@ -107,17 +108,23 @@ img.logo-web-my {
   text-decoration: none;
   color: #000;
   font-weight: bold;
-  transition: all 0.3s ease-in;
   display: inline-block;
   padding: 1rem;
   border-radius: 20px;
   white-space: nowrap;
+
+  background-image: linear-gradient(#eb3656, #eb3656);
+  background-position: 0 100%;
+  background-size: 0% 2px;
+  background-repeat: no-repeat;
+
+  transition: color 0.3s ease, background-size 0.3s ease;
 }
 
 .nav-item:hover,
 .nav-item:active {
-  background-color: #eb3656;
-  color: #fff;
+  color: #eb3656;
+  background-size: 100% 2px;
 }
 
 /* User section */

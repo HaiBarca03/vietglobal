@@ -40,10 +40,10 @@ function App() {
               <LanguageWrapper>
                 <Routes>
                   {langRoutes.map(
-                    ({ path, page: Page, isPrivate, isShowHeader }, idx) => {
+                    ({ path, page: Page, isPrivate, isShowHeader, footerType }, idx) => {
                       const Layout = isShowHeader ? Default : Fragment
                       const element = (
-                        <Layout>
+                        <Layout footerType={footerType}>
                           <Page setIsAdmin={setIsAdmin} />
                         </Layout>
                       )
