@@ -75,7 +75,7 @@
 }
 
 .logo-text {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.75px;
   text-transform: uppercase;
@@ -95,10 +95,10 @@ img.logo-web-my {
   transform: translateX(-50%);
   display: flex;
   list-style: none;
-  font-size: 1rem;
-  gap: 1.8rem;
-  align-items: center;
-  backdrop-filter: blur(8px);
+  font-size: 1.1rem;
+  gap: 1rem;
+  /* align-items: center; */
+  /* backdrop-filter: blur(8px); */
   border-radius: 20px;
   margin: 0;
   padding: 0;
@@ -295,7 +295,8 @@ img.logo-web-my {
 
 .dropdown-menu-category li {
   position: relative;
-  border-bottom: 1px solid #eee;
+  width: 17rem;
+  border-bottom: 1px solid #dbd6d6;
 }
 
 .dropdown-menu-category li:last-child {
@@ -335,10 +336,11 @@ img.logo-web-my {
 }
 
 .dropdown-link {
+  font-size: 1rem;
   display: block;
   padding: 10px 15px;
   text-decoration: none;
-  color: #333;
+  color: #4c4a4a;
   background-color: #fff;
   /* border: solid #ddd; */
   border-radius: 4px;
@@ -346,15 +348,15 @@ img.logo-web-my {
 }
 
 .dropdown-link:hover {
-  background-color: #f0f0f0;
+  background-color: #f1dddd;
 }
 
 /* RESPONSIVE BREAKPOINTS */
 
 /* Large Desktop (1200px and up) */
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .navbar-header {
-    padding: 0 3rem;
+    padding: 0 1rem;
   }
 
   .nav-items {
@@ -378,7 +380,7 @@ img.logo-web-my {
   }
 
   .logo-text {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   img.logo-web-my {
@@ -547,7 +549,7 @@ img.logo-web-my {
   }
 
   .nav-items li {
-    width: 90%;
+    width: 100%;
     text-align: center;
     margin-bottom: 0.5rem;
   }

@@ -143,6 +143,12 @@ const Navbar = () => {
     { slug: "air-freight", label: "Vận chuyển đường hàng không" },
     { slug: "sea-freight", label: "Vận chuyển đường biển" },
   ];
+
+  const aboutUsLinks = [
+    { slug: "shipping-about-us", label: "Giới thiệu" },
+    { slug: "shipping-contact-us", label: "Liên hệ" },
+    { slug: "partners", label: "Đối tác" },
+  ];
   return (
     <header className="navbar-header">
       <button
@@ -179,7 +185,7 @@ const Navbar = () => {
 
           {/* 2. Dịch vụ (Dropdown) */}
           <li className="nav-item dropdown-container">
-            <span className="nav-item dropdown-trigger">{t("Dịch vụ")}</span>
+            <Link className="nav-item dropdown-trigger">{t("Dịch vụ")}</Link>
             <ul className="dropdown-menu-category">
               {services.map((svc) => (
                 <li key={svc.slug} className="dropdown-item-parent">
@@ -217,7 +223,7 @@ const Navbar = () => {
             </Link>
           </li>
 
-          <li>
+          {/* <li>
             <Link
               className="nav-item"
               to={`/${lang}/partners`}
@@ -225,10 +231,10 @@ const Navbar = () => {
             >
               {t("Đối tác")}
             </Link>
-          </li>
+          </li> */}
 
           {/* 5. Contact Us */}
-          <li>
+          {/* <li>
             <Link
               className="nav-item"
               to={`/${lang}/shipping-contact-us`}
@@ -236,8 +242,8 @@ const Navbar = () => {
             >
               {t("Liên hệ")}
             </Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link
               className="nav-item"
               to={`/${lang}/shipping-about-us`}
@@ -245,6 +251,29 @@ const Navbar = () => {
             >
               {t("Về chúng tôi")}
             </Link>
+          </li> */}
+          <li className="nav-item dropdown-container">
+            <Link
+              className="nav-item dropdown-trigger"
+              // to={`/${lang}/shipping-about-us`}
+              // onClick={closeMobileMenu}
+            >
+              {t("Về chúng tôi")}
+            </Link>
+            {/* <Link className="nav-item dropdown-trigger">{t("Dịch vụ")}</Link> */}
+            <ul className="dropdown-menu-category">
+              {aboutUsLinks.map((svc) => (
+                <li key={svc.slug} className="dropdown-item-parent">
+                  <Link
+                    className="dropdown-link"
+                    to={`/${lang}/${svc.slug}`}
+                    onClick={closeMobileMenu}
+                  >
+                    {svc.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </li>
         </ul>
       </nav>

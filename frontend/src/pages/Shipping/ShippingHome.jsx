@@ -375,7 +375,9 @@ export default function ShippingHome() {
           {services.map((svc, idx) => (
             <Col xs={24} sm={12} md={6} key={idx}>
               <div
+                onClick={() => handleClick(svc.link)}
                 style={{
+                  cursor: "pointer",
                   height: "100%",
                   background: "#fff",
                   borderRadius: 8,
@@ -400,7 +402,6 @@ export default function ShippingHome() {
                     overflow: "hidden",
                     position: "relative",
                   }}
-                  onClick={() => handleClick(svc.link)}
                 >
                   <img
                     src={svc.img}

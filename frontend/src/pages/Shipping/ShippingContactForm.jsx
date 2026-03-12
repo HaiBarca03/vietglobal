@@ -471,12 +471,9 @@ export default function ContactForm() {
                 </div>
                 <div className="info-content">
                   <div className="info-label">Điện thoại</div>
-                  <div className="info-value">Phone: +84 (0) 246779622</div>
-                  <div className="info-value">
-                    {/* H/P: <a href="tel:+84907844843">+84 246779622</a> — */}
-                    VietGlobal
-                  </div>
-                  <div className="info-note">Zalo · WhatsApp · Viber</div>
+                  <div className="info-value">Phone: (+84) 0346779622</div>
+                  <div className="info-value">WhatsApp: (+84) 0763205365</div>
+                  <div className="info-note">Zalo · WhatsApp</div>
                 </div>
               </div>
 
@@ -527,11 +524,11 @@ export default function ContactForm() {
                   <div className="info-label">Website</div>
                   <div className="info-value">
                     <a
-                      href="https://www.vietglobal.com"
+                      href="https://www.vietgloballogistic.com"
                       target="_blank"
                       rel="noreferrer"
                     >
-                      www.vietglobal.com
+                      www.vietgloballogistic.com
                     </a>
                   </div>
                 </div>

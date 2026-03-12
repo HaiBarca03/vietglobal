@@ -46,8 +46,11 @@ const SERVICE_DATA = [
   {
     slug: "air-freight",
     title: "Vận chuyển đường hàng không",
-    description:
-      "Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp đóng gói cho lô hàng tiếp theo của bạn. Chúng tôi cung cấp các loại thùng gỗ, kiện gỗ, pallet và dịch vụ đóng gói hút chân không theo yêu cầu cho các nhu cầu đóng gói công nghiệp.",
+    description: `  Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp vận chuyển đường hàng không phù hợp cho lô hàng tiếp theo của bạn. Đội ngũ chuyên gia của chúng tôi sẽ hỗ trợ đánh giá đặc điểm hàng hóa, yêu cầu về thời gian giao nhận cũng như các điều kiện bảo quản trong quá trình vận chuyển để đưa ra phương án tối ưu nhất.
+      
+    Chúng tôi cung cấp các giải pháp đóng gói chuyên nghiệp như thùng gỗ, kiện gỗ, pallet và dịch vụ đóng gói hút chân không theo yêu cầu, đặc biệt phù hợp với các loại hàng hóa công nghiệp, máy móc hoặc hàng hóa có giá trị cao. Tất cả các quy trình đóng gói đều được thực hiện cẩn thận nhằm đảm bảo hàng hóa được bảo vệ tối đa và đáp ứng các tiêu chuẩn vận chuyển quốc tế trong ngành hàng không.
+      
+    Với mạng lưới đối tác hàng không rộng khắp và kinh nghiệm trong lĩnh vực logistics, chúng tôi cam kết mang đến dịch vụ vận chuyển nhanh chóng, an toàn và đáng tin cậy, giúp hàng hóa của bạn đến đúng nơi, đúng thời gian và trong tình trạng tốt nhất.`,
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-Air-Freight-Benefits-1920x600.jpg",
   },

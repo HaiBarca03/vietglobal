@@ -1,9 +1,10 @@
-import './Default.css'
-import Header from '../Header/Header'
-import AppFooter from '../Footer/Footer'
-import FooterShipping from '../Footer/FooterShipping'
+import "./Default.css";
+import Header from "../Header/Header";
+import AppFooter from "../Footer/Footer";
+import FooterShipping from "../Footer/FooterShipping";
+import FloatingContact from "./FloatingContact";
 
-const Default = ({ children , footerType }) => {
+const Default = ({ children, footerType }) => {
   return (
     <div>
       <Header />
@@ -12,9 +13,10 @@ const Default = ({ children , footerType }) => {
       </div>
       {footerType === "shipping" && <FooterShipping />}
       {footerType === "" && <AppFooter />}
-     
-    </div>
-  )
-}
 
-export default Default
+      <FloatingContact />
+    </div>
+  );
+};
+
+export default Default;

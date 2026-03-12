@@ -73,7 +73,7 @@ const FooterShipping = () => {
             marginBottom: 8,
           }}
         >
-          Phone: +84 (0) 246779622
+          Phone: (+84) 0346779622
         </Paragraph>
 
         <Paragraph
@@ -84,7 +84,7 @@ const FooterShipping = () => {
             marginBottom: 8,
           }}
         >
-          Vietglobal (Zalo/WhatsApp/Viber)
+          WhatsApp: (+84) 0763205365
         </Paragraph>
 
         <Paragraph
@@ -95,7 +95,18 @@ const FooterShipping = () => {
             marginBottom: 8,
           }}
         >
-          Skype: vietglobal | Email: Vietglobal8@gmail.com
+          Vietglobal
+        </Paragraph>
+
+        <Paragraph
+          style={{
+            color: "#d0e8ff",
+            fontSize: 16,
+            lineHeight: 1.8,
+            marginBottom: 8,
+          }}
+        >
+          Email: Vietglobal8@gmail.com
         </Paragraph>
 
         <Paragraph
@@ -108,10 +119,10 @@ const FooterShipping = () => {
         >
           Website:{" "}
           <a
-            href="https://www.vietgloballogictics.com"
+            href="https://www.vietgloballogitics.com"
             style={{ color: TEAL, textDecoration: "none" }}
           >
-            www.vietgloballogictics.com
+            www.vietgloballogitics.com
           </a>
         </Paragraph>
 
@@ -130,7 +141,7 @@ const FooterShipping = () => {
         >
           <div>Designed By VietGlobal</div>
           <div>
-            Copyright © 2025 VIETGLOBAL LOGISTICS. All rights reserved.
+            Copyright © 2026 VIETGLOBAL LOGISTICS. All rights reserved.
           </div>{" "}
           {/* cập nhật năm nếu cần */}
         </div>

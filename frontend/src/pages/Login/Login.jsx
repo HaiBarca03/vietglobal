@@ -1,118 +1,99 @@
-import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { Icon } from '@iconify/react'
-import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import './Login.css'
-import TextInput from '../../components/Icons/TextInput'
-import PasswordInput from '../../components/Icons/PasswordInput'
-import { useDispatch } from 'react-redux'
-import logo from '../../assets/logo.png'
-import { login } from '../../stores/Users/userApis'
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./Login.css";
+import TextInput from "../../components/Icons/TextInput";
+import PasswordInput from "../../components/Icons/PasswordInput";
+import { useDispatch } from "react-redux";
+import logo from "../../assets/logo.png";
+import { login } from "../../stores/Users/userApis";
 
 const Login = ({ setIsAdmin }) => {
-  const [email, setIdentifier] = useState('')
-  const [password, setPassword] = useState('')
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const handleLogin = async (event) => {
-    event.preventDefault()
+  const [email, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-    const values = {
-      email,
-      password
-    }
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    const values = { email, password };
     try {
-      await dispatch(login(values))
-      toast.success('Đăng nhập thành công!')
-      const storedUser = localStorage.getItem('user')
-      const parsedUser = JSON.parse(storedUser)
-      if (parsedUser?.isAdmin === true || parsedUser?.role === 'admin') {
-        setIsAdmin(true)
-        setTimeout(() => {
-          navigate('/admin')
-        }, 100)
+      await dispatch(login(values));
+      toast.success("Chào mừng bạn quay trở lại!");
+      const storedUser = localStorage.getItem("user");
+      const parsedUser = JSON.parse(storedUser);
+
+      if (parsedUser?.isAdmin || parsedUser?.role === "admin") {
+        setIsAdmin(true);
+        setTimeout(() => navigate("/admin"), 100);
       } else {
-        setIsAdmin(false)
-        navigate('/')
+        setIsAdmin(false);
+        navigate("/");
       }
     } catch (error) {
-      toast.error('Đăng nhập thất bại')
+      toast.error("Email hoặc mật khẩu không đúng");
     }
-  }
+  };
 
   return (
-    <div className="login-container">
-      <img
-        src="https://getflycrm.com/wp-content/uploads/2023/10/han-che-cua-thuong-mai-dien-tu-1.webp"
-        // autoPlay
-        // loop
-        // muted
-        className="background-video"
-      />
-      <div className="overlay" />
-
-      <div className="help-button">
-        <button>Help?</button>
-      </div>
-
-      <div className="login-box">
-        <div className="form-content">
-          <div className="logo-container">
-            <img src={logo} alt="Logo" />
-          </div>
-
-          {/* <div className="social-login">
-            <button className="google-button">
-              Log in with
-              <Icon icon="logos:google-icon" className="icon" />
-            </button>
-            <button className="facebook-button">
-              Log in with
-              <Icon icon="logos:facebook" className="icon" />
-            </button>
-          </div>
-
-          <div className="separator">
-            <hr />
-            <span>or</span>
-            <hr />
-          </div> */}
-
-          <form onSubmit={handleLogin}>
-            <TextInput
-              label="Email or Phone"
-              placeholder="Enter your email or phone"
-              value={email}
-              onChange={(e) => setIdentifier(e.target.value)}
-            />
-            <PasswordInput
-              label="Password"
-              placeholder="Enter your password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <div className="forgot-link">
-              <Link to="/forgot-password">Forgot your password?</Link>
-            </div>
-
-            <button type="submit" className="login-button">
-              Log In
-            </button>
-          </form>
-        </div>
-
-        <div className="signup-section">
+    <div className="login-wrapper">
+      <div className="login-side-image">
+        <div className="side-content">
+          <h1>Kết nối & Vận hành Logistics</h1>
           <p>
-            Don't have an account?
-            <Link to="/signup">Sign Up to Ride In</Link>
+            Hệ thống quản lý thông minh giúp theo dõi lô hàng, tối ưu hóa quy
+            trình vận chuyển và nâng cao hiệu quả hoạt động logistics mỗi ngày.
           </p>
         </div>
       </div>
 
+      <div className="login-side-form">
+        <div className="login-card">
+          <div className="brand-logo">
+            <img src={logo} alt="Logo" />
+          </div>
+
+          <div className="login-header">
+            <h2>Đăng nhập</h2>
+          </div>
+
+          <form onSubmit={handleLogin} className="form-wrapper">
+            <TextInput
+              label="Email hoặc Số điện thoại"
+              placeholder="name@company.com"
+              className="custom-light-input"
+              value={email}
+              onChange={(e) => setIdentifier(e.target.value)}
+            />
+            <PasswordInput
+              className="custom-light-input"
+              label="Mật khẩu"
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <div className="form-options">
+              <label className="remember-me">
+                <input type="checkbox" /> Ghi nhớ đăng nhập
+              </label>
+              <Link to="/forgot-password">Quên mật khẩu?</Link>
+            </div>
+
+            <button type="submit" className="btn-primary">
+              Đăng nhập ngay
+            </button>
+          </form>
+
+          <div className="footer-link">
+            Chưa có tài khoản? <Link to="/signup">Đăng ký miễn phí</Link>
+          </div>
+        </div>
+      </div>
       <ToastContainer />
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

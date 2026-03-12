@@ -27,13 +27,13 @@ export const langRoutes = [
     path: "/logistics-china-viet", // Xuất nhập khẩu Trung - Việt
     page: HomeLogitics,
     isShowHeader: true,
-    footerType: "",
+    footerType: "shipping",
   },
   {
     path: "/import-export", // Trang Import-Export (HomePage)
     page: HomePage,
     isShowHeader: true,
-    footerType: "",
+    footerType: "shipping",
   },
   {
     path: "/partners",
@@ -63,31 +63,31 @@ export const langRoutes = [
     path: "about-us",
     page: AboutUs,
     isShowHeader: true,
-    footerType: "",
+    footerType: "shipping",
   },
   {
     path: "product-detail/:slug",
     page: ProductDetailPage,
     isShowHeader: true,
-    footerType: "",
+    footerType: "shipping",
   },
   {
     path: "category/:slug",
     page: ProductCategory,
     isShowHeader: true,
-    footerType: "",
+    footerType: "shipping",
   },
   {
     path: "all-product",
     page: ProductList,
     isShowHeader: true,
-    footerType: "",
+    footerType: "shipping",
   },
   {
     path: "policy",
     page: Policy,
     isShowHeader: true,
-    footerType: "",
+    footerType: "shipping",
   },
 ];
 
