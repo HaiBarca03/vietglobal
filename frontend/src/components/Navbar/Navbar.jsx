@@ -1,146 +1,152 @@
-import { Link, useNavigate, useParams } from 'react-router-dom'
-import './Navbar.css'
-import { LogoutOutlined, RightOutlined, UserOutlined } from '@ant-design/icons'
-import { useDispatch, useSelector } from 'react-redux'
-import { Fragment, useEffect, useState } from 'react'
-import { Select, Spin } from 'antd'
-const { Option } = Select
-import logo from '../../assets/logo.png'
-import { useTranslation } from 'react-i18next'
-import vietnamFlag from '../../assets/Flag_of_Vietnam.svg'
-import ukFlag from '../../assets/Flag_of_the_United_Kingdom.png'
+import { Link, useNavigate, useParams } from "react-router-dom";
+import "./Navbar.css";
+import { LogoutOutlined, RightOutlined, UserOutlined } from "@ant-design/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { Fragment, useEffect, useState } from "react";
+import { Select, Spin } from "antd";
+const { Option } = Select;
+import logo from "../../assets/logo.png";
+import { useTranslation } from "react-i18next";
+import vietnamFlag from "../../assets/Flag_of_Vietnam.svg";
+import ukFlag from "../../assets/Flag_of_the_United_Kingdom.png";
 import {
   getAllCategory,
-  getAllCategoryMenu
-} from '../../stores/Category/categoryApis'
+  getAllCategoryMenu,
+} from "../../stores/Category/categoryApis";
 
 const Navbar = () => {
-  const storedUser = JSON.parse(localStorage.getItem('user'))
-  const token = localStorage.getItem('token')
-  const isLoggedIn = storedUser && token
-  const categoryList = useSelector((state) => state.category.cateMenu || [])
-  const [isAdmin, setIsAdmin] = useState(false)
-  const [loading, setLoading] = useState(true)
-  const [activeSubmenu, setActiveSubmenu] = useState(null)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const { t, i18n } = useTranslation()
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const token = localStorage.getItem("token");
+  const isLoggedIn = storedUser && token;
+  const categoryList = useSelector((state) => state.category.cateMenu || []);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [activeSubmenu, setActiveSubmenu] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
 
-  const { lang } = useParams()
+  const { lang } = useParams();
 
   useEffect(() => {
     if (storedUser?.isAdmin === true) {
-      setIsAdmin(true)
+      setIsAdmin(true);
     } else {
-      setIsAdmin(false)
+      setIsAdmin(false);
     }
-  }, [storedUser])
+  }, [storedUser]);
 
   useEffect(() => {
-    dispatch(getAllCategoryMenu())
-  }, [dispatch])
+    dispatch(getAllCategoryMenu());
+  }, [dispatch]);
 
   useEffect(() => {
     if (Array.isArray(categoryList)) {
-      setLoading(false)
+      setLoading(false);
     }
-  }, [categoryList])
+  }, [categoryList]);
 
   const handleLogout = () => {
-    localStorage.removeItem('user')
-    setIsMobileMenuOpen(false)
-    navigate(`/${lang}/`)
-  }
+    localStorage.removeItem("user");
+    setIsMobileMenuOpen(false);
+    navigate(`/${lang}/`);
+  };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
+    setIsMobileMenuOpen(!isMobileMenuOpen);
 
     if (!isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset";
     }
-  }
+  };
 
   const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false)
-    document.body.style.overflow = 'unset'
-  }
+    setIsMobileMenuOpen(false);
+    document.body.style.overflow = "unset";
+  };
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 767 && isMobileMenuOpen) {
-        setIsMobileMenuOpen(false)
-        document.body.style.overflow = 'unset'
+        setIsMobileMenuOpen(false);
+        document.body.style.overflow = "unset";
       }
-    }
+    };
 
-    window.addEventListener('resize', handleResize)
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize)
-      document.body.style.overflow = 'unset' // Cleanup on unmount
-    }
-  }, [isMobileMenuOpen])
+      window.removeEventListener("resize", handleResize);
+      document.body.style.overflow = "unset"; // Cleanup on unmount
+    };
+  }, [isMobileMenuOpen]);
 
-  const [isOpen, setIsOpen] = useState(false)
-  const [currentLang, setCurrentLang] = useState(i18n.language || 'en')
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState(i18n.language || "en");
 
   const languages = [
     {
-      code: 'en',
+      code: "en",
       flag: ukFlag,
-      name: 'English',
-      alt: 'UK Flag'
+      name: "English",
+      alt: "UK Flag",
     },
     {
-      code: 'vi',
+      code: "vi",
       flag: vietnamFlag,
-      name: 'Tiếng Việt',
-      alt: 'Vietnam Flag'
-    }
-  ]
+      name: "Tiếng Việt",
+      alt: "Vietnam Flag",
+    },
+  ];
 
-  const currentLanguage = languages.find((lang) => lang.code === currentLang)
+  const currentLanguage = languages.find((lang) => lang.code === currentLang);
 
   const handleLanguageChange = (langCode) => {
-    i18n.changeLanguage(langCode)
-    setCurrentLang(langCode)
-    setIsOpen(false)
+    i18n.changeLanguage(langCode);
+    setCurrentLang(langCode);
+    setIsOpen(false);
 
     const newPath = window.location.pathname.replace(
       /^\/(vi|en)/,
-      `/${langCode}`
-    )
-    navigate(newPath)
-  }
+      `/${langCode}`,
+    );
+    navigate(newPath);
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (!event.target.closest('.language-dropdown')) {
-        setIsOpen(false)
+      if (!event.target.closest(".language-dropdown")) {
+        setIsOpen(false);
       }
-    }
+    };
 
-    document.addEventListener('click', handleClickOutside)
-    return () => document.removeEventListener('click', handleClickOutside)
-  }, [])
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
 
   if (loading) {
     return (
       <div className="loading-container">
         <Spin size="large" />
       </div>
-    )
+    );
   }
   const toggleSubmenu = (id) => {
-    setActiveSubmenu((prev) => (prev === id ? null : id))
-  }
-
+    setActiveSubmenu((prev) => (prev === id ? null : id));
+  };
+  const services = [
+    { slug: "all-services", label: "Tất cả dịch vụ" },
+    { slug: "trucking-delivery", label: "Vận chuyển bằng xe tải" },
+    { slug: "customs-clearance", label: "Thông quan hải quan" },
+    { slug: "air-freight", label: "Vận chuyển đường hàng không" },
+    { slug: "sea-freight", label: "Vận chuyển đường biển" },
+  ];
   return (
     <header className="navbar-header">
       <button
-        className={`btn-menu ${isMobileMenuOpen ? 'active' : ''}`}
+        className={`btn-menu ${isMobileMenuOpen ? "active" : ""}`}
         onClick={toggleMobileMenu}
         aria-label="Toggle mobile menu"
       >
@@ -159,85 +165,78 @@ const Navbar = () => {
       </Link>
 
       <nav>
-        <ul className={`nav-items ${isMobileMenuOpen ? 'open' : ''}`}>
+        <ul className={`nav-items ${isMobileMenuOpen ? "open" : ""}`}>
+          {/* 1. Trang chủ (Shipping) */}
           <li>
             <Link
               className="nav-item"
               to={`/${lang}/`}
               onClick={closeMobileMenu}
             >
-              {t('home')}
+              {t("Home")}
             </Link>
           </li>
+
+          {/* 2. Dịch vụ (Dropdown) */}
+          <li className="nav-item dropdown-container">
+            <span className="nav-item dropdown-trigger">{t("Services")}</span>
+            <ul className="dropdown-menu-category">
+              {services.map((svc) => (
+                <li key={svc.slug} className="dropdown-item-parent">
+                  <Link
+                    className="dropdown-link"
+                    to={`/${lang}/service/${svc.slug}`}
+                    onClick={closeMobileMenu}
+                  >
+                    {svc.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+
+          {/* 3. Xuất nhập khẩu Trung - Việt */}
+          <li>
+            <Link
+              className="nav-item"
+              to={`/${lang}/logistics-china-viet`}
+              onClick={closeMobileMenu}
+            >
+              {t("Trung - Việt Logistics")}
+            </Link>
+          </li>
+
+          {/* 4. Import - Export */}
           <li>
             <Link
               className="nav-item"
               to={`/${lang}/import-export`}
               onClick={closeMobileMenu}
             >
-              {t('import-export')}
+              {t("Import - Export")}
             </Link>
           </li>
-          <li className="nav-item dropdown-container">
-            <Link className="nav-item dropdown-trigger">{t('category')}</Link>
-            <ul className="dropdown-menu-category">
-              {categoryList.map((parent) => (
-                <Fragment key={parent._id}>
-                  <li className="dropdown-item-parent">
-                    <Link
-                      className="dropdown-link"
-                      to={`/${lang}/category/${
-                        parent.slug[i18n.language] || parent.slug.vi
-                      }`}
-                      onClick={closeMobileMenu}
-                    >
-                      {parent.name[i18n.language] || parent.name.vi}
-                    </Link>
-                  </li>
-                  {parent.children.length > 0 &&
-                    parent.children.map((child) => (
-                      <li className="dropdown-item-child" key={child._id}>
-                        <Link
-                          className="dropdown-link"
-                          to={`/${lang}/category/${
-                            child.slug[i18n.language] || child.slug.vi
-                          }`}
-                          onClick={closeMobileMenu}
-                        >
-                          <RightOutlined className="child-arrow" />
-                          {child.name[i18n.language] || child.name.vi}
-                        </Link>
-                      </li>
-                    ))}
-                </Fragment>
-              ))}
-            </ul>
-          </li>
-          {/* <li>
-            <Link
-              className="nav-item"
-              to="/all-product"
-              onClick={closeMobileMenu}
-            >
-              {t('products')}
-            </Link>
-          </li> */}
+
           <li>
             <Link
               className="nav-item"
-              to={`/${lang}/about-us`}
+              to={`/${lang}/partners`}
               onClick={closeMobileMenu}
             >
-              {t('aboutUs')}
+              {t("Partners")}
             </Link>
           </li>
-          {isAdmin && (
-            <li>
-              <Link className="nav-item" to="/admin" onClick={closeMobileMenu}>
-                {t('admin')}
-              </Link>
-            </li>
-          )}
+
+          {/* 5. Contact Us */}
+          <li>
+            <Link
+              className="nav-item"
+              to={`/${lang}/shipping-contact-us`}
+              onClick={closeMobileMenu}
+            >
+              {t("Contact Us")}
+            </Link>
+          </li>
         </ul>
       </nav>
 
@@ -250,54 +249,54 @@ const Navbar = () => {
               className="customer-profile-btn"
               onClick={closeMobileMenu}
             >
-              <UserOutlined style={{ fontSize: '20px', color: '#000' }} />
+              <UserOutlined style={{ fontSize: "20px", color: "#000" }} />
             </Link>
             <LogoutOutlined
               onClick={handleLogout}
               style={{
-                fontSize: '20px',
-                color: '#000',
-                paddingLeft: '10px',
-                cursor: 'pointer'
+                fontSize: "20px",
+                color: "#000",
+                paddingLeft: "10px",
+                cursor: "pointer",
               }}
             />
 
             <div className="language-switcher">
               <div
                 className="language-dropdown"
-                style={{ position: 'relative', display: 'inline-block' }}
+                style={{ position: "relative", display: "inline-block" }}
               >
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   className="dropdown-toggle"
                   style={{
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    padding: '8px 12px',
-                    borderRadius: '4px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '5px',
-                    transition: 'background-color 0.2s'
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    padding: "8px 12px",
+                    borderRadius: "4px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    transition: "background-color 0.2s",
                   }}
                 >
                   <img
                     src={currentLanguage?.flag}
                     alt={currentLanguage?.alt}
                     style={{
-                      width: '24px',
-                      height: '16px',
-                      objectFit: 'cover',
-                      borderRadius: '2px'
+                      width: "24px",
+                      height: "16px",
+                      objectFit: "cover",
+                      borderRadius: "2px",
                     }}
                   />
                   <span
                     style={{
-                      fontSize: '12px',
-                      color: '#000',
-                      transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                      transition: 'transform 0.2s'
+                      fontSize: "12px",
+                      color: "#000",
+                      transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                      transition: "transform 0.2s",
                     }}
                   >
                     ▼
@@ -308,17 +307,17 @@ const Navbar = () => {
                   <div
                     className="dropdown-menu"
                     style={{
-                      position: 'absolute',
-                      top: '100%',
+                      position: "absolute",
+                      top: "100%",
                       right: 0,
-                      color: '#000',
-                      backgroundColor: 'white',
-                      border: '1px solid #ccc',
-                      borderRadius: '4px',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                      color: "#000",
+                      backgroundColor: "white",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
                       zIndex: 1000,
-                      minWidth: '150px',
-                      overflow: 'hidden'
+                      minWidth: "150px",
+                      overflow: "hidden",
                     }}
                   >
                     {languages.map((lang) => (
@@ -327,26 +326,26 @@ const Navbar = () => {
                         onClick={() => handleLanguageChange(lang.code)}
                         className="dropdown-item"
                         style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          border: 'none',
+                          width: "100%",
+                          padding: "8px 12px",
+                          border: "none",
                           background:
-                            currentLang === lang.code ? '#f0f0f0' : 'white',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px',
-                          fontSize: '14px',
-                          transition: 'background-color 0.2s'
+                            currentLang === lang.code ? "#f0f0f0" : "white",
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          fontSize: "14px",
+                          transition: "background-color 0.2s",
                         }}
                         onMouseEnter={(e) => {
                           if (currentLang !== lang.code) {
-                            e.target.style.backgroundColor = '#f8f8f8'
+                            e.target.style.backgroundColor = "#f8f8f8";
                           }
                         }}
                         onMouseLeave={(e) => {
                           if (currentLang !== lang.code) {
-                            e.target.style.backgroundColor = 'white'
+                            e.target.style.backgroundColor = "white";
                           }
                         }}
                       >
@@ -354,10 +353,10 @@ const Navbar = () => {
                           src={lang.flag}
                           alt={lang.alt}
                           style={{
-                            width: '20px',
-                            height: '14px',
-                            objectFit: 'cover',
-                            borderRadius: '2px'
+                            width: "20px",
+                            height: "14px",
+                            objectFit: "cover",
+                            borderRadius: "2px",
                           }}
                         />
                         <span>{lang.name}</span>
@@ -372,49 +371,49 @@ const Navbar = () => {
           <div className="location-and-sign">
             <div>
               <Link to="/signup" onClick={closeMobileMenu}>
-                <button className="btn-auth btn-signup">{t('signup')}</button>
+                <button className="btn-auth btn-signup">{t("signup")}</button>
               </Link>
               <Link to="/login" onClick={closeMobileMenu}>
-                <button className="btn-auth btn-login">{t('signin')}</button>
+                <button className="btn-auth btn-login">{t("signin")}</button>
               </Link>
             </div>
 
             <div className="language-switcher">
               <div
                 className="language-dropdown"
-                style={{ position: 'relative', display: 'inline-block' }}
+                style={{ position: "relative", display: "inline-block" }}
               >
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   className="dropdown-toggle"
                   style={{
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    padding: '8px 12px',
-                    borderRadius: '4px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '5px',
-                    transition: 'background-color 0.2s'
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    padding: "8px 12px",
+                    borderRadius: "4px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "5px",
+                    transition: "background-color 0.2s",
                   }}
                 >
                   <img
                     src={currentLanguage?.flag}
                     alt={currentLanguage?.alt}
                     style={{
-                      width: '24px',
-                      height: '16px',
-                      objectFit: 'cover',
-                      borderRadius: '2px'
+                      width: "24px",
+                      height: "16px",
+                      objectFit: "cover",
+                      borderRadius: "2px",
                     }}
                   />
                   <span
                     style={{
-                      fontSize: '12px',
-                      color: '#000',
-                      transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                      transition: 'transform 0.2s'
+                      fontSize: "12px",
+                      color: "#000",
+                      transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
+                      transition: "transform 0.2s",
                     }}
                   >
                     ▼
@@ -425,17 +424,17 @@ const Navbar = () => {
                   <div
                     className="dropdown-menu"
                     style={{
-                      position: 'absolute',
-                      top: '100%',
+                      position: "absolute",
+                      top: "100%",
                       right: 0,
-                      color: '#000',
-                      backgroundColor: 'white',
-                      border: '1px solid #ccc',
-                      borderRadius: '4px',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                      color: "#000",
+                      backgroundColor: "white",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
                       zIndex: 1000,
-                      minWidth: '150px',
-                      overflow: 'hidden'
+                      minWidth: "150px",
+                      overflow: "hidden",
                     }}
                   >
                     {languages.map((lang) => (
@@ -444,26 +443,26 @@ const Navbar = () => {
                         onClick={() => handleLanguageChange(lang.code)}
                         className="dropdown-item"
                         style={{
-                          width: '100%',
-                          padding: '8px 12px',
-                          border: 'none',
+                          width: "100%",
+                          padding: "8px 12px",
+                          border: "none",
                           background:
-                            currentLang === lang.code ? '#f0f0f0' : 'white',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px',
-                          fontSize: '14px',
-                          transition: 'background-color 0.2s'
+                            currentLang === lang.code ? "#f0f0f0" : "white",
+                          cursor: "pointer",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          fontSize: "14px",
+                          transition: "background-color 0.2s",
                         }}
                         onMouseEnter={(e) => {
                           if (currentLang !== lang.code) {
-                            e.target.style.backgroundColor = '#f8f8f8'
+                            e.target.style.backgroundColor = "#f8f8f8";
                           }
                         }}
                         onMouseLeave={(e) => {
                           if (currentLang !== lang.code) {
-                            e.target.style.backgroundColor = 'white'
+                            e.target.style.backgroundColor = "white";
                           }
                         }}
                       >
@@ -471,10 +470,10 @@ const Navbar = () => {
                           src={lang.flag}
                           alt={lang.alt}
                           style={{
-                            width: '20px',
-                            height: '14px',
-                            objectFit: 'cover',
-                            borderRadius: '2px'
+                            width: "20px",
+                            height: "14px",
+                            objectFit: "cover",
+                            borderRadius: "2px",
                           }}
                         />
                         <span>{lang.name}</span>
@@ -493,19 +492,19 @@ const Navbar = () => {
           className="mobile-menu-overlay"
           onClick={closeMobileMenu}
           style={{
-            position: 'fixed',
+            position: "fixed",
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
             zIndex: 999,
-            display: 'block'
+            display: "block",
           }}
         />
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

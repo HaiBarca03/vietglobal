@@ -9,7 +9,11 @@ const { Paragraph } = Typography;
  *   image:       string  — URL ảnh
  *   imageAlt:    string
  */
-export default function ServiceContent({ description, image, imageAlt = "service" }) {
+export default function ServiceContent({
+  description,
+  image,
+  imageAlt = "service",
+}) {
   return (
     <Row gutter={48} align="top">
       {/* Text */}

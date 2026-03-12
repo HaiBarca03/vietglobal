@@ -6,36 +6,40 @@ const { Title, Paragraph } = Typography;
 
 const TEAL = "#00B5B8";
 const DARK = "#1a1a2e";
-const lang = i18next.language || 'en'
+const lang = i18next.language || "en";
 const ALL_SERVICES = [
   {
-    title: "SEA FREIGHT",
-    desc: "Our sea freight services are regularly audited and analyzed to ensure that it meets the contemporary business models, and any and all upgrades are made to ensure our services continue to exceed expectations.",
-    image: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-1920x600.jpg", 
+    title: "VẬN CHUYỂN ĐƯỜNG BIỂN",
+    desc: "Dịch vụ vận chuyển đường biển của chúng tôi được kiểm tra và phân tích định kỳ để đảm bảo phù hợp với các mô hình kinh doanh hiện đại. Mọi nâng cấp cần thiết đều được thực hiện nhằm đảm bảo dịch vụ luôn vượt trên mong đợi của khách hàng.",
+    image:
+      "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-1920x600.jpg",
     link: `/${lang}/service/sea-freight`,
   },
   {
-    title: "TRUCKING DELIVERY",
-    desc: "Contact us for shipping manual & handling tariff for specific shows that you are requested for. Using our own operation team, trucks and forklifts we work around the clock to ensure cargo delivered on time.",
-    image: "https://tpshipping.com.vn/wp-content/uploads/2021/06/Trucking-Delivery-1920x600.jpeg", 
+    title: "VẬN CHUYỂN BẰNG XE TẢI",
+    desc: "Liên hệ với chúng tôi để nhận bảng hướng dẫn vận chuyển và biểu phí xử lý cho từng loại hàng hóa theo yêu cầu. Với đội ngũ vận hành riêng, xe tải và xe nâng, chúng tôi hoạt động 24/7 để đảm bảo hàng hóa được giao đúng thời gian.",
+    image:
+      "https://tpshipping.com.vn/wp-content/uploads/2021/06/Trucking-Delivery-1920x600.jpeg",
     link: `/${lang}/service/trucking-delivery`,
   },
   {
-    title: "AIR FREIGHT SERVICE",
-    desc: "Contact us today for cargo survey, cost estimation and packing solution for your next shipment. We offer custom made wooden cases, crates, pallets and vacuum packing to suit any of your industrial packing requirement.",
-    image: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-Air-Freight-Benefits-1920x600.jpg",
+    title: "DỊCH VỤ VẬN CHUYỂN ĐƯỜNG HÀNG KHÔNG",
+    desc: "Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp đóng gói cho lô hàng tiếp theo của bạn. Chúng tôi cung cấp các loại thùng gỗ, kiện gỗ, pallet và đóng gói hút chân không theo yêu cầu cho các nhu cầu đóng gói công nghiệp.",
+    image:
+      "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-Air-Freight-Benefits-1920x600.jpg",
     link: `/${lang}/service/air-freight`,
   },
   {
-    title: "CUSTOMS CLEARANCE SERVICE",
-    desc: "We ensure fast and reliable customs clearance for all import/export shipments. Handling documentation, declarations, and compliance efficiently.",
-    image: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-customs-clearance-service-1-1920x600.jpg",
+    title: "DỊCH VỤ THÔNG QUAN HẢI QUAN",
+    desc: "Chúng tôi đảm bảo quá trình thông quan nhanh chóng và đáng tin cậy cho tất cả các lô hàng xuất nhập khẩu, bao gồm xử lý chứng từ, khai báo hải quan và tuân thủ quy định một cách hiệu quả.",
+    image:
+      "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-customs-clearance-service-1-1920x600.jpg",
     link: `/${lang}/service/customs-clearance`,
   },
 ];
 
 export default function AllServicesGrid() {
-  const lang = i18next.language || 'en'
+  const lang = i18next.language || "en";
   return (
     <div style={{ padding: "0 0 40px" }}>
       {/* Tiêu đề ALL SERVICES */}
@@ -53,7 +57,7 @@ export default function AllServicesGrid() {
           letterSpacing: 1,
         }}
       >
-        ALL SERVICES
+        TẤT CẢ DỊCH VỤ
       </div>
 
       <Row gutter={[24, 32]}>
@@ -72,15 +76,14 @@ export default function AllServicesGrid() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = "translateY(-12px)";
-                e.currentTarget.style.boxShadow = "0 16px 40px rgba(0,181,184,0.3)";
+                e.currentTarget.style.boxShadow =
+                  "0 16px 40px rgba(0,181,184,0.3)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
                 e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,0,0,0.12)";
               }}
-              onClick={() =>
-                (window.location.href = service.link)
-              }
+              onClick={() => (window.location.href = service.link)}
             >
               <img
                 src={service.image}
@@ -98,7 +101,8 @@ export default function AllServicesGrid() {
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background: "linear-gradient(to top, rgba(0,0,0,0.75) 30%, transparent 70%)",
+                  background:
+                    "linear-gradient(to top, rgba(0,0,0,0.75) 30%, transparent 70%)",
                 }}
               />
 

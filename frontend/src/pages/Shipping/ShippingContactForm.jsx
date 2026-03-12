@@ -273,7 +273,14 @@ const styles = `
 `;
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", subject: "", message: "" });
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
   const [sent, setSent] = useState(false);
 
   const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value });
@@ -282,76 +289,134 @@ export default function ContactForm() {
     if (!form.firstName || !form.email) return;
     setSent(true);
     setTimeout(() => setSent(false), 4000);
-    setForm({ firstName: "", lastName: "", email: "", phone: "", subject: "", message: "" });
+    setForm({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    });
   };
-    const current = { title: "Contact Us" };
+  const current = { title: "Liên hệ" };
 
-    const breadcrumbs = [
+  const breadcrumbs = [
     { label: "VietGlobal", href: "/" },
-    { label: "Contact Us", href: "#" },
-    ];
+    { label: "Liên hệ", href: "#" },
+  ];
   return (
     <>
       <style>{styles}</style>
-     <PageHeader title={current.title} />
-              
-     <PageBreadcrumb items={breadcrumbs} />
+      <PageHeader title={current.title} />
+
+      <PageBreadcrumb items={breadcrumbs} />
       <section className="contact-section">
         <div className="contact-inner">
           {/* LEFT */}
           <div className="form-col">
             <div className="form-eyebrow">Liên hệ với chúng tôi</div>
-            <h2 className="form-title">Gửi email, <span>hoặc gọi ngay</span></h2>
+            <h2 className="form-title">
+              Gửi email, <span>hoặc gọi ngay</span>
+            </h2>
             <p className="form-subtitle">
-              Chúng tôi luôn sẵn sàng tiếp nhận mọi yêu cầu của bạn và cam kết phản hồi trong thời gian sớm nhất.
+              Chúng tôi luôn sẵn sàng tiếp nhận mọi yêu cầu của bạn và cam kết
+              phản hồi trong thời gian sớm nhất.
             </p>
 
             <div className="form-row">
               <div className="form-group">
                 <label>Họ</label>
-                <input name="firstName" placeholder="Nguyen" value={form.firstName} onChange={handle} />
+                <input
+                  name="firstName"
+                  placeholder="Nguyen"
+                  value={form.firstName}
+                  onChange={handle}
+                />
               </div>
               <div className="form-group">
                 <label>Tên</label>
-                <input name="lastName" placeholder="Van A" value={form.lastName} onChange={handle} />
+                <input
+                  name="lastName"
+                  placeholder="Van A"
+                  value={form.lastName}
+                  onChange={handle}
+                />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
                 <label>Email</label>
-                <input name="email" type="email" placeholder="email@company.com" value={form.email} onChange={handle} />
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="email@company.com"
+                  value={form.email}
+                  onChange={handle}
+                />
               </div>
               <div className="form-group">
                 <label>Số điện thoại</label>
-                <input name="phone" placeholder="+84 xxx xxx xxx" value={form.phone} onChange={handle} />
+                <input
+                  name="phone"
+                  placeholder="+84 xxx xxx xxx"
+                  value={form.phone}
+                  onChange={handle}
+                />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group full">
                 <label>Tiêu đề</label>
-                <input name="subject" placeholder="Nội dung chủ đề..." value={form.subject} onChange={handle} />
+                <input
+                  name="subject"
+                  placeholder="Nội dung chủ đề..."
+                  value={form.subject}
+                  onChange={handle}
+                />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group full">
                 <label>Tin nhắn</label>
-                <textarea name="message" placeholder="Nhập nội dung tin nhắn của bạn..." value={form.message} onChange={handle} />
+                <textarea
+                  name="message"
+                  placeholder="Nhập nội dung tin nhắn của bạn..."
+                  value={form.message}
+                  onChange={handle}
+                />
               </div>
             </div>
 
             <button className="submit-btn" onClick={submit}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13" /><polygon points="22 2 15 22 11 13 2 9 22 2" />
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
               </svg>
               Gửi tin nhắn
             </button>
 
             {sent && (
               <div className="success-msg">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 Tin nhắn đã được gửi thành công! Chúng tôi sẽ liên hệ lại sớm.
@@ -362,18 +427,30 @@ export default function ContactForm() {
           {/* RIGHT */}
           <div className="info-card">
             <div className="info-card-title">Thông tin liên hệ</div>
-            <div className="company-name">TP Shipping Company Limited</div>
+            <div className="company-name">VietGlobal Company Limited</div>
 
             <div className="info-list">
               <div className="info-item">
                 <div className="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
                   </svg>
                 </div>
                 <div className="info-content">
                   <div className="info-label">Địa chỉ</div>
-                  <div className="info-value">Office 5.48, Floor 5, Rivergate Building,<br />151-155 Ben Van Don Str, Ward 6,<br />District 4, HCM City, Vietnam</div>
+                  <div className="info-value">
+                    2B Vương Thừa Vũ
+                    <br />
+                    Thanh Xuân, Hà Nội, Việt Nam
+                  </div>
                 </div>
               </div>
 
@@ -381,15 +458,23 @@ export default function ContactForm() {
 
               <div className="info-item">
                 <div className="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
                   </svg>
                 </div>
                 <div className="info-content">
                   <div className="info-label">Điện thoại</div>
                   <div className="info-value">Tel: +84 (0) 28 7302 2205</div>
                   <div className="info-value">
-                    H/P: <a href="tel:+84907844843">+84 907 844 843</a> — Mrs. Christina Quynh
+                    H/P: <a href="tel:+84907844843">+84 907 844 843</a> —
+                    VietGlobal
                   </div>
                   <div className="info-note">Zalo · WhatsApp · Viber</div>
                 </div>
@@ -399,14 +484,24 @@ export default function ContactForm() {
 
               <div className="info-item">
                 <div className="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
                   </svg>
                 </div>
                 <div className="info-content">
                   <div className="info-label">Email</div>
                   <div className="info-value">
-                    <a href="mailto:christina.quynh@tpshipping.com.vn">christina.quynh@tpshipping.com.vn</a>
+                    <a href="mailto:vietglobal@gmail.com">
+                      vietglobal@gmail.com
+                    </a>
                   </div>
                 </div>
               </div>
@@ -415,14 +510,29 @@ export default function ContactForm() {
 
               <div className="info-item">
                 <div className="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                   </svg>
                 </div>
                 <div className="info-content">
                   <div className="info-label">Website</div>
                   <div className="info-value">
-                    <a href="https://www.tpshipping.com.vn" target="_blank" rel="noreferrer">www.tpshipping.com.vn</a>
+                    <a
+                      href="https://www.vietglobal.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      www.vietglobal.com
+                    </a>
                   </div>
                 </div>
               </div>
