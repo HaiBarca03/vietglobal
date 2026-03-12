@@ -73,7 +73,7 @@ const FooterShipping = () => {
             marginBottom: 8,
           }}
         >
-          Tel: +84 (0) 28 7302205 | H/P: (+84) 907 844 843
+          Phone: +84 (0) 246779622
         </Paragraph>
 
         <Paragraph
@@ -95,7 +95,7 @@ const FooterShipping = () => {
             marginBottom: 8,
           }}
         >
-          Skype: vietglobal | Email: vietglobal.com.vn
+          Skype: vietglobal | Email: Vietglobal8@gmail.com
         </Paragraph>
 
         <Paragraph

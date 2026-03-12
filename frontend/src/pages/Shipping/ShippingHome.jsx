@@ -9,34 +9,41 @@ import {
   SendOutlined,
   AuditOutlined,
 } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
+import i18next from "i18next";
 
 const { Title, Paragraph, Text } = Typography;
 
 const TEAL = "#00B5B8";
 const DARK = "#1a1a2e";
+const lang = i18next.language || "en";
 
 const services = [
   {
     icon: <GlobalOutlined style={{ fontSize: 32, color: TEAL }} />,
     title: "VẬN CHUYỂN ĐƯỜNG BIỂN",
+    link: "sea-freight",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-1920x600.jpg",
     desc: "Dịch vụ vận chuyển đường biển của chúng tôi được kiểm tra và phân tích thường xuyên để đảm bảo phù hợp với các mô hình kinh doanh hiện đại. Mọi nâng cấp cần thiết đều được thực hiện nhằm đảm bảo dịch vụ của chúng tôi luôn vượt trên mong đợi của khách hàng.",
   },
   {
     icon: <CarOutlined style={{ fontSize: 32, color: TEAL }} />,
     title: "VẬN CHUYỂN BẰNG XE TẢI",
+    link: "trucking-delivery",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/Trucking-Delivery-1920x600.jpeg",
     desc: "Liên hệ với chúng tôi để nhận hướng dẫn vận chuyển và biểu phí xử lý cho các dịch vụ cụ thể mà bạn yêu cầu. Với đội ngũ vận hành riêng, xe tải và xe nâng, chúng tôi làm việc 24/7 để đảm bảo hàng hóa được giao đúng thời gian.",
   },
   {
     icon: <SendOutlined style={{ fontSize: 32, color: TEAL }} />,
     title: "DỊCH VỤ VẬN CHUYỂN ĐƯỜNG HÀNG KHÔNG",
+    link: "air-freight",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-Air-Freight-Benefits-1920x600.jpg",
     desc: "Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp đóng gói cho lô hàng tiếp theo của bạn. Chúng tôi cung cấp các loại thùng gỗ, kiện gỗ, pallet và đóng gói hút chân không theo yêu cầu cho nhu cầu đóng gói công nghiệp.",
   },
   {
     icon: <AuditOutlined style={{ fontSize: 32, color: TEAL }} />,
     title: "DỊCH VỤ THÔNG QUAN HẢI QUAN",
+    link: "customs-clearance",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-customs-clearance-service-1-1920x600.jpg",
     desc: "Chúng tôi đảm bảo đội xe luôn được bảo dưỡng tốt và sử dụng các phương tiện hiện đại nhất để đáp ứng mọi yêu cầu vận chuyển một cách hiệu quả và an toàn.",
   },
@@ -189,9 +196,36 @@ export default function ShippingHome() {
   const visibleCount = 6;
   const maxIndex = partners.length - visibleCount;
   const carouselRef = useRef();
+  const navigate = useNavigate();
+  const lang = i18next.language || "en";
+  const handleClick = (slug) => {
+    console.log("Navigating to service with slug:", slug);
+    const path = `/${lang}/service/${slug}`;
+    console.log("Navigating to:", path);
+    navigate(path);
+  };
+
+  const handleClickContactUs = () => {
+    const path = `/${lang}/shipping-contact-us`;
+    console.log("Navigating to:", path);
+    navigate(path);
+  };
 
   const prevPartner = () => setPartnerIndex((i) => Math.max(0, i - 1));
   const nextPartner = () => setPartnerIndex((i) => Math.min(maxIndex, i + 1));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPartnerIndex((prev) => {
+        if (prev >= maxIndex) {
+          return 0; // quay lại đầu
+        }
+        return prev + 1;
+      });
+    }, 2500); // 3 giây chạy 1 lần
+
+    return () => clearInterval(interval);
+  }, [maxIndex]);
 
   useEffect(() => {
     const link = document.createElement("link");
@@ -260,6 +294,7 @@ export default function ShippingHome() {
                   </Paragraph>
 
                   <Button
+                    onClick={() => handleClickContactUs()}
                     type="primary"
                     size="large"
                     style={{
@@ -272,7 +307,7 @@ export default function ShippingHome() {
                     }}
                     icon={<ArrowRightOutlined />}
                   >
-                    GET A QUOTE
+                    LIÊN HỆ NGAY
                   </Button>
                 </div>
               </div>
@@ -365,6 +400,7 @@ export default function ShippingHome() {
                     overflow: "hidden",
                     position: "relative",
                   }}
+                  onClick={() => handleClick(svc.link)}
                 >
                   <img
                     src={svc.img}
@@ -375,7 +411,6 @@ export default function ShippingHome() {
                       objectFit: "cover",
                       transition: "transform 0.5s ease",
                     }}
-                    // Hover zoom vẫn giữ, nhưng giờ card nâng lên nên đẹp hơn
                   />
                 </div>
                 <div style={{ padding: "24px 20px" }}>

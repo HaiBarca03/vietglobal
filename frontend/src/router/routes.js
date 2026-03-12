@@ -10,6 +10,7 @@ import ProductCategory from "../pages/ProductCategory/ProductCategory";
 import ProductDetailPage from "../pages/ProductDetailPage/ProductDetailPage";
 import ProductList from "../pages/ProductList/ProductList";
 import Register from "../pages/Register/Register";
+import AboutUsShipping from "../pages/Shipping/AboutUsShipping";
 import PartnersPage from "../pages/Shipping/PartnersPage";
 import ServiceDetailPage from "../pages/Shipping/ServiceDetailPage";
 import ContactForm from "../pages/Shipping/ShippingContactForm";
@@ -49,6 +50,12 @@ export const langRoutes = [
   {
     path: "/service/:slug",
     page: ServiceDetailPage,
+    isShowHeader: true,
+    footerType: "shipping",
+  },
+  {
+    path: "/shipping-about-us",
+    page: AboutUsShipping,
     isShowHeader: true,
     footerType: "shipping",
   },

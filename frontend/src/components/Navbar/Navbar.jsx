@@ -173,13 +173,13 @@ const Navbar = () => {
               to={`/${lang}/`}
               onClick={closeMobileMenu}
             >
-              {t("Home")}
+              {t("home")}
             </Link>
           </li>
 
           {/* 2. Dịch vụ (Dropdown) */}
           <li className="nav-item dropdown-container">
-            <span className="nav-item dropdown-trigger">{t("Services")}</span>
+            <span className="nav-item dropdown-trigger">{t("Dịch vụ")}</span>
             <ul className="dropdown-menu-category">
               {services.map((svc) => (
                 <li key={svc.slug} className="dropdown-item-parent">
@@ -202,7 +202,7 @@ const Navbar = () => {
               to={`/${lang}/logistics-china-viet`}
               onClick={closeMobileMenu}
             >
-              {t("Trung - Việt Logistics")}
+              {t("Trung - Việt")}
             </Link>
           </li>
 
@@ -213,7 +213,7 @@ const Navbar = () => {
               to={`/${lang}/import-export`}
               onClick={closeMobileMenu}
             >
-              {t("Import - Export")}
+              {t("Xuất nhập khẩu")}
             </Link>
           </li>
 
@@ -223,7 +223,7 @@ const Navbar = () => {
               to={`/${lang}/partners`}
               onClick={closeMobileMenu}
             >
-              {t("Partners")}
+              {t("Đối tác")}
             </Link>
           </li>
 
@@ -234,7 +234,16 @@ const Navbar = () => {
               to={`/${lang}/shipping-contact-us`}
               onClick={closeMobileMenu}
             >
-              {t("Contact Us")}
+              {t("Liên hệ")}
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="nav-item"
+              to={`/${lang}/shipping-about-us`}
+              onClick={closeMobileMenu}
+            >
+              {t("Về chúng tôi")}
             </Link>
           </li>
         </ul>

@@ -1,31 +1,97 @@
-import React from 'react'
+import React from "react";
 import { useState } from "react";
-import PageBreadcrumb from '../../components/ServiceDetail/PageBreadcrumb';
-import PageHeader from '../../components/ServiceDetail/PageHeader';
+import PageBreadcrumb from "../../components/ServiceDetail/PageBreadcrumb";
+import PageHeader from "../../components/ServiceDetail/PageHeader";
 
 const partners = [
-  { name: "CMA CGM", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/CMA-CGM_Shipping_drdn67.png" },
-  { name: "EVERGREEN", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/Evergreen_Logo_leeecu.png" },
-  { name: "APL", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/logo_apl_c8ilur.png" },
-  { name: "HAMBURG SÜD", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/logo_hamburg-sud_ngs7b4.png" },
-  { name: "HAPAG-LLOYD", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo_Hapag-Lloyd_iakcdw.png" },
-  { name: "HEUNG-A", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo_heung-a_ruw1ff.png" },
-  { name: "HMM", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/logo_hmm_eo5e1e.png" },
-  { name: "SEALAND", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850081/logo-sealand_ydjl0u.png" },
-  { name: "MSC", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/logo_MSC_txg3gu.png" },
-  { name: "TS LINES", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo_TS_gokjfv.png" },
-  { name: "YANG MING", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/logo_yang_ming.png" },
-  { name: "ZIM", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo_ZIM_ojvcv3.png" },
-  { name: "CNC", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo-cnc_snfad9.png" },
-  { name: "COSCO SHIPPING", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo-cosco_s0vgqq.png" },
-  { name: "PIL", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo-pil_ke6ofj.png" },
-  { name: "RCL", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850080/logo-rcl_nim1cn.png" },
-  { name: "MAERSK LINE", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850088/maersk-line-vector-logo_gsagni.png" },
-  { name: "OOCL", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850100/oocl-logo_tmaylg.png" },
-  { name: "WAN HAI LINES", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850100/Wan_Hai_logo_tglxvu.png" },
-  { name: "SITC", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850081/logo-sealand_ydjl0u.png" },
-  { name: "KMTC", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo-KMTC_nfhqpv.png" },
-  { name: "SKR", url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850082/logo-SKR_qpdsv6.png" },
+  {
+    name: "CMA CGM",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/CMA-CGM_Shipping_drdn67.png",
+  },
+  {
+    name: "EVERGREEN",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/Evergreen_Logo_leeecu.png",
+  },
+  {
+    name: "APL",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/logo_apl_c8ilur.png",
+  },
+  {
+    name: "HAMBURG SÜD",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/logo_hamburg-sud_ngs7b4.png",
+  },
+  {
+    name: "HAPAG-LLOYD",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo_Hapag-Lloyd_iakcdw.png",
+  },
+  {
+    name: "HEUNG-A",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo_heung-a_ruw1ff.png",
+  },
+  {
+    name: "HMM",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/logo_hmm_eo5e1e.png",
+  },
+  {
+    name: "SEALAND",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850081/logo-sealand_ydjl0u.png",
+  },
+  {
+    name: "MSC",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/logo_MSC_txg3gu.png",
+  },
+  {
+    name: "TS LINES",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo_TS_gokjfv.png",
+  },
+  {
+    name: "YANG MING",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850074/logo_yang_ming.png",
+  },
+  {
+    name: "ZIM",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo_ZIM_ojvcv3.png",
+  },
+  {
+    name: "CNC",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo-cnc_snfad9.png",
+  },
+  {
+    name: "COSCO SHIPPING",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo-cosco_s0vgqq.png",
+  },
+  {
+    name: "PIL",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo-pil_ke6ofj.png",
+  },
+  {
+    name: "RCL",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850080/logo-rcl_nim1cn.png",
+  },
+  {
+    name: "MAERSK LINE",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850088/maersk-line-vector-logo_gsagni.png",
+  },
+  {
+    name: "OOCL",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850100/oocl-logo_tmaylg.png",
+  },
+  {
+    name: "WAN HAI LINES",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850100/Wan_Hai_logo_tglxvu.png",
+  },
+  {
+    name: "SITC",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850081/logo-sealand_ydjl0u.png",
+  },
+  {
+    name: "KMTC",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850075/logo-KMTC_nfhqpv.png",
+  },
+  {
+    name: "SKR",
+    url: "https://res.cloudinary.com/demwoy6ku/image/upload/v1772850082/logo-SKR_qpdsv6.png",
+  },
 ];
 
 const styles = `
@@ -199,20 +265,20 @@ const styles = `
 `;
 
 const PartnersPage = () => {
-const [hovered, setHovered] = useState(null);
-const current = { title: "Partners" };
+  const [hovered, setHovered] = useState(null);
+  const current = { title: "Đối tác" };
 
-const breadcrumbs = [
-  { label: "VietGlobal", href: "/" },
-  { label: "Partners", href: "#" },
-];
+  const breadcrumbs = [
+    { label: "VietGlobal", href: "/" },
+    { label: "Đối tác", href: "#" },
+  ];
 
   return (
     <>
       <style>{styles}</style>
       <section className="partners-section">
         <PageHeader title={current.title} />
-        
+
         <PageBreadcrumb items={breadcrumbs} />
 
         <div className="partners-grid">
@@ -238,25 +304,33 @@ const breadcrumbs = [
 
         <div className="stats-row">
           <div className="stat-item">
-            <div className="stat-number">22<span>+</span></div>
+            <div className="stat-number">
+              22<span>+</span>
+            </div>
             <div className="stat-label">Hãng tàu</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">150<span>+</span></div>
+            <div className="stat-number">
+              150<span>+</span>
+            </div>
             <div className="stat-label">Tuyến hàng</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">80<span>+</span></div>
+            <div className="stat-number">
+              80<span>+</span>
+            </div>
             <div className="stat-label">Cảng biển</div>
           </div>
           <div className="stat-item">
-            <div className="stat-number">15<span>+</span></div>
+            <div className="stat-number">
+              15<span>+</span>
+            </div>
             <div className="stat-label">Năm kinh nghiệm</div>
           </div>
         </div>
       </section>
     </>
   );
-}
+};
 
-export default PartnersPage
+export default PartnersPage;
