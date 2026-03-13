@@ -1,26 +1,67 @@
 // src/components/OrderProcessFlow.jsx
-import React from 'react';
-import { motion } from 'framer-motion';
-import { 
-  FileTextOutlined, 
-  GiftOutlined, 
-  CarOutlined, 
-  HomeOutlined, 
-  GlobalOutlined, 
-  CheckCircleOutlined, 
-  ShopOutlined 
-} from '@ant-design/icons';
-import './OrderProcessFlow.css';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FileTextOutlined,
+  GiftOutlined,
+  CarOutlined,
+  HomeOutlined,
+  GlobalOutlined,
+  CheckCircleOutlined,
+  ShopOutlined,
+} from "@ant-design/icons";
+import "./OrderProcessFlow.css";
+import { t } from "i18next";
 
 const steps = [
-  { id: 1, title: "Đặt hàng", icon: <FileTextOutlined />, color: '#00d2ff' },
-  { id: 2, title: "Đóng gói hàng hóa", icon: <GiftOutlined />, color: '#00bcff' },
-  { id: 3, title: "Vận chuyển nội địa", icon: <CarOutlined />, color: '#00a6ff' },
-  { id: 4, title: "Kho Trung Quốc", icon: <HomeOutlined />, color: '#0090ff' },
-  { id: 5, title: "Vận chuyển Việt Nam", icon: <GlobalOutlined />, color: '#007aff' },
-  { id: 6, title: "Thông quan", icon: <CheckCircleOutlined />, color: '#0064ff' },
-  { id: 7, title: "Kho Việt Nam", icon: <ShopOutlined />, color: '#004eff' },
-  { id: 8, title: "Vận chuyển nội địa", icon: <CarOutlined />, color: '#0038ff' },
+  {
+    id: 1,
+    title: t("vi-chi.steps.step1"),
+    icon: <FileTextOutlined />,
+    color: "#00d2ff",
+  },
+  {
+    id: 2,
+    title: t("vi-chi.steps.step2"),
+    icon: <GiftOutlined />,
+    color: "#00bcff",
+  },
+  {
+    id: 3,
+    title: t("vi-chi.steps.step3"),
+    icon: <CarOutlined />,
+    color: "#00a6ff",
+  },
+  {
+    id: 4,
+    title: t("vi-chi.steps.step4"),
+    icon: <HomeOutlined />,
+    color: "#0090ff",
+  },
+  {
+    id: 5,
+    title: t("vi-chi.steps.step5"),
+    icon: <GlobalOutlined />,
+    color: "#007aff",
+  },
+  {
+    id: 6,
+    title: t("vi-chi.steps.step6"),
+    icon: <CheckCircleOutlined />,
+    color: "#0064ff",
+  },
+  {
+    id: 7,
+    title: t("vi-chi.steps.step7"),
+    icon: <ShopOutlined />,
+    color: "#004eff",
+  },
+  {
+    id: 8,
+    title: t("vi-chi.steps.step8"),
+    icon: <CarOutlined />,
+    color: "#0038ff",
+  },
 ];
 
 const containerVariants = {
@@ -30,8 +71,8 @@ const containerVariants = {
     transition: {
       staggerChildren: 0.2,
       delayChildren: 0.3,
-    }
-  }
+    },
+  },
 };
 
 const itemVariants = {
@@ -44,14 +85,14 @@ const itemVariants = {
       type: "spring",
       stiffness: 120,
       damping: 12,
-    }
+    },
   },
   hover: {
     scale: 1.08,
     y: -8,
     boxShadow: "0 20px 40px rgba(0,0,0,0.16)",
-    transition: { duration: 0.3 }
-  }
+    transition: { duration: 0.3 },
+  },
 };
 
 const lineVariants = {
@@ -62,9 +103,9 @@ const lineVariants = {
     transition: {
       duration: 1.5,
       ease: "easeInOut",
-      delay: 0.4
-    }
-  }
+      delay: 0.4,
+    },
+  },
 };
 
 export default function OrderProcessFlow() {
@@ -96,13 +137,17 @@ export default function OrderProcessFlow() {
         transition={{ type: "spring", stiffness: 100, damping: 10 }}
         className="main-title"
       >
-        Quy trình đặt hàng
+        {t("vi-chi.process")}
       </motion.h1>
 
       <div className="flow-wrapper">
-        <svg className="connecting-lines" preserveAspectRatio="none" viewBox="0 0 1200 400">
-           {/* Giữ nguyên các path SVG của bạn nhưng đổi màu sang trắng trong suốt */}
-           <motion.path
+        <svg
+          className="connecting-lines"
+          preserveAspectRatio="none"
+          viewBox="0 0 1200 400"
+        >
+          {/* Giữ nguyên các path SVG của bạn nhưng đổi màu sang trắng trong suốt */}
+          <motion.path
             d="M 100 200 Q 300 50, 500 200 Q 700 350, 900 200 Q 1100 50, 1300 200"
             fill="none"
             stroke="rgba(255,255,255,0.2)"
@@ -124,10 +169,10 @@ export default function OrderProcessFlow() {
               key={step.id}
               className="step-card"
               variants={itemVariants}
-              whileHover={{ 
-                scale: 1.1, 
+              whileHover={{
+                scale: 1.1,
                 rotate: [0, -2, 2, 0], // Xoay nhẹ khi hover
-                y: -15 
+                y: -15,
               }}
               // Animation tự động nhấp nhô (Floating)
               animate={{
@@ -138,10 +183,10 @@ export default function OrderProcessFlow() {
                   duration: 3,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: step.id * 0.2
-                }
+                  delay: step.id * 0.2,
+                },
               }}
-              style={{ '--step-color': step.color }}
+              style={{ "--step-color": step.color }}
             >
               <div className="step-number">{step.id}</div>
               <div className="step-icon">{step.icon}</div>
