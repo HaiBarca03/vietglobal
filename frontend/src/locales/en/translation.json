@@ -41,5 +41,56 @@
   "readmore": "Read more",
   "allProduct": "All products",
   "productByCate": "Products by categories",
-  "followUs": "Follow us"
+  "followUs": "Follow us",
+  "partners": "PARTNERS OF OURS",
+  "services": {
+    "seaFreight": {
+      "title": "SEA FREIGHT",
+      "desc": "Our sea freight services are regularly audited and analyzed to ensure they meet modern business requirements. Continuous improvements are made to ensure our services always exceed customer expectations."
+    },
+    "truckingDelivery": {
+      "title": "TRUCKING DELIVERY",
+      "desc": "Contact us for shipping manuals and handling tariffs for the services you require. With our own operation team, trucks and forklifts, we operate around the clock to ensure cargo is delivered on time."
+    },
+    "airFreight": {
+      "title": "AIR FREIGHT SERVICE",
+      "desc": "Contact us today for cargo survey, cost estimation and packing solutions for your next shipment. We provide custom wooden cases, crates, pallets and vacuum packing to meet industrial packaging requirements."
+    },
+    "customsClearance": {
+      "title": "CUSTOMS CLEARANCE SERVICE",
+      "desc": "We ensure our fleet is well maintained and equipped with modern vehicles to meet all transportation requirements efficiently and safely."
+    }
+  },
+  "servicePage": {
+    "sidebar": {
+      "all": "All Services",
+      "trucking": "Trucking Delivery",
+      "customs": "Customs Clearance",
+      "air": "Air Freight",
+      "sea": "Sea Freight"
+    },
+    "breadcrumb": {
+      "services": "Services"
+    },
+    "allServices": {
+      "title": "All Services",
+      "desc": "We provide comprehensive logistics services to meet your business needs including sea freight, air freight, trucking delivery and customs clearance."
+    },
+    "trucking": {
+      "title": "Trucking Delivery",
+      "desc": "Contact us for shipping instructions and handling tariffs for the services you require. Our team ensures your cargo is prepared and transported according to necessary standards."
+    },
+    "customs": {
+      "title": "Customs Clearance",
+      "desc": "We ensure our fleet is well maintained and equipped with modern technology to transport high-value and oversized cargo efficiently and safely."
+    },
+    "air": {
+      "title": "Air Freight",
+      "desc": "Contact us today for cargo inspection, cost estimation and the best air freight solutions for your next shipment."
+    },
+    "sea": {
+      "title": "Sea Freight",
+      "desc": "Our sea freight services are regularly reviewed and optimized to meet modern logistics and supply chain demands."
+    }
+  }
 }

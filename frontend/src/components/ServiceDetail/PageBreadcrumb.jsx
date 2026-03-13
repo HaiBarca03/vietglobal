@@ -9,6 +9,7 @@ const TEAL = "#00B5B8";
  *   items: Array<{ label: string, href?: string, active?: boolean }>
  */
 export default function PageBreadcrumb({ items = [] }) {
+  console.log("Rendering PageBreadcrumb with items:", items);
   return (
     <div
       style={{
@@ -18,7 +19,11 @@ export default function PageBreadcrumb({ items = [] }) {
       }}
     >
       <Breadcrumb
-        separator={<RightOutlined style={{ fontSize: 10, color: "#aaa", margin: "0 4px" }} />}
+        separator={
+          <RightOutlined
+            style={{ fontSize: 10, color: "#aaa", margin: "0 4px" }}
+          />
+        }
         items={items.map((item) => ({
           title: item.href ? (
             <a

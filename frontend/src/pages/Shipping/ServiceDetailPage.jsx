@@ -38,27 +38,29 @@ const SERVICE_DATA = [
   {
     slug: "customs-clearance",
     title: "Thông quan hải quan",
-    description:
-      "Chúng tôi đảm bảo đội xe luôn được bảo dưỡng tốt và cập nhật hiện đại để có thể vận chuyển các loại hàng hóa có giá trị cao hoặc kích thước lớn một cách hiệu quả và an toàn. Điều này giúp hạn chế rủi ro mất mát, vốn thường xảy ra với nhiều đơn vị vận chuyển thuê ngoài.",
+    description: ` Dịch vụ thông quan hải quan hỗ trợ doanh nghiệp hoàn tất các thủ tục pháp lý cần thiết để hàng hóa được phép xuất khẩu hoặc nhập khẩu qua biên giới một cách nhanh chóng và đúng quy định. Với kinh nghiệm trong lĩnh vực logistics và xuất nhập khẩu, chúng tôi cung cấp giải pháp thông quan chuyên nghiệp, giúp khách hàng tiết kiệm thời gian, chi phí và hạn chế tối đa các rủi ro phát sinh trong quá trình làm thủ tục.
+
+      Đội ngũ chuyên viên của chúng tôi am hiểu các quy định pháp luật và quy trình hải quan, sẵn sàng tư vấn và xử lý toàn bộ hồ sơ liên quan như khai báo hải quan điện tử, chuẩn bị chứng từ, kiểm tra hàng hóa, cũng như phối hợp với các cơ quan chức năng để đảm bảo quá trình thông quan diễn ra thuận lợi.`,
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-customs-clearance-service-1-1920x600.jpg",
   },
   {
     slug: "air-freight",
     title: "Vận chuyển đường hàng không",
-    description: `  Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp vận chuyển đường hàng không phù hợp cho lô hàng tiếp theo của bạn. Đội ngũ chuyên gia của chúng tôi sẽ hỗ trợ đánh giá đặc điểm hàng hóa, yêu cầu về thời gian giao nhận cũng như các điều kiện bảo quản trong quá trình vận chuyển để đưa ra phương án tối ưu nhất.
+    description: `Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp vận chuyển đường hàng không phù hợp cho lô hàng tiếp theo của bạn. Đội ngũ chuyên gia của chúng tôi sẽ hỗ trợ đánh giá đặc điểm hàng hóa, yêu cầu về thời gian giao nhận cũng như các điều kiện bảo quản trong quá trình vận chuyển để đưa ra phương án tối ưu nhất.
       
-    Chúng tôi cung cấp các giải pháp đóng gói chuyên nghiệp như thùng gỗ, kiện gỗ, pallet và dịch vụ đóng gói hút chân không theo yêu cầu, đặc biệt phù hợp với các loại hàng hóa công nghiệp, máy móc hoặc hàng hóa có giá trị cao. Tất cả các quy trình đóng gói đều được thực hiện cẩn thận nhằm đảm bảo hàng hóa được bảo vệ tối đa và đáp ứng các tiêu chuẩn vận chuyển quốc tế trong ngành hàng không.
+      Chúng tôi cung cấp các giải pháp đóng gói chuyên nghiệp như thùng gỗ, kiện gỗ, pallet và dịch vụ đóng gói hút chân không theo yêu cầu, đặc biệt phù hợp với các loại hàng hóa công nghiệp, máy móc hoặc hàng hóa có giá trị cao. Tất cả các quy trình đóng gói đều được thực hiện cẩn thận nhằm đảm bảo hàng hóa được bảo vệ tối đa và đáp ứng các tiêu chuẩn vận chuyển quốc tế trong ngành hàng không.
       
-    Với mạng lưới đối tác hàng không rộng khắp và kinh nghiệm trong lĩnh vực logistics, chúng tôi cam kết mang đến dịch vụ vận chuyển nhanh chóng, an toàn và đáng tin cậy, giúp hàng hóa của bạn đến đúng nơi, đúng thời gian và trong tình trạng tốt nhất.`,
+      Với mạng lưới đối tác hàng không rộng khắp và kinh nghiệm trong lĩnh vực logistics, chúng tôi cam kết mang đến dịch vụ vận chuyển nhanh chóng, an toàn và đáng tin cậy, giúp hàng hóa của bạn đến đúng nơi, đúng thời gian và trong tình trạng tốt nhất.`,
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-Air-Freight-Benefits-1920x600.jpg",
   },
   {
     slug: "sea-freight",
     title: "Vận chuyển đường biển",
-    description:
-      "Dịch vụ vận chuyển đường biển của chúng tôi được kiểm tra và phân tích thường xuyên để đảm bảo phù hợp với các mô hình kinh doanh hiện đại. Mọi cải tiến cần thiết đều được thực hiện nhằm giúp khách hàng đáp ứng nhu cầu logistics một cách hiệu quả. Đội ngũ logistics của chúng tôi có nhiều năm kinh nghiệm và có thể xử lý các dự án dài hạn hoặc quy mô lớn với tính chuyên nghiệp cao. Đồng thời, bộ phận chăm sóc khách hàng luôn hỗ trợ để khách hàng có thể cập nhật thông tin trong suốt quá trình vận chuyển khi cần thiết. Hãy liên hệ với các chuyên gia của chúng tôi ngay hôm nay cho nhu cầu logistics, kho bãi và phân phối của bạn để chúng tôi có thể mang lại sự khác biệt tích cực cho doanh nghiệp của bạn.",
+    description: `Dịch vụ vận chuyển đường biển của chúng tôi được kiểm tra và phân tích thường xuyên để đảm bảo phù hợp với các mô hình kinh doanh hiện đại. Mọi cải tiến cần thiết đều được thực hiện nhằm giúp khách hàng đáp ứng nhu cầu logistics một cách hiệu quả. 
+
+      Đội ngũ logistics của chúng tôi có nhiều năm kinh nghiệm và có thể xử lý các dự án dài hạn hoặc quy mô lớn với tính chuyên nghiệp cao. Đồng thời, bộ phận chăm sóc khách hàng luôn hỗ trợ để khách hàng có thể cập nhật thông tin trong suốt quá trình vận chuyển khi cần thiết. Hãy liên hệ với các chuyên gia của chúng tôi ngay hôm nay cho nhu cầu logistics, kho bãi và phân phối của bạn để chúng tôi có thể mang lại sự khác biệt tích cực cho doanh nghiệp của bạn.`,
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-1920x600.jpg",
   },

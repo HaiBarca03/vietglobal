@@ -10,45 +10,45 @@ import {
   AuditOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import i18next from "i18next";
+import i18next, { t } from "i18next";
 
 const { Title, Paragraph, Text } = Typography;
 
 const TEAL = "#00B5B8";
 const DARK = "#1a1a2e";
-const lang = i18next.language || "en";
 
 const services = [
   {
     icon: <GlobalOutlined style={{ fontSize: 32, color: TEAL }} />,
-    title: "VẬN CHUYỂN ĐƯỜNG BIỂN",
+    title: "services.seaFreight.title",
     link: "sea-freight",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-1920x600.jpg",
-    desc: "Dịch vụ vận chuyển đường biển của chúng tôi được kiểm tra và phân tích thường xuyên để đảm bảo phù hợp với các mô hình kinh doanh hiện đại. Mọi nâng cấp cần thiết đều được thực hiện nhằm đảm bảo dịch vụ của chúng tôi luôn vượt trên mong đợi của khách hàng.",
+    desc: "services.seaFreight.desc",
   },
   {
     icon: <CarOutlined style={{ fontSize: 32, color: TEAL }} />,
-    title: "VẬN CHUYỂN BẰNG XE TẢI",
+    title: "services.truckingDelivery.title",
     link: "trucking-delivery",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/Trucking-Delivery-1920x600.jpeg",
-    desc: "Liên hệ với chúng tôi để nhận hướng dẫn vận chuyển và biểu phí xử lý cho các dịch vụ cụ thể mà bạn yêu cầu. Với đội ngũ vận hành riêng, xe tải và xe nâng, chúng tôi làm việc 24/7 để đảm bảo hàng hóa được giao đúng thời gian.",
+    desc: "services.truckingDelivery.desc",
   },
   {
     icon: <SendOutlined style={{ fontSize: 32, color: TEAL }} />,
-    title: "DỊCH VỤ VẬN CHUYỂN ĐƯỜNG HÀNG KHÔNG",
+    title: "services.airFreight.title",
     link: "air-freight",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-Air-Freight-Benefits-1920x600.jpg",
-    desc: "Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp đóng gói cho lô hàng tiếp theo của bạn. Chúng tôi cung cấp các loại thùng gỗ, kiện gỗ, pallet và đóng gói hút chân không theo yêu cầu cho nhu cầu đóng gói công nghiệp.",
+    desc: "services.airFreight.desc",
   },
   {
     icon: <AuditOutlined style={{ fontSize: 32, color: TEAL }} />,
-    title: "DỊCH VỤ THÔNG QUAN HẢI QUAN",
+    title: "services.customsClearance.title",
     link: "customs-clearance",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-customs-clearance-service-1-1920x600.jpg",
-    desc: "Chúng tôi đảm bảo đội xe luôn được bảo dưỡng tốt và sử dụng các phương tiện hiện đại nhất để đáp ứng mọi yêu cầu vận chuyển một cách hiệu quả và an toàn.",
+    desc: "services.customsClearance.desc",
   },
 ];
 
+console.log("Services data:", services);
 const partners = [
   {
     name: "KMTC",
@@ -157,40 +157,6 @@ const partners = [
   },
 ];
 
-const PartnerCard = ({ partner }) => (
-  <div
-    style={{
-      border: "1px solid #e0e0e0",
-      borderRadius: 4,
-      padding: "18px 28px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      height: 80,
-      background: "#fff",
-      minWidth: 160,
-    }}
-  >
-    <Text
-      strong
-      style={{
-        color: partner.color,
-        fontSize: 15,
-        letterSpacing: 1,
-        fontFamily: "'Barlow Condensed', sans-serif",
-      }}
-    >
-      {partner.name}
-    </Text>
-  </div>
-);
-const slides = [
-  "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-1920x600.jpg",
-  "https://tpshipping.com.vn/wp-content/uploads/2021/06/Trucking-Delivery-1920x600.jpeg",
-  "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-Air-Freight-Benefits-1920x600.jpg",
-  "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-customs-clearance-service-1-1920x600.jpg",
-];
-
 export default function ShippingHome() {
   const [partnerIndex, setPartnerIndex] = useState(0);
   const visibleCount = 6;
@@ -278,7 +244,7 @@ export default function ShippingHome() {
                       textShadow: "0 4px 12px rgba(0,0,0,0.7)",
                     }}
                   >
-                    {svc.title}
+                    {t(svc.title)}
                   </Title>
 
                   <Paragraph
@@ -290,7 +256,7 @@ export default function ShippingHome() {
                       maxWidth: 520,
                     }}
                   >
-                    {svc.desc}
+                    {t(svc.desc)}
                   </Paragraph>
 
                   <Button
@@ -307,7 +273,7 @@ export default function ShippingHome() {
                     }}
                     icon={<ArrowRightOutlined />}
                   >
-                    LIÊN HỆ NGAY
+                    {t("contact.title")}
                   </Button>
                 </div>
               </div>
@@ -429,7 +395,7 @@ export default function ShippingHome() {
                         margin: 0,
                       }}
                     >
-                      {svc.title}
+                      {t(svc.title)}
                     </Title>
                   </Space>
                   <Paragraph
@@ -439,7 +405,7 @@ export default function ShippingHome() {
                       lineHeight: 1.6,
                     }}
                   >
-                    {svc.desc}
+                    {t(svc.desc)}
                   </Paragraph>
                 </div>
               </div>
@@ -470,7 +436,7 @@ export default function ShippingHome() {
               display: "inline-block",
             }}
           >
-            ĐỐI TÁC CỦA CHÚNG TÔI
+            {t("partners")}
             <div
               style={{
                 position: "absolute",
