@@ -1,6 +1,6 @@
 import { Row, Col, Typography, Button } from "antd";
 import { ArrowRightOutlined } from "@ant-design/icons";
-import i18next from "i18next";
+import i18next, { t } from "i18next";
 
 const { Title, Paragraph } = Typography;
 
@@ -9,29 +9,29 @@ const DARK = "#1a1a2e";
 const lang = i18next.language || "en";
 const ALL_SERVICES = [
   {
-    title: "VẬN CHUYỂN ĐƯỜNG BIỂN",
-    desc: "Dịch vụ vận chuyển đường biển của chúng tôi được kiểm tra và phân tích định kỳ để đảm bảo phù hợp với các mô hình kinh doanh hiện đại. Mọi nâng cấp cần thiết đều được thực hiện nhằm đảm bảo dịch vụ luôn vượt trên mong đợi của khách hàng.",
+    title: "services.seaFreight.title",
+    desc: "services.seaFreight.desc",
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-1920x600.jpg",
     link: `/${lang}/service/sea-freight`,
   },
   {
-    title: "VẬN CHUYỂN BẰNG XE TẢI",
-    desc: "Liên hệ với chúng tôi để nhận bảng hướng dẫn vận chuyển và biểu phí xử lý cho từng loại hàng hóa theo yêu cầu. Với đội ngũ vận hành riêng, xe tải và xe nâng, chúng tôi hoạt động 24/7 để đảm bảo hàng hóa được giao đúng thời gian.",
+    title: "services.truckingDelivery.title",
+    desc: "services.truckingDelivery.desc",
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/Trucking-Delivery-1920x600.jpeg",
     link: `/${lang}/service/trucking-delivery`,
   },
   {
-    title: "DỊCH VỤ VẬN CHUYỂN ĐƯỜNG HÀNG KHÔNG",
-    desc: "Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp đóng gói cho lô hàng tiếp theo của bạn. Chúng tôi cung cấp các loại thùng gỗ, kiện gỗ, pallet và đóng gói hút chân không theo yêu cầu cho các nhu cầu đóng gói công nghiệp.",
+    title: "services.airFreight.title",
+    desc: "services.airFreight.desc",
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-Air-Freight-Benefits-1920x600.jpg",
     link: `/${lang}/service/air-freight`,
   },
   {
-    title: "DỊCH VỤ THÔNG QUAN HẢI QUAN",
-    desc: "Chúng tôi đảm bảo quá trình thông quan nhanh chóng và đáng tin cậy cho tất cả các lô hàng xuất nhập khẩu, bao gồm xử lý chứng từ, khai báo hải quan và tuân thủ quy định một cách hiệu quả.",
+    title: "services.customsClearance.title",
+    desc: "services.customsClearance.desc",
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-customs-clearance-service-1-1920x600.jpg",
     link: `/${lang}/service/customs-clearance`,
@@ -57,7 +57,7 @@ export default function AllServicesGrid() {
           letterSpacing: 1,
         }}
       >
-        TẤT CẢ DỊCH VỤ
+        {t("servicePage.sidebar.all")}
       </div>
 
       <Row gutter={[24, 32]}>
@@ -129,7 +129,7 @@ export default function AllServicesGrid() {
                     letterSpacing: 1,
                   }}
                 >
-                  {service.title}
+                  {t(service.title)}
                 </Title>
 
                 <Paragraph
@@ -146,7 +146,7 @@ export default function AllServicesGrid() {
                     WebkitBoxOrient: "vertical",
                   }}
                 >
-                  {service.desc}
+                  {t(service.desc)}
                 </Paragraph>
 
                 <Button
@@ -160,7 +160,7 @@ export default function AllServicesGrid() {
                   }}
                   icon={<ArrowRightOutlined />}
                 >
-                  READ MORE
+                  {t("readmore")}
                 </Button>
               </div>
             </div>

@@ -6,73 +6,68 @@ import ServiceSidebar from "../../components/ServiceDetail/ServiceSidebar";
 import ServiceContent from "../../components/ServiceDetail/ServiceContent";
 import { useParams } from "react-router-dom";
 import AllServicesGrid from "../../components/ServiceDetail/AllServicesGrid";
+import { t } from "i18next";
 
-const SIDEBAR_ITEMS = [
-  { key: "all-services", label: "Tất cả dịch vụ" },
-  { key: "trucking-delivery", label: "Vận chuyển bằng xe tải" },
-  { key: "customs-clearance", label: "Thông quan hải quan" },
-  { key: "air-freight", label: "Vận chuyển đường hàng không" },
-  { key: "sea-freight", label: "Vận chuyển đường biển" },
-];
+// const SIDEBAR_ITEMS = [
+//   { key: "all-services", label: "Tất cả dịch vụ" },
+//   { key: "trucking-delivery", label: "Vận chuyển bằng xe tải" },
+//   { key: "customs-clearance", label: "Thông quan hải quan" },
+//   { key: "air-freight", label: "Vận chuyển đường hàng không" },
+//   { key: "sea-freight", label: "Vận chuyển đường biển" },
+// ];
 
 const SERVICE_DATA = [
   {
     slug: "all-services",
-    title: "Tất cả dịch vụ",
-    description:
-      "Chúng tôi cung cấp đầy đủ các dịch vụ logistics nhằm đáp ứng nhu cầu kinh doanh của bạn. Từ vận chuyển đường biển, vận chuyển đường hàng không đến vận chuyển bằng xe tải và dịch vụ thông quan hải quan...",
+    title: "servicePage.allServices.title",
+    description: "servicePage.allServices.desc",
     image:
       "https://images.unsplash.com/photo-1494412651409-8963ce7935a7?w=800&q=80",
   },
   {
     slug: "trucking-delivery",
-    title: "Vận chuyển bằng xe tải",
-    description: `Liên hệ với chúng tôi để nhận hướng dẫn vận chuyển và biểu phí xử lý cho các dịch vụ cụ thể mà bạn yêu cầu. Đội ngũ của chúng tôi sẽ cung cấp hướng dẫn rõ ràng và thông tin chi tiết để đảm bảo hàng hóa của bạn được chuẩn bị và vận chuyển đúng theo các tiêu chuẩn cần thiết.
-
-    Với đội ngũ vận hành riêng, xe tải và xe nâng, chúng tôi làm việc 24/7 để đảm bảo hàng hóa được giao đúng thời gian và trong tình trạng tốt nhất cho các hội chợ và sự kiện của bạn. Đội ngũ nhân viên giàu kinh nghiệm của chúng tôi quản lý cẩn thận từng giai đoạn của quá trình vận chuyển, bao gồm bốc xếp, cố định và dỡ hàng nhằm đảm bảo an toàn và hiệu quả.
-
-    Thông qua việc lập kế hoạch cẩn thận, tối ưu tuyến đường và giám sát liên tục, chúng tôi có thể cung cấp lịch giao hàng linh hoạt và dịch vụ đáng tin cậy. Mục tiêu của chúng tôi là đảm bảo mọi lô hàng đến nơi an toàn, đúng thời gian và sẵn sàng cho sự kiện hoặc hoạt động kinh doanh của bạn.`,
+    title: "servicePage.trucking.title",
+    description: "servicePage.trucking.desc",
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/Trucking-Delivery-1920x600.jpeg",
   },
   {
     slug: "customs-clearance",
-    title: "Thông quan hải quan",
-    description: ` Dịch vụ thông quan hải quan hỗ trợ doanh nghiệp hoàn tất các thủ tục pháp lý cần thiết để hàng hóa được phép xuất khẩu hoặc nhập khẩu qua biên giới một cách nhanh chóng và đúng quy định. Với kinh nghiệm trong lĩnh vực logistics và xuất nhập khẩu, chúng tôi cung cấp giải pháp thông quan chuyên nghiệp, giúp khách hàng tiết kiệm thời gian, chi phí và hạn chế tối đa các rủi ro phát sinh trong quá trình làm thủ tục.
-
-      Đội ngũ chuyên viên của chúng tôi am hiểu các quy định pháp luật và quy trình hải quan, sẵn sàng tư vấn và xử lý toàn bộ hồ sơ liên quan như khai báo hải quan điện tử, chuẩn bị chứng từ, kiểm tra hàng hóa, cũng như phối hợp với các cơ quan chức năng để đảm bảo quá trình thông quan diễn ra thuận lợi.`,
+    title: "servicePage.customs.title",
+    description: "servicePage.customs.desc",
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-customs-clearance-service-1-1920x600.jpg",
   },
   {
     slug: "air-freight",
-    title: "Vận chuyển đường hàng không",
-    description: `Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp vận chuyển đường hàng không phù hợp cho lô hàng tiếp theo của bạn. Đội ngũ chuyên gia của chúng tôi sẽ hỗ trợ đánh giá đặc điểm hàng hóa, yêu cầu về thời gian giao nhận cũng như các điều kiện bảo quản trong quá trình vận chuyển để đưa ra phương án tối ưu nhất.
-      
-      Chúng tôi cung cấp các giải pháp đóng gói chuyên nghiệp như thùng gỗ, kiện gỗ, pallet và dịch vụ đóng gói hút chân không theo yêu cầu, đặc biệt phù hợp với các loại hàng hóa công nghiệp, máy móc hoặc hàng hóa có giá trị cao. Tất cả các quy trình đóng gói đều được thực hiện cẩn thận nhằm đảm bảo hàng hóa được bảo vệ tối đa và đáp ứng các tiêu chuẩn vận chuyển quốc tế trong ngành hàng không.
-      
-      Với mạng lưới đối tác hàng không rộng khắp và kinh nghiệm trong lĩnh vực logistics, chúng tôi cam kết mang đến dịch vụ vận chuyển nhanh chóng, an toàn và đáng tin cậy, giúp hàng hóa của bạn đến đúng nơi, đúng thời gian và trong tình trạng tốt nhất.`,
+    title: "servicePage.air.title",
+    description: "servicePage.air.desc",
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-Air-Freight-Benefits-1920x600.jpg",
   },
   {
     slug: "sea-freight",
-    title: "Vận chuyển đường biển",
-    description: `Dịch vụ vận chuyển đường biển của chúng tôi được kiểm tra và phân tích thường xuyên để đảm bảo phù hợp với các mô hình kinh doanh hiện đại. Mọi cải tiến cần thiết đều được thực hiện nhằm giúp khách hàng đáp ứng nhu cầu logistics một cách hiệu quả. 
-
-      Đội ngũ logistics của chúng tôi có nhiều năm kinh nghiệm và có thể xử lý các dự án dài hạn hoặc quy mô lớn với tính chuyên nghiệp cao. Đồng thời, bộ phận chăm sóc khách hàng luôn hỗ trợ để khách hàng có thể cập nhật thông tin trong suốt quá trình vận chuyển khi cần thiết. Hãy liên hệ với các chuyên gia của chúng tôi ngay hôm nay cho nhu cầu logistics, kho bãi và phân phối của bạn để chúng tôi có thể mang lại sự khác biệt tích cực cho doanh nghiệp của bạn.`,
+    title: "servicePage.sea.title",
+    description: "servicePage.sea.desc",
     image:
       "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-1920x600.jpg",
   },
 ];
 
-const BREADCRUMB_BASE = [
-  { label: "VietGlobal", href: "/" },
-  { label: "Dịch Vụ", href: "#" },
-];
-
 export default function ServiceDetailPage() {
   const { slug } = useParams();
+
+  const BREADCRUMB_BASE = [
+    { label: "VietGlobal", href: "/" },
+    { label: t("servicePage.breadcrumb.services"), href: "#" },
+  ];
+  const SIDEBAR_ITEMS = [
+    { key: "all-services", label: t("servicePage.sidebar.all") },
+    { key: "trucking-delivery", label: t("servicePage.sidebar.trucking") },
+    { key: "customs-clearance", label: t("servicePage.sidebar.customs") },
+    { key: "air-freight", label: t("servicePage.sidebar.air") },
+    { key: "sea-freight", label: t("servicePage.sidebar.sea") },
+  ];
 
   const current = SERVICE_DATA.find((s) => s.slug === slug) || SERVICE_DATA[0];
 
@@ -86,7 +81,7 @@ export default function ServiceDetailPage() {
 
   const breadcrumbs = [
     ...BREADCRUMB_BASE,
-    { label: current.title, active: true },
+    { label: t(current.title), active: true },
   ];
 
   return (
@@ -97,7 +92,7 @@ export default function ServiceDetailPage() {
         background: "#fff",
       }}
     >
-      <PageHeader title={current.title} />
+      <PageHeader title={t(current.title)} />
 
       <PageBreadcrumb items={breadcrumbs} />
 
@@ -121,11 +116,11 @@ export default function ServiceDetailPage() {
                       color: "#555",
                     }}
                   >
-                    {current.description}
+                    {t(current.description)}
                   </div>
                 }
                 image={current.image}
-                imageAlt={current.title}
+                imageAlt={t(current.title)}
               />
             )}
           </Col>

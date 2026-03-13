@@ -10,13 +10,15 @@
   "email": "Email",
   "phone": "Số điện thoại",
   "address": "Địa chỉ",
+  "readmore": "ĐỌC THÊM",
   "description": "VietGlobal là nhà xuất khẩu uy tín, cung cấp đa dạng sản phẩm chất lượng với giá tốt nhất, giao hàng nhanh và dịch vụ khách hàng tuyệt vời.",
   "links": {
     "title": "Liên kết",
     "home": "Trang chủ",
     "products": "Tất cả sản phẩm",
     "categories": "Danh mục",
-    "deals": "Ưu đãi & khuyến mãi"
+    "deals": "Ưu đãi & khuyến mãi",
+    "Services": "Dịch vụ"
   },
   "policies": {
     "title": "Chính sách",
@@ -38,7 +40,6 @@
   "productday": "Ngày tạo",
   "producttitle": "Thông tin sản phẩm",
   "homeTitle": "Sản phẩm nổi bật",
-  "readmore": "Xem thêm",
   "allProduct": "Tất cả sản phẩm",
   "productByCate": "Sản phẩm theo danh mục",
   "followUs": "Theo dõi chúng tôi",
@@ -78,19 +79,41 @@
     },
     "trucking": {
       "title": "Vận chuyển bằng xe tải",
-      "desc": "Liên hệ với chúng tôi để nhận hướng dẫn vận chuyển và biểu phí xử lý cho các dịch vụ cụ thể mà bạn yêu cầu. Đội ngũ của chúng tôi sẽ cung cấp hướng dẫn rõ ràng và thông tin chi tiết để đảm bảo hàng hóa của bạn được chuẩn bị và vận chuyển đúng theo các tiêu chuẩn cần thiết."
+      "desc": "Dịch vụ vận chuyển bằng xe tải mang đến giải pháp giao nhận hàng hóa linh hoạt và nhanh chóng trong phạm vi nội địa và khu vực. Đội xe được bảo dưỡng thường xuyên cùng đội ngũ tài xế giàu kinh nghiệm giúp đảm bảo quá trình vận chuyển an toàn. Mọi khâu từ nhận hàng, bốc xếp đến giao hàng đều được quản lý cẩn thận. Nhờ đó hàng hóa luôn được giao đúng địa điểm và đúng thời gian cam kết."
     },
     "customs": {
       "title": "Thông quan hải quan",
-      "desc": "Chúng tôi đảm bảo đội xe luôn được bảo dưỡng tốt và cập nhật hiện đại để có thể vận chuyển các loại hàng hóa có giá trị cao hoặc kích thước lớn một cách hiệu quả và an toàn."
+      "desc": "Dịch vụ thông quan hải quan giúp doanh nghiệp hoàn tất các thủ tục xuất nhập khẩu một cách nhanh chóng và đúng quy định. Đội ngũ chuyên viên của chúng tôi am hiểu quy trình và các quy định pháp luật liên quan đến hải quan. Chúng tôi hỗ trợ chuẩn bị hồ sơ, khai báo hải quan điện tử và xử lý các thủ tục cần thiết. Nhờ đó quá trình thông quan được thực hiện thuận lợi, giúp tiết kiệm thời gian và chi phí cho doanh nghiệp."
     },
     "air": {
       "title": "Vận chuyển đường hàng không",
-      "desc": "Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp vận chuyển đường hàng không phù hợp cho lô hàng tiếp theo của bạn."
+      "desc": "Dịch vụ vận chuyển đường hàng không là lựa chọn tối ưu cho các lô hàng cần giao nhanh và yêu cầu thời gian chính xác. Chúng tôi hợp tác với nhiều hãng hàng không và đối tác logistics quốc tế để mang lại giải pháp vận chuyển linh hoạt. Ngoài việc tổ chức vận chuyển, chúng tôi còn hỗ trợ tư vấn đóng gói và chuẩn bị chứng từ cần thiết. Điều này giúp đảm bảo hàng hóa được vận chuyển an toàn và đến nơi đúng lịch trình."
     },
     "sea": {
       "title": "Vận chuyển đường biển",
-      "desc": "Dịch vụ vận chuyển đường biển của chúng tôi được kiểm tra và phân tích thường xuyên để đảm bảo phù hợp với các mô hình kinh doanh hiện đại."
+      "desc": "Dịch vụ vận chuyển đường biển của chúng tôi cung cấp giải pháp logistics hiệu quả và tiết kiệm chi phí cho các lô hàng quốc tế. Với mạng lưới đối tác vận tải rộng khắp, chúng tôi có thể xử lý nhiều loại hàng hóa với quy mô khác nhau. Quy trình vận hành được kiểm soát chặt chẽ nhằm đảm bảo hàng hóa luôn được vận chuyển an toàn và đúng lịch trình. Chúng tôi cũng hỗ trợ theo dõi hành trình và xử lý chứng từ để khách hàng dễ dàng quản lý lô hàng."
     }
+  },
+  "vi-chi": {
+    "process": "Quy trình đặt hàng",
+    "steps": {
+      "step1": "Đặt hàng",
+      "step2": "Đóng gói hàng hóa",
+      "step3": "Vận chuyển nội địa",
+      "step4": "Kho Trung Quốc",
+      "step5": "Vận chuyển Việt Nam",
+      "step6": "Thông quan",
+      "step7": "Kho Việt Nam",
+      "step8": "Vận chuyển nội địa"
+    },
+    "orderTool": "Công cụ đặt hàng",
+    "orderBrowser": "Đặt hàng trên trình duyệt",
+    "ourActivities": "Chúng tôi đã hoạt động",
+    "orderServiceCommitment": "Cam kết dịch vụ đặt hàng",
+    "orderServiceCommit": "Chúng tôi cam kết cung cấp dịch vụ đặt hàng nhanh chóng, minh bạch và đáng tin cậy cho khách hàng. Mỗi đơn hàng đều được đội ngũ của chúng tôi theo dõi và xử lý cẩn thận từ khi đặt đến khi giao thành công, đảm bảo quy trình vận hành chính xác và hiệu quả. Khách hàng luôn được cung cấp thông tin rõ ràng về chi phí, thời gian vận chuyển và trạng thái đơn hàng trong suốt quá trình xử lý. Với hệ thống theo dõi hiện đại cùng đội ngũ hỗ trợ tận tâm, chúng tôi nỗ lực mang đến trải nghiệm mua hàng thuận tiện, an toàn và đúng thời gian cam kết.",
+    "paymentFormForHousehold": "Đơn thanh toán hộ",
+    "currencyExchangeService": "Dịch vụ đổi tệ",
+    "ordersEveryDay": "Đơn hàng mỗi ngày",
+    "depositApplications": "Đơn hàng ký gửi"
   }
 }

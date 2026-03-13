@@ -13,6 +13,8 @@ import {
   TeamOutlined,
 } from "@ant-design/icons";
 import "./Logistics.css";
+import { useNavigate } from "react-router-dom";
+import i18next from "i18next";
 const { Title, Text, Paragraph } = Typography;
 
 const COLORS = {
@@ -341,7 +343,11 @@ function RouteTabContent({ route }) {
 export default function AboutUsShipping() {
   const [activeRoute, setActiveRoute] = useState("chau-a");
   const currentRoute = logisticsRoutes.find((r) => r.key === activeRoute);
-
+  const lang = i18next.language || "en";
+  const navigate = useNavigate();
+  const handleContact = () => {
+    navigate(`/${lang}/shipping-contact-us`);
+  };
   return (
     <div style={styles.page}>
       {/* HERO */}
@@ -628,6 +634,7 @@ export default function AboutUsShipping() {
               </Space>
             </div>
             <div
+              onClick={handleContact}
               style={{
                 background: "rgba(22,119,255,0.2)",
                 border: "1px solid rgba(22,119,255,0.4)",

@@ -10,6 +10,7 @@
   "email": "Email",
   "phone": "Phone",
   "address": "Address",
+  "readmore": "READ MORE",
   "description": "VietGlobal is a reliable exporter, offering a wide variety of quality products at the best prices, fast delivery and excellent customer service.",
   "links": {
     "title": "Links",
@@ -23,7 +24,8 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
     "shipping": "Shipping Policy",
-    "returnPolicy": "Return Policy"
+    "returnPolicy": "Return Policy",
+    "Services": "Services"
   },
   "contact": {
     "title": "Contact",
@@ -38,7 +40,6 @@
   "productday": "Created",
   "producttitle": "Product infomation",
   "homeTitle": "Best product",
-  "readmore": "Read more",
   "allProduct": "All products",
   "productByCate": "Products by categories",
   "followUs": "Follow us",
@@ -57,7 +58,7 @@
       "desc": "Contact us today for cargo survey, cost estimation and packing solutions for your next shipment. We provide custom wooden cases, crates, pallets and vacuum packing to meet industrial packaging requirements."
     },
     "customsClearance": {
-      "title": "CUSTOMS CLEARANCE SERVICE",
+      "title": "CUSTOMS CLEARANCE",
       "desc": "We ensure our fleet is well maintained and equipped with modern vehicles to meet all transportation requirements efficiently and safely."
     }
   },
@@ -78,19 +79,41 @@
     },
     "trucking": {
       "title": "Trucking Delivery",
-      "desc": "Contact us for shipping instructions and handling tariffs for the services you require. Our team ensures your cargo is prepared and transported according to necessary standards."
+      "desc": "Our trucking service offers a flexible and reliable solution for domestic and regional cargo transportation. The fleet is regularly maintained, and our experienced drivers ensure that every shipment is delivered safely and on time. Each step, from cargo pickup and loading to final delivery, is managed with great attention and care. This allows us to guarantee that goods reach the correct destination in the best condition and within the committed timeframe."
     },
     "customs": {
       "title": "Customs Clearance",
-      "desc": "We ensure our fleet is well maintained and equipped with modern technology to transport high-value and oversized cargo efficiently and safely."
+      "desc": "Our customs clearance service helps businesses complete import and export procedures quickly and in full compliance with regulations. Our experienced specialists have strong knowledge of customs regulations and operational processes. We support clients in preparing documentation, submitting electronic customs declarations, and handling all required procedures. This ensures a smooth clearance process while saving time and operational costs for businesses."
     },
     "air": {
       "title": "Air Freight",
-      "desc": "Contact us today for cargo inspection, cost estimation and the best air freight solutions for your next shipment."
+      "desc": "Our air freight service is the ideal solution for shipments that require fast delivery and precise timing. We cooperate with various airlines and international logistics partners to provide flexible transportation solutions tailored to each customer’s needs. In addition to transportation, we also assist with packaging consultation and preparation of necessary shipping documents. This ensures that all cargo is handled safely and arrives at its destination according to schedule."
     },
     "sea": {
       "title": "Sea Freight",
-      "desc": "Our sea freight services are regularly reviewed and optimized to meet modern logistics and supply chain demands."
+      "desc": "Our sea freight service provides an efficient and cost-effective logistics solution for international shipments. With an extensive network of global shipping partners, we are capable of handling a wide range of cargo with different scales and requirements. Our operations are carefully managed to ensure that goods are transported safely and according to schedule. We also support shipment tracking and documentation handling to help clients easily monitor and manage their cargo."
     }
+  },
+  "vi-chi": {
+    "process": "Ordering process",
+    "steps": {
+      "step1": "Place Order",
+      "step2": "Package Goods",
+      "step3": "Domestic Transport",
+      "step4": "China Warehouse",
+      "step5": "Transport to Vietnam",
+      "step6": "Customs Clearance",
+      "step7": "Vietnam Warehouse",
+      "step8": "Domestic Delivery"
+    },
+    "orderTool": "Ordering tool",
+    "orderBrowser": "Order on browser",
+    "ourActivities": "We have been operating",
+    "orderServiceCommitment": "Order service commitment",
+    "orderServiceCommit": "We are committed to providing a fast, transparent, and reliable ordering service for our customers. Every order is carefully monitored and processed by our team from placement to successful delivery, ensuring accuracy and efficiency throughout the entire process. Customers are always provided with clear information regarding pricing, shipping time, and order status at every stage. With a modern tracking system and a dedicated support team, we strive to deliver a convenient, safe, and on-time purchasing experience.",
+    "paymentFormForHousehold": "Payment form for household",
+    "currencyExchangeService": "Currency exchange service",
+    "ordersEveryDay": "Orders every day",
+    "depositApplications": "Deposit applications"
   }
 }
