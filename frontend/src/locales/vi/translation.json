@@ -41,5 +41,56 @@
   "readmore": "Xem thêm",
   "allProduct": "Tất cả sản phẩm",
   "productByCate": "Sản phẩm theo danh mục",
-  "followUs": "Theo dõi chúng tôi"
+  "followUs": "Theo dõi chúng tôi",
+  "partners": "ĐỐI TÁC CỦA CHÚNG TÔI",
+  "services": {
+    "seaFreight": {
+      "title": "VẬN CHUYỂN ĐƯỜNG BIỂN",
+      "desc": "Dịch vụ vận chuyển đường biển của chúng tôi được kiểm tra và phân tích thường xuyên để đảm bảo phù hợp với các mô hình kinh doanh hiện đại. Mọi nâng cấp cần thiết đều được thực hiện nhằm đảm bảo dịch vụ của chúng tôi luôn vượt trên mong đợi của khách hàng."
+    },
+    "truckingDelivery": {
+      "title": "VẬN CHUYỂN BẰNG XE TẢI",
+      "desc": "Liên hệ với chúng tôi để nhận hướng dẫn vận chuyển và biểu phí xử lý cho các dịch vụ cụ thể mà bạn yêu cầu. Với đội ngũ vận hành riêng, xe tải và xe nâng, chúng tôi làm việc 24/7 để đảm bảo hàng hóa được giao đúng thời gian."
+    },
+    "airFreight": {
+      "title": "VẬN CHUYỂN ĐƯỜNG HÀNG KHÔNG",
+      "desc": "Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp đóng gói cho lô hàng tiếp theo của bạn. Chúng tôi cung cấp các loại thùng gỗ, kiện gỗ, pallet và đóng gói hút chân không theo yêu cầu cho nhu cầu đóng gói công nghiệp."
+    },
+    "customsClearance": {
+      "title": "THÔNG QUAN HẢI QUAN",
+      "desc": "Chúng tôi đảm bảo đội xe luôn được bảo dưỡng tốt và sử dụng các phương tiện hiện đại nhất để đáp ứng mọi yêu cầu vận chuyển một cách hiệu quả và an toàn."
+    }
+  },
+  "servicePage": {
+    "sidebar": {
+      "all": "Tất cả dịch vụ",
+      "trucking": "Vận chuyển bằng xe tải",
+      "customs": "Thông quan hải quan",
+      "air": "Vận chuyển đường hàng không",
+      "sea": "Vận chuyển đường biển"
+    },
+    "breadcrumb": {
+      "services": "Dịch vụ"
+    },
+    "allServices": {
+      "title": "Tất cả dịch vụ",
+      "desc": "Chúng tôi cung cấp đầy đủ các dịch vụ logistics nhằm đáp ứng nhu cầu kinh doanh của bạn. Từ vận chuyển đường biển, vận chuyển đường hàng không đến vận chuyển bằng xe tải và dịch vụ thông quan hải quan..."
+    },
+    "trucking": {
+      "title": "Vận chuyển bằng xe tải",
+      "desc": "Liên hệ với chúng tôi để nhận hướng dẫn vận chuyển và biểu phí xử lý cho các dịch vụ cụ thể mà bạn yêu cầu. Đội ngũ của chúng tôi sẽ cung cấp hướng dẫn rõ ràng và thông tin chi tiết để đảm bảo hàng hóa của bạn được chuẩn bị và vận chuyển đúng theo các tiêu chuẩn cần thiết."
+    },
+    "customs": {
+      "title": "Thông quan hải quan",
+      "desc": "Chúng tôi đảm bảo đội xe luôn được bảo dưỡng tốt và cập nhật hiện đại để có thể vận chuyển các loại hàng hóa có giá trị cao hoặc kích thước lớn một cách hiệu quả và an toàn."
+    },
+    "air": {
+      "title": "Vận chuyển đường hàng không",
+      "desc": "Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp vận chuyển đường hàng không phù hợp cho lô hàng tiếp theo của bạn."
+    },
+    "sea": {
+      "title": "Vận chuyển đường biển",
+      "desc": "Dịch vụ vận chuyển đường biển của chúng tôi được kiểm tra và phân tích thường xuyên để đảm bảo phù hợp với các mô hình kinh doanh hiện đại."
+    }
+  }
 }
