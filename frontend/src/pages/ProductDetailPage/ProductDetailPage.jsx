@@ -35,10 +35,10 @@ const ProductDetailPage = () => {
   const [selectedImage, setSelectedImage] = useState(0)
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
   const { t, i18n } = useTranslation()
-  const lang = i18n.language || 'vi'
+  // const lang = i18n.language || 'vi'
   const productDetail = useSelector((state) => state.product.productDetails)
   const dispatch = useDispatch()
-  const { slug } = useParams()
+  const { lang, slug } = useParams()
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
 
@@ -54,6 +54,7 @@ const ProductDetailPage = () => {
   useEffect(() => {
     if (!productDetail || productDetail.slug !== slug) {
       setLoading(true)
+      console.log('lang:', lang, 'slug:', slug)
       dispatch(getProductDetail(lang, slug)).finally(() => setLoading(false))
     } else {
       setLoading(false)
@@ -87,7 +88,7 @@ const ProductDetailPage = () => {
   }
 
   const handleAllProduct = () => {
-    navigate('/all-product')
+    navigate(`/${lang}/all-product`)
   }
 
   if (loading) {

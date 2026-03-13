@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const ContactUs = () => {
   const { t, i18n } = useTranslation()
-  const lang = i18n.language || 'vi'
+  const lang = i18n.language || 'en'
   const dispatch = useDispatch()
   const contactUsDetails = useSelector(
     (state) => state.contactUs.contactUsDetails || []
@@ -91,7 +91,7 @@ const ContactUs = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {info.social_links?.zalo}
+          (+84) 346779622
         </a>
       </p>
 

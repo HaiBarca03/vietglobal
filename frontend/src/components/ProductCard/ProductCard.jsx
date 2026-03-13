@@ -1,12 +1,13 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const ProductCard = ({ product, lang }) => {
   const navigate = useNavigate()
   if (!product) return null
+  const { lang: currentLang } = useParams()
   const handleProductDt = () => {
     const slug = product.slug?.[lang]
-    navigate(`/product-detail/${slug}`)
+    navigate(`/${currentLang}/product-detail/${slug}`)
   }
   return (
     <div

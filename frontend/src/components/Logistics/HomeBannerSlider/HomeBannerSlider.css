@@ -1,0 +1,134 @@
+.home-banner-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.slide-inner {
+  position: relative;
+  background-image: url('https://img.freepik.com/free-photo/red-containers-stack-logistics-port_23-2148813180.jpg'); /* Ảnh nền container đỏ mờ */
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+.overlay-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(201, 32, 39, 0.95) 0%, rgba(160, 26, 31, 0.8) 100%);
+  z-index: 1;
+}
+
+.banner-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sub-title-top {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.main-title-yellow {
+  color: #ffeb3b !important; /* Màu vàng rực của tiêu đề */
+  font-size: 50px !important;
+  font-weight: 900 !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+.desc-white {
+  color: #fff !important;
+  font-size: 32px !important;
+  margin-top: 5px !important;
+  font-weight: 700 !important;
+}
+
+.feature-list {
+  margin-top: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.check-icon {
+  color: #fff;
+  font-size: 18px;
+}
+
+.truck-col {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.truck-image {
+  width: 120%;
+  max-width: 700px;
+  filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+  z-index: 3;
+}
+
+/* Custom Nav Buttons */
+.custom-prev, .custom-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: 2px solid rgba(255,255,255,0.5);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.custom-prev:hover, .custom-next:hover {
+  background: #fff;
+  color: #c92027;
+}
+
+.custom-prev { left: 20px; }
+.custom-next { right: 20px; }
+
+/* Swiper Pagination */
+.swiper-pagination-bullet {
+  background: #fff !important;
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffeb3b !important;
+  opacity: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+  .main-title-yellow { font-size: 30px !important; }
+  .desc-white { font-size: 20px !important; }
+  .truck-image { width: 100%; margin-top: 30px; }
+  .slide-inner { padding: 40px 0; }
+}

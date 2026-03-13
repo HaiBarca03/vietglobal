@@ -8,7 +8,7 @@ import './Policy.css'
 const Policy = () => {
   const navigate = useNavigate()
   const { t, i18n } = useTranslation()
-  const lang = i18n.language || 'vi'
+  const lang = i18n.language || 'en'
   const policyLists = useSelector((state) => state.policy.policyList)
   const dispatch = useDispatch()
 

@@ -1,179 +1,188 @@
-/* General layout */
-.login-container {
-  position: relative;
+@import url("https://media.vneconomy.vn/images/upload/2024/10/31/xaydungtnkhlogis.jpg");
+
+:root {
+  --p-green: #10b981;
+  --p-green-dark: #059669;
+  --bg-light: #f1f5f9;
+  --text-dark: #1e293b;
+  --text-gray: #64748b;
+  --white: #ffffff;
+  --shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.04), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+.login-wrapper {
+  display: flex;
   min-height: 100vh;
-  background: linear-gradient(to right, #1f2937, #000, #1f2937);
-  color: white;
+  font-family: "Inter", sans-serif;
+  background-color: var(--white);
+}
+
+/* Side Image - Chỉ hiện trên Desktop */
+.login-side-image {
+  flex: 1.2;
+  background:
+    linear-gradient(135deg, rgba(101, 104, 103, 0.9), rgba(149, 152, 151, 0.9)),
+    url("https://media.vneconomy.vn/images/upload/2024/10/31/xaydungtnkhlogis.jpg");
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-
-.background-video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1;
-}
-
-.help-button {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 2;
-}
-
-.help-button button {
-  background: #1f2937;
+  padding: 4rem;
   color: white;
-  padding: 6px 16px;
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
 }
 
-.help-button button:hover {
-  background-color: #111827;
+.side-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
-.login-box {
-  position: relative;
-  z-index: 2;
-  background-color: #1f2937;
-  border-radius: 8px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 420px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+.side-content p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
 }
 
-.form-content {
-  padding: 32px;
-}
-
-.logo-container {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 24px;
-}
-
-.logo-container img {
-  width: 100px;
-  height: auto;
-}
-
-.social-login {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.google-button,
-.facebook-button {
+/* Form Section */
+.login-side-form {
+  flex: 1;
   display: flex;
   align-items: center;
-  font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  justify-content: center;
+  background-color: var(--white);
 }
 
-.google-button {
-  background: white;
-  color: #1f2937;
-}
-
-.google-button:hover {
-  background-color: #e5e7eb;
-}
-
-.facebook-button {
-  background: #1877f2;
-  color: white;
-}
-
-.facebook-button:hover {
-  background-color: #145db2;
-}
-
-.icon {
-  margin-left: 8px;
-}
-
-.separator {
-  display: flex;
-  align-items: center;
-  margin: 12px 0;
-  color: #9ca3af;
-}
-
-.separator hr {
-  flex-grow: 1;
-  border: 0.5px solid #374151;
-}
-
-.separator span {
-  margin: 0 12px;
-}
-
-/* Form inputs are styled inside TextInput/PasswordInput */
-.forgot-link {
-  text-align: right;
-  margin-top: 16;
-  margin-bottom: 16px;
-}
-
-.forgot-link a {
-  font-size: 14px;
-  color: #9ca3af;
-  text-decoration: none;
-}
-
-.forgot-link a:hover {
-  color: white;
-}
-
-.login-button {
+.login-card {
   width: 100%;
-  background-color: #22c55e;
-  color: white;
-  padding: 10px 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  max-width: 400px;
+  padding: 2rem;
 }
 
-.login-button:hover {
-  background-color: #16a34a;
+.brand-logo {
+  display: flex;
+  justify-content: center;
+  /* margin-bottom: 2rem; */
 }
 
-.signup-section {
-  background-color: #374151;
+.brand-logo img {
+  height: 100px;
+}
+
+.login-header h2 {
+  font-size: 1.875rem;
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
   text-align: center;
-  padding: 16px;
 }
 
-.signup-section a {
-  color: #22c55e;
-  font-weight: bold;
-  margin-left: 4px;
+.login-header p {
+  color: var(--text-gray);
+  margin-bottom: 2rem;
+}
+
+.form-wrapper > div {
+  margin-bottom: 1.25rem;
+}
+
+/* Tinh chỉnh Input (Nếu component TextInput hỗ trợ style) */
+.form-wrapper label {
+  font-weight: 500;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-gray);
+  cursor: pointer;
+}
+
+.form-options a {
+  color: var(--p-green);
   text-decoration: none;
+  font-weight: 500;
 }
 
-.signup-section a:hover {
-  color: #16a34a;
+.btn-primary {
+  width: 100%;
+  background-color: var(--p-green);
+  color: white;
+  padding: 0.875rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--p-green-dark);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.footer-link {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--text-gray);
+}
+
+.footer-link a {
+  color: var(--p-green);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.custom-light-input label {
+  color: #334155 !important;
+  font-weight: 600;
+  display: block;
+}
+
+.custom-light-input input {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.custom-light-input input:focus {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1) !important;
+  outline: none;
+}
+
+.custom-light-input input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .login-side-image {
+    display: none;
+  }
+  .login-side-form {
+    background-color: var(--bg-light);
+  }
+  .login-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
 }

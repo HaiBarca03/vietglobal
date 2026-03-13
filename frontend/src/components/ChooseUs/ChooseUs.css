@@ -1,9 +1,10 @@
 .why-choose-us-section {
   position: relative;
-  padding: 80px 40px;
-  background-image: url('https://sunriseins.com/assets/images/bg_visao.jpg'); /* Đặt đúng đường dẫn hình ảnh */
+  padding: 100px 40px;
+  background-image: url('https://sunriseins.com/assets/images/bg_visao.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Tạo hiệu ứng Parallax nhẹ */
   color: white;
   text-align: center;
   overflow: hidden;
@@ -11,44 +12,98 @@
 
 .overlay-choose-us {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, -0.1);
+  top: 0; left: 0; right: 0; bottom: 0;
+  /* Làm tối nền hơn một chút để nổi bật nội dung */
+  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.4) 100%);
+  z-index: 0;
 }
 
 .section-title {
   position: relative;
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 60px;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 70px;
   z-index: 1;
-  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.choose-content-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .choose-item {
-  position: relative;
-  z-index: 1;
-  padding: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  height: 100%;
+  padding: 40px 25px;
+  background: rgba(255, 255, 255, 0.08); /* Hiệu ứng kính */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  cursor: pointer;
 }
 
-.choose-item .icon {
-  margin-bottom: 16px;
+.choose-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #2ecc71; /* Màu xanh nông nghiệp */
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.icon-box {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  z-index: 2;
+  color: #2ecc71; /* Màu xanh lá nổi bật */
+  transition: transform 0.3s ease;
+}
+
+.choose-item:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Hiệu ứng vòng sáng sau icon */
+.icon-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(46, 204, 113, 0.2);
+  filter: blur(15px);
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .choose-item .title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 12px;
-  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
 }
 
 .choose-item .description {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #f0f0f0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .why-choose-us-section {
+    padding: 60px 20px;
+  }
+  .section-title {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
 }
