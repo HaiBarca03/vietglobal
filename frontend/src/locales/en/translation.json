@@ -11,13 +11,15 @@
   "phone": "Phone",
   "address": "Address",
   "readmore": "READ MORE",
+  "TV": "Vietnamese-Chinese",
   "description": "VietGlobal is a reliable exporter, offering a wide variety of quality products at the best prices, fast delivery and excellent customer service.",
   "links": {
     "title": "Links",
     "home": "Home",
     "products": "All Products",
     "categories": "Categories",
-    "deals": "Deals & Promotions"
+    "deals": "Deals & Promotions",
+    "Services": "Services"
   },
   "policies": {
     "title": "Policies",
@@ -94,7 +96,7 @@
       "desc": "Our sea freight service provides an efficient and cost-effective logistics solution for international shipments. With an extensive network of global shipping partners, we are capable of handling a wide range of cargo with different scales and requirements. Our operations are carefully managed to ensure that goods are transported safely and according to schedule. We also support shipment tracking and documentation handling to help clients easily monitor and manage their cargo."
     }
   },
-  "vi-chi": {
+  "viChi": {
     "process": "Ordering process",
     "steps": {
       "step1": "Place Order",
@@ -114,6 +116,269 @@
     "paymentFormForHousehold": "Payment form for household",
     "currencyExchangeService": "Currency exchange service",
     "ordersEveryDay": "Orders every day",
-    "depositApplications": "Deposit applications"
+    "depositApplications": "Deposit applications",
+    "commitments": {
+      "compensation": {
+        "title": "Compensation Guarantee",
+        "desc": "We guarantee 100% compensation for product value and purchasing fees if an order is placed incorrectly or missing items."
+      },
+      "support": {
+        "title": "Support Commitment",
+        "desc": "Our support team is always ready to assist customers with any issues 24/7."
+      },
+      "deliveryTime": {
+        "title": "Delivery Time Commitment",
+        "desc": "We commit to stable and fast delivery time, typically from 3 - 7 days."
+      }
+    },
+    "saidMe": "What customers are saying about",
+    "testimonials": [
+      {
+        "content": "VietGlobal Logistics' cargo consignment service is very reliable. I have shipped many containers through VietGlobal and rarely encountered any issues. Their staff always provide professional support and consultation.",
+        "name": "Mr. Thanh Tu",
+        "position": "Sports goods business",
+        "avatar": "https://i.pravatar.cc/150?u=1"
+      },
+      {
+        "content": "The staff at VietGlobal Logistics are always friendly and the shipping process runs smoothly. Their fast and efficient workflow helps me save a lot of time.",
+        "name": "Mrs. Nhat Ha",
+        "position": "Electronic components business",
+        "avatar": "https://i.pravatar.cc/150?u=2"
+      },
+      {
+        "content": "I highly appreciate the transparency in pricing and shipment tracking at VietGlobal. This is the best official China import service provider I have ever worked with.",
+        "name": "Mr. Hoang Nam",
+        "position": "Home appliance retail chain owner",
+        "avatar": "https://i.pravatar.cc/150?u=3"
+      },
+      {
+        "content": "VietGlobal Logistics supports my large-volume orders very well. Goods arrive on schedule, are carefully packaged, and shipment status is updated regularly.",
+        "name": "Ms. Thuy Linh",
+        "position": "Imported cosmetics business",
+        "avatar": "https://i.pravatar.cc/150?u=4"
+      },
+      {
+        "content": "What I like most about VietGlobal is the transparency in contracts and costs. There are no unexpected additional fees, making it very suitable for long-term cooperation.",
+        "name": "Mr. Duc Manh",
+        "position": "CEO of an e-commerce company",
+        "avatar": "https://i.pravatar.cc/150?u=5"
+      },
+      {
+        "content": "Since using VietGlobal Logistics' services, importing goods from China has become much easier for our business. The support team responds quickly and handles everything very professionally.",
+        "name": "Mrs. Kim Anh",
+        "position": "Online shop owner",
+        "avatar": "https://i.pravatar.cc/150?u=6"
+      }
+    ]
+  },
+  "importAndexport": {
+    "ad-banners": {
+      "title1": "VietGlobal",
+      "desc1": "Connecting Vietnamese agricultural products to the global market",
+
+      "title2": "Trust & Quality",
+      "desc2": "Committed to high standards and sustainable development",
+
+      "title3": "Our Mission",
+      "desc3": "Bringing Vietnamese agricultural products to the world",
+
+      "title4": "International Value",
+      "desc4": "Global standards – Vietnamese value"
+    }
+  },
+  "introduce": {
+    "route": "Route",
+    "badge": "Comprehensive logistics solutions",
+    "text": "Bonded Warehouse",
+    "text2": "WAREHOUSING SERVICES",
+    "text2decs": "Flexible storage of import and export goods, no immediate need to fulfill tax obligations — optimizes costs, proactively manages distribution.",
+    "description": "Extensive transportation network supporting import and export needs with optimized cost and fast delivery time",
+
+    "stats": {
+      "global": "Global",
+      "globalDesc": "Connected countries",
+
+      "scale": "Large Scale",
+      "scaleDesc": "Shipments per month",
+
+      "reliable": "Reliability",
+      "reliableDesc": "On-time delivery rate",
+
+      "support": "24/7",
+      "supportDesc": "Customer support"
+    },
+    "trans": "Transportation Routes & Services",
+    "shipSer": "SHIPPING SERVICES",
+    "ChooseTrans": "Choose a shipping route that best suits your business needs"
+  },
+  "warehouse": {
+    "standards": "Bonded warehouse service standards",
+      "highlights": [
+        "Customs-standard warehouse",
+        "24/7 security & surveillance",
+        "Highly experienced team"
+      ],
+    "services": {
+      "storage": {
+        "title": "Cargo Storage",
+        "desc": "Customs-standard warehouses for safe storage of various types of goods",
+        "items": [
+          "Imported goods awaiting customs clearance",
+          "Transit & re-export goods",
+          "Goods awaiting domestic distribution",
+          "Export goods awaiting shipment"
+        ]
+      },
+      "management": {
+        "title": "Management & Control",
+        "desc": "Modern warehouse management systems allow real-time tracking of cargo status",
+        "items": [
+          "Automated inventory management",
+          "Cargo counting & classification",
+          "Relabeling and repacking",
+          "Periodic inventory reports"
+        ]
+      },
+      "customs": {
+        "title": "Customs Procedures",
+        "desc": "Professional team supporting all customs procedures in compliance with regulations",
+        "items": [
+          "Customs declaration",
+          "Change of goods purpose",
+          "Import procedures from warehouse",
+          "Re-export procedures"
+        ]
+      },
+      "valueAdded": {
+        "title": "Value-added Services",
+        "desc": "Additional services to optimize your entire supply chain",
+        "items": [
+          "Repacking & sorting",
+          "Labeling services",
+          "Cargo consolidation & splitting",
+          "Domestic & international transportation"
+        ]
+      }
+    }
+  },
+  "logistics": {
+    "routes": {
+      "chau-a": {
+        "label": "Asia",
+        "description": "Operating shipping routes to major Asian markets with stable schedules",
+        "countries": [
+          "China",
+          "South Korea",
+          "Japan",
+          "Singapore",
+          "Thailand",
+          "Malaysia",
+          "ASEAN"
+        ],
+        "services": [
+          "Sea Freight FCL/LCL",
+          "Air Freight",
+          "Cargo Consolidation",
+          "Door to Door Service",
+          "Customs clearance support"
+        ]
+      },
+      "noi-a": {
+        "label": "Intra Asia",
+        "description": "Transportation services within the Asian region with high frequency and short transit times",
+        "countries": [
+          "Vietnam – China",
+          "Vietnam – Thailand",
+          "Vietnam – Indonesia",
+          "Vietnam – Philippines",
+          "Vietnam – Malaysia"
+        ],
+        "services": [
+          "High sailing frequency",
+          "Short transit time",
+          "Competitive freight rates",
+          "Real-time cargo tracking",
+          "Full documentation support"
+        ]
+      },
+      "trung-dong": {
+        "label": "Middle East",
+        "description": "Shipping services to fast-growing Middle Eastern markets with stable schedules",
+        "countries": [
+          "UAE (Dubai, Jebel Ali)",
+          "Saudi Arabia",
+          "Qatar",
+          "Kuwait",
+          "Oman",
+          "Bahrain"
+        ],
+        "services": [
+          "Stable shipping schedules",
+          "Competitive freight rates",
+          "Import documentation support",
+          "Reliable shipping line partners",
+          "Market consulting"
+        ]
+      },
+      "duong-bien": {
+        "label": "Ocean Freight",
+        "description": "Cost-optimized solutions for large shipments with a global shipping partner network",
+        "countries": [
+          "FCL (Full Container Load)",
+          "LCL (Less than Container Load)",
+          "Project cargo",
+          "Oversized cargo",
+          "Door to Door"
+        ],
+        "services": [
+          "Global shipping line network",
+          "Reliable and punctual schedules",
+          "Best market freight rates",
+          "24/7 customs support",
+          "Online cargo tracking"
+        ]
+      }
+    }
+  },
+  "contactShip": {
+    "pageTitle": "Contact",
+    "breadcrumbContact": "Contact",
+    "badge": "Contact Us",
+    "titleSendMail": "Send an email",
+    "titleCall": "or call now",
+    "description": "We are always ready to receive your requests and commit to responding as soon as possible.",
+    "form": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phone": "Phone number",
+      "subject": "Subject",
+      "message": "Message",
+
+      "placeholderSubject": "Subject content...",
+      "placeholderMessage": "Enter your message..."
+    },
+    "sendMessage": "Message sent successfully! We will contact you soon.",
+    "sendButton": "Send message"
+  },
+  "contactInfo": {
+    "title": "Contact Information",
+    "addressTitle": "Address",
+    "address": "2B Vuong Thua Vu, Thanh Xuan, Hanoi, Vietnam",
+    "phoneTitle": "Phone"
+  },
+   "footer": {
+    "services": {
+      "all": "All Services",
+      "trucking": "Truck Delivery",
+      "customs": "Customs Clearance",
+      "air": "Air Freight",
+      "sea": "Sea Freight"
+    },
+    "about": {
+      "aboutUs": "About Us",
+      "contact": "Contact",
+      "partners": "Partners"
+    }
   }
 }

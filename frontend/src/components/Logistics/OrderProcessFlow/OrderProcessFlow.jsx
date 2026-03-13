@@ -11,57 +11,18 @@ import {
   ShopOutlined,
 } from "@ant-design/icons";
 import "./OrderProcessFlow.css";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const steps = [
-  {
-    id: 1,
-    title: t("vi-chi.steps.step1"),
-    icon: <FileTextOutlined />,
-    color: "#00d2ff",
-  },
-  {
-    id: 2,
-    title: t("vi-chi.steps.step2"),
-    icon: <GiftOutlined />,
-    color: "#00bcff",
-  },
-  {
-    id: 3,
-    title: t("vi-chi.steps.step3"),
-    icon: <CarOutlined />,
-    color: "#00a6ff",
-  },
-  {
-    id: 4,
-    title: t("vi-chi.steps.step4"),
-    icon: <HomeOutlined />,
-    color: "#0090ff",
-  },
-  {
-    id: 5,
-    title: t("vi-chi.steps.step5"),
-    icon: <GlobalOutlined />,
-    color: "#007aff",
-  },
-  {
-    id: 6,
-    title: t("vi-chi.steps.step6"),
-    icon: <CheckCircleOutlined />,
-    color: "#0064ff",
-  },
-  {
-    id: 7,
-    title: t("vi-chi.steps.step7"),
-    icon: <ShopOutlined />,
-    color: "#004eff",
-  },
-  {
-    id: 8,
-    title: t("vi-chi.steps.step8"),
-    icon: <CarOutlined />,
-    color: "#0038ff",
-  },
+  { id: 1, title: "viChi.steps.step1", icon: <FileTextOutlined />, color: "#00d2ff" },
+  { id: 2, title: "viChi.steps.step2", icon: <GiftOutlined />, color: "#00bcff" },
+  { id: 3, title: "viChi.steps.step3", icon: <CarOutlined />, color: "#00a6ff" },
+  { id: 4, title: "viChi.steps.step4", icon: <HomeOutlined />, color: "#0090ff" },
+  { id: 5, title: "viChi.steps.step5", icon: <GlobalOutlined />, color: "#007aff" },
+  { id: 6, title: "viChi.steps.step6", icon: <CheckCircleOutlined />, color: "#0064ff" },
+  { id: 7, title: "viChi.steps.step7", icon: <ShopOutlined />, color: "#004eff" },
+  { id: 8, title: "viChi.steps.step8", icon: <CarOutlined />, color: "#0038ff" },
 ];
 
 const containerVariants = {
@@ -109,9 +70,10 @@ const lineVariants = {
 };
 
 export default function OrderProcessFlow() {
+  const { t } = useTranslation();
+  const lang = i18next.language || "en";
   return (
     <div className="process-container">
-      {/* Thêm các bong bóng trang trí bay lơ lửng */}
       <div className="decor-bubbles">
         {[...Array(6)].map((_, i) => (
           <motion.div
@@ -137,7 +99,7 @@ export default function OrderProcessFlow() {
         transition={{ type: "spring", stiffness: 100, damping: 10 }}
         className="main-title"
       >
-        {t("vi-chi.process")}
+        {t("viChi.process")}
       </motion.h1>
 
       <div className="flow-wrapper">
@@ -190,7 +152,7 @@ export default function OrderProcessFlow() {
             >
               <div className="step-number">{step.id}</div>
               <div className="step-icon">{step.icon}</div>
-              <div className="step-title">{step.title}</div>
+              <div className="step-title">{t(step.title)}</div>
             </motion.div>
           ))}
         </motion.div>

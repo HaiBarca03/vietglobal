@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PageHeader from "../../components/ServiceDetail/PageHeader";
 import PageBreadcrumb from "../../components/ServiceDetail/PageBreadcrumb";
+import { useTranslation } from "react-i18next";
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap');
@@ -273,6 +274,7 @@ const styles = `
 `;
 
 export default function ContactForm() {
+  const {t} = useTranslation()
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -298,11 +300,11 @@ export default function ContactForm() {
       message: "",
     });
   };
-  const current = { title: "Liên hệ" };
+  const current = { title: t("contact.title") };
 
   const breadcrumbs = [
     { label: "VietGlobal", href: "/" },
-    { label: "Liên hệ", href: "#" },
+    { label: t("contact.title"), href: "#" },
   ];
   return (
     <>
@@ -314,18 +316,17 @@ export default function ContactForm() {
         <div className="contact-inner">
           {/* LEFT */}
           <div className="form-col">
-            <div className="form-eyebrow">Liên hệ với chúng tôi</div>
+            <div className="form-eyebrow">{t("contactShip.badge")}</div>
             <h2 className="form-title">
-              Gửi email, <span>hoặc gọi ngay</span>
+              {t("contactShip.titleSendMail")}, <span>{t("contactShip.titleCall")}</span>
             </h2>
             <p className="form-subtitle">
-              Chúng tôi luôn sẵn sàng tiếp nhận mọi yêu cầu của bạn và cam kết
-              phản hồi trong thời gian sớm nhất.
+              {t("contactShip.description")}
             </p>
 
             <div className="form-row">
               <div className="form-group">
-                <label>Họ</label>
+                <label>{t("contactShip.form.firstName")}</label>
                 <input
                   name="firstName"
                   placeholder="Nguyen"
@@ -334,7 +335,7 @@ export default function ContactForm() {
                 />
               </div>
               <div className="form-group">
-                <label>Tên</label>
+                <label>{t("contactShip.form.lastName")}</label>
                 <input
                   name="lastName"
                   placeholder="Van A"
@@ -356,7 +357,7 @@ export default function ContactForm() {
                 />
               </div>
               <div className="form-group">
-                <label>Số điện thoại</label>
+                <label>{t("contactShip.form.phone")}</label>
                 <input
                   name="phone"
                   placeholder="+84 xxx xxx xxx"
@@ -368,10 +369,10 @@ export default function ContactForm() {
 
             <div className="form-row">
               <div className="form-group full">
-                <label>Tiêu đề</label>
+                <label>{t("contactShip.form.subject")}</label>
                 <input
                   name="subject"
-                  placeholder="Nội dung chủ đề..."
+                  placeholder={t("contactShip.form.placeholderSubject")}
                   value={form.subject}
                   onChange={handle}
                 />
@@ -380,10 +381,10 @@ export default function ContactForm() {
 
             <div className="form-row">
               <div className="form-group full">
-                <label>Tin nhắn</label>
+                <label>{t("contactShip.form.message")}</label>
                 <textarea
                   name="message"
-                  placeholder="Nhập nội dung tin nhắn của bạn..."
+                  placeholder={t("contactShip.form.placeholderMessage")}
                   value={form.message}
                   onChange={handle}
                 />
@@ -402,7 +403,7 @@ export default function ContactForm() {
                 <line x1="22" y1="2" x2="11" y2="13" />
                 <polygon points="22 2 15 22 11 13 2 9 22 2" />
               </svg>
-              Gửi tin nhắn
+              {t("contactShip.sendButton")}
             </button>
 
             {sent && (
@@ -419,14 +420,14 @@ export default function ContactForm() {
                 >
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
-                Tin nhắn đã được gửi thành công! Chúng tôi sẽ liên hệ lại sớm.
+                {t("contactShip.sendMessage")}
               </div>
             )}
           </div>
 
           {/* RIGHT */}
           <div className="info-card">
-            <div className="info-card-title">Thông tin liên hệ</div>
+            <div className="info-card-title">{t("contactInfo.title")}</div>
             <div className="company-name">VietGlobal Company Limited</div>
 
             <div className="info-list">
@@ -445,11 +446,9 @@ export default function ContactForm() {
                   </svg>
                 </div>
                 <div className="info-content">
-                  <div className="info-label">Địa chỉ</div>
+                  <div className="info-label">{t("contactInfo.addressTitle")}</div>
                   <div className="info-value">
-                    2B Vương Thừa Vũ
-                    <br />
-                    Thanh Xuân, Hà Nội, Việt Nam
+                    {t("contactInfo.address")}
                   </div>
                 </div>
               </div>
@@ -470,7 +469,7 @@ export default function ContactForm() {
                   </svg>
                 </div>
                 <div className="info-content">
-                  <div className="info-label">Điện thoại</div>
+                  <div className="info-label"> {t("contactInfo.phoneTitle")}</div>
                   <div className="info-value">Phone: (+84) 0346779622</div>
                   <div className="info-value">WhatsApp: (+84) 0763205365</div>
                   <div className="info-note">Zalo · WhatsApp</div>

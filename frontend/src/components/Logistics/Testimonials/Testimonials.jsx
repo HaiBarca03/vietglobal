@@ -4,11 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { motion } from 'framer-motion';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './Testimonials.css';
+import { useTranslation } from 'react-i18next';
 
 const { Title, Text, Paragraph} = Typography;
 
@@ -59,6 +59,8 @@ const testimonialData = [
 
 
 const Testimonials = () => {
+  const { t } = useTranslation();
+  const testimonials = t("viChi.testimonials", { returnObjects: true });
   return (
     <section className="testimonials-section">
       <div className="container">
@@ -68,7 +70,7 @@ const Testimonials = () => {
           className="testimonials-header"
         >
           <Title level={2} className="main-header-title">
-            <span className="highlight-red">Khách hàng nói gì về</span> VietGlobal Logistics
+            <span className="highlight-red">{t("viChi.saidMe")}</span> VietGlobal Logistics
           </Title>
           <div className="red-line"></div>
         </motion.div>
@@ -87,7 +89,7 @@ const Testimonials = () => {
           }}
           className="mySwiper"
         >
-          {testimonialData.map((item) => (
+          {testimonials.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="testimonial-card">
                 <div className="quote-content">

@@ -3,11 +3,13 @@ import { Button, Row, Col, Typography } from "antd";
 import { ChromeFilled } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import "./OrderTool.css";
-import { t } from "i18next";
-
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 const { Title, Text } = Typography;
 
 const OrderTool = () => {
+    const { t } = useTranslation();
+  
   // Các biến thể animation cho các vật thể bay
   const floatVariants = (delay) => ({
     animate: {
@@ -89,9 +91,9 @@ const OrderTool = () => {
             transition={{ duration: 0.6 }}
           >
             <Title level={1} className="tool-title">
-              {t("vi-chi.orderBrowser")}
+              {t("viChi.orderBrowser")}
             </Title>
-            <Text className="tool-subtitle">{t("vi-chi.orderBrowser")}</Text>
+            <Text className="tool-subtitle">{t("viChi.orderBrowser")}</Text>
 
             <div className="button-group">
               <Button

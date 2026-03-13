@@ -15,6 +15,7 @@ import {
 import "./Logistics.css";
 import { useNavigate } from "react-router-dom";
 import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 const { Title, Text, Paragraph } = Typography;
 
 const COLORS = {
@@ -125,164 +126,165 @@ const styles = {
 
 // --- DATA ---
 
+// const logisticsRoutes = [
+//   {
+//     key: "chau-a",
+//     label: "Châu Á",
+//     icon: <GlobalOutlined />,
+//     description:
+//       "Khai thác các tuyến vận chuyển đến các quốc gia trọng điểm tại Châu Á với lịch tàu ổn định.",
+//     countries: [
+//       "Trung Quốc",
+//       "Hàn Quốc",
+//       "Nhật Bản",
+//       "Singapore",
+//       "Thái Lan",
+//       "Malaysia",
+//       "ASEAN",
+//     ],
+//     services: [
+//       "Vận chuyển đường biển FCL/LCL",
+//       "Vận chuyển hàng không (Air Freight)",
+//       "Gom hàng (Consolidation)",
+//       "Dịch vụ Door to Door",
+//       "Hỗ trợ thủ tục hải quan",
+//     ],
+//   },
+//   {
+//     key: "noi-a",
+//     label: "Nội Á",
+//     icon: <EnvironmentOutlined />,
+//     description:
+//       "Dịch vụ vận chuyển trong khu vực Nội Á với tần suất chuyến cao và thời gian transit ngắn.",
+//     countries: [
+//       "Vietnam – Trung Quốc",
+//       "Vietnam – Thái Lan",
+//       "Vietnam – Indonesia",
+//       "Vietnam – Philippines",
+//       "Vietnam – Malaysia",
+//     ],
+//     services: [
+//       "Tần suất chuyến cao",
+//       "Thời gian transit ngắn",
+//       "Giá cước cạnh tranh",
+//       "Theo dõi hàng hóa realtime",
+//       "Hỗ trợ chứng từ đầy đủ",
+//     ],
+//   },
+//   {
+//     key: "trung-dong",
+//     label: "Trung Đông",
+//     icon: <CarOutlined />,
+//     description:
+//       "Vận chuyển đến các thị trường Trung Đông đang tăng trưởng mạnh với lịch tàu ổn định.",
+//     countries: [
+//       "UAE (Dubai, Jebel Ali)",
+//       "Saudi Arabia",
+//       "Qatar",
+//       "Kuwait",
+//       "Oman",
+//       "Bahrain",
+//     ],
+//     services: [
+//       "Lịch tàu ổn định",
+//       "Giá cước cạnh tranh",
+//       "Hỗ trợ chứng từ nhập khẩu",
+//       "Đối tác hãng tàu uy tín",
+//       "Tư vấn thị trường",
+//     ],
+//   },
+//   {
+//     key: "duong-bien",
+//     label: "Đường biển",
+//     icon: <ShoppingOutlined />,
+//     description:
+//       "Tối ưu chi phí cho các lô hàng lớn với mạng lưới đối tác hãng tàu toàn cầu.",
+//     countries: [
+//       "FCL (Full Container Load)",
+//       "LCL (Less than Container Load)",
+//       "Hàng dự án",
+//       "Hàng quá khổ quá tải",
+//       "Door to Door",
+//     ],
+//     services: [
+//       "Mạng lưới hãng tàu toàn cầu",
+//       "Lịch trình ổn định, đúng giờ",
+//       "Giá cước tốt nhất thị trường",
+//       "Hỗ trợ hải quan 24/7",
+//       "Tracking hàng hóa trực tuyến",
+//     ],
+//     isRoute: false,
+//   },
+// ];
+
 const logisticsRoutes = [
   {
     key: "chau-a",
-    label: "Châu Á",
-    icon: <GlobalOutlined />,
-    description:
-      "Khai thác các tuyến vận chuyển đến các quốc gia trọng điểm tại Châu Á với lịch tàu ổn định.",
-    countries: [
-      "Trung Quốc",
-      "Hàn Quốc",
-      "Nhật Bản",
-      "Singapore",
-      "Thái Lan",
-      "Malaysia",
-      "ASEAN",
-    ],
-    services: [
-      "Vận chuyển đường biển FCL/LCL",
-      "Vận chuyển hàng không (Air Freight)",
-      "Gom hàng (Consolidation)",
-      "Dịch vụ Door to Door",
-      "Hỗ trợ thủ tục hải quan",
-    ],
+    icon: <GlobalOutlined />
   },
   {
     key: "noi-a",
-    label: "Nội Á",
-    icon: <EnvironmentOutlined />,
-    description:
-      "Dịch vụ vận chuyển trong khu vực Nội Á với tần suất chuyến cao và thời gian transit ngắn.",
-    countries: [
-      "Vietnam – Trung Quốc",
-      "Vietnam – Thái Lan",
-      "Vietnam – Indonesia",
-      "Vietnam – Philippines",
-      "Vietnam – Malaysia",
-    ],
-    services: [
-      "Tần suất chuyến cao",
-      "Thời gian transit ngắn",
-      "Giá cước cạnh tranh",
-      "Theo dõi hàng hóa realtime",
-      "Hỗ trợ chứng từ đầy đủ",
-    ],
+    icon: <EnvironmentOutlined />
   },
   {
     key: "trung-dong",
-    label: "Trung Đông",
-    icon: <CarOutlined />,
-    description:
-      "Vận chuyển đến các thị trường Trung Đông đang tăng trưởng mạnh với lịch tàu ổn định.",
-    countries: [
-      "UAE (Dubai, Jebel Ali)",
-      "Saudi Arabia",
-      "Qatar",
-      "Kuwait",
-      "Oman",
-      "Bahrain",
-    ],
-    services: [
-      "Lịch tàu ổn định",
-      "Giá cước cạnh tranh",
-      "Hỗ trợ chứng từ nhập khẩu",
-      "Đối tác hãng tàu uy tín",
-      "Tư vấn thị trường",
-    ],
+    icon: <CarOutlined />
   },
   {
     key: "duong-bien",
-    label: "Đường biển",
     icon: <ShoppingOutlined />,
-    description:
-      "Tối ưu chi phí cho các lô hàng lớn với mạng lưới đối tác hãng tàu toàn cầu.",
-    countries: [
-      "FCL (Full Container Load)",
-      "LCL (Less than Container Load)",
-      "Hàng dự án",
-      "Hàng quá khổ quá tải",
-      "Door to Door",
-    ],
-    services: [
-      "Mạng lưới hãng tàu toàn cầu",
-      "Lịch trình ổn định, đúng giờ",
-      "Giá cước tốt nhất thị trường",
-      "Hỗ trợ hải quan 24/7",
-      "Tracking hàng hóa trực tuyến",
-    ],
-    isRoute: false,
-  },
-];
+    isRoute: false
+  }
+]
 
 const warehouseServices = [
   {
     icon: <HomeOutlined style={{ fontSize: 24, color: COLORS.accent }} />,
-    title: "Lưu trữ hàng hóa",
-    desc: "Hệ thống kho đạt tiêu chuẩn hải quan, lưu trữ an toàn nhiều loại hàng hóa khác nhau.",
-    items: [
-      "Hàng nhập khẩu chờ làm thủ tục",
-      "Hàng trung chuyển & tái xuất",
-      "Hàng chờ phân phối nội địa",
-      "Hàng xuất khẩu chờ vận chuyển",
-    ],
+    key: "storage"
   },
   {
     icon: <SafetyOutlined style={{ fontSize: 24, color: COLORS.accent }} />,
-    title: "Quản lý & kiểm soát",
-    desc: "Hệ thống quản lý kho hiện đại giúp theo dõi tình trạng hàng hóa mọi lúc, mọi nơi.",
-    items: [
-      "Quản lý tồn kho tự động",
-      "Kiểm đếm & phân loại hàng",
-      "Dán nhãn, đóng gói lại",
-      "Báo cáo tồn kho định kỳ",
-    ],
+    key: "management"
   },
   {
-    icon: (
-      <ClockCircleOutlined style={{ fontSize: 24, color: COLORS.accent }} />
-    ),
-    title: "Thủ tục hải quan",
-    desc: "Đội ngũ chuyên viên hỗ trợ đầy đủ các thủ tục hải quan theo đúng quy định.",
-    items: [
-      "Khai báo hải quan",
-      "Chuyển đổi mục đích hàng hóa",
-      "Thủ tục nhập khẩu từ kho",
-      "Thủ tục tái xuất hàng hóa",
-    ],
+    icon: <ClockCircleOutlined style={{ fontSize: 24, color: COLORS.accent }} />,
+    key: "customs"
   },
   {
     icon: <TeamOutlined style={{ fontSize: 24, color: COLORS.accent }} />,
-    title: "Dịch vụ giá trị gia tăng",
-    desc: "Các dịch vụ hỗ trợ thêm giúp tối ưu toàn bộ chuỗi cung ứng của doanh nghiệp.",
-    items: [
-      "Phân loại & đóng gói lại (Repacking)",
-      "Dán nhãn (Labeling)",
-      "Gom hàng và chia hàng",
-      "Vận chuyển nội địa & quốc tế",
-    ],
-  },
-];
+    key: "valueAdded"
+  }
+]
 
 const stats = [
-  { value: "Toàn cầu", label: "Quốc gia kết nối" },
-  { value: "Quy mô lớn", label: "Lô hàng mỗi tháng" },
-  { value: "Độ tin cậy", label: "Tỷ lệ đúng hạn" },
-  { value: "24/7", label: "Hỗ trợ khách hàng" },
+  { value: "introduce.stats.global", label: "introduce.stats.globalDesc" },
+  { value: "introduce.stats.scale", label: "introduce.stats.scaleDesc" },
+  { value: "introduce.stats.reliable", label: "introduce.stats.reliableDesc" },
+  { value: "introduce.stats.support", label: "introduce.stats.supportDesc" },
 ];
 
 // --- COMPONENTS ---
 
 function RouteTabContent({ route }) {
+  const { t } = useTranslation();
+
+  const countries = t(`logistics.routes.${route.key}.countries`, {
+    returnObjects: true,
+  });
+
+  const services = t(`logistics.routes.${route.key}.services`, {
+    returnObjects: true,
+  });
+
   return (
     <Row gutter={[32, 24]} style={{ marginTop: 24 }}>
       <Col xs={24} md={12}>
         <div style={{ marginBottom: 20 }}>
           <Text style={{ color: COLORS.textMuted, fontSize: 15 }}>
-            {route.description}
+            {t(`logistics.routes.${route.key}.description`)}
           </Text>
         </div>
+
         <div style={{ marginBottom: 8 }}>
           <Text
             style={{
@@ -293,19 +295,21 @@ function RouteTabContent({ route }) {
               letterSpacing: 1,
             }}
           >
-            {route.isRoute === false ? "Loại hàng" : "Tuyến / Thị trường"}
+            {route.isRoute === false
+              ? t("logistics.cargoType")
+              : t("logistics.marketRoute")}
           </Text>
         </div>
-        <div
-          style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 10 }}
-        >
-          {route.countries.map((c) => (
-            <span key={c} style={styles.routeTag}>
+
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 10 }}>
+          {countries.map((c, index) => (
+            <span key={index} style={styles.routeTag}>
               {c}
             </span>
           ))}
         </div>
       </Col>
+
       <Col xs={24} md={12}>
         <div
           style={{
@@ -324,13 +328,16 @@ function RouteTabContent({ route }) {
               letterSpacing: 1,
             }}
           >
-            Dịch vụ bao gồm
+            {t("logistics.servicesIncluded")}
           </Text>
+
           <div style={{ marginTop: 12 }}>
-            {route.services.map((s) => (
-              <div key={s} style={styles.featureItem}>
+            {services.map((s, index) => (
+              <div key={index} style={styles.featureItem}>
                 <CheckCircleFilled style={styles.checkIcon} />
-                <Text style={{ color: COLORS.primary, fontSize: 14 }}>{s}</Text>
+                <Text style={{ color: COLORS.primary, fontSize: 14 }}>
+                  {s}
+                </Text>
               </div>
             ))}
           </div>
@@ -344,10 +351,12 @@ export default function AboutUsShipping() {
   const [activeRoute, setActiveRoute] = useState("chau-a");
   const currentRoute = logisticsRoutes.find((r) => r.key === activeRoute);
   const lang = i18next.language || "en";
+  const {t} = useTranslation()
   const navigate = useNavigate();
   const handleContact = () => {
     navigate(`/${lang}/shipping-contact-us`);
   };
+  const highlights = t("warehouse.highlights", { returnObjects: true });
   return (
     <div style={styles.page}>
       {/* HERO */}
@@ -358,7 +367,7 @@ export default function AboutUsShipping() {
           <div style={styles.badge}>
             <GlobalOutlined style={{ color: "#60A5FA", fontSize: 13 }} />
             <Text style={{ color: "#93C5FD", fontSize: 13, fontWeight: 500 }}>
-              Giải pháp logistics toàn diện
+              {t("introduce.badge")}
             </Text>
           </div>
           <Title
@@ -372,9 +381,9 @@ export default function AboutUsShipping() {
               lineHeight: 1.15,
             }}
           >
-            Dịch Vụ
+            {t("links.Services")}
             <span style={{ color: "#60A5FA" }}> Logistics</span>
-            <br />& Kho Ngoại Quan
+            <br />&  {t("introduce.text")}
           </Title>
           <Paragraph
             style={{
@@ -384,8 +393,7 @@ export default function AboutUsShipping() {
               margin: "0 0 40px",
             }}
           >
-            Mạng lưới vận chuyển rộng khắp, đáp ứng nhu cầu xuất nhập khẩu với
-            chi phí tối ưu và thời gian nhanh chóng.
+            {t("introduce.description")}
           </Paragraph>
           <Row gutter={[24, 16]}>
             {stats.map((s) => (
@@ -401,10 +409,10 @@ export default function AboutUsShipping() {
                       lineHeight: 1.1,
                     }}
                   >
-                    {s.value}
+                    {t(s.value)}
                   </div>
                   <div style={{ fontSize: 13, color: "#94A3B8", marginTop: 2 }}>
-                    {s.label}
+                    {t(s.label)}
                   </div>
                 </div>
               </Col>
@@ -422,14 +430,14 @@ export default function AboutUsShipping() {
               color="blue"
               style={{ borderRadius: 20, fontWeight: 600, fontSize: 12 }}
             >
-              DỊCH VỤ VẬN CHUYỂN
+              {t("introduce.shipSer")}
             </Tag>
           </div>
           <Title level={2} style={styles.sectionTitle}>
-            Tuyến vận chuyển & Dịch vụ
+            {t("introduce.trans")}
           </Title>
           <Text style={{ color: COLORS.textMuted, fontSize: 15 }}>
-            Chọn tuyến vận chuyển phù hợp với nhu cầu của doanh nghiệp bạn
+            {t("introduce.ChooseTrans")}
           </Text>
 
           {/* Tab Selector */}
@@ -462,7 +470,7 @@ export default function AboutUsShipping() {
                       fontSize: 14,
                     }}
                   >
-                    {route.label}
+                    {t(`logistics.routes.${route.key}.label`)}
                   </Text>
                   <div
                     style={{
@@ -502,7 +510,7 @@ export default function AboutUsShipping() {
                 {currentRoute.icon}
               </span>
               <Title level={4} style={{ margin: 0, color: COLORS.primary }}>
-                Tuyến {currentRoute.label}
+                {t("introduce.route")} {t(`logistics.routes.${currentRoute.key}.label`)}
               </Title>
             </div>
             <Divider style={{ margin: "16px 0" }} />
@@ -517,20 +525,19 @@ export default function AboutUsShipping() {
               color="gold"
               style={{ borderRadius: 20, fontWeight: 600, fontSize: 12 }}
             >
-              DỊCH VỤ KHO
+              {t("introduce.text2")}
             </Tag>
           </div>
           <Title level={2} style={styles.sectionTitle}>
-            Kho Ngoại Quan
+            {t("introduce.text")}
           </Title>
           <Text style={{ color: COLORS.textMuted, fontSize: 15 }}>
-            Lưu trữ hàng hóa xuất nhập khẩu linh hoạt, chưa cần thực hiện ngay
-            nghĩa vụ thuế — tối ưu chi phí, chủ động phân phối.
+            {t("introduce.text2decs")}
           </Text>
 
           <Row gutter={[20, 20]} style={{ marginTop: 28 }}>
             {warehouseServices.map((ws) => (
-              <Col xs={24} sm={12} lg={12} key={ws.title}>
+              <Col xs={24} sm={12} lg={12} key={ws.key}>
                 <div style={styles.warehouseFeatureCard}>
                   <div
                     style={{
@@ -554,6 +561,7 @@ export default function AboutUsShipping() {
                     >
                       {ws.icon}
                     </div>
+
                     <Text
                       style={{
                         fontWeight: 700,
@@ -561,9 +569,10 @@ export default function AboutUsShipping() {
                         color: COLORS.primary,
                       }}
                     >
-                      {ws.title}
+                      {t(`warehouse.services.${ws.key}.title`)}
                     </Text>
                   </div>
+
                   <Text
                     style={{
                       color: COLORS.textMuted,
@@ -572,26 +581,29 @@ export default function AboutUsShipping() {
                       marginBottom: 14,
                     }}
                   >
-                    {ws.desc}
+                    {t(`warehouse.services.${ws.key}.desc`)}
                   </Text>
-                  {ws.items.map((item) => (
-                    <div
-                      key={item}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 8,
-                        padding: "5px 0",
-                      }}
-                    >
-                      <CheckCircleFilled
-                        style={{ color: COLORS.accent, fontSize: 13 }}
-                      />
-                      <Text style={{ fontSize: 13, color: COLORS.primary }}>
-                        {item}
-                      </Text>
-                    </div>
-                  ))}
+
+                  {t(`warehouse.services.${ws.key}.items`, { returnObjects: true }).map(
+                    (item, index) => (
+                      <div
+                        key={index}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 8,
+                          padding: "5px 0",
+                        }}
+                      >
+                        <CheckCircleFilled
+                          style={{ color: COLORS.accent, fontSize: 13 }}
+                        />
+                        <Text style={{ fontSize: 13, color: COLORS.primary }}>
+                          {item}
+                        </Text>
+                      </div>
+                    )
+                  )}
                 </div>
               </Col>
             ))}
@@ -613,22 +625,18 @@ export default function AboutUsShipping() {
           >
             <div>
               <Title level={4} style={{ color: "#fff", margin: "0 0 8px" }}>
-                Tiêu chuẩn dịch vụ kho ngoại quan
+                {t("warehouse.standards")}
               </Title>
               <Space size={24} wrap>
-                {[
-                  "Kho đạt tiêu chuẩn hải quan",
-                  "An ninh & giám sát 24/7",
-                  "Đội ngũ giàu kinh nghiệm",
-                ].map((t) => (
+                {highlights.map((item, index) => (
                   <div
-                    key={t}
+                    key={index}
                     style={{ display: "flex", alignItems: "center", gap: 6 }}
                   >
-                    <CheckCircleFilled
-                      style={{ color: "#60A5FA", fontSize: 14 }}
-                    />
-                    <Text style={{ color: "#CBD5E1", fontSize: 13 }}>{t}</Text>
+                    <CheckCircleFilled style={{ color: "#60A5FA", fontSize: 14 }} />
+                    <Text style={{ color: "#CBD5E1", fontSize: 13 }}>
+                      {item}
+                    </Text>
                   </div>
                 ))}
               </Space>
@@ -644,7 +652,7 @@ export default function AboutUsShipping() {
               }}
             >
               <Text style={{ color: "#60A5FA", fontWeight: 600, fontSize: 14 }}>
-                Liên hệ tư vấn <RightOutlined />
+                {t("contact.title")} <RightOutlined />
               </Text>
             </div>
           </div>

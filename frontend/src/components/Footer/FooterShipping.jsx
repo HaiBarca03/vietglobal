@@ -1,11 +1,13 @@
 import React from "react";
 import { Typography } from "antd";
+import { useTranslation } from "react-i18next";
 
 const { Title, Paragraph } = Typography;
 
 const TEAL = "#00B5B8";
 
 const FooterShipping = () => {
+  const {t} = useTranslation()
   return (
     <div
       style={{
@@ -62,7 +64,7 @@ const FooterShipping = () => {
             marginBottom: 16,
           }}
         >
-          Địa chỉ: 2B Vương Thừa Vũ, Thanh Xuân - TP.Hà Nội - Việt Nam
+          {t("contactInfo.address")}
         </Paragraph>
 
         <Paragraph

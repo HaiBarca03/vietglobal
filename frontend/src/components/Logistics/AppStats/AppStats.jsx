@@ -3,7 +3,8 @@ import { Row, Col, Typography, Statistic } from "antd";
 import { motion } from "framer-motion";
 import CountUp from "react-countup";
 import "./AppStats.css";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const { Title, Text } = Typography;
 
@@ -12,40 +13,42 @@ const statsData = [
     id: 1,
     value: 20394,
     suffix: "+",
-    label: t("vi-chi.paymentFormForHousehold"),
+    label: "viChi.paymentFormForHousehold",
     color: "#ff7a18",
   },
   {
     id: 2,
     value: 4982,
     suffix: "+",
-    label: t("vi-chi.currencyExchangeService"),
+    label: "viChi.currencyExchangeService",
     color: "#ff7a18",
   },
   {
     id: 3,
     value: 2459,
     suffix: "+",
-    label: t("vi-chi.ordersEveryDay"),
+    label: "viChi.ordersEveryDay",
     color: "#ff7a18",
   },
   {
     id: 4,
     value: 19852,
     suffix: "+",
-    label: t("vi-chi.depositApplications"),
+    label: "viChi.depositApplications",
     color: "#ff7a18",
   },
 ];
 
 const AppStats = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="stats-section">
       {/* Tiêu đề chính */}
       <div className="stats-header">
         <div className="line-decoration left"></div>
         <Title level={2} className="stats-main-title">
-          {t("vi-chi.ourActivities")}
+          {t("viChi.ourActivities")}
         </Title>
         <div className="line-decoration right"></div>
       </div>
@@ -66,7 +69,7 @@ const AppStats = () => {
                   <CountUp end={item.value} duration={3} separator="," />
                   <span>{item.suffix}</span>
                 </div>
-                <Text className="stat-label">{item.label}</Text>
+                <Text className="stat-label">{t(item.label)}</Text>
               </motion.div>
             ))}
           </Col>
@@ -105,7 +108,7 @@ const AppStats = () => {
                   <CountUp end={item.value} duration={3} separator="," />
                   <span>{item.suffix}</span>
                 </div>
-                <Text className="stat-label">{item.label}</Text>
+                <Text className="stat-label">{t(item.label)}</Text>
               </motion.div>
             ))}
           </Col>

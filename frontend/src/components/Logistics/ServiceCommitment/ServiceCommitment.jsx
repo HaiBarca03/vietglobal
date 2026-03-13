@@ -8,15 +8,16 @@ import {
 } from "@ant-design/icons";
 import "./ServiceCommitment.css";
 import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const { Title, Paragraph } = Typography;
 
 const commitments = [
   {
     id: 1,
-    title: "CAM KẾT BỒI THƯỜNG",
+    title: "viChi.commitments.compensation.title",
     content:
-      "Cam kết bồi thường 100% giá trị tiền hàng & phí mua hàng nếu Lê Phương Logistics đặt hàng sai hoặc đặt thiếu sản phẩm...",
+      "viChi.commitments.compensation.desc",
     icon: <DollarCircleOutlined />,
     number: "1",
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
@@ -24,9 +25,9 @@ const commitments = [
   },
   {
     id: 2,
-    title: "CAM KẾT HỖ TRỢ",
+    title: "viChi.commitments.compensation.title",
     content:
-      "Đội ngũ nhân viên của chúng tôi sẽ hỗ trợ mọi vấn đề của Quý khách 24/7",
+      "viChi.commitments.compensation.desc",
     icon: <CustomerServiceOutlined />,
     number: "2",
     gradient: "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)",
@@ -34,8 +35,8 @@ const commitments = [
   },
   {
     id: 3,
-    title: "CAM KẾT THỜI GIAN",
-    content: "Chúng tôi cam kết thời gian hàng về ổn định, nhanh từ 3-7 ngày",
+    title: "viChi.commitments.compensation.title",
+    content: "viChi.commitments.compensation.desc",
     icon: <CalendarOutlined />,
     number: "3",
     gradient: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)",
@@ -75,6 +76,7 @@ const iconVariants = {
 };
 
 const ServiceCommitment = () => {
+  const { t } = useTranslation();
   return (
     <div className="commitment-section">
       <div className="container">
@@ -88,7 +90,7 @@ const ServiceCommitment = () => {
         >
           <div className="line-decoration left"></div>
           <Title level={2} className="stats-main-title">
-            {t("vi-chi.orderServiceCommitment")}
+            {t("viChi.orderServiceCommitment")}
           </Title>
           <div className="line-decoration right"></div>
         </motion.div>
@@ -100,7 +102,7 @@ const ServiceCommitment = () => {
           viewport={{ once: true }}
         >
           <Paragraph className="commitment-desc">
-            {t("vi-chi.orderServiceCommit")}
+            {t("viChi.orderServiceCommit")}
           </Paragraph>
         </motion.div>
 
@@ -152,9 +154,9 @@ const ServiceCommitment = () => {
                   </motion.div>
 
                   <Title level={4} className="card-title">
-                    {item.title}
+                    {t(item.title)}
                   </Title>
-                  <Paragraph className="card-content">{item.content}</Paragraph>
+                  <Paragraph className="card-content">{t(item.content)}</Paragraph>
                 </motion.div>
               </Col>
             ))}

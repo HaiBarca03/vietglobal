@@ -91,7 +91,7 @@ const ContactUs = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {info.social_links?.zalo}
+          (+84) 346779622
         </a>
       </p>
 

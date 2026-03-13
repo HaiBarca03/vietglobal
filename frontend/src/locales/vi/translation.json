@@ -11,6 +11,7 @@
   "phone": "Số điện thoại",
   "address": "Địa chỉ",
   "readmore": "ĐỌC THÊM",
+  "TV": "Việt - Trung",
   "description": "VietGlobal là nhà xuất khẩu uy tín, cung cấp đa dạng sản phẩm chất lượng với giá tốt nhất, giao hàng nhanh và dịch vụ khách hàng tuyệt vời.",
   "links": {
     "title": "Liên kết",
@@ -94,7 +95,7 @@
       "desc": "Dịch vụ vận chuyển đường biển của chúng tôi cung cấp giải pháp logistics hiệu quả và tiết kiệm chi phí cho các lô hàng quốc tế. Với mạng lưới đối tác vận tải rộng khắp, chúng tôi có thể xử lý nhiều loại hàng hóa với quy mô khác nhau. Quy trình vận hành được kiểm soát chặt chẽ nhằm đảm bảo hàng hóa luôn được vận chuyển an toàn và đúng lịch trình. Chúng tôi cũng hỗ trợ theo dõi hành trình và xử lý chứng từ để khách hàng dễ dàng quản lý lô hàng."
     }
   },
-  "vi-chi": {
+  "viChi": {
     "process": "Quy trình đặt hàng",
     "steps": {
       "step1": "Đặt hàng",
@@ -114,6 +115,268 @@
     "paymentFormForHousehold": "Đơn thanh toán hộ",
     "currencyExchangeService": "Dịch vụ đổi tệ",
     "ordersEveryDay": "Đơn hàng mỗi ngày",
-    "depositApplications": "Đơn hàng ký gửi"
+    "depositApplications": "Đơn hàng ký gửi",
+    "commitments": {
+      "compensation": {
+        "title": "Cam kết bồi thường",
+        "desc": "Cam kết bồi thường 100% giá trị tiền hàng và phí mua hàng nếu đặt sai hoặc thiếu sản phẩm."
+      },
+      "support": {
+        "title": "Cam kết hỗ trợ",
+        "desc": "Đội ngũ nhân viên của chúng tôi luôn sẵn sàng hỗ trợ mọi vấn đề của khách hàng 24/7."
+      },
+      "deliveryTime": {
+        "title": "Cam kết thời gian",
+        "desc": "Chúng tôi cam kết thời gian hàng về ổn định và nhanh chóng từ 3 - 7 ngày."
+      }
+    },
+    "saidMe": "Khách hàng nói gì về",
+    "testimonials": [
+      {
+        "content": "Dịch vụ ký gửi hàng hóa của VietGlobal Logistics rất đáng tin cậy. Mình đã gửi nhiều container hàng qua VietGlobal và hiếm khi gặp vấn đề phát sinh. Nhân viên luôn hỗ trợ và tư vấn một cách chuyên nghiệp.",
+        "name": "Mr. Thanh Tú",
+        "position": "Business ngành hàng thể thao",
+        "avatar": "https://i.pravatar.cc/150?u=1"
+      },
+      {
+        "content": "Nhân viên của VietGlobal Logistics luôn thân thiện và quá trình vận chuyển rất suôn sẻ. Đặc biệt, quy trình xử lý nhanh gọn giúp mình tiết kiệm rất nhiều thời gian.",
+        "name": "Mrs. Nhật Hạ",
+        "position": "Business ngành linh kiện điện tử",
+        "avatar": "https://i.pravatar.cc/150?u=2"
+      },
+      {
+        "content": "Tôi đánh giá cao sự minh bạch về giá cả và lộ trình hàng hóa tại VietGlobal. Đây là đơn vị nhập hàng Trung Quốc chính ngạch tốt nhất mà tôi từng hợp tác.",
+        "name": "Mr. Hoàng Nam",
+        "position": "Chủ chuỗi cửa hàng gia dụng",
+        "avatar": "https://i.pravatar.cc/150?u=3"
+      },
+      {
+        "content": "VietGlobal Logistics hỗ trợ mình rất tốt trong các đơn hàng số lượng lớn. Hàng về đúng tiến độ, đóng gói cẩn thận và luôn có thông báo trạng thái.",
+        "name": "Ms. Thùy Linh",
+        "position": "Kinh doanh mỹ phẩm nhập khẩu",
+        "avatar": "https://i.pravatar.cc/150?u=4"
+      },
+      {
+        "content": "Điểm mình thích nhất ở VietGlobal là sự rõ ràng trong hợp đồng và chi phí. Không phát sinh thêm các khoản ngoài dự kiến, rất phù hợp để hợp tác lâu dài.",
+        "name": "Mr. Đức Mạnh",
+        "position": "CEO công ty thương mại điện tử",
+        "avatar": "https://i.pravatar.cc/150?u=5"
+      },
+      {
+        "content": "Từ khi sử dụng dịch vụ của VietGlobal Logistics, việc nhập hàng Trung Quốc của bên mình trở nên dễ dàng hơn rất nhiều. Đội ngũ hỗ trợ phản hồi nhanh và xử lý rất tận tâm.",
+        "name": "Mrs. Kim Anh",
+        "position": "Chủ shop kinh doanh online",
+        "avatar": "https://i.pravatar.cc/150?u=6"
+      }
+    ]
+  },
+  "importAndexport": {
+    "ad-banners": {
+      "title1": "VietGlobal",
+      "desc1": "Kết nối nông sản Việt với thị trường toàn cầu",
+
+      "title2": "Uy tín & Chất lượng",
+      "desc2": "Cam kết sản phẩm đạt chuẩn và phát triển bền vững",
+
+      "title3": "Sứ mệnh",
+      "desc3": "Đưa nông sản Việt vươn ra thế giới",
+
+      "title4": "Giá trị quốc tế",
+      "desc4": "Tiêu chuẩn toàn cầu – Giá trị Việt Nam"
+    }
+  },
+  "introduce": {
+    "route": "Tuyến",
+    "badge": "Giải pháp logistics toàn diện",
+    "text": "Kho Ngoại Quan",
+    "text2": "DỊCH VỤ KHO",
+    "text2decs": "Lưu trữ hàng hóa xuất nhập khẩu linh hoạt, chưa cần thực hiện ngay nghĩa vụ thuế — tối ưu chi phí, chủ động phân phối",
+    "description": "Mạng lưới vận chuyển rộng khắp, đáp ứng nhu cầu xuất nhập khẩu với chi phí tối ưu và thời gian nhanh chóng",
+    "stats": {
+      "global": "Toàn cầu",
+      "globalDesc": "Quốc gia kết nối",
+
+      "scale": "Quy mô lớn",
+      "scaleDesc": "Lô hàng mỗi tháng",
+
+      "reliable": "Độ tin cậy",
+      "reliableDesc": "Tỷ lệ đúng hạn",
+
+      "support": "24/7",
+      "supportDesc": "Hỗ trợ khách hàng"
+    },
+    "trans": "Tuyến vận chuyển & Dịch vụ",
+    "shipSer": "DỊCH VỤ VẬN CHUYỂN",
+    "ChooseTrans": "Chọn tuyến vận chuyển phù hợp với nhu cầu của doanh nghiệp bạn"
+  },
+  "warehouse": {
+    "standards": "Tiêu chuẩn dịch vụ kho ngoại quan",
+      "highlights": [
+        "Kho đạt tiêu chuẩn hải quan",
+        "An ninh & giám sát 24/7",
+        "Đội ngũ giàu kinh nghiệm"
+      ],
+    "services": {
+      "storage": {
+        "title": "Lưu trữ hàng hóa",
+        "desc": "Hệ thống kho đạt tiêu chuẩn hải quan, lưu trữ an toàn nhiều loại hàng hóa khác nhau",
+        "items": [
+          "Hàng nhập khẩu chờ làm thủ tục",
+          "Hàng trung chuyển & tái xuất",
+          "Hàng chờ phân phối nội địa",
+          "Hàng xuất khẩu chờ vận chuyển"
+        ]
+      },
+      "management": {
+        "title": "Quản lý & kiểm soát",
+        "desc": "Hệ thống quản lý kho hiện đại giúp theo dõi tình trạng hàng hóa mọi lúc, mọi nơi",
+        "items": [
+          "Quản lý tồn kho tự động",
+          "Kiểm đếm & phân loại hàng",
+          "Dán nhãn, đóng gói lại",
+          "Báo cáo tồn kho định kỳ"
+        ]
+      },
+      "customs": {
+        "title": "Thủ tục hải quan",
+        "desc": "Đội ngũ chuyên viên hỗ trợ đầy đủ các thủ tục hải quan theo đúng quy định",
+        "items": [
+          "Khai báo hải quan",
+          "Chuyển đổi mục đích hàng hóa",
+          "Thủ tục nhập khẩu từ kho",
+          "Thủ tục tái xuất hàng hóa"
+        ]
+      },
+      "valueAdded": {
+        "title": "Dịch vụ giá trị gia tăng",
+        "desc": "Các dịch vụ hỗ trợ thêm giúp tối ưu toàn bộ chuỗi cung ứng của doanh nghiệp",
+        "items": [
+          "Phân loại & đóng gói lại (Repacking)",
+          "Dán nhãn (Labeling)",
+          "Gom hàng và chia hàng",
+          "Vận chuyển nội địa & quốc tế"
+        ]
+      }
+    }
+  },
+  "logistics": {
+    "routes": {
+      "chau-a": {
+        "label": "Châu Á",
+        "description": "Khai thác các tuyến vận chuyển đến các quốc gia trọng điểm tại Châu Á với lịch tàu ổn định",
+        "countries": [
+          "Trung Quốc",
+          "Hàn Quốc",
+          "Nhật Bản",
+          "Singapore",
+          "Thái Lan",
+          "Malaysia",
+          "ASEAN"
+        ],
+        "services": [
+          "Vận chuyển đường biển FCL/LCL",
+          "Vận chuyển hàng không (Air Freight)",
+          "Gom hàng (Consolidation)",
+          "Dịch vụ Door to Door",
+          "Hỗ trợ thủ tục hải quan"
+        ]
+      },
+      "noi-a": {
+        "label": "Nội Á",
+        "description": "Dịch vụ vận chuyển trong khu vực Nội Á với tần suất chuyến cao và thời gian transit ngắn",
+        "countries": [
+          "Việt Nam – Trung Quốc",
+          "Việt Nam – Thái Lan",
+          "Việt Nam – Indonesia",
+          "Việt Nam – Philippines",
+          "Việt Nam – Malaysia"
+        ],
+        "services": [
+          "Tần suất chuyến cao",
+          "Thời gian transit ngắn",
+          "Giá cước cạnh tranh",
+          "Theo dõi hàng hóa realtime",
+          "Hỗ trợ chứng từ đầy đủ"
+        ]
+      },
+      "trung-dong": {
+        "label": "Trung Đông",
+        "description": "Vận chuyển đến các thị trường Trung Đông đang tăng trưởng mạnh với lịch tàu ổn định",
+        "countries": [
+          "UAE (Dubai, Jebel Ali)",
+          "Saudi Arabia",
+          "Qatar",
+          "Kuwait",
+          "Oman",
+          "Bahrain"
+        ],
+        "services": [
+          "Lịch tàu ổn định",
+          "Giá cước cạnh tranh",
+          "Hỗ trợ chứng từ nhập khẩu",
+          "Đối tác hãng tàu uy tín",
+          "Tư vấn thị trường"
+        ]
+      },
+      "duong-bien": {
+        "label": "Đường biển",
+        "description": "Tối ưu chi phí cho các lô hàng lớn với mạng lưới đối tác hãng tàu toàn cầu",
+        "countries": [
+          "FCL (Full Container Load)",
+          "LCL (Less than Container Load)",
+          "Hàng dự án",
+          "Hàng quá khổ quá tải",
+          "Door to Door"
+        ],
+        "services": [
+          "Mạng lưới hãng tàu toàn cầu",
+          "Lịch trình ổn định, đúng giờ",
+          "Giá cước tốt nhất thị trường",
+          "Hỗ trợ hải quan 24/7",
+          "Tracking hàng hóa trực tuyến"
+        ]
+      }
+    }
+  },
+  "contactShip": {
+    "pageTitle": "Liên hệ",
+    "breadcrumbContact": "Liên hệ",
+    "badge": "Liên hệ với chúng tôi",
+    "titleSendMail": "Gửi email",
+    "titleCall": "hoặc gọi ngay",
+    "description": "Chúng tôi luôn sẵn sàng tiếp nhận mọi yêu cầu của bạn và cam kết phản hồi trong thời gian sớm nhất.",
+    "form": {
+      "firstName": "Họ",
+      "lastName": "Tên",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "subject": "Tiêu đề",
+      "message": "Tin nhắn",
+
+      "placeholderSubject": "Nội dung chủ đề...",
+      "placeholderMessage": "Nhập nội dung tin nhắn của bạn..."
+    },
+    "sendMessage": "Tin nhắn đã được gửi thành công! Chúng tôi sẽ liên hệ lại sớm",
+    "sendButton": "Gửi tin nhắn"
+  },
+  "contactInfo": {
+    "title": "Thông tin liên hệ",
+    "addressTitle": "Địa chỉ",
+    "address": "2B Vương Thừa Vũ, Thanh Xuân, Hà Nội, Việt Nam",
+    "phoneTitle": "Điện thoại"
+  },
+  "footer": {
+    "services": {
+      "all": "Tất cả dịch vụ",
+      "trucking": "Vận chuyển bằng xe tải",
+      "customs": "Thông quan hải quan",
+      "air": "Vận chuyển đường hàng không",
+      "sea": "Vận chuyển đường biển"
+    },
+    "about": {
+      "aboutUs": "Giới thiệu",
+      "contact": "Liên hệ",
+      "partners": "Đối tác"
+    }
   }
 }

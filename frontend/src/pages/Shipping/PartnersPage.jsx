@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useTransition } from "react";
 import { useState } from "react";
 import PageBreadcrumb from "../../components/ServiceDetail/PageBreadcrumb";
 import PageHeader from "../../components/ServiceDetail/PageHeader";
+import { useTranslation } from "react-i18next";
 
 const partners = [
   {
@@ -266,11 +267,12 @@ const styles = `
 
 const PartnersPage = () => {
   const [hovered, setHovered] = useState(null);
-  const current = { title: "Đối tác" };
+   const {t} = useTranslation()
+  const current = { title: t("partners") };
 
   const breadcrumbs = [
     { label: "VietGlobal", href: "/" },
-    { label: "Đối tác", href: "#" },
+    { label: t("footer.about.partners"), href: "#" },
   ];
 
   return (

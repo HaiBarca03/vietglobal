@@ -48,7 +48,6 @@ const services = [
   },
 ];
 
-console.log("Services data:", services);
 const partners = [
   {
     name: "KMTC",
