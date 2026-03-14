@@ -1,5 +1,5 @@
 import { sendBrevoEmail } from "../config/brevo-mail.config.js";
-import { VERIFICATION_EMAIL_TEMPLATE } from "./emailtemplates.js";
+import { CONTACT_FORM_SUBMISSION_TEMPLATE, VERIFICATION_EMAIL_TEMPLATE } from "./emailtemplates.js";
 import { PASSWORD_RESET_REQUEST_TEMPLATE } from "./emailtemplates.js";
 import { PASSWORD_RESET_SUCCESS_TEMPLATE } from "./emailtemplates.js";
 
@@ -50,5 +50,24 @@ export const SendResetPasswordConfimation = async (email) => {
     subject: "Password Reset Successfully",
     html: PASSWORD_RESET_SUCCESS_TEMPLATE,
     category: "Password Reset Confirmation",
+  });
+};
+
+export const SendContactFormMail = async (customerData) => {
+  const { email, firstname, lastname, phoneNumber, subject, message } = customerData;
+
+  let htmlContent = CONTACT_FORM_SUBMISSION_TEMPLATE
+    .replace(/{firstname}/g, firstname)
+    .replace(/{lastname}/g, lastname)
+    .replace(/{email}/g, email)
+    .replace(/{phoneNumber}/g, phoneNumber)
+    .replace(/{subject}/g, subject)
+    .replace(/{message}/g, message);
+
+  return sendBrevoEmail({
+    to: process.env.ADMIN_EMAIL, 
+    subject: `[EMS] Yêu cầu liên hệ mới: ${subject}`,
+    html: htmlContent,
+    category: "Contact Form Admin Notification",
   });
 };

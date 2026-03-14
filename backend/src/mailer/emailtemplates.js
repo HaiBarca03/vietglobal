@@ -93,3 +93,67 @@ export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 </body>
 </html>
 `;
+
+export const CONTACT_FORM_SUBMISSION_TEMPLATE = `
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thông báo liên hệ mới</title>
+</head>
+<body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #334155; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8fafc;">
+  <div style="background: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+    
+    <div style="background-color: #3b82f6; padding: 30px; text-align: center;">
+      <h1 style="color: white; margin: 0; font-size: 24px; letter-spacing: 1px;">YÊU CẦU LIÊN HỆ MỚI</h1>
+    </div>
+
+    <div style="padding: 30px;">
+      <p style="margin-top: 0;">Chào Quản trị viên,</p>
+      <p>
+        Bạn vừa nhận được một tin nhắn mới từ biểu mẫu liên hệ trên website 
+        <strong>
+        <a href="https://www.vietgloballogistic.com/" target="_blank">
+        Viet Global Logistic
+        </a>
+        </strong>. Dưới đây là thông tin chi tiết của khách hàng:
+      </p>
+      
+      <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold; width: 30%;">Họ và tên:</td>
+          <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{firstname} {lastname}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Email:</td>
+          <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;"><a href="mailto:{email}" style="color: #3b82f6; text-decoration: none;">{email}</a></td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Số điện thoại:</td>
+          <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{phoneNumber}</td>
+        </tr>
+        <tr>
+          <td style="padding: 10px; border-bottom: 1px solid #e2e8f0; font-weight: bold;">Tiêu đề:</td>
+          <td style="padding: 10px; border-bottom: 1px solid #e2e8f0;">{subject}</td>
+        </tr>
+      </table>
+
+      <div style="background-color: #f1f5f9; padding: 15px; border-left: 4px solid #3b82f6; border-radius: 4px;">
+        <p style="margin: 0 0 10px 0; font-weight: bold;">Nội dung tin nhắn:</p>
+        <p style="margin: 0; font-style: italic; color: #475569;">"{message}"</p>
+      </div>
+
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="mailto:{email}" style="background-color: #3b82f6; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Phản hồi ngay</a>
+      </div>
+    </div>
+
+    <div style="background-color: #f8fafc; padding: 20px; text-align: center; color: #94a3b8; font-size: 0.85em; border-top: 1px solid #e2e8f0;">
+      <p style="margin: 0;">Email này được gửi tự động từ hệ thống quản lý website của bạn.</p>
+      <p style="margin: 5px 0 0 0;">© 2026 Tên Công Ty Của Bạn</p>
+    </div>
+  </div>
+</body>
+</html>
+`;

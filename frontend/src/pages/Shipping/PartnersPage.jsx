@@ -309,25 +309,25 @@ const PartnersPage = () => {
             <div className="stat-number">
               22<span>+</span>
             </div>
-            <div className="stat-label">Hãng tàu</div>
+            <div className="stat-label">{t("partnersPage.Shippingcompany")}"</div>
           </div>
           <div className="stat-item">
             <div className="stat-number">
               150<span>+</span>
             </div>
-            <div className="stat-label">Tuyến hàng</div>
+            <div className="stat-label">{t("partnersPage.Cargoroute")}</div>
           </div>
           <div className="stat-item">
             <div className="stat-number">
               80<span>+</span>
             </div>
-            <div className="stat-label">Cảng biển</div>
+            <div className="stat-label">{t("partnersPage.Seaport")}</div>
           </div>
           <div className="stat-item">
             <div className="stat-number">
               15<span>+</span>
             </div>
-            <div className="stat-label">Năm kinh nghiệm</div>
+            <div className="stat-label">{t("partnersPage.Yearsofexperience")}</div>
           </div>
         </div>
       </section>
