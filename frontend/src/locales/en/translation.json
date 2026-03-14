@@ -341,6 +341,7 @@
     }
   },
   "contactShip": {
+    "sending": "Sending...",
     "pageTitle": "Contact",
     "breadcrumbContact": "Contact",
     "badge": "Contact Us",
@@ -367,7 +368,7 @@
     "address": "2B Vuong Thua Vu, Thanh Xuan, Hanoi, Vietnam",
     "phoneTitle": "Phone"
   },
-   "footer": {
+  "footer": {
     "services": {
       "all": "All Services",
       "trucking": "Truck Delivery",
@@ -376,9 +377,15 @@
       "sea": "Sea Freight"
     },
     "about": {
-      "aboutUs": "About Us",
+      "aboutUs": "Introduction",
       "contact": "Contact",
       "partners": "Partners"
     }
+  },
+  "partnersPage": {
+    "Shippingcompany": "SHIPPING COMPANIES",
+    "Cargoroute": "CARGO ROUTES",
+    "Seaport": "SEAPORTS",
+    "Yearsofexperience": "YEARS OF EXPERIENCE"
   }
 }

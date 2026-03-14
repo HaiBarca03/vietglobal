@@ -339,6 +339,7 @@
     }
   },
   "contactShip": {
+    "sending": "Đang gửi...",
     "pageTitle": "Liên hệ",
     "breadcrumbContact": "Liên hệ",
     "badge": "Liên hệ với chúng tôi",
@@ -378,5 +379,11 @@
       "contact": "Liên hệ",
       "partners": "Đối tác"
     }
+  },
+  "partnersPage": {
+    "Shippingcompany": "HÃNG TÀU",
+    "Cargoroute": "TUYẾN HÀNG",
+    "Seaport": "CẢNG BIỂN",
+    "Yearsofexperience": "NĂM KINH NGHIỆM"
   }
 }
