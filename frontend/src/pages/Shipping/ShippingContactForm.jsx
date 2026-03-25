@@ -1,9 +1,9 @@
-import { useState } from "react";
-import PageHeader from "../../components/ServiceDetail/PageHeader";
-import PageBreadcrumb from "../../components/ServiceDetail/PageBreadcrumb";
-import { useTranslation } from "react-i18next";
-import { sendContactForm } from "../../stores/Mailer/MailerAction";
-import { useDispatch, useSelector } from 'react-redux'
+import { useState } from 'react';
+import PageHeader from '../../components/ServiceDetail/PageHeader';
+import PageBreadcrumb from '../../components/ServiceDetail/PageBreadcrumb';
+import { useTranslation } from 'react-i18next';
+import { sendContactForm } from '../../stores/Mailer/MailerAction';
+import { useDispatch, useSelector } from 'react-redux';
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap');
@@ -276,280 +276,286 @@ const styles = `
 `;
 
 export default function ContactForm() {
-  const dispatch = useDispatch();
-  const { t } = useTranslation();
-  
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
+    const dispatch = useDispatch();
+    const { t } = useTranslation();
 
-  const [sent, setSent] = useState(false);
-  const loading = useSelector((state) => state.mailer.loading);
+    const [form, setForm] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+    });
 
-  const handle = (e) => setForm({ ...form, [e.target.name]: e.target.value });
+    const [sent, setSent] = useState(false);
+    const loading = useSelector(state => state.mailer.loading);
 
-  const submit = async () => {
-    // Validation cơ bản trước khi gửi
-    if (!form.firstName || !form.email || !form.message) {
-      return;
-    }
+    const handle = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-    const payload = {
-      ho: form.lastName,
-      ten: form.firstName,
-      email: form.email,
-      so_dien_thoai: form.phone,
-      tieu_de: form.subject,
-      tin_nhan: form.message
+    const submit = async () => {
+        // Validation cơ bản trước khi gửi
+        if (!form.firstName || !form.email || !form.message) {
+            return;
+        }
+
+        const payload = {
+            ho: form.lastName,
+            ten: form.firstName,
+            email: form.email,
+            so_dien_thoai: form.phone,
+            tieu_de: form.subject,
+            tin_nhan: form.message,
+        };
+
+        // Gửi dispatch và đợi kết quả (nếu thunk trả về promise)
+        try {
+            await dispatch(sendContactForm(payload));
+
+            // Hiển thị trạng thái thành công
+            setSent(true);
+
+            // Reset form về trạng thái ban đầu
+            setForm({
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                subject: '',
+                message: '',
+            });
+
+            // Ẩn thông báo thành công sau 4 giây
+            setTimeout(() => setSent(false), 4000);
+        } catch (error) {
+            console.error('Failed to send contact form:', error);
+        }
     };
 
-    // Gửi dispatch và đợi kết quả (nếu thunk trả về promise)
-    try {
-      await dispatch(sendContactForm(payload));
-      
-      // Hiển thị trạng thái thành công
-      setSent(true);
+    const current = { title: t('contact.title') };
 
-      // Reset form về trạng thái ban đầu
-      setForm({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: ""
-      });
+    const breadcrumbs = [
+        { label: 'VietGlobal', href: '/' },
+        { label: t('contact.title'), href: '#' },
+    ];
 
-      // Ẩn thông báo thành công sau 4 giây
-      setTimeout(() => setSent(false), 4000);
-    } catch (error) {
-      console.error("Failed to send contact form:", error);
-    }
-  };
+    return (
+        <>
+            <style>{styles}</style>
+            <PageHeader title={current.title} />
+            <PageBreadcrumb items={breadcrumbs} />
 
-  const current = { title: t("contact.title") };
+            <section className="contact-section">
+                <div className="contact-inner">
+                    {/* LEFT - FORM */}
+                    <div className="form-col">
+                        <div className="form-eyebrow">{t('contactShip.badge')}</div>
+                        <h2 className="form-title">
+                            {t('contactShip.titleSendMail')}, <span>{t('contactShip.titleCall')}</span>
+                        </h2>
+                        <p className="form-subtitle">{t('contactShip.description')}</p>
 
-  const breadcrumbs = [
-    { label: "VietGlobal", href: "/" },
-    { label: t("contact.title"), href: "#" },
-  ];
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>{t('contactShip.form.firstName')}</label>
+                                <input
+                                    name="firstName"
+                                    placeholder="Nguyen"
+                                    value={form.firstName}
+                                    onChange={handle}
+                                    disabled={loading}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label>{t('contactShip.form.lastName')}</label>
+                                <input
+                                    name="lastName"
+                                    placeholder="Van A"
+                                    value={form.lastName}
+                                    onChange={handle}
+                                    disabled={loading}
+                                />
+                            </div>
+                        </div>
 
-  return (
-    <>
-      <style>{styles}</style>
-      <PageHeader title={current.title} />
-      <PageBreadcrumb items={breadcrumbs} />
+                        <div className="form-row">
+                            <div className="form-group">
+                                <label>Email</label>
+                                <input
+                                    name="email"
+                                    type="email"
+                                    placeholder="email@company.com"
+                                    value={form.email}
+                                    onChange={handle}
+                                    disabled={loading}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label>{t('contactShip.form.phone')}</label>
+                                <input
+                                    name="phone"
+                                    placeholder="+84 xxx xxx xxx"
+                                    value={form.phone}
+                                    onChange={handle}
+                                    disabled={loading}
+                                />
+                            </div>
+                        </div>
 
-      <section className="contact-section">
-        <div className="contact-inner">
-          {/* LEFT - FORM */}
-          <div className="form-col">
-            <div className="form-eyebrow">{t("contactShip.badge")}</div>
-            <h2 className="form-title">
-              {t("contactShip.titleSendMail")}, <span>{t("contactShip.titleCall")}</span>
-            </h2>
-            <p className="form-subtitle">
-              {t("contactShip.description")}
-            </p>
+                        <div className="form-row">
+                            <div className="form-group full">
+                                <label>{t('contactShip.form.subject')}</label>
+                                <input
+                                    name="subject"
+                                    placeholder={t('contactShip.form.placeholderSubject')}
+                                    value={form.subject}
+                                    onChange={handle}
+                                    disabled={loading}
+                                />
+                            </div>
+                        </div>
 
-            <div className="form-row">
-              <div className="form-group">
-                <label>{t("contactShip.form.firstName")}</label>
-                <input
-                  name="firstName"
-                  placeholder="Nguyen"
-                  value={form.firstName}
-                  onChange={handle}
-                  disabled={loading}
-                />
-              </div>
-              <div className="form-group">
-                <label>{t("contactShip.form.lastName")}</label>
-                <input
-                  name="lastName"
-                  placeholder="Van A"
-                  value={form.lastName}
-                  onChange={handle}
-                  disabled={loading}
-                />
-              </div>
-            </div>
+                        <div className="form-row">
+                            <div className="form-group full">
+                                <label>{t('contactShip.form.message')}</label>
+                                <textarea
+                                    name="message"
+                                    placeholder={t('contactShip.form.placeholderMessage')}
+                                    value={form.message}
+                                    onChange={handle}
+                                    disabled={loading}
+                                />
+                            </div>
+                        </div>
 
-            <div className="form-row">
-              <div className="form-group">
-                <label>Email</label>
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="email@company.com"
-                  value={form.email}
-                  onChange={handle}
-                  disabled={loading}
-                />
-              </div>
-              <div className="form-group">
-                <label>{t("contactShip.form.phone")}</label>
-                <input
-                  name="phone"
-                  placeholder="+84 xxx xxx xxx"
-                  value={form.phone}
-                  onChange={handle}
-                  disabled={loading}
-                />
-              </div>
-            </div>
+                        <button
+                            className="submit-btn"
+                            onClick={submit}
+                            disabled={loading || !form.firstName || !form.email || !form.message}
+                        >
+                            {loading ? (
+                                <svg
+                                    className="spinner"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="3"
+                                >
+                                    <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.2)" />
+                                    <path d="M12 2a10 10 0 0 1 10 10" stroke="white" strokeLinecap="round" />
+                                </svg>
+                            ) : (
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2.2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                </svg>
+                            )}
+                            {loading ? t('contactShip.sending') || 'Sending...' : t('contactShip.sendButton')}
+                        </button>
 
-            <div className="form-row">
-              <div className="form-group full">
-                <label>{t("contactShip.form.subject")}</label>
-                <input
-                  name="subject"
-                  placeholder={t("contactShip.form.placeholderSubject")}
-                  value={form.subject}
-                  onChange={handle}
-                  disabled={loading}
-                />
-              </div>
-            </div>
+                        {sent && (
+                            <div className="success-msg">
+                                <svg
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="3"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                <span>{t('contactShip.sendMessage')}</span>
+                            </div>
+                        )}
+                    </div>
 
-            <div className="form-row">
-              <div className="form-group full">
-                <label>{t("contactShip.form.message")}</label>
-                <textarea
-                  name="message"
-                  placeholder={t("contactShip.form.placeholderMessage")}
-                  value={form.message}
-                  onChange={handle}
-                  disabled={loading}
-                />
-              </div>
-            </div>
+                    {/* RIGHT - INFO CARD */}
+                    <div className="info-card">
+                        <div className="info-card-title">{t('contactInfo.title')}</div>
+                        <div className="company-name">VIETGLOBAL IMPORT EXPORT TRADING PRODUCTION COMPANY LIMITED</div>
 
-            <button 
-              className="submit-btn" 
-              onClick={submit} 
-              disabled={loading || !form.firstName || !form.email || !form.message}
-            >
-              {loading ? (
-                <svg className="spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                  <circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,0.2)" />
-                  <path d="M12 2a10 10 0 0 1 10 10" stroke="white" strokeLinecap="round" />
-                </svg>
-              ) : (
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <line x1="22" y1="2" x2="11" y2="13" />
-                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                </svg>
-              )}
-              {loading ? t("contactShip.sending") || "Sending..." : t("contactShip.sendButton")}
-            </button>
+                        <div className="info-list">
+                            <div className="info-item">
+                                <div className="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </div>
+                                <div className="info-content">
+                                    <div className="info-label">{t('contactInfo.addressTitle')}</div>
+                                    <div className="info-value">{t('contactInfo.address')}</div>
+                                    <div className="info-value">{t('contactInfo.address1')}</div>
+                                </div>
+                            </div>
 
-            {sent && (
-              <div className="success-msg">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-                <span>{t("contactShip.sendMessage")}</span>
-              </div>
-            )}
-          </div>
+                            <div className="divider-line" />
 
-          {/* RIGHT - INFO CARD */}
-          <div className="info-card">
-            <div className="info-card-title">{t("contactInfo.title")}</div>
-            <div className="company-name">VietGlobal Company Limited</div>
+                            <div className="info-item">
+                                <div className="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
+                                    </svg>
+                                </div>
+                                <div className="info-content">
+                                    <div className="info-label">{t('contactInfo.phoneTitle')}</div>
+                                    <div className="info-value">Phone: (+84) 0346779622</div>
+                                    <div className="info-value">TP.HCM: Ms. Ngọc (+84) 0938 342 995</div>
+                                    <div className="info-value">WhatsApp: (+84) 0763205365</div>
+                                    <div className="info-note">Zalo · WhatsApp</div>
+                                </div>
+                            </div>
 
-            <div className="info-list">
-              <div className="info-item">
-                <div className="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
+                            <div className="divider-line" />
+
+                            <div className="info-item">
+                                <div className="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                </div>
+                                <div className="info-content">
+                                    <div className="info-label">Email</div>
+                                    <div className="info-value">
+                                        <a href="mailto:Vietglobal8@gmail.com">Vietglobal8@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="divider-line" />
+
+                            <div className="info-item">
+                                <div className="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <line x1="2" y1="12" x2="22" y2="12" />
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                    </svg>
+                                </div>
+                                <div className="info-content">
+                                    <div className="info-label">Website</div>
+                                    <div className="info-value">
+                                        <a href="https://www.vietgloballogistic.com" target="_blank" rel="noreferrer">
+                                            www.vietgloballogistic.com
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="info-content">
-                  <div className="info-label">{t("contactInfo.addressTitle")}</div>
-                  <div className="info-value">{t("contactInfo.address")}</div>
-                </div>
-              </div>
-
-              <div className="divider-line" />
-
-              <div className="info-item">
-                <div className="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
-                  </svg>
-                </div>
-                <div className="info-content">
-                  <div className="info-label">{t("contactInfo.phoneTitle")}</div>
-                  <div className="info-value">Phone: (+84) 0346779622</div>
-                  <div className="info-value">WhatsApp: (+84) 0763205365</div>
-                  <div className="info-note">Zalo · WhatsApp</div>
-                </div>
-              </div>
-
-              <div className="divider-line" />
-
-              <div className="info-item">
-                <div className="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                    <polyline points="22,6 12,13 2,6" />
-                  </svg>
-                </div>
-                <div className="info-content">
-                  <div className="info-label">Email</div>
-                  <div className="info-value">
-                    <a href="mailto:Vietglobal8@gmail.com">Vietglobal8@gmail.com</a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="divider-line" />
-
-              <div className="info-item">
-                <div className="info-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <circle cx="12" cy="12" r="10" />
-                    <line x1="2" y1="12" x2="22" y2="12" />
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                  </svg>
-                </div>
-                <div className="info-content">
-                  <div className="info-label">Website</div>
-                  <div className="info-value">
-                    <a href="https://www.vietgloballogistic.com" target="_blank" rel="noreferrer">
-                      www.vietgloballogistic.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+            </section>
+        </>
+    );
 }
