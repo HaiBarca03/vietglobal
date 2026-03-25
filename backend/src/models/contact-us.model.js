@@ -6,10 +6,18 @@ const contactUsSchema = new mongoose.Schema(
       vi: { type: String, required: true, trim: true },
       en: { type: String, required: true, trim: true }
     },
+    address2: {
+      vi: { type: String, trim: true, default: '' },
+      en: { type: String, trim: true, default: '' }
+    },
     phone: {
       type: String,
       required: true,
       trim: true
+    },
+    phone2: {
+      vi: { type: String, trim: true, default: '' },
+      en: { type: String, trim: true, default: '' }
     },
     email: {
       type: String,

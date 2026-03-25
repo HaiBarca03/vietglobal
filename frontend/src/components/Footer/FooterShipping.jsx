@@ -1,13 +1,23 @@
 import React from 'react';
 import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getAllContactUs } from '../../stores/ContactUs/ContactUsApi';
 
 const { Title, Paragraph } = Typography;
 
 const TEAL = '#00B5B8';
 
 const FooterShipping = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+    const lang = i18n.language || 'vi';
+    const dispatch = useDispatch();
+    const contactUsDetails = useSelector(state => state.contactUs.contactUsDetails || {});
+
+    useEffect(() => {
+        dispatch(getAllContactUs());
+    }, [dispatch]);
     return (
         <div
             style={{
@@ -85,8 +95,10 @@ const FooterShipping = () => {
                         marginBottom: 8,
                     }}
                 >
-                    Phone: (+84) 0346779622
-                    <div className="info-value">TP.HCM: Ms. Ngọc (+84) 0938 342 995</div>
+                    Phone: {contactUsDetails.phone || '(+84) 0346779622'}
+                    <div className="info-value">
+                        {contactUsDetails.phone2?.[lang] || t('contactInfo.phone2')}
+                    </div>
                 </Paragraph>
 
                 <Paragraph

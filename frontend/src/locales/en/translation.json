@@ -34,6 +34,7 @@
         "address": "Office 1: 21/86 To Vinh Dien Street, Khuong Trung Ward, Thanh Xuan District, Hanoi, Vietnam",
         "address1": "Office 2: 2B Vuong Thua Vu, Thanh Xuan, Hanoi, Vietnam",
         "phone": "(+84) 346779622",
+        "phone2": "HCMC: Ms. Ngoc (+84) 0938342995",
         "email": "contact@vietglobal.com.vn"
     },
     "allRights": "All rights reserved.",
@@ -176,13 +177,10 @@
         "ad-banners": {
             "title1": "VietGlobal",
             "desc1": "Connecting Vietnamese agricultural products to the global market",
-
             "title2": "Trust & Quality",
             "desc2": "Committed to high standards and sustainable development",
-
             "title3": "Our Mission",
             "desc3": "Bringing Vietnamese agricultural products to the world",
-
             "title4": "International Value",
             "desc4": "Global standards – Vietnamese value"
         }
@@ -194,17 +192,13 @@
         "text2": "WAREHOUSING SERVICES",
         "text2decs": "Flexible storage of import and export goods, no immediate need to fulfill tax obligations — optimizes costs, proactively manages distribution.",
         "description": "Extensive transportation network supporting import and export needs with optimized cost and fast delivery time",
-
         "stats": {
             "global": "Global",
             "globalDesc": "Connected countries",
-
             "scale": "Large Scale",
             "scaleDesc": "Shipments per month",
-
             "reliable": "Reliability",
             "reliableDesc": "On-time delivery rate",
-
             "support": "24/7",
             "supportDesc": "Customer support"
         },
@@ -214,7 +208,11 @@
     },
     "warehouse": {
         "standards": "Bonded warehouse service standards",
-        "highlights": ["Customs-standard warehouse", "24/7 security & surveillance", "Highly experienced team"],
+        "highlights": [
+            "Customs-standard warehouse",
+            "24/7 security & surveillance",
+            "Highly experienced team"
+        ],
         "services": {
             "storage": {
                 "title": "Cargo Storage",
@@ -263,7 +261,15 @@
             "chau-a": {
                 "label": "Asia",
                 "description": "Operating shipping routes to major Asian markets with stable schedules",
-                "countries": ["China", "South Korea", "Japan", "Singapore", "Thailand", "Malaysia", "ASEAN"],
+                "countries": [
+                    "China",
+                    "South Korea",
+                    "Japan",
+                    "Singapore",
+                    "Thailand",
+                    "Malaysia",
+                    "ASEAN"
+                ],
                 "services": [
                     "Sea Freight FCL/LCL",
                     "Air Freight",
@@ -293,7 +299,14 @@
             "trung-dong": {
                 "label": "Middle East",
                 "description": "Shipping services to fast-growing Middle Eastern markets with stable schedules",
-                "countries": ["UAE (Dubai, Jebel Ali)", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain"],
+                "countries": [
+                    "UAE (Dubai, Jebel Ali)",
+                    "Saudi Arabia",
+                    "Qatar",
+                    "Kuwait",
+                    "Oman",
+                    "Bahrain"
+                ],
                 "services": [
                     "Stable shipping schedules",
                     "Competitive freight rates",
@@ -337,7 +350,6 @@
             "phone": "Phone number",
             "subject": "Subject",
             "message": "Message",
-
             "placeholderSubject": "Subject content...",
             "placeholderMessage": "Enter your message..."
         },
@@ -349,7 +361,8 @@
         "addressTitle": "Address",
         "address": "Office 1: 21/86 To Vinh Dien Street, Khuong Trung Ward, Thanh Xuan District, Hanoi, Vietnam",
         "address1": "Office 2: 2B Vuong Thua Vu, Thanh Xuan, Hanoi, Vietnam",
-        "phoneTitle": "Phone"
+        "phoneTitle": "Phone",
+        "phone2": "HCMC: Ms. Ngoc (+84) 0938342995"
     },
     "footer": {
         "services": {

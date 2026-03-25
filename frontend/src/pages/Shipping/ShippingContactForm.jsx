@@ -4,6 +4,8 @@ import PageBreadcrumb from '../../components/ServiceDetail/PageBreadcrumb';
 import { useTranslation } from 'react-i18next';
 import { sendContactForm } from '../../stores/Mailer/MailerAction';
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getAllContactUs } from '../../stores/ContactUs/ContactUsApi';
 
 const styles = `
   @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap');
@@ -290,6 +292,11 @@ export default function ContactForm() {
 
     const [sent, setSent] = useState(false);
     const loading = useSelector(state => state.mailer.loading);
+    const contactUsDetails = useSelector(state => state.contactUs.contactUsDetails || {});
+
+    useEffect(() => {
+        dispatch(getAllContactUs());
+    }, [dispatch]);
 
     const handle = e => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -509,8 +516,10 @@ export default function ContactForm() {
                                 </div>
                                 <div className="info-content">
                                     <div className="info-label">{t('contactInfo.phoneTitle')}</div>
-                                    <div className="info-value">Phone: (+84) 0346779622</div>
-                                    <div className="info-value">TP.HCM: Ms. Ngọc (+84) 0938 342 995</div>
+                                    <div className="info-value">Phone: {contactUsDetails.phone || '(+84) 0346779622'}</div>
+                                    <div className="info-value">
+                                        {contactUsDetails.phone2?.[t('lang') || 'vi'] || t('contactInfo.phone2')}
+                                    </div>
                                     <div className="info-value">WhatsApp: (+84) 0763205365</div>
                                     <div className="info-note">Zalo · WhatsApp</div>
                                 </div>

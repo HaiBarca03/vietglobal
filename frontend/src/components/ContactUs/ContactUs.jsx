@@ -32,21 +32,28 @@ const ContactUs = () => {
     <div className="contact-us-section">
       <h4>{lang === 'vi' ? 'Liên hệ với chúng tôi' : 'Contact Us'}</h4>
 
-      <p>
+      <div className="contact-info-item address-item">
         <EnvironmentOutlined />
         <strong>{t('address')}:</strong>
-        {info.address?.[lang]}
-      </p>
+        <div className="address-details">
+          <div>VP1: {info.address?.[lang]}</div>
+          {info.address2?.[lang] && <div>VP2: {info.address2?.[lang]}</div>}
+        </div>
+      </div>
 
       <p>
         <MailOutlined />
         <strong>{t('email')}:</strong> {info.email}
       </p>
 
-      <p>
+      <div className="contact-info-item phone-item">
         <PhoneOutlined />
-        <strong>{t('phone')}:</strong> {info.phone}
-      </p>
+        <strong>{t('phone')}:</strong>
+        <div className="phone-details">
+          <div>{info.phone}</div>
+          {info.phone2?.[lang] && <div>{info.phone2?.[lang]}</div>}
+        </div>
+      </div>
 
       <p>
         <GlobalOutlined />
