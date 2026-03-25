@@ -33,6 +33,7 @@
         "address": "VP1: 21 /86 Tô Vĩnh Diện - Khương Trung - Thanh Xuân - Hà Nội",
         "address1": "VP2: 2B Vương Thừa Vũ, Thanh Xuân, Hà Nội",
         "phone": "(+84) 346779622",
+        "phone2": "TP.HCM: Ms. Ngọc (+84) 0938342995",
         "email": "contact@vietglobal.com.vn"
     },
     "allRights": "Đã đăng ký bản quyền.",
@@ -347,7 +348,8 @@
         "addressTitle": "Địa chỉ",
         "address": "VP1: 21 /86 Tô Vĩnh Diện - Khương Trung - Thanh Xuân - Hà Nội",
         "address1": "VP2: 2B Vương Thừa Vũ, Thanh Xuân, Hà Nội",
-        "phoneTitle": "Điện thoại"
+        "phoneTitle": "Điện thoại",
+        "phone2": "TP.HCM: Ms. Ngọc (+84) 0938342995"
     },
     "footer": {
         "services": {

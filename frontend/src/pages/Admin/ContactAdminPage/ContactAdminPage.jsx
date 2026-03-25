@@ -29,7 +29,15 @@ const ContactAdminPage = () => {
           vi: contactUsDetails.address?.vi || '',
           en: contactUsDetails.address?.en || ''
         },
+        address2: {
+          vi: contactUsDetails.address2?.vi || '',
+          en: contactUsDetails.address2?.en || ''
+        },
         phone: contactUsDetails.phone || '',
+        phone2: {
+          vi: contactUsDetails.phone2?.vi || '',
+          en: contactUsDetails.phone2?.en || ''
+        },
         email: contactUsDetails.email || '',
         website: contactUsDetails.website || '',
         social_links: {
@@ -75,7 +83,28 @@ const ContactAdminPage = () => {
           </Col>
 
           <Col span={12}>
+            <Form.Item label="Địa chỉ 2 (VI)" name={['address2', 'vi']}>
+              <Input />
+            </Form.Item>
+          </Col>
+          <Col span={12}>
+            <Form.Item label="Address 2 (EN)" name={['address2', 'en']}>
+              <Input />
+            </Form.Item>
+          </Col>
+
+          <Col span={12}>
             <Form.Item label="Số điện thoại" name="phone">
+              <Input />
+            </Form.Item>
+          </Col>
+          <Col span={12}>
+            <Form.Item label="Số điện thoại 2 (VI)" name={['phone2', 'vi']}>
+              <Input />
+            </Form.Item>
+          </Col>
+          <Col span={12}>
+            <Form.Item label="Phone 2 (EN)" name={['phone2', 'en']}>
               <Input />
             </Form.Item>
           </Col>
