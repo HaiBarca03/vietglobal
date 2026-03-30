@@ -1,15 +1,19 @@
 import React, { useEffect } from 'react'
-import { Carousel } from 'antd' // 👈 dùng Carousel từ Ant Design
+import { useSelector, useDispatch } from 'react-redux'
+import { useParams, Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { Carousel, Typography, Row, Col, Button } from 'antd'
+import { ArrowRightOutlined } from '@ant-design/icons'
+
 import AdBanner from '../../components/Banner/AdBanner'
 import WhyChooseUs from '../../components/ChooseUs/ChooseUs'
 import MapLocation from '../../components/MapLocation/MapLocation'
 import ContactUs from '../../components/ContactUs/ContactUs'
-import './HomePage.css'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import { getAllProduct } from '../../stores/Product/productApi'
-import { useDispatch, useSelector } from 'react-redux'
-import { useTranslation } from 'react-i18next'
-import { Link, useParams } from 'react-router-dom'
+import './HomePage.css'
+
+const { Title, Text } = Typography
 
 const HomePage = () => {
   const productLists = useSelector((state) => state.product.productList)
@@ -17,50 +21,70 @@ const HomePage = () => {
   const { t, i18n } = useTranslation()
   const lang = i18n.language || 'en'
   const { lang: currentLang } = useParams()
+
   useEffect(() => {
     dispatch(getAllProduct())
   }, [dispatch])
+
   return (
-    <div>
+    <div className="homepage-wrapper">
       <AdBanner />
+      
       <WhyChooseUs />
-      <div className="product-slider" style={{ padding: '40px' }}>
-        <div className="tit-product-hot">{t('homeTitle')}</div>
-        {productLists.length === 0 ? (
-          <p>Không có sản phẩm nào</p>
-        ) : (
-          <Carousel autoplay>
-            {Array.from(
-              { length: Math.ceil(productLists.length / 3) },
-              (_, i) => (
-                <div key={i} className="product-slide-group">
-                  {productLists.slice(i * 3, i * 3 + 3).map((product) => (
-                    <div className="product-slide-item" key={product._id}>
-                      <ProductCard product={product} lang={lang} />
-                    </div>
-                  ))}
-                </div>
-              )
-            )}
-          </Carousel>
-        )}
-        <p className="all-product">
-          <Link
-            to={`/${currentLang}/all-product`}
-            style={{ color: 'inherit', textDecoration: 'none' }}
-          >
-            {t('readmore')}
-          </Link>
-        </p>
-      </div>
-      <div className="contact-map-wrapper">
-        <div className="contact-left">
-          <ContactUs />
+
+      <section className="product-section">
+        <div className="container">
+          <div className="section-header">
+            <Title level={2} className="main-title">
+              {t('homeTitle')}
+            </Title>
+            <div className="title-accent" />
+          </div>
+
+          {productLists.length === 0 ? (
+            <div className="no-products">
+              <Text type="secondary">{'Không có sản phẩm nào'}</Text>
+            </div>
+          ) : (
+            <div className="carousel-wrapper">
+              <Carousel 
+                autoplay 
+                dots={{ className: 'custom-dots' }}
+                slidesToShow={productLists.length < 3 ? productLists.length : 3}
+                responsive={[
+                  { breakpoint: 1024, settings: { slidesToShow: 2 } },
+                  { breakpoint: 768, settings: { slidesToShow: 1 } }
+                ]}
+              >
+                {productLists.map((product) => (
+                  <div key={product._id} className="product-slide-item">
+                    <ProductCard product={product} lang={lang} />
+                  </div>
+                ))}
+              </Carousel>
+            </div>
+          )}
+
+          <div className="view-all-wrapper">
+            <Link to={`/${currentLang}/all-product`}>
+              <Button type="link" size="large" icon={<ArrowRightOutlined />}>
+                {t('readmore')}
+              </Button>
+            </Link>
+          </div>
         </div>
-        <div className="contact-right">
-          <MapLocation />
-        </div>
-      </div>
+      </section>
+
+      <section className="contact-map-section">
+        <Row gutter={[0, 0]} align="stretch">
+          <Col xs={24} lg={10} className="contact-column">
+            <ContactUs />
+          </Col>
+          <Col xs={24} lg={14} className="map-column">
+            <MapLocation />
+          </Col>
+        </Row>
+      </section>
     </div>
   )
 }

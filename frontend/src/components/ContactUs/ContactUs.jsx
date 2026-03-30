@@ -14,12 +14,16 @@ import './ContactUs.css'
 import { getAllContactUs } from '../../stores/ContactUs/ContactUsApi'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { Typography, Space, Divider } from 'antd'
+
+const { Title, Text, Paragraph } = Typography
+
 const ContactUs = () => {
   const { t, i18n } = useTranslation()
   const lang = i18n.language || 'en'
   const dispatch = useDispatch()
   const contactUsDetails = useSelector(
-    (state) => state.contactUs.contactUsDetails || []
+    (state) => state.contactUs.contactUsDetails || {}
   )
 
   useEffect(() => {
@@ -28,91 +32,82 @@ const ContactUs = () => {
 
   const info = contactUsDetails
 
+  const ContactItem = ({ icon, label, children }) => (
+    <div style={{ marginBottom: 20, display: 'flex', gap: 15 }}>
+      <div style={{
+        color: '#00B5B8',
+        fontSize: 20,
+        marginTop: 4,
+        background: 'rgba(0, 181, 184, 0.1)',
+        width: 40,
+        height: 40,
+        borderRadius: 8,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexShrink: 0
+      }}>
+        {icon}
+      </div>
+      <div>
+        <Text strong style={{ display: 'block', fontSize: 13, textTransform: 'uppercase', color: '#888', letterSpacing: 0.5 }}>
+          {label}
+        </Text>
+        <div style={{ fontSize: 16 }}>{children}</div>
+      </div>
+    </div>
+  )
+
   return (
-    <div className="contact-us-section">
-      <h4>{lang === 'vi' ? 'Liên hệ với chúng tôi' : 'Contact Us'}</h4>
+    <div className="contact-us-section" style={{ padding: '40px', background: '#fff', borderRadius: 20 }}>
+      <Title level={3} style={{ marginBottom: 30, color: '#0a1f3a', fontFamily: "'Barlow Condensed', sans-serif", textTransform: 'uppercase' }}>
+        {lang === 'vi' ? 'Thông tin liên hệ' : 'Contact Information'}
+      </Title>
 
-      <div className="contact-info-item address-item">
-        <EnvironmentOutlined />
-        <strong>{t('address')}:</strong>
-        <div className="address-details">
-          <div>VP1: {info.address?.[lang]}</div>
-          {info.address2?.[lang] && <div>VP2: {info.address2?.[lang]}</div>}
-        </div>
-      </div>
+      <ContactItem icon={<EnvironmentOutlined />} label={t('address')}>
+        <Paragraph style={{ marginBottom: 0 }}>
+          <Text strong>Office 1:</Text> {info.address?.[lang]}
+        </Paragraph>
+        {info.address2?.[lang] && (
+          <Paragraph style={{ marginBottom: 0, marginTop: 8 }}>
+            <Text strong>Office 2:</Text> {info.address2?.[lang]}
+          </Paragraph>
+        )}
+      </ContactItem>
 
-      <p>
-        <MailOutlined />
-        <strong>{t('email')}:</strong> {info.email}
-      </p>
+      <ContactItem icon={<MailOutlined />} label={t('email')}>
+        <a href={`mailto:${info.email}`} style={{ color: 'inherit' }}>{info.email}</a>
+      </ContactItem>
 
-      <div className="contact-info-item phone-item">
-        <PhoneOutlined />
-        <strong>{t('phone')}:</strong>
-        <div className="phone-details">
-          <div>{info.phone}</div>
-          {info.phone2?.[lang] && <div>{info.phone2?.[lang]}</div>}
-        </div>
-      </div>
+      <ContactItem icon={<PhoneOutlined />} label={t('phone')}>
+        <Space direction="vertical" size={0}>
+          <Text>{info.phone}</Text>
+          {info.phone2?.[lang] && <Text>{info.phone2?.[lang]}</Text>}
+        </Space>
+      </ContactItem>
 
-      <p>
-        <GlobalOutlined />
-        <strong>{t('website')}:</strong>
-        <a href={info.website} target="_blank" rel="noopener noreferrer">
-          {info.website}
-        </a>
-      </p>
+      <ContactItem icon={<WhatsAppOutlined />} label="WhatsApp / Zalo">
+        <Space size="large">
+          <a href={`https://wa.me/${info.social_links?.zalo?.replace(/\D/g, '') || '84346779622'}`} target="_blank" rel="noopener noreferrer" style={{ color: '#25D366', fontWeight: 600 }}>
+            WhatsApp
+          </a>
+          <a href={info.social_links?.zalo} target="_blank" rel="noopener noreferrer" style={{ color: '#0068FF', fontWeight: 600 }}>
+            Zalo
+          </a>
+        </Space>
+      </ContactItem>
 
-      <p>
-        <FacebookOutlined />
-        <strong>Facebook:</strong>
-        <a
-          href={info.social_links?.facebook}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {info.social_links?.facebook}
-        </a>
-      </p>
+      <Divider style={{ margin: '30px 0' }} />
 
-      <p>
-        <InstagramOutlined />
-        <strong>Instagram:</strong>
-        <a
-          href={info.social_links?.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {info.social_links?.instagram}
-        </a>
-      </p>
+      <Text strong style={{ display: 'block', marginBottom: 15, color: '#888', fontSize: 12, textTransform: 'uppercase' }}>
+        {lang === 'vi' ? 'Theo dõi chúng tôi' : 'Follow Us'}
+      </Text>
 
-      <p>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/2048px-Icon_of_Zalo.svg.png"
-          alt="Zalo"
-        />
-        <strong>Zalo:</strong>
-        <a
-          href={info.social_links?.zalo}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          (+84) 346779622
-        </a>
-      </p>
-
-      <p>
-        <WhatsAppOutlined />
-        <strong>Whatsapp:</strong>
-        <a
-          href={info.social_links?.zalo}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {info.social_links?.zalo}
-        </a>
-      </p>
+      <Space size="middle">
+        <a href={info.social_links?.facebook} target="_blank" rel="noopener noreferrer" style={{ fontSize: 24, color: '#1877F2' }}><FacebookOutlined /></a>
+        <a href={info.social_links?.instagram} target="_blank" rel="noopener noreferrer" style={{ fontSize: 24, color: '#E4405F' }}><InstagramOutlined /></a>
+        <a href={info.website} target="_blank" rel="noopener noreferrer" style={{ fontSize: 24, color: '#00B5B8' }}><GlobalOutlined /></a>
+      </Space>
     </div>
   )
 }
