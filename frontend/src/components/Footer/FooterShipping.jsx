@@ -1,5 +1,12 @@
 import React from 'react';
-import { Typography } from 'antd';
+import { Typography, Row, Col, Space } from 'antd';
+import {
+    PhoneOutlined,
+    MailOutlined,
+    WhatsAppOutlined,
+    EnvironmentOutlined,
+    GlobalOutlined
+} from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -65,88 +72,91 @@ const FooterShipping = () => {
                     VIETGLOBAL IMPORT EXPORT TRADING PRODUCTION COMPANY LIMITED.
                 </Title>
 
-                <Paragraph
-                    style={{
-                        color: '#d0e8ff',
-                        fontSize: 16,
-                        lineHeight: 1.8,
-                        marginBottom: 16,
-                    }}
-                >
-                    {t('contactInfo.address')}
-                </Paragraph>
+                <Row gutter={[40, 40]} justify="center" style={{ textAlign: 'left', marginTop: 40, marginBottom: 40 }}>
+                    {/* Hotline Column */}
+                    <Col xs={24} sm={24} md={8}>
+                        <Title level={4} style={{ color: TEAL, textTransform: 'uppercase', marginBottom: 20 }}>
+                            <PhoneOutlined style={{ marginRight: 10 }} />
+                            Hotline Service
+                        </Title>
+                        <Space direction="vertical" size="middle" style={{ width: '100%' }}>
+                            <div>
+                                <Paragraph style={{ color: '#fff', marginBottom: 4, fontWeight: 600 }}>Phone:</Paragraph>
+                                <a href={`tel:${contactUsDetails.phone || '0346779622'}`} style={{ color: '#d0e8ff', textDecoration: 'none' }}>
+                                    {contactUsDetails.phone || '(+84) 0346779622'}
+                                </a>
+                            </div>
+                            <div>
+                                <Paragraph style={{ color: '#fff', marginBottom: 4, fontWeight: 600 }}>Staff Support:</Paragraph>
+                                <div style={{ color: '#d0e8ff' }}>
+                                    {contactUsDetails.phone2?.[lang] || t('contactInfo.phone2')}
+                                </div>
+                            </div>
+                            <div>
+                                <Paragraph style={{ color: '#fff', marginBottom: 4, fontWeight: 600 }}>WhatsApp:</Paragraph>
+                                <Space>
+                                    <WhatsAppOutlined style={{ color: '#25D366' }} />
+                                    <a href="https://wa.me/84763205365" target="_blank" rel="noopener noreferrer" style={{ color: '#d0e8ff', textDecoration: 'none' }}>
+                                        (+84) 0763205365
+                                    </a>
+                                </Space>
+                            </div>
+                        </Space>
+                    </Col>
 
-                <Paragraph
-                    style={{
-                        color: '#d0e8ff',
-                        fontSize: 16,
-                        lineHeight: 1.8,
-                        marginBottom: 16,
-                    }}
-                >
-                    {t('contactInfo.address1')}
-                </Paragraph>
+                    {/* Email Column */}
+                    <Col xs={24} sm={24} md={8}>
+                        <Title level={4} style={{ color: TEAL, textTransform: 'uppercase', marginBottom: 20 }}>
+                            <MailOutlined style={{ marginRight: 10 }} />
+                            Connect With Us
+                        </Title>
+                        <Space direction="vertical" size="middle" style={{ width: '100%' }}>
+                            <div>
+                                <Paragraph style={{ color: '#fff', marginBottom: 4, fontWeight: 600 }}>General Email:</Paragraph>
+                                <a href="mailto:Vietglobal8@gmail.com" style={{ color: '#d0e8ff', textDecoration: 'none' }}>
+                                    Vietglobal8@gmail.com
+                                </a>
+                            </div>
+                            <div>
+                                <Paragraph style={{ color: '#fff', marginBottom: 4, fontWeight: 600 }}>Department (Ngọc):</Paragraph>
+                                <a href="mailto:myngocvietgobal@gmail.com" style={{ color: '#d0e8ff', textDecoration: 'none' }}>
+                                    myngocvietgobal@gmail.com
+                                </a>
+                            </div>
+                            <div>
+                                <Paragraph style={{ color: '#fff', marginBottom: 4, fontWeight: 600 }}>Official Website:</Paragraph>
+                                <Space>
+                                    <GlobalOutlined />
+                                    <a href="https://www.vietgloballogitics.com" target="_blank" rel="noopener noreferrer" style={{ color: '#d0e8ff', textDecoration: 'none' }}>
+                                        www.vietgloballogitics.com
+                                    </a>
+                                </Space>
+                            </div>
+                        </Space>
+                    </Col>
 
-                <Paragraph
-                    style={{
-                        color: '#d0e8ff',
-                        fontSize: 16,
-                        lineHeight: 1.8,
-                        marginBottom: 8,
-                    }}
-                >
-                    Phone: {contactUsDetails.phone || '(+84) 0346779622'}
-                    <div className="info-value">
-                        {contactUsDetails.phone2?.[lang] || t('contactInfo.phone2')}
-                    </div>
-                </Paragraph>
-
-                <Paragraph
-                    style={{
-                        color: '#d0e8ff',
-                        fontSize: 16,
-                        lineHeight: 1.8,
-                        marginBottom: 8,
-                    }}
-                >
-                    WhatsApp: (+84) 0763205365
-                </Paragraph>
-
-                <Paragraph
-                    style={{
-                        color: '#d0e8ff',
-                        fontSize: 16,
-                        lineHeight: 1.8,
-                        marginBottom: 8,
-                    }}
-                >
-                    Vietglobal
-                </Paragraph>
-
-                <Paragraph
-                    style={{
-                        color: '#d0e8ff',
-                        fontSize: 16,
-                        lineHeight: 1.8,
-                        marginBottom: 8,
-                    }}
-                >
-                    Email: Vietglobal8@gmail.com
-                </Paragraph>
-
-                <Paragraph
-                    style={{
-                        color: '#d0e8ff',
-                        fontSize: 16,
-                        lineHeight: 1.8,
-                        marginBottom: 48,
-                    }}
-                >
-                    Website:{' '}
-                    <a href="https://www.vietgloballogitics.com" style={{ color: TEAL, textDecoration: 'none' }}>
-                        www.vietgloballogitics.com
-                    </a>
-                </Paragraph>
+                    {/* Locations Column */}
+                    <Col xs={24} sm={24} md={8}>
+                        <Title level={4} style={{ color: TEAL, textTransform: 'uppercase', marginBottom: 20 }}>
+                            <EnvironmentOutlined style={{ marginRight: 10 }} />
+                            Our Offices
+                        </Title>
+                        <Space direction="vertical" size="large" style={{ width: '100%' }}>
+                            <div>
+                                <Paragraph style={{ color: '#fff', marginBottom: 4, fontWeight: 600 }}>Head Office:</Paragraph>
+                                <div style={{ color: '#d0e8ff', lineHeight: 1.6 }}>
+                                    {t('contactInfo.address')}
+                                </div>
+                            </div>
+                            <div>
+                                <Paragraph style={{ color: '#fff', marginBottom: 4, fontWeight: 600 }}>Branch Address:</Paragraph>
+                                <div style={{ color: '#d0e8ff', lineHeight: 1.6 }}>
+                                    {t('contactInfo.address1')}
+                                </div>
+                            </div>
+                        </Space>
+                    </Col>
+                </Row>
 
                 {/* Bottom bar */}
                 <div

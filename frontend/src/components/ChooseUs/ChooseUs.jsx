@@ -68,12 +68,13 @@ const WhyChooseUs = () => {
       <div className="overlay-choose-us" />
       
       <motion.h2 
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="section-title"
+        style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
       >
-        {lang === 'vi' ? 'Tại sao chọn chúng tôi?' : 'Why Choose Us?'}
+        {lang === 'vi' ? 'Tại sao chọn VietGlobal?' : 'Why Choose VietGlobal?'}
       </motion.h2>
 
       <motion.div
@@ -83,19 +84,23 @@ const WhyChooseUs = () => {
         viewport={{ once: true, margin: "-100px" }}
         className="choose-content-wrapper"
       >
-        <Row gutter={[24, 24]}>
+        <Row gutter={[30, 30]}>
           {items.map((item, index) => (
-            <Col xs={24} md={12} lg={6} key={index}>
+            <Col xs={24} sm={12} lg={6} key={index}>
               <motion.div 
                 variants={itemVariants}
-                whileHover={{ y: -10 }} // Bay nhẹ khi hover
+                whileHover={{ 
+                  y: -15,
+                  transition: { duration: 0.3 }
+                }}
                 className="choose-item"
               >
                 <div className="icon-box">
                   <div className="icon-glow" />
-                  <div className="icon">{item.icon}</div>
+                  <div className="icon" style={{ color: '#00B5B8' }}>{item.icon}</div>
                 </div>
                 <h3 className="title">{item.title[lang]}</h3>
+                <div className="separator" />
                 <p className="description">{item.description[lang]}</p>
               </motion.div>
             </Col>
