@@ -30,7 +30,7 @@
     },
     "contact": {
         "title": "Liên hệ",
-        "address": "VP1: 21 /86 Tô Vĩnh Diện - Khương Trung - Thanh Xuân - Hà Nội",
+        "address": "VP1: LK31 - Ỷ La - Dương Nội - Hà Đông - Hà Nội",
         "address1": "VP2: 2B Vương Thừa Vũ, Thanh Xuân, Hà Nội",
         "phone": "(+84) 346779622",
         "phone2": "TP.HCM: Ms. Ngọc (+84) 0938342995",
@@ -176,13 +176,10 @@
         "ad-banners": {
             "title1": "VietGlobal",
             "desc1": "Kết nối nông sản Việt với thị trường toàn cầu",
-
             "title2": "Uy tín & Chất lượng",
             "desc2": "Cam kết sản phẩm đạt chuẩn và phát triển bền vững",
-
             "title3": "Sứ mệnh",
             "desc3": "Đưa nông sản Việt vươn ra thế giới",
-
             "title4": "Giá trị quốc tế",
             "desc4": "Tiêu chuẩn toàn cầu – Giá trị Việt Nam"
         }
@@ -197,13 +194,10 @@
         "stats": {
             "global": "Toàn cầu",
             "globalDesc": "Quốc gia kết nối",
-
             "scale": "Quy mô lớn",
             "scaleDesc": "Lô hàng mỗi tháng",
-
             "reliable": "Độ tin cậy",
             "reliableDesc": "Tỷ lệ đúng hạn",
-
             "support": "24/7",
             "supportDesc": "Hỗ trợ khách hàng"
         },
@@ -213,7 +207,11 @@
     },
     "warehouse": {
         "standards": "Tiêu chuẩn dịch vụ kho ngoại quan",
-        "highlights": ["Kho đạt tiêu chuẩn hải quan", "An ninh & giám sát 24/7", "Đội ngũ giàu kinh nghiệm"],
+        "highlights": [
+            "Kho đạt tiêu chuẩn hải quan",
+            "An ninh & giám sát 24/7",
+            "Đội ngũ giàu kinh nghiệm"
+        ],
         "services": {
             "storage": {
                 "title": "Lưu trữ hàng hóa",
@@ -262,7 +260,15 @@
             "chau-a": {
                 "label": "Châu Á",
                 "description": "Khai thác các tuyến vận chuyển đến các quốc gia trọng điểm tại Châu Á với lịch tàu ổn định",
-                "countries": ["Trung Quốc", "Hàn Quốc", "Nhật Bản", "Singapore", "Thái Lan", "Malaysia", "ASEAN"],
+                "countries": [
+                    "Trung Quốc",
+                    "Hàn Quốc",
+                    "Nhật Bản",
+                    "Singapore",
+                    "Thái Lan",
+                    "Malaysia",
+                    "ASEAN"
+                ],
                 "services": [
                     "Vận chuyển đường biển FCL/LCL",
                     "Vận chuyển hàng không (Air Freight)",
@@ -292,7 +298,14 @@
             "trung-dong": {
                 "label": "Trung Đông",
                 "description": "Vận chuyển đến các thị trường Trung Đông đang tăng trưởng mạnh với lịch tàu ổn định",
-                "countries": ["UAE (Dubai, Jebel Ali)", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain"],
+                "countries": [
+                    "UAE (Dubai, Jebel Ali)",
+                    "Saudi Arabia",
+                    "Qatar",
+                    "Kuwait",
+                    "Oman",
+                    "Bahrain"
+                ],
                 "services": [
                     "Lịch tàu ổn định",
                     "Giá cước cạnh tranh",
@@ -336,7 +349,6 @@
             "phone": "Số điện thoại",
             "subject": "Tiêu đề",
             "message": "Tin nhắn",
-
             "placeholderSubject": "Nội dung chủ đề...",
             "placeholderMessage": "Nhập nội dung tin nhắn của bạn..."
         },
@@ -346,7 +358,7 @@
     "contactInfo": {
         "title": "Thông tin liên hệ",
         "addressTitle": "Địa chỉ",
-        "address": "VP1: 21 /86 Tô Vĩnh Diện - Khương Trung - Thanh Xuân - Hà Nội",
+        "address": "VP1: LK31 - Ỷ La - Dương Nội - Hà Đông - Hà Nội",
         "address1": "VP2: 2B Vương Thừa Vũ, Thanh Xuân, Hà Nội",
         "phoneTitle": "Điện thoại",
         "phone2": "TP.HCM: Ms. Ngọc (+84) 0938342995"
