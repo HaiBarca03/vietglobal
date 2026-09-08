@@ -1,162 +1,229 @@
-// src/components/OrderProcessFlow.jsx
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FileTextOutlined,
   GiftOutlined,
   CarOutlined,
   HomeOutlined,
   GlobalOutlined,
-  CheckCircleOutlined,
+  SafetyCertificateOutlined,
   ShopOutlined,
+  SendOutlined,
+  ArrowRightOutlined,
+  ThunderboltFilled,
+  EnvironmentFilled,
 } from "@ant-design/icons";
-import "./OrderProcessFlow.css";
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
+import "./OrderProcessFlow.css";
 
-const steps = [
-  { id: 1, title: "viChi.steps.step1", icon: <FileTextOutlined />, color: "#00d2ff" },
-  { id: 2, title: "viChi.steps.step2", icon: <GiftOutlined />, color: "#00bcff" },
-  { id: 3, title: "viChi.steps.step3", icon: <CarOutlined />, color: "#00a6ff" },
-  { id: 4, title: "viChi.steps.step4", icon: <HomeOutlined />, color: "#0090ff" },
-  { id: 5, title: "viChi.steps.step5", icon: <GlobalOutlined />, color: "#007aff" },
-  { id: 6, title: "viChi.steps.step6", icon: <CheckCircleOutlined />, color: "#0064ff" },
-  { id: 7, title: "viChi.steps.step7", icon: <ShopOutlined />, color: "#004eff" },
-  { id: 8, title: "viChi.steps.step8", icon: <CarOutlined />, color: "#0038ff" },
+const chinaStepsConfig = [
+  { id: 1, stepNum: "01", key: "s1", icon: <FileTextOutlined /> },
+  { id: 2, stepNum: "02", key: "s2", icon: <GiftOutlined /> },
+  { id: 3, stepNum: "03", key: "s3", icon: <CarOutlined /> },
+  { id: 4, stepNum: "04", key: "s4", icon: <HomeOutlined /> },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 60, opacity: 0, scale: 0.85 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    scale: 1,
-    transition: {
-      type: "spring",
-      stiffness: 120,
-      damping: 12,
-    },
-  },
-  hover: {
-    scale: 1.08,
-    y: -8,
-    boxShadow: "0 20px 40px rgba(0,0,0,0.16)",
-    transition: { duration: 0.3 },
-  },
-};
-
-const lineVariants = {
-  hidden: { pathLength: 0, opacity: 0 },
-  visible: {
-    pathLength: 1,
-    opacity: 1,
-    transition: {
-      duration: 1.5,
-      ease: "easeInOut",
-      delay: 0.4,
-    },
-  },
-};
+const vietnamStepsConfig = [
+  { id: 5, stepNum: "05", key: "s5", icon: <GlobalOutlined /> },
+  { id: 6, stepNum: "06", key: "s6", icon: <SafetyCertificateOutlined /> },
+  { id: 7, stepNum: "07", key: "s7", icon: <ShopOutlined /> },
+  { id: 8, stepNum: "08", key: "s8", icon: <SendOutlined /> },
+];
 
 export default function OrderProcessFlow() {
   const { t } = useTranslation();
-  const lang = i18next.language || "en";
+  const [activeStep, setActiveStep] = useState(1);
+
+  const getStepData = (cfg) => ({
+    id: cfg.id,
+    stepNum: cfg.stepNum,
+    icon: cfg.icon,
+    title: t(`viChi.process.steps.${cfg.key}.title`),
+    sub: t(`viChi.process.steps.${cfg.key}.sub`),
+    detail: t(`viChi.process.steps.${cfg.key}.detail`),
+    badge: t(`viChi.process.steps.${cfg.key}.badge`),
+  });
+
+  const stageChina = chinaStepsConfig.map(getStepData);
+  const stageVietnam = vietnamStepsConfig.map(getStepData);
+  const allSteps = [...stageChina, ...stageVietnam];
+  const currentStepData = allSteps.find((s) => s.id === activeStep) || allSteps[0];
+
   return (
-    <div className="process-container">
-      <div className="decor-bubbles">
-        {[...Array(6)].map((_, i) => (
+    <section id="order-process-flow" className="pipeline-section-wrapper">
+      {/* Dynamic Background Ambient Waves */}
+      <div className="pipeline-ambient-glow glow-top" />
+      <div className="pipeline-ambient-glow glow-bottom" />
+
+      <div className="pipeline-container">
+        {/* Header */}
+        <div className="pipeline-header">
           <motion.div
-            key={i}
-            className="bubble"
-            animate={{
-              y: [0, -40, 0],
-              opacity: [0.3, 0.6, 0.3],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 3 + i,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="pipeline-eyebrow"
+          >
+            <ThunderboltFilled style={{ color: "#1464C4" }} />
+            <span>{t("viChi.process.eyebrow", "HÀNH TRÌNH VẬN TẢI KHÉP KÍN")}</span>
+          </motion.div>
 
-      <motion.h1
-        initial={{ opacity: 0, scale: 0.5, y: -100 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ type: "spring", stiffness: 100, damping: 10 }}
-        className="main-title"
-      >
-        {t("viChi.process")}
-      </motion.h1>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="pipeline-title"
+          >
+            {t("viChi.process.title", "Pipeline Vận Chuyển 8 Bước Thông Suốt")}
+          </motion.h2>
 
-      <div className="flow-wrapper">
-        <svg
-          className="connecting-lines"
-          preserveAspectRatio="none"
-          viewBox="0 0 1200 400"
-        >
-          {/* Giữ nguyên các path SVG của bạn nhưng đổi màu sang trắng trong suốt */}
-          <motion.path
-            d="M 100 200 Q 300 50, 500 200 Q 700 350, 900 200 Q 1100 50, 1300 200"
-            fill="none"
-            stroke="rgba(255,255,255,0.2)"
-            strokeWidth="3"
-            variants={lineVariants}
-            initial="hidden"
-            animate="visible"
-          />
-        </svg>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="pipeline-desc"
+          >
+            {t("viChi.process.subtitle", "Quy trình 8 bước khép kín từ lúc phát sinh đơn đến khi nhận hàng tận tay an toàn, chuẩn xác.")}
+          </motion.p>
+        </div>
 
+        {/* ================= STAGE 1: NGUỒN HÀNG TRUNG QUỐC ================= */}
+        <div className="pipeline-stage-block">
+          <div className="stage-ribbon-label">
+            <span className="stage-flag-dot china" />
+            <span className="stage-text">{t("viChi.process.stage1Title", "CHẶNG 1: NGUỒN HÀNG & TỔNG KHO TRUNG QUỐC")}</span>
+            <span className="stage-sub-tag">{t("viChi.process.stage1Sub", "Kho Bằng Tường / Đông Hưng")}</span>
+          </div>
+
+          <div className="pipeline-highway-track">
+            <div className="highway-connecting-line" />
+            <div className="highway-nodes-row">
+              {stageChina.map((step) => {
+                const isActive = activeStep === step.id;
+                return (
+                  <motion.div
+                    key={step.id}
+                    className={`highway-node-card ${isActive ? "active" : ""}`}
+                    onClick={() => setActiveStep(step.id)}
+                    whileHover={{ y: -6 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="node-top-indicator">
+                      <span className="node-num-pill">{step.stepNum}</span>
+                      <span className="node-badge-pill">{step.badge}</span>
+                    </div>
+
+                    <div className="node-icon-circle">
+                      {step.icon}
+                    </div>
+
+                    <div className="node-title">{step.title}</div>
+                    <div className="node-sub">{step.sub}</div>
+
+                    <div className="node-active-bar" />
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* ================= CENTRAL GATEWAY BRIDGE ================= */}
+        <div className="border-crossing-bridge">
+          <div className="bridge-track-line" />
+          <motion.div
+            className="bridge-portal-card"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="bridge-pulse-beacon" />
+            <div className="bridge-content">
+              <div className="bridge-icon">
+                <EnvironmentFilled />
+              </div>
+              <div>
+                <div className="bridge-title">{t("viChi.process.bridgeTitle", "Cửa khẩu Quốc tế Hữu Nghị / Tân Thanh")}</div>
+                <div className="bridge-sub">{t("viChi.process.bridgeSub", "Chuyên tuyến thông quan mậu dịch chính ngạch • Xuất bến 18:00 hàng ngày")}</div>
+              </div>
+            </div>
+            <div className="bridge-status-tag">
+              <span className="status-live-dot" />
+              <span>{t("viChi.process.bridgeStatus", "Thông quan 24h")}</span>
+            </div>
+          </motion.div>
+          <div className="bridge-track-line" />
+        </div>
+
+        {/* ================= STAGE 2: PHÂN PHỐI VIỆT NAM ================= */}
+        <div className="pipeline-stage-block">
+          <div className="stage-ribbon-label">
+            <span className="stage-flag-dot vietnam" />
+            <span className="stage-text">{t("viChi.process.stage2Title", "CHẶNG 2: THÔNG QUAN & GIAO HÀNG TẠI VIỆT NAM")}</span>
+            <span className="stage-sub-tag">{t("viChi.process.stage2Sub", "Hà Nội • Đà Nẵng • TP.HCM")}</span>
+          </div>
+
+          <div className="pipeline-highway-track">
+            <div className="highway-connecting-line vn-line" />
+            <div className="highway-nodes-row">
+              {stageVietnam.map((step) => {
+                const isActive = activeStep === step.id;
+                return (
+                  <motion.div
+                    key={step.id}
+                    className={`highway-node-card ${isActive ? "active" : ""}`}
+                    onClick={() => setActiveStep(step.id)}
+                    whileHover={{ y: -6 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="node-top-indicator">
+                      <span className="node-num-pill">{step.stepNum}</span>
+                      <span className="node-badge-pill vn">{step.badge}</span>
+                    </div>
+
+                    <div className="node-icon-circle vn">
+                      {step.icon}
+                    </div>
+
+                    <div className="node-title">{step.title}</div>
+                    <div className="node-sub">{step.sub}</div>
+
+                    <div className="node-active-bar" />
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* ================= INTERACTIVE STEP DETAIL CONSOLE ================= */}
         <motion.div
-          className="steps-grid"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          key={activeStep}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35 }}
+          className="step-detail-console"
         >
-          {steps.map((step) => (
-            <motion.div
-              key={step.id}
-              className="step-card"
-              variants={itemVariants}
-              whileHover={{
-                scale: 1.1,
-                rotate: [0, -2, 2, 0], // Xoay nhẹ khi hover
-                y: -15,
-              }}
-              // Animation tự động nhấp nhô (Floating)
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                y: {
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: step.id * 0.2,
-                },
-              }}
-              style={{ "--step-color": step.color }}
-            >
-              <div className="step-number">{step.id}</div>
-              <div className="step-icon">{step.icon}</div>
-              <div className="step-title">{t(step.title)}</div>
-            </motion.div>
-          ))}
+          <div className="detail-console-left">
+            <div className="detail-step-badge">
+              <span>{t("viChi.process.stepPrefix", "BƯỚC")} {currentStepData.stepNum}</span>
+              <ArrowRightOutlined style={{ fontSize: 12 }} />
+              <span className="detail-step-name">{currentStepData.title}</span>
+            </div>
+            <div className="detail-step-title">{currentStepData.sub}</div>
+            <div className="detail-step-desc">{currentStepData.detail}</div>
+          </div>
+
+          <div className="detail-console-right">
+            <div className="detail-action-chips">
+              <span className="chip">{t("viChi.process.chipOnTime", "✓ Cam kết đúng tiến độ")}</span>
+              <span className="chip">{t("viChi.process.chipTracking", "✓ Cập nhật mã tracking realtime")}</span>
+              <span className="chip">{t("viChi.process.chipInsurance", "✓ Đền bù 100% nếu thất lạc")}</span>
+            </div>
+          </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 }

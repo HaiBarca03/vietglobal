@@ -96,13 +96,13 @@ export default function ServiceDetailPage() {
 
       <PageBreadcrumb items={breadcrumbs} />
 
-      <div style={{ padding: "48px 80px 80px" }}>
-        <Row gutter={40}>
-          <Col xs={24} md={7} lg={6}>
-            <ServiceSidebar items={SIDEBAR_ITEMS} />
+      <div style={{ maxWidth: 1240, margin: "0 auto", padding: "48px 24px 80px" }}>
+        <Row gutter={[40, 40]}>
+          <Col xs={24} md={8} lg={7}>
+            <ServiceSidebar items={SIDEBAR_ITEMS} activeKey={slug} />
           </Col>
 
-          <Col xs={24} md={17} lg={18}>
+          <Col xs={24} md={16} lg={17}>
             {slug === "all-services" ? (
               <AllServicesGrid />
             ) : (

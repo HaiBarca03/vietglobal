@@ -1,5 +1,6 @@
 {
     "home": "Home",
+    "fulfillment": "Fulfillment",
     "import-export": "Import & Export",
     "category": "Products category",
     "products": "Products",
@@ -34,7 +35,7 @@
         "address": "Office 1: LK31 - Y La - Duong Noi - Ha Dong - Hanoi",
         "address1": "Office 2: 2B Vuong Thua Vu, Thanh Xuan, Hanoi, Vietnam",
         "phone": "(+84) 346779622",
-        "phone2": "HCMC: Ms. Ngoc (+84) 0938342995",
+        "phone2": "(+84) 0763205365",
         "email": "contact@vietglobal.com.vn"
     },
     "allRights": "All rights reserved.",
@@ -99,39 +100,205 @@
         }
     },
     "viChi": {
-        "process": "Ordering process",
-        "steps": {
-            "step1": "Place Order",
-            "step2": "Package Goods",
-            "step3": "Domestic Transport",
-            "step4": "China Warehouse",
-            "step5": "Transport to Vietnam",
-            "step6": "Customs Clearance",
-            "step7": "Vietnam Warehouse",
-            "step8": "Domestic Delivery"
+        "banner": {
+            "tag": "OFFICIAL IMPORT & CROSS-BORDER LOGISTICS",
+            "subTitle": "STRATEGIC PARTNER FOR IMPORT & SOURCING SOLUTIONS",
+            "mainTitle": "CHINA – VIETNAM LOGISTICS",
+            "desc": "Cost-effective, rapid customs clearance, and 100% cargo insurance for businesses and importers",
+            "ctaQuote": "Get Official Quote",
+            "ctaProcess": "Explore 8-Step Flow",
+            "features": [
+                "Direct factory sourcing & negotiation on 1688, Taobao, Tmall",
+                "Fast transit within 3 – 7 business days after truck dispatch",
+                "LCL container consolidation by sea & road starting from only 50kg",
+                "3 regional hub warehouses in Vietnam (Hanoi – Da Nang – Ho Chi Minh City)",
+                "Competitive rates from 5,000 VND/kg – 1,000,000 VND/CBM",
+                "Full legal customs documentation (VAT invoice, C/O Form E, import declarations)",
+                "100% compensation guarantee against loss or cargo damage",
+                "Direct nationwide doorstep delivery & express forwarding"
+            ],
+            "telemetry": {
+                "route": "China ⇄ Vietnam (Daily Cargo)",
+                "statusActive": "Active",
+                "originTitle": "Guangzhou / Pingxiang",
+                "originSub": "1688 & Taobao consolidation hubs",
+                "transitBadge": "Trucking Express • 3–7 Days",
+                "destTitle": "Hanoi • Da Nang • Ho Chi Minh City",
+                "destSub": "Proprietary 3-region warehouse network",
+                "transitTimeVal": "3 – 7 Days",
+                "transitTimeLbl": "Transit lead time",
+                "insuranceVal": "100% Insured",
+                "insuranceLbl": "Cargo protection",
+                "minWeightVal": "From 50kg",
+                "minWeightLbl": "Official LCL consolidation",
+                "docVal": "VAT & C/O Form E",
+                "docLbl": "Import documentation",
+                "dispatchTip": "⚡ Daily fixed 18:00 truck dispatch from Pingxiang hub"
+            }
         },
-        "orderTool": "Ordering tool",
-        "orderBrowser": "Order on browser",
-        "ourActivities": "We have been operating",
+        "process": {
+            "eyebrow": "CLOSED-LOOP LOGISTICS HIGHWAY",
+            "title": "Seamless 8-Step Supply Chain Pipeline",
+            "subtitle": "An 8-step closed-loop logistics flow ensuring fast, secure, and transparent delivery to your doorstep.",
+            "stage1Title": "STAGE 1: CHINA SOURCING & CONSOLIDATION",
+            "stage1Sub": "Pingxiang / Dongxing Hubs",
+            "stage2Title": "STAGE 2: CUSTOMS CLEARANCE & LAST-MILE DELIVERY",
+            "stage2Sub": "Hanoi • Da Nang • Ho Chi Minh City",
+            "bridgeTitle": "Huu Nghi / Tan Thanh International Border Gates",
+            "bridgeSub": "Dedicated official trade customs lanes • Daily 18:00 departure",
+            "bridgeStatus": "24h Customs Clearance",
+            "stepPrefix": "STEP",
+            "chipOnTime": "✓ Strict on-time SLA commitment",
+            "chipTracking": "✓ Real-time parcel tracking code",
+            "chipInsurance": "✓ 100% loss compensation guarantee",
+            "steps": {
+                "s1": {
+                    "title": "Order & Price Agreement",
+                    "sub": "Order placement & wholesale pricing",
+                    "detail": "Link processing on 1688/Taobao, factory reputation auditing, and direct wholesale negotiation.",
+                    "badge": "10 Mins"
+                },
+                "s2": {
+                    "title": "Export Packaging",
+                    "sub": "Barcode labeling & box packing",
+                    "detail": "Factory export-standard packaging with individual tracking barcodes applied to every carton.",
+                    "badge": "Dispatched"
+                },
+                "s3": {
+                    "title": "China Domestic Freight",
+                    "sub": "Mainland linehaul to border",
+                    "detail": "Express linehaul from Chinese industrial provinces directly to the Vietnam border gateway.",
+                    "badge": "1 – 2 Days"
+                },
+                "s4": {
+                    "title": "China Hub Inbound",
+                    "sub": "Pingxiang hub intake",
+                    "detail": "Item count verification, live photos, bubble wrap, and wooden crating for fragile goods.",
+                    "badge": "5,000m² Hub"
+                },
+                "s5": {
+                    "title": "Linehaul Consolidation",
+                    "sub": "Dedicated container loading",
+                    "detail": "Cargo weight classification, container sealing, and scheduled 18:00 daily departure.",
+                    "badge": "18:00 Daily"
+                },
+                "s6": {
+                    "title": "Official Customs Clearance",
+                    "sub": "Border gate clearance",
+                    "detail": "Electronic declaration at Huu Nghi / Tan Thanh border gates, issuing VAT invoices & C/O Form E.",
+                    "badge": "100% Official"
+                },
+                "s7": {
+                    "title": "Vietnam Hub Distribution",
+                    "sub": "3-Region sorting hubs",
+                    "detail": "Cross-docking at Hanoi, Da Nang, or HCMC hubs with instant parcel scan telemetry.",
+                    "badge": "3 Hubs"
+                },
+                "s8": {
+                    "title": "Last-Mile Delivery",
+                    "sub": "Doorstep delivery",
+                    "detail": "Same-day inner-city dispatch, express nationwide courier via Viettel Post & J&T Express.",
+                    "badge": "Door to Door"
+                }
+            }
+        },
+        "stats": {
+            "telemetryLive": "LIVE OPERATIONS",
+            "telemetryHeadline": "OFFICIAL CUSTOMS CLEARANCE RUNNING 24/7",
+            "nodeBangTuong": "Pingxiang Hub",
+            "nodeHuuNghi": "Huu Nghi Gate",
+            "nodeSync": "Data Sync",
+            "statusReady": "Ready",
+            "statusSmooth": "Clear",
+            "statusRealtime": "Real-time",
+            "eyebrow": "OPERATING CAPACITY & TRACK RECORD",
+            "title": "Real-Time Operational Telemetry & Metrics",
+            "desc": "All cross-border cargo traffic, factory supplier payments, and customs clearance milestones are orchestrated automatically on the VietGlobal platform.",
+            "card1Growth": "+24% this month",
+            "card1Sla": "SLA: < 10 mins",
+            "card2Growth": "Auto-matched",
+            "card2Sla": "Instant match 24/7",
+            "card3Growth": "99.8% On-time",
+            "card3Sla": "Daily fixed dispatch",
+            "card4Growth": "Zero Loss",
+            "card4Sla": "100% Parcel Integrity",
+            "gpsTitle": "Real-Time GPS Asset Tracking",
+            "gpsDesc": "Precise satellite positioning of linehaul trucks and 24/7 hub parcel status",
+            "vatTitle": "100% VAT Invoices & Customs Declarations",
+            "vatDesc": "Full regulatory compliance, digital documentation for official cross-border trade",
+            "insuranceTitle": "100% Comprehensive Cargo Insurance",
+            "insuranceDesc": "Full invoice value protection guarantee with prompt 24-hour claims settlement"
+        },
+        "orderTool": "Smart Sourcing & Ordering Tool",
+        "orderBrowser": "1-Click Chrome Extension",
+        "orderToolDesc": "Install the VietGlobal browser extension on Google Chrome to import items from 1688, Taobao, and Tmall directly into your cart in just 1 click with real-time price estimation.",
+        "installExtension": "Install Chrome Extension",
+        "featureFast": "Auto-capture product links with real-time currency conversion",
+        "featureSecure": "Complete account security & protected trade records",
+        "featureSupport": "Integrated instant translation from Chinese to English",
+        "ourActivities": "Our Operating Track Record",
         "orderServiceCommitment": "Order service commitment",
         "orderServiceCommit": "We are committed to providing a fast, transparent, and reliable ordering service for our customers. Every order is carefully monitored and processed by our team from placement to successful delivery, ensuring accuracy and efficiency throughout the entire process. Customers are always provided with clear information regarding pricing, shipping time, and order status at every stage. With a modern tracking system and a dedicated support team, we strive to deliver a convenient, safe, and on-time purchasing experience.",
-        "paymentFormForHousehold": "Payment form for household",
-        "currencyExchangeService": "Currency exchange service",
-        "ordersEveryDay": "Orders every day",
-        "depositApplications": "Deposit applications",
+        "paymentFormForHousehold": "Supplier Payment Orders",
+        "paymentFormForHouseholdDesc": "Direct 1688 / Taobao / Tmall supplier payment settled within 10 mins",
+        "currencyExchangeService": "Currency Exchange (CNY/VND)",
+        "currencyExchangeServiceDesc": "Competitive market exchange rates, 100% secure escrow protection",
+        "ordersEveryDay": "Daily Handled Shipments",
+        "ordersEveryDayDesc": "Dedicated cross-border fleet with 3 fixed scheduled dispatches daily",
+        "depositApplications": "Consignment & Freight Packages",
+        "depositApplicationsDesc": "Automated parcel inspection, bubble wrapping, and wooden crating",
         "commitments": {
+            "eyebrow": "SERVICE LEVEL COMMITMENT",
+            "mainTitle": "3 Core Guarantees of Service Accountability",
+            "commitmentPrefix": "Commitment 0",
+            "legalTitle": "Legally Binding Commitments",
+            "legalSub": "Backed by binding logistics framework contracts and verifiable cargo insurance.",
+            "pointsHeading": "Detailed Execution Standards:",
+            "ctaBtn": "Request Consultation & Quote",
             "compensation": {
                 "title": "Compensation Guarantee",
-                "desc": "We guarantee 100% compensation for product value and purchasing fees if an order is placed incorrectly or missing items."
+                "desc": "We guarantee 100% compensation for product value and purchasing fees if an order is placed incorrectly or missing items.",
+                "tag": "100% Full Value Protection",
+                "slaWindow": "Claim resolution: 24 Hours",
+                "statement": "We guarantee 100% reimbursement of goods invoice value and service fees in the event of loss, misplacement, or discrepancy caused by VietGlobal.",
+                "points": [
+                    "100% cargo reimbursement based on declared factory invoice values",
+                    "Transparent written claim processing resolved within 24 hours",
+                    "Official logistics framework contract & full transit insurance",
+                    "Zero hidden surcharges beyond the agreed rate sheet"
+                ]
             },
             "support": {
                 "title": "Support Commitment",
-                "desc": "Our support team is always ready to assist customers with any issues 24/7."
+                "desc": "Our support team is always ready to assist customers with any issues 24/7.",
+                "tag": "24/7 Native Chinese Specialists",
+                "slaWindow": "Response time: < 2 Mins",
+                "statement": "Our 24/7 native Chinese trade specialists negotiate directly with factories and resolve border issues instantly.",
+                "points": [
+                    "Direct phone negotiation for wholesale factory pricing on 1688, Taobao, Tmall",
+                    "Factory credential audits and production capacity verification before deposit",
+                    "Continuous GPS coordinate and shipment milestone tracking via the platform",
+                    "Swift dispute mediation and return-to-factory logistics assistance"
+                ]
             },
             "deliveryTime": {
                 "title": "Delivery Time Commitment",
-                "desc": "We commit to stable and fast delivery time, typically from 3 - 7 days."
+                "desc": "We commit to stable and fast delivery time, typically from 3 - 7 days.",
+                "tag": "Reliable 3 – 7 Days",
+                "slaWindow": "Frequency: 1 Dispatch / Day",
+                "statement": "Daily scheduled 18:00 linehaul departures from Pingxiang hub with proactive customs steering to prevent peak-season congestion.",
+                "points": [
+                    "Arrival at Hanoi central hub within 2 – 3 days from loading",
+                    "Arrival at Da Nang & HCMC central hubs within 4 – 6 days",
+                    "Factory-sealed containers; zero transshipment or cross-loading en route",
+                    "Same-day inner-city doorstep delivery and express nationwide forwarding"
+                ]
             }
+        },
+        "testimonialsSection": {
+            "eyebrow": "VERIFIED CLIENT REVIEWS",
+            "title": "What Importers & Businesses Say About Us",
+            "sub": "Authentic feedback from cross-border merchants and official import enterprises."
         },
         "saidMe": "What customers are saying about",
         "testimonials": [
@@ -315,6 +482,46 @@
                     "Market consulting"
                 ]
             },
+            "trung-dong-nam-a": {
+                "label": "China – Southeast Asia",
+                "description": "Dedicated cross-border shipping corridors connecting manufacturing hubs in China to Vietnam and all ASEAN nations with optimal trucking and sea freight.",
+                "countries": [
+                    "China (Guangzhou, Shenzhen, Yiwu)",
+                    "Vietnam",
+                    "Thailand",
+                    "Malaysia",
+                    "Singapore",
+                    "Indonesia",
+                    "Philippines"
+                ],
+                "services": [
+                    "Cross-Border Road Trucking",
+                    "Express Sea Freight LCL/FCL",
+                    "Official & Electronic Customs Clearance",
+                    "Factory Consolidation & Door-to-Door Delivery",
+                    "Direct Handover to Southeast Asian E-commerce Hubs"
+                ]
+            },
+            "trung-au-my": {
+                "label": "China – Europe – USA",
+                "description": "Direct air express and dedicated sea routes transporting cross-border goods from China and Asia directly to premier consumer markets in the United States and the European Union.",
+                "countries": [
+                    "China (International Cargo Hubs)",
+                    "United States (50 States)",
+                    "United Kingdom (UK)",
+                    "Germany",
+                    "France",
+                    "Netherlands",
+                    "European Union (27 Nations)"
+                ],
+                "services": [
+                    "Direct Air Cargo Express (5 - 8 Days)",
+                    "Cost-Effective Expedited Sea Freight (Matson / CMA)",
+                    "Pre-Clearance under Section 321 (<$800) & EU IOSS VAT",
+                    "Verified Last-Mile Carrier Handover (USPS, FedEx, DHL, DPD)",
+                    "End-to-End Real-Time Milestone Tracking"
+                ]
+            },
             "duong-bien": {
                 "label": "Ocean Freight",
                 "description": "Cost-optimized solutions for large shipments with a global shipping partner network",
@@ -333,6 +540,36 @@
                     "Online cargo tracking"
                 ]
             }
+        }
+    },
+    "fulfillmentSection": {
+        "tag": "GLOBAL E-COMMERCE FULFILLMENT",
+        "title": "Specialized POD & Dropshipping Fulfillment",
+        "subtitle": "End-to-end supply chain infrastructure for cross-border sellers: zero inventory risk, custom-branded unboxing, and rapid global doorstep delivery.",
+        "exploreFulfillment": "Explore VietGlobal Fulfillment Hub",
+        "exploreFulfillmentDesc": "View flight corridor console, interactive lead time estimator, and brand packaging solutions.",
+        "actionBtn": "Explore Now",
+        "pod": {
+            "title": "Print-on-Demand (POD) Fulfillment",
+            "desc": "On-demand production and precision packaging per order, empowering sellers to scale without capital tied up in inventory.",
+            "items": [
+                "Made-to-order manufacturing with zero inventory risk",
+                "High-definition digital DTG printing, embroidery & thermal transfer",
+                "Custom brand packaging (branded mailers, woven labels, thank-you inserts)",
+                "Rapid turnaround dispatched within 24 to 48 hours",
+                "Automated order ingestion from Shopify, TikTok Shop, Etsy, Amazon..."
+            ]
+        },
+        "dropship": {
+            "title": "Dropshipping Fulfillment",
+            "desc": "VietGlobal handles automated order routing, trusted sourcing, transit warehousing, strict QC inspection, and direct doorstep delivery.",
+            "items": [
+                "Zero-latency automated order sync via Webhook / REST APIs",
+                "Reliable factory sourcing with multi-point quality control (QC)",
+                "Consolidated transit warehousing and smart parcel sorting",
+                "Export-ready protective packing with international tracking barcodes",
+                "Direct express handover covering 100+ global markets and regions"
+            ]
         }
     },
     "contactShip": {
@@ -362,7 +599,7 @@
         "address": "Office 1: LK31 - Y La - Duong Noi - Ha Dong - Hanoi",
         "address1": "Office 2: 2B Vuong Thua Vu, Thanh Xuan, Hanoi, Vietnam",
         "phoneTitle": "Phone",
-        "phone2": "HCMC: Ms. Ngoc (+84) 0938342995"
+        "phone2": "(+84) 0763205365"
     },
     "footer": {
         "services": {
@@ -383,5 +620,229 @@
         "Cargoroute": "CARGO ROUTES",
         "Seaport": "SEAPORTS",
         "Yearsofexperience": "YEARS OF EXPERIENCE"
+    },
+    "fulfillmentPage": {
+        "hero": {
+            "eyebrow": "Global Fulfillment & Logistics Technology",
+            "headline": "Fulfillment and cross-border shipping, built for sellers who go global.",
+            "subheadline": "One unified platform for on-demand POD production, dropship fulfillment, and international express lines — connecting Southeast Asia to the US, Europe, and the Middle East.",
+            "primaryCta": "Get a Quote",
+            "secondaryCta": "Explore Corridors",
+            "badges": {
+                "api": "Real-time API Sync",
+                "dispatch": "24-48h Pick & Pack",
+                "tracking": "Transparent Tracking"
+            },
+            "preview": {
+                "title": "Live Operations • Direct Line Dispatch",
+                "status": "In Transit (Direct Line)",
+                "routeLabel": "Route:",
+                "routeVal": "VN HUB ➔ Los Angeles Hub ➔ Final Mile",
+                "pkgLabel": "Package:",
+                "pkgVal": "Custom POD Apparel Box (Branded)",
+                "carrierLabel": "Carrier:",
+                "carrierVal": "USPS Direct Express Tracked",
+                "step1": "Production Complete",
+                "step2": "Air Transit",
+                "step3": "Out for Delivery",
+                "stat1Val": "99.4%",
+                "stat1Lbl": "On-Time SLA",
+                "stat2Val": "24h",
+                "stat2Lbl": "Avg Dispatch",
+                "stat3Val": "0",
+                "stat3Lbl": "Inventory Risk"
+            }
+        },
+        "metrics": {
+            "title": "Trusted by fast-growing global sellers across Shopify, TikTok Shop, Amazon & Etsy",
+            "card1Value": "100+",
+            "card1Label": "Markets Reached",
+            "card2Value": "500K+",
+            "card2Label": "Orders Fulfilled",
+            "card3Value": "24-48h",
+            "card3Label": "Avg. Processing Time",
+            "card4Value": "15+",
+            "card4Label": "Global Transit Hubs"
+        },
+        "solutions": {
+            "eyebrow": "Solutions Overview",
+            "headline": "Everything a global seller needs to fulfill and ship, in one place.",
+            "subtitle": "Flexible fulfillment infrastructure built for every cross-border business model — on-demand production, dropshipping automation, or brand inventory.",
+            "pod": {
+                "tag": "On-Demand Production",
+                "title": "POD Fulfillment",
+                "desc": "On-demand production and packing, so you never hold inventory. Print, pack, and ship under your own brand.",
+                "item1": "Made-to-order workflow with zero inventory risk",
+                "item2": "Custom packaging and branded customer touchpoints",
+                "item3": "Automated order routing and global express delivery",
+                "fitFor": "Best for: POD sellers & custom merchandise brands"
+            },
+            "dropship": {
+                "tag": "Supply Chain Automation",
+                "title": "Dropshipping Fulfillment",
+                "desc": "Connect your store, we handle sourcing, warehousing, and order routing — you focus on selling.",
+                "item1": "Multi-channel store integration (Shopify, TikTok Shop, Amazon...)",
+                "item2": "Reliable sourcing, strict QC & consolidated warehousing",
+                "item3": "Zero-delay automated order routing and fulfillment",
+                "fitFor": "Best for: Multi-channel cross-border dropshippers"
+            },
+            "ecommerce": {
+                "tag": "Warehousing & Logistics",
+                "title": "E-commerce Fulfillment",
+                "desc": "General warehousing, precision pick-pack, and global distribution for brands and retailers that hold their own stock.",
+                "item1": "Secure warehousing and real-time inventory visibility",
+                "item2": "Standardized pick & pack operations with barcode verification",
+                "item3": "Consolidated shipping rates and verified last-mile handover",
+                "fitFor": "Best for: DTC brands & established e-commerce sellers"
+            }
+        },
+        "laneConsole": {
+            "eyebrow": "Direct Shipping Network & Market Advantages",
+            "headline": "Global Lane Console: Fast Cross-Border Delivery",
+            "subtitle": "Click any trade corridor below to explore transit times, certified last-mile carriers, and distinct seller profit advantages.",
+            "tabs": {
+                "us": "United States",
+                "eu": "Europe & UK",
+                "me": "Middle East (GCC)",
+                "sea": "Southeast Asia Hub"
+            },
+            "labels": {
+                "transitTime": "Doorstep Transit Time",
+                "carrier": "Last-Mile Carrier",
+                "customs": "Customs & Duty Mode",
+                "customsDesc": "Automated EDI manifest integration ensures immediate cargo release without terminal delays.",
+                "advantage": "Seller Market Advantage",
+                "bestFor": "Recommended For",
+                "airRoute": "Direct Air Cargo Lane"
+            },
+            "lanes": {
+                "us": {
+                    "flag": "🇺🇸 US Lane",
+                    "name": "United States Cross-Border Corridor",
+                    "transit": "5 - 8 Days",
+                    "carrier": "USPS Direct Priority Express",
+                    "customs": "Section 321 Duty-Free Compliant (< $800)",
+                    "advantage": "High purchasing power, high repeat rate, nationwide last-mile tracking with stable fixed commercial line pricing.",
+                    "bestFor": "POD Streetwear, Dropship Trending Goods, TikTok Shop US sellers",
+                    "route": "SGN/HAN International Airport ➔ LAX/ORD Gateway ➔ USPS Nationwide Hubs"
+                },
+                "eu": {
+                    "flag": "🇪🇺 EU Lane",
+                    "name": "Central Europe & UK Trade Corridor",
+                    "transit": "6 - 9 Days",
+                    "carrier": "DHL Express / DPD Continental Network",
+                    "customs": "Automated IOSS VAT Pre-cleared Electronic Filing",
+                    "advantage": "Zero customs holdups at destination. Direct consolidated air cargo into Frankfurt & Amsterdam distributing to 27 EU nations.",
+                    "bestFor": "High-AOV DTC Apparel, Sustainable Goods, Shopify Europe stores",
+                    "route": "SGN/HAN Airport ➔ FRA/AMS Freight Terminal ➔ DPD/DHL Continental Last-Mile"
+                },
+                "me": {
+                    "flag": "🇦🇪 GCC Lane",
+                    "name": "Middle East Fast-Growth Corridor",
+                    "transit": "4 - 7 Days",
+                    "carrier": "Aramex Priority Direct Delivery",
+                    "customs": "B2C Express Air Clearance",
+                    "advantage": "Booming consumer demand with exceptional basket values across UAE, Saudi Arabia, and Qatar with reliable local carrier SLA.",
+                    "bestFor": "Gift products, Premium Fashion, High-margin DTC collections",
+                    "route": "SGN Airport ➔ DXB/RUH Hub ➔ Aramex Regional Doorstep Delivery"
+                },
+                "sea": {
+                    "flag": "🇻🇳 Production Hub",
+                    "name": "Southeast Asia Production & Sourcing Center",
+                    "transit": "24 - 48h Production",
+                    "carrier": "Direct Airport Tarmac Handoff",
+                    "customs": "Certified Export Manifest Clearing",
+                    "advantage": "Massive supply chain and cost advantage directly from Vietnamese textile factories and printing houses without middleman markups.",
+                    "bestFor": "POD Blank Sourcing, Quality Control, Consolidated Container Freight",
+                    "route": "Factory Floor ➔ Barcode QC Sorting Hub ➔ International Airport Terminals"
+                }
+            }
+        },
+        "pipeline": {
+            "eyebrow": "Intelligent Operations",
+            "headline": "The Connected Fulfillment Pipeline",
+            "subtitle": "A synchronized, transparent journey from checkout click to customer doorstep.",
+            "step1": {
+                "num": "01",
+                "title": "Store Sync",
+                "desc": "Real-time webhook ingestion from Shopify, TikTok Shop, Amazon & Etsy."
+            },
+            "step2": {
+                "num": "02",
+                "title": "On-Demand Production",
+                "desc": "High-precision DTG / embroidery printing or instant pick from warehouse stock."
+            },
+            "step3": {
+                "num": "03",
+                "title": "Custom Brand Pack",
+                "desc": "Automated QC scan, custom neck label attachment, and branded polymailers."
+            },
+            "step4": {
+                "num": "04",
+                "title": "Direct Express Flight",
+                "desc": "Consolidated airport tarmac handoff for direct cross-border air takeoff."
+            },
+            "step5": {
+                "num": "05",
+                "title": "Digital Customs",
+                "desc": "Pre-cleared electronic customs filing (Section 321 / IOSS VAT)."
+            },
+            "step6": {
+                "num": "06",
+                "title": "Doorstep Delivery",
+                "desc": "Delivered by trusted local carriers with 100% end-to-end GPS tracking."
+            }
+        },
+        "estimator": {
+            "eyebrow": "Instant Calculation",
+            "headline": "Calculate Your Fulfillment Lead Time",
+            "subtitle": "Select your product and market to preview estimated production and delivery timelines.",
+            "catLabel": "Select Product Category:",
+            "marketLabel": "Select Target Market:",
+            "catApparel": "Apparel & Streetwear (POD)",
+            "catGeneral": "Accessories & General Goods",
+            "catStock": "Stocked Inventory (Warehoused)",
+            "marketUS": "United States (USPS Direct)",
+            "marketEU": "Europe / UK (DHL/DPD)",
+            "marketME": "Middle East (Aramex Priority)",
+            "prodTime": "Production & QC Time",
+            "transitTime": "Air Freight & Clearance",
+            "totalTime": "Total Doorstep Delivery",
+            "ctaBtn": "Request Full Price Sheet"
+        },
+        "integrations": {
+            "eyebrow": "Omnichannel Ecosystem",
+            "headline": "Works seamlessly with the platforms you already sell on.",
+            "copy": "Connect your store in minutes — orders sync automatically without code."
+        },
+        "socialProof": {
+            "quote": "Working with VietGlobal Fulfillment cut our cross-border cycle by 4 days, gave us custom branded packaging, and boosted our repurchase rate by 22%.",
+            "author": "Global DTC Merchant",
+            "role": "Shopify & TikTok Shop Seller",
+            "onboarding": "We are onboarding our next cohort of high-growth global sellers — talk to us to scale your brand."
+        },
+        "faq": {
+            "eyebrow": "Common Inquiries",
+            "headline": "Frequently Asked Questions",
+            "subtitle": "Everything you need to know about starting global fulfillment with VietGlobal.",
+            "q1": "Do I need to hold inventory?",
+            "a1": "No. For POD and dropshipping models, products are produced or sourced on demand after customer orders. For brands holding inventory, we offer scalable warehousing.",
+            "q2": "Which markets can you ship to today?",
+            "a2": "Our core routes span Southeast Asia, the Middle East (UAE, Saudi Arabia), European Union countries, the UK, and the United States.",
+            "q3": "How does POD fulfillment pricing work?",
+            "a3": "Pricing consists of the product blank/manufacturing cost + printing/handling fee + international shipping rate. All rates are transparent with no hidden costs.",
+            "q4": "Can I use my own branding on packaging?",
+            "a4": "Yes, absolutely. We support custom poly mailers, branded stickers, neck labels, and personalized thank-you cards.",
+            "q5": "How long does cross-border delivery usually take?",
+            "a5": "Direct line express cross-border delivery typically takes between 5 to 8 business days depending on destination market.",
+            "q6": "Which platforms do you integrate with?",
+            "a6": "We integrate directly with Shopify, TikTok Shop, Amazon, WooCommerce, and Etsy with automatic order & tracking sync."
+        },
+        "cta": {
+            "headline": "Ready to scale your fulfillment globally?",
+            "copy": "No upfront commitment required — share your target volume and markets, we'll configure an optimized fulfillment plan.",
+            "primary": "Request a Quote",
+            "secondary": "Talk to an Expert"
+        }
     }
 }

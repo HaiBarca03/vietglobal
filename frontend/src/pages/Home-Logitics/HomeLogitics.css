@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Logistics China - Vietnam Page Scope
+   Scoped under: .logistics-cn-vn-scope
+   ========================================================================== */
+
+.logistics-cn-vn-scope {
+  --lcv-primary: #1464C4;
+  --lcv-primary-hover: #0F52A3;
+  --lcv-accent-sky: #E6F4FF;
+  --lcv-navy-dark: #0A2540;
+  --lcv-slate-text: #1E293B;
+  --lcv-muted: #64748B;
+  --lcv-border: #E2E8F0;
+  --lcv-white: #FFFFFF;
+  --lcv-surface: #F8FAFC;
+  --lcv-accent-orange: #FF7A45;
+
+  font-family: 'IBM Plex Sans', 'Be Vietnam Pro', -apple-system, sans-serif;
+  color: var(--lcv-slate-text);
+  background-color: var(--lcv-surface);
+  overflow-x: hidden;
+  line-height: 1.6;
+}

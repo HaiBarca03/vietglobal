@@ -1,129 +1,152 @@
 import React from "react";
-import { Button, Row, Col, Typography } from "antd";
-import { ChromeFilled } from "@ant-design/icons";
+import { Button, Row, Col, Typography, Tag } from "antd";
+import {
+  ChromeFilled,
+  ThunderboltFilled,
+  CheckCircleFilled,
+  TranslationOutlined,
+  SafetyCertificateFilled,
+  DownloadOutlined,
+  ShoppingCartOutlined,
+} from "@ant-design/icons";
 import { motion } from "framer-motion";
-import "./OrderTool.css";
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
-const { Title, Text } = Typography;
+import "./OrderTool.css";
+
+const { Title, Text, Paragraph } = Typography;
 
 const OrderTool = () => {
-    const { t } = useTranslation();
-  
-  // Các biến thể animation cho các vật thể bay
-  const floatVariants = (delay) => ({
-    animate: {
-      y: [0, -20, 0],
-      rotate: [0, 5, -5, 0],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        ease: "easeInOut",
-        delay: delay,
-      },
-    },
-  });
+  const { t } = useTranslation();
 
   return (
-    <div className="tool-section-wrapper">
-      <Row gutter={[32, 32]} align="middle" className="tool-container">
-        {/* Bên trái: Hình ảnh minh họa 3D */}
-        <Col xs={24} md={12} className="image-stack-col">
-          <div className="image-relative-container">
-            {/* Laptop chính */}
-            <motion.img
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              src="https://img.freepik.com/free-vector/isometric-laptop-with-business-chart-magnifying-glass_1262-16544.jpg" // Thay bằng link ảnh laptop của bạn
-              alt="Laptop Order"
-              className="main-laptop"
-            />
-
-            {/* Các vật thể bay xung quanh (Icon 3D) */}
+    <section className="tool-section-wrapper">
+      <div className="tool-container">
+        <Row gutter={[48, 48]} align="middle">
+          {/* Left Column: Modern Tech Extension Mockup */}
+          <Col xs={24} lg={12} className="tool-preview-col">
             <motion.div
-              className="floating-item box-1"
-              variants={floatVariants(0)}
-              animate="animate"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="extension-mockup-card"
             >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/679/679821.png"
-                alt="box"
-                width="60"
-              />
-            </motion.div>
+              {/* Browser Window Header */}
+              <div className="browser-window-header">
+                <div className="browser-dots">
+                  <span className="dot red" />
+                  <span className="dot yellow" />
+                  <span className="dot green" />
+                </div>
+                <div className="browser-address-bar">
+                  <span className="secure-badge">🔒 1688.com/offer/782941.html</span>
+                </div>
+                <div className="extension-badge-active">
+                  <span className="ext-icon">VG</span>
+                  <span className="ext-dot" />
+                </div>
+              </div>
 
+              {/* Product Page Preview with Overlay Extension Card */}
+              <div className="mockup-content-body">
+                <div className="mock-product-row">
+                  <div className="mock-product-thumb">
+                    <span className="mock-badge">1688 Xưởng</span>
+                  </div>
+                  <div className="mock-product-info">
+                    <div className="mock-title">Smart Tech Cargo Jacket • Vải chống nước 2 lớp</div>
+                    <div className="mock-pricing">
+                      <span className="yuan-price">¥ 128.00</span>
+                      <span className="arrow-convert">➔</span>
+                      <span className="vnd-price">473.600 đ</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Extension Action Box */}
+                <div className="extension-action-box">
+                  <div className="ext-box-header">
+                    <div className="ext-brand">
+                      <ThunderboltFilled style={{ color: "#1464C4" }} />
+                      <span>VietGlobal Order Assistant</span>
+                    </div>
+                    <Tag color="blue" style={{ borderRadius: 6, margin: 0, fontSize: 11 }}>
+                      Tỷ giá: 1¥ = 3,700đ
+                    </Tag>
+                  </div>
+
+                  <div className="ext-specs-row">
+                    <div className="spec-pill">Tự động dịch CN ➔ VN</div>
+                    <div className="spec-pill">Cân nặng dự kiến: 0.45 kg</div>
+                    <div className="spec-pill">Phí ship nội địa: ¥ 0.00</div>
+                  </div>
+
+                  <div className="ext-action-btn">
+                    <ShoppingCartOutlined />
+                    <span>Thêm vào Giỏ hàng VietGlobal (1-Click)</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </Col>
+
+          {/* Right Column: Value Proposition & Download */}
+          <Col xs={24} lg={12} className="tool-content-col">
             <motion.div
-              className="floating-item coin-1"
-              variants={floatVariants(0.5)}
-              animate="animate"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
             >
-              <img
-                src="https://cdn-icons-png.flaticon.com/512/2489/2489756.png"
-                alt="coin"
-                width="80"
-              />
+              <div className="tool-eyebrow">
+                <ThunderboltFilled style={{ color: "#1464C4" }} />
+                <span>{t("viChi.orderTool")}</span>
+              </div>
+
+              <h2 className="tool-main-title">
+                {t("viChi.orderBrowser")}
+              </h2>
+
+              <p className="tool-desc">
+                {t("viChi.orderToolDesc")}
+              </p>
+
+              {/* Bullet Features */}
+              <div className="tool-feature-list">
+                <div className="tool-feature-item">
+                  <CheckCircleFilled className="tool-check" />
+                  <span>{t("viChi.featureFast")}</span>
+                </div>
+                <div className="tool-feature-item">
+                  <SafetyCertificateFilled className="tool-check" />
+                  <span>{t("viChi.featureSecure")}</span>
+                </div>
+                <div className="tool-feature-item">
+                  <TranslationOutlined className="tool-check" />
+                  <span>{t("viChi.featureSupport")}</span>
+                </div>
+              </div>
+
+              {/* Download Buttons */}
+              <div className="tool-button-group">
+                <Button
+                  type="primary"
+                  size="large"
+                  icon={<ChromeFilled />}
+                  className="btn-install-chrome"
+                  onClick={() => window.open("https://chromewebstore.google.com", "_blank")}
+                >
+                  {t("viChi.installExtension")}
+                </Button>
+                <div className="tool-support-chips">
+                  <span>Hỗ trợ: Chrome, Cốc Cốc, Edge, Brave</span>
+                </div>
+              </div>
             </motion.div>
-
-            <motion.div
-              className="floating-item heart-icon"
-              variants={floatVariants(1)}
-              animate="animate"
-            >
-              <div className="glass-card">❤️</div>
-            </motion.div>
-
-            <motion.div
-              className="floating-item cloud"
-              variants={floatVariants(1.5)}
-              animate="animate"
-            >
-              ☁️
-            </motion.div>
-          </div>
-        </Col>
-
-        {/* Bên phải: Nội dung văn bản */}
-        <Col xs={24} md={12} className="content-col">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Title level={1} className="tool-title">
-              {t("viChi.orderBrowser")}
-            </Title>
-            <Text className="tool-subtitle">{t("viChi.orderBrowser")}</Text>
-
-            <div className="button-group">
-              <Button
-                type="primary"
-                size="large"
-                icon={<ChromeFilled />}
-                className="btn-chrome"
-              >
-                Chrome
-              </Button>
-
-              <Button
-                size="large"
-                className="btn-coccoc"
-                icon={
-                  <img
-                    src="https://coccoc.com/favicon.ico"
-                    width="20"
-                    style={{ marginRight: 8 }}
-                    alt="coccoc"
-                  />
-                }
-              >
-                CỐC CỐC
-              </Button>
-            </div>
-          </motion.div>
-        </Col>
-      </Row>
-    </div>
+          </Col>
+        </Row>
+      </div>
+    </section>
   );
 };
 

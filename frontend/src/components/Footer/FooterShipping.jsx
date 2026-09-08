@@ -14,7 +14,7 @@ import { getAllContactUs } from '../../stores/ContactUs/ContactUsApi';
 
 const { Title, Paragraph } = Typography;
 
-const TEAL = '#00B5B8';
+const BRAND_SKY = '#38BDF8';
 
 const FooterShipping = () => {
     const { t, i18n } = useTranslation();
@@ -60,7 +60,7 @@ const FooterShipping = () => {
                 <Title
                     level={3}
                     style={{
-                        color: TEAL, // hoặc "#00d4ff" cho sáng hơn
+                        color: BRAND_SKY,
                         fontFamily: "'Barlow Condensed', sans-serif",
                         fontWeight: 800,
                         fontSize: 32,
@@ -75,7 +75,7 @@ const FooterShipping = () => {
                 <Row gutter={[40, 40]} justify="center" style={{ textAlign: 'left', marginTop: 40, marginBottom: 40 }}>
                     {/* Hotline Column */}
                     <Col xs={24} sm={24} md={8}>
-                        <Title level={4} style={{ color: TEAL, textTransform: 'uppercase', marginBottom: 20 }}>
+                        <Title level={4} style={{ color: BRAND_SKY, textTransform: 'uppercase', marginBottom: 20 }}>
                             <PhoneOutlined style={{ marginRight: 10 }} />
                             Hotline Service
                         </Title>
@@ -106,7 +106,7 @@ const FooterShipping = () => {
 
                     {/* Email Column */}
                     <Col xs={24} sm={24} md={8}>
-                        <Title level={4} style={{ color: TEAL, textTransform: 'uppercase', marginBottom: 20 }}>
+                        <Title level={4} style={{ color: BRAND_SKY, textTransform: 'uppercase', marginBottom: 20 }}>
                             <MailOutlined style={{ marginRight: 10 }} />
                             Connect With Us
                         </Title>
@@ -137,7 +137,7 @@ const FooterShipping = () => {
 
                     {/* Locations Column */}
                     <Col xs={24} sm={24} md={8}>
-                        <Title level={4} style={{ color: TEAL, textTransform: 'uppercase', marginBottom: 20 }}>
+                        <Title level={4} style={{ color: BRAND_SKY, textTransform: 'uppercase', marginBottom: 20 }}>
                             <EnvironmentOutlined style={{ marginRight: 10 }} />
                             Our Offices
                         </Title>

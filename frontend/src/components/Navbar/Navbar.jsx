@@ -213,13 +213,24 @@ const Navbar = () => {
           </li>
 
           {/* 4. Import - Export */}
-          <li>
+          {/* <li>
             <Link
               className="nav-item"
               to={`/${lang}/import-export`}
               onClick={closeMobileMenu}
             >
               {t("import-export")}
+            </Link>
+          </li> */}
+
+          {/* 5. Fulfillment */}
+          <li>
+            <Link
+              className="nav-item"
+              to={`/${lang}/fulfillment`}
+              onClick={closeMobileMenu}
+            >
+              {t("fulfillment")}
             </Link>
           </li>
 
@@ -255,8 +266,8 @@ const Navbar = () => {
           <li className="nav-item dropdown-container">
             <Link
               className="nav-item dropdown-trigger"
-              // to={`/${lang}/shipping-about-us`}
-              // onClick={closeMobileMenu}
+            // to={`/${lang}/shipping-about-us`}
+            // onClick={closeMobileMenu}
             >
               {t("aboutUs")}
             </Link>

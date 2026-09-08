@@ -1,5 +1,6 @@
 {
     "home": "Trang chủ",
+    "fulfillment": "Xử lý đơn hàng",
     "import-export": "Xuất nhập nhẩu",
     "category": "Danh mục sản phẩm",
     "products": "Sản phẩm",
@@ -57,7 +58,7 @@
             "desc": "Liên hệ với chúng tôi để nhận hướng dẫn vận chuyển và biểu phí xử lý cho các dịch vụ cụ thể mà bạn yêu cầu. Với đội ngũ vận hành riêng, xe tải và xe nâng, chúng tôi làm việc 24/7 để đảm bảo hàng hóa được giao đúng thời gian."
         },
         "airFreight": {
-            "title": "VẬN CHUYỂN ĐƯỜNG HÀNG KHÔNG",
+            "title": "VẬN CHUYỂN ĐƯỜNG KHÔNG",
             "desc": "Liên hệ với chúng tôi ngay hôm nay để được khảo sát hàng hóa, ước tính chi phí và tư vấn giải pháp đóng gói cho lô hàng tiếp theo của bạn. Chúng tôi cung cấp các loại thùng gỗ, kiện gỗ, pallet và đóng gói hút chân không theo yêu cầu cho nhu cầu đóng gói công nghiệp."
         },
         "customsClearance": {
@@ -98,39 +99,205 @@
         }
     },
     "viChi": {
-        "process": "Quy trình đặt hàng",
-        "steps": {
-            "step1": "Đặt hàng",
-            "step2": "Đóng gói hàng hóa",
-            "step3": "Vận chuyển nội địa",
-            "step4": "Kho Trung Quốc",
-            "step5": "Vận chuyển Việt Nam",
-            "step6": "Thông quan",
-            "step7": "Kho Việt Nam",
-            "step8": "Vận chuyển nội địa"
+        "banner": {
+            "tag": "LOGISTICS & XUẤT NHẬP KHẨU CHÍNH NGẠCH",
+            "subTitle": "ĐỐI TÁC CHIẾN LƯỢC CUNG CẤP GIẢI PHÁP NHẬP HÀNG",
+            "mainTitle": "CHÍNH NGẠCH TRUNG – VIỆT",
+            "desc": "Tối ưu chi phí, thông quan nhanh chóng, bảo hiểm 100% cho nhà bán hàng & doanh nghiệp",
+            "ctaQuote": "Nhận báo giá chính ngạch",
+            "ctaProcess": "Xem quy trình 8 bước",
+            "features": [
+                "Hỗ trợ tìm nguồn & deal giá tận xưởng 1688, Taobao, Tmall",
+                "Hàng về từ 3 – 7 ngày sau khi xếp xe",
+                "Ghép cont chính ngạch đường biển & bộ chỉ từ 50kg",
+                "Kho chính chủ 3 miền (Hà Nội – Đà Nẵng – TP.HCM)",
+                "Cước tối ưu chỉ từ 5.000đ/kg – 1.000.000đ/khối",
+                "Cung cấp đầy đủ hóa đơn chứng từ (VAT, C/O form E, tờ khai)",
+                "Bảo hiểm đền bù 100% nếu thất lạc hàng hóa",
+                "Miễn phí giao hàng nội thành & hỗ trợ chuyển phát"
+            ],
+            "telemetry": {
+                "route": "Trung Quốc ⇄ Việt Nam (Vận Tải Hàng Ngày)",
+                "statusActive": "Active",
+                "originTitle": "Quảng Châu / Bằng Tường",
+                "originSub": "Kho tập kết xưởng 1688 & Taobao",
+                "transitBadge": "Trucking Express • 3–7 Ngày",
+                "destTitle": "Hà Nội • Đà Nẵng • TP.HCM",
+                "destSub": "Hệ thống tổng kho 3 miền chính chủ",
+                "transitTimeVal": "3 – 7 Ngày",
+                "transitTimeLbl": "Thời gian về hàng",
+                "insuranceVal": "100% Bảo hiểm",
+                "insuranceLbl": "Đền bù hàng hóa",
+                "minWeightVal": "Từ 50kg",
+                "minWeightLbl": "Ghép cont chính ngạch",
+                "docVal": "VAT & C/O Form E",
+                "docLbl": "Chứng từ nhập khẩu",
+                "dispatchTip": "⚡ Xe tải xuất bến cố định 18:00 mỗi ngày tại kho Bằng Tường"
+            }
         },
-        "orderTool": "Công cụ đặt hàng",
-        "orderBrowser": "Đặt hàng trên trình duyệt",
-        "ourActivities": "Chúng tôi đã hoạt động",
+        "process": {
+            "eyebrow": "HÀNH TRÌNH VẬN TẢI KHÉP KÍN",
+            "title": "Pipeline Vận Chuyển 8 Bước Thông Suốt",
+            "subtitle": "Quy trình 8 bước khép kín từ lúc phát sinh đơn đến khi nhận hàng tận tay an toàn, chuẩn xác.",
+            "stage1Title": "CHẶNG 1: NGUỒN HÀNG & TỔNG KHO TRUNG QUỐC",
+            "stage1Sub": "Kho Bằng Tường / Đông Hưng",
+            "stage2Title": "CHẶNG 2: THÔNG QUAN & GIAO HÀNG TẠI VIỆT NAM",
+            "stage2Sub": "Hà Nội • Đà Nẵng • TP.HCM",
+            "bridgeTitle": "Cửa khẩu Quốc tế Hữu Nghị / Tân Thanh",
+            "bridgeSub": "Chuyên tuyến thông quan mậu dịch chính ngạch • Xuất bến 18:00 hàng ngày",
+            "bridgeStatus": "Thông quan 24h",
+            "stepPrefix": "BƯỚC",
+            "chipOnTime": "✓ Cam kết đúng tiến độ",
+            "chipTracking": "✓ Cập nhật mã tracking realtime",
+            "chipInsurance": "✓ Đền bù 100% nếu thất lạc",
+            "steps": {
+                "s1": {
+                    "title": "Đặt hàng & Chốt giá",
+                    "sub": "Tạo đơn & chốt giá xưởng",
+                    "detail": "Tiếp nhận link 1688/Taobao, kiểm tra uy tín xưởng và thương lượng giá sỉ tận gốc.",
+                    "badge": "10 Phút"
+                },
+                "s2": {
+                    "title": "Đóng gói hàng hóa",
+                    "sub": "Ký mã kiện & đóng thùng",
+                    "detail": "Xưởng đóng gói theo tiêu chuẩn xuất khẩu, dán barcode quản lý kiện hàng riêng biệt.",
+                    "badge": "Xuất xưởng"
+                },
+                "s3": {
+                    "title": "Vận chuyển nội địa TQ",
+                    "sub": "Trucking nội địa TQ",
+                    "detail": "Vận chuyển hỏa tốc từ các tỉnh công nghiệp Trung Quốc về sát biên giới Việt Nam.",
+                    "badge": "1 – 2 Ngày"
+                },
+                "s4": {
+                    "title": "Kho Trung Quốc",
+                    "sub": "Nhập tổng kho Bằng Tường",
+                    "detail": "Kiểm đếm số lượng, chụp ảnh thực tế, đóng gỗ/chống sốc nếu hàng dễ vỡ.",
+                    "badge": "Kho 5.000m²"
+                },
+                "s5": {
+                    "title": "Vận chuyển Việt Nam",
+                    "sub": "Xếp xe cont chuyên tuyến",
+                    "detail": "Phân loại hàng nặng/nhẹ, đóng cont niêm phong kẹp chì xuất bến 18:00 mỗi ngày.",
+                    "badge": "Xe chạy 18h"
+                },
+                "s6": {
+                    "title": "Thông quan chính ngạch",
+                    "sub": "Thông quan chính ngạch",
+                    "detail": "Khai báo hải quan cửa khẩu Hữu Nghị/Tân Thanh, cấp đầy đủ VAT và C/O Form E.",
+                    "badge": "Chính ngạch 100%"
+                },
+                "s7": {
+                    "title": "Kho Việt Nam",
+                    "sub": "Về tổng kho 3 miền",
+                    "detail": "Hạ hàng tại tổng kho Hà Nội, Đà Nẵng hoặc TP.HCM, quét mã kiện cập nhật hệ thống.",
+                    "badge": "3 Miền"
+                },
+                "s8": {
+                    "title": "Giao hàng tận tay",
+                    "sub": "Giao hỏa tốc tận tay",
+                    "detail": "Giao hàng nội thành trong ngày, liên tỉnh qua đối tác bưu chính Viettel Post/J&T.",
+                    "badge": "Door to Door"
+                }
+            }
+        },
+        "stats": {
+            "telemetryLive": "LIVE OPERATIONS",
+            "telemetryHeadline": "HỆ THỐNG THÔNG QUAN CHÍNH NGẠCH VẬN HÀNH 24/7",
+            "nodeBangTuong": "Kho Bằng Tường",
+            "nodeHuuNghi": "Cửa khẩu Hữu Nghị",
+            "nodeSync": "Đồng bộ",
+            "statusReady": "Sẵn sàng",
+            "statusSmooth": "Thông suốt",
+            "statusRealtime": "Real-time",
+            "eyebrow": "NĂNG LỰC CUNG ỨNG & THỰC THI THỰC TẾ",
+            "title": "Dữ liệu vận hành minh bạch theo thời gian thực",
+            "desc": "Toàn bộ lưu lượng hàng hóa, thanh toán nguồn hàng và tiến độ thông quan đều được quản lý tự động hóa trên nền tảng VietGlobal.",
+            "card1Growth": "+24% tháng này",
+            "card1Sla": "SLA xử lý: < 10 phút",
+            "card2Growth": "Khớp lệnh tự động",
+            "card2Sla": "Khớp lệnh tức thì 24/7",
+            "card3Growth": "Đúng giờ 99.8%",
+            "card3Sla": "Xuất bến cố định mỗi ngày",
+            "card4Growth": "Zero thất lạc",
+            "card4Sla": "An toàn nguyên kiện 100%",
+            "gpsTitle": "Theo dõi vị trí Real-time (GPS)",
+            "gpsDesc": "Định vị vệ tinh chính xác lộ trình xe tải và trạng thái kho bãi 24/7",
+            "vatTitle": "100% Hóa đơn GTGT & Tờ khai hải quan",
+            "vatDesc": "Hồ sơ pháp lý minh bạch, chứng từ điện tử đầy đủ hợp chuẩn xuất nhập khẩu",
+            "insuranceTitle": "Bảo hiểm 100% bồi thường toàn diện",
+            "insuranceDesc": "Cam kết bảo hiểm trọn gói giá trị tiền hàng, bồi thường nhanh trong 24 giờ"
+        },
+        "orderTool": "Công cụ đặt hàng thông minh",
+        "orderBrowser": "Tiện ích mở rộng đặt hàng 1-Click",
+        "orderToolDesc": "Cài đặt tiện ích mở rộng VietGlobal trên Google Chrome hoặc Cốc Cốc để thêm sản phẩm từ 1688, Taobao, Tmall vào giỏ hàng và tính giá tạm tính tự động chỉ với 1 cú click chuột.",
+        "installExtension": "Cài đặt Extension Chrome",
+        "featureFast": "Bắt link sản phẩm & quy đổi tỷ giá thời gian thực",
+        "featureSecure": "Bảo mật tài khoản & thông tin giao dịch xưởng",
+        "featureSupport": "Hỗ trợ dịch tự động thông số tiếng Trung",
+        "ourActivities": "Thống kê hoạt động ấn tượng",
         "orderServiceCommitment": "Cam kết dịch vụ đặt hàng",
         "orderServiceCommit": "Chúng tôi cam kết cung cấp dịch vụ đặt hàng nhanh chóng, minh bạch và đáng tin cậy cho khách hàng. Mỗi đơn hàng đều được đội ngũ của chúng tôi theo dõi và xử lý cẩn thận từ khi đặt đến khi giao thành công, đảm bảo quy trình vận hành chính xác và hiệu quả. Khách hàng luôn được cung cấp thông tin rõ ràng về chi phí, thời gian vận chuyển và trạng thái đơn hàng trong suốt quá trình xử lý. Với hệ thống theo dõi hiện đại cùng đội ngũ hỗ trợ tận tâm, chúng tôi nỗ lực mang đến trải nghiệm mua hàng thuận tiện, an toàn và đúng thời gian cam kết.",
         "paymentFormForHousehold": "Đơn thanh toán hộ",
+        "paymentFormForHouseholdDesc": "Xử lý thanh toán xưởng 1688 / Taobao / Tmall trong 10 phút",
         "currencyExchangeService": "Dịch vụ đổi tệ",
+        "currencyExchangeServiceDesc": "Tỷ giá cạnh tranh sát thị trường, bảo mật giao dịch tuyệt đối 100%",
         "ordersEveryDay": "Đơn hàng mỗi ngày",
+        "ordersEveryDayDesc": "Đội xe tải chuyên tuyến xuất bến cố định 3 chuyến mỗi ngày",
         "depositApplications": "Đơn hàng ký gửi",
+        "depositApplicationsDesc": "Kiểm đếm kiện, bọc bọt khí, đóng khung gỗ và phân loại tự động",
         "commitments": {
+            "eyebrow": "CAM KẾT TRÁCH NHIỆM DỊCH VỤ",
+            "mainTitle": "3 Cam Kết Vàng Về Trách Nhiệm Dịch Vụ",
+            "commitmentPrefix": "Cam kết 0",
+            "legalTitle": "Cam Kết Có Hiệu Lực Pháp Lý",
+            "legalSub": "Kèm hợp đồng vận chuyển nguyên tắc & bảo hiểm hàng hóa rõ ràng.",
+            "pointsHeading": "Quy chuẩn thực thi chi tiết:",
+            "ctaBtn": "Yêu cầu tư vấn & Nhận báo giá",
             "compensation": {
                 "title": "Cam kết bồi thường",
-                "desc": "Cam kết bồi thường 100% giá trị tiền hàng và phí mua hàng nếu đặt sai hoặc thiếu sản phẩm."
+                "desc": "Cam kết bồi thường 100% giá trị tiền hàng và phí mua hàng nếu đặt sai hoặc thiếu sản phẩm.",
+                "tag": "Bảo Hiểm 100% Giá Trị",
+                "slaWindow": "Giải quyết đền bù: 24 Giờ",
+                "statement": "Cam kết đền bù 100% giá trị tiền hàng và toàn bộ phí dịch vụ nếu xảy ra mất mát, thất lạc hoặc sai lệch quy cách do lỗi từ VietGlobal.",
+                "points": [
+                    "Bồi thường 100% tiền hàng theo giá trị khai báo trên hóa đơn xưởng",
+                    "Tiếp nhận và giải quyết khiếu nại bằng văn bản minh bạch trong 24 giờ",
+                    "Hợp đồng nguyên tắc & bảo hiểm hàng hóa chuẩn ngạch",
+                    "Không phát sinh phụ phí ẩn ngoài bảng cước đã ký kết"
+                ]
             },
             "support": {
                 "title": "Cam kết hỗ trợ",
-                "desc": "Đội ngũ nhân viên của chúng tôi luôn sẵn sàng hỗ trợ mọi vấn đề của khách hàng 24/7."
+                "desc": "Đội ngũ nhân viên của chúng tôi luôn sẵn sàng hỗ trợ mọi vấn đề của khách hàng 24/7.",
+                "tag": "Chuyên Viên Bản Địa 24/7",
+                "slaWindow": "Thời gian phản hồi: < 2 Phút",
+                "statement": "Đội ngũ chuyên viên tiếng Trung bản địa thường trực 24/7, trực tiếp đàm phán với xưởng sản xuất và giải quyết phát sinh ngay tại biên giới.",
+                "points": [
+                    "Trực tiếp gọi điện, deal giá sỉ tận xưởng 1688, Taobao, Tmall",
+                    "Kiểm tra uy tín nhà máy, thẩm định năng lực cung ứng trước khi đặt cọc",
+                    "Cập nhật tọa độ và tình trạng hàng hóa liên tục qua hệ thống",
+                    "Hỗ trợ khiếu nại đổi trả hàng lỗi về xưởng Trung Quốc nhanh gọn"
+                ]
             },
             "deliveryTime": {
                 "title": "Cam kết thời gian",
-                "desc": "Chúng tôi cam kết thời gian hàng về ổn định và nhanh chóng từ 3 - 7 ngày."
+                "desc": "Chúng tôi cam kết thời gian hàng về ổn định và nhanh chóng từ 3 - 7 ngày.",
+                "tag": "Ổn Định 3 – 7 Ngày",
+                "slaWindow": "Tần suất: 1 Chuyến / Ngày",
+                "statement": "Lịch trình xe cont liên vận xuất bến cố định 18:00 mỗi ngày tại kho Bằng Tường, chủ động điều phối thông quan tránh tắc biên mùa cao điểm.",
+                "points": [
+                    "Hàng về tổng kho Hà Nội chỉ sau 2 – 3 ngày kể từ khi xếp xe",
+                    "Hàng về tổng kho Đà Nẵng & TP.HCM chỉ sau 4 – 6 ngày",
+                    "Đóng cont kẹp chì niêm phong tại xưởng gom, không sang xe dọc đường",
+                    "Giao hàng tận nơi nội thành trong ngày, liên tỉnh hỏa tốc"
+                ]
             }
+        },
+        "testimonialsSection": {
+            "eyebrow": "ĐÁNH GIÁ THỰC TẾ TỪ KHÁCH HÀNG",
+            "title": "Khách Hàng Nói Gì Về Chúng Tôi",
+            "sub": "Lắng nghe đánh giá thực tế từ các nhà bán hàng và doanh nghiệp nhập khẩu chính ngạch."
         },
         "saidMe": "Khách hàng nói gì về",
         "testimonials": [
@@ -314,6 +481,46 @@
                     "Tư vấn thị trường"
                 ]
             },
+            "trung-dong-nam-a": {
+                "label": "Trung – Đông Nam Á",
+                "description": "Tuyến vận chuyển chuyên sâu hai chiều giữa Trung Quốc, Việt Nam và các nước Đông Nam Á với mạng lưới kho gom và trucking đường bộ tối ưu",
+                "countries": [
+                    "Trung Quốc (Quảng Châu, Thâm Quyến, Nghĩa Ô)",
+                    "Việt Nam",
+                    "Thái Lan",
+                    "Malaysia",
+                    "Singapore",
+                    "Indonesia",
+                    "Philippines"
+                ],
+                "services": [
+                    "Vận tải đường bộ xuyên biên giới (Cross-Border Trucking)",
+                    "Vận chuyển đường biển LCL/FCL nhanh",
+                    "Thông quan chính ngạch & mậu biên điện tử",
+                    "Dịch vụ gom hàng xưởng & Door to Door",
+                    "Kết nối kho trung chuyển TMĐT Đông Nam Á"
+                ]
+            },
+            "trung-au-my": {
+                "label": "Trung – Âu – Mỹ",
+                "description": "Tuyến chuyển phát nhanh và đường biển chuyên biệt từ nguồn hàng Trung Quốc tới các thị trường sức mua hàng đầu thế giới tại Hoa Kỳ và Liên minh Châu Âu",
+                "countries": [
+                    "Trung Quốc (Hub bay quốc tế)",
+                    "Hoa Kỳ (US 50 bang)",
+                    "Vương quốc Anh (UK)",
+                    "Đức",
+                    "Pháp",
+                    "Hà Lan",
+                    "Khối EU (27 nước)"
+                ],
+                "services": [
+                    "Chuyến bay thẳng Air Cargo 5 – 8 ngày",
+                    "Đường biển chuyên tuyến Matson/CMA tối ưu chi phí",
+                    "Thông quan nhanh Section 321 (Mỹ <$800) & IOSS VAT (EU)",
+                    "Giao chặng cuối uy tín (USPS, FedEx, DHL, DPD)",
+                    "Tracking mã bưu điện bản địa cập nhật thời gian thực"
+                ]
+            },
             "duong-bien": {
                 "label": "Đường biển",
                 "description": "Tối ưu chi phí cho các lô hàng lớn với mạng lưới đối tác hãng tàu toàn cầu",
@@ -332,6 +539,36 @@
                     "Tracking hàng hóa trực tuyến"
                 ]
             }
+        }
+    },
+    "fulfillmentSection": {
+        "tag": "GIẢI PHÁP TMĐT XUYÊN BIÊN GIỚI",
+        "title": "Dịch vụ Hoàn tất Đơn hàng: POD & Dropshipping",
+        "subtitle": "Giải pháp hậu cần trọn gói cho nhà bán hàng TMĐT quốc tế: tối ưu chuỗi cung ứng, không rủi ro ôm hàng, in ấn đóng gói mang thương hiệu riêng và giao hàng hỏa tốc toàn cầu.",
+        "exploreFulfillment": "Khám phá Trung tâm Dịch vụ Fulfillment VietGlobal",
+        "exploreFulfillmentDesc": "Xem bảng điều khiển hành lang bay, máy tính lead time và giải pháp đóng gói thương hiệu.",
+        "actionBtn": "Khám phá ngay",
+        "pod": {
+            "title": "Dịch vụ POD Fulfillment (Print-on-Demand)",
+            "desc": "Sản xuất và đóng gói theo yêu cầu của từng đơn đặt hàng, giúp bạn không bao giờ phải chịu áp lực vốn và tồn kho.",
+            "items": [
+                "Sản xuất theo đơn phát sinh (Zero Inventory Risk)",
+                "Công nghệ in ấn kỹ thuật số DTG, thêu, in nhiệt sắc nét",
+                "Đóng gói mang thương hiệu riêng (Custom mailer, thiệp cảm ơn, nhãn dệt)",
+                "Xử lý xuất xưởng thần tốc trong 24 – 48 giờ",
+                "Đồng bộ đơn hàng tự động từ Shopify, TikTok Shop, Etsy, Amazon..."
+            ]
+        },
+        "dropship": {
+            "title": "Dịch vụ Dropshipping Fulfillment",
+            "desc": "VietGlobal tiếp nhận đơn, tìm nguồn hàng uy tín, lưu kho trung chuyển, kiểm định chất lượng và đóng gói giao thẳng đến người mua.",
+            "items": [
+                "Tự động đồng bộ hóa đơn hàng qua kết nối Webhook / API",
+                "Tìm nguồn hàng nhà máy & kiểm định chất lượng (QC) nghiêm ngặt",
+                "Lưu kho miễn phí, phân loại và gom nhiều đơn hàng thông minh",
+                "Đóng gói chuẩn xuất khẩu, cấp mã tracking quốc tế theo dõi thời gian thực",
+                "Điều phối chuyển phát nhanh đến hơn 100+ quốc gia và vùng lãnh thổ"
+            ]
         }
     },
     "contactShip": {
@@ -382,5 +619,229 @@
         "Cargoroute": "TUYẾN HÀNG",
         "Seaport": "CẢNG BIỂN",
         "Yearsofexperience": "NĂM KINH NGHIỆM"
+    },
+    "fulfillmentPage": {
+        "hero": {
+            "eyebrow": "Nền tảng Công nghệ Logistics & Fulfillment Toàn cầu",
+            "headline": "Dịch vụ fulfillment và vận chuyển xuyên biên giới, tối ưu cho nhà bán hàng vươn ra toàn cầu.",
+            "subheadline": "Một nền tảng duy nhất cho sản xuất POD theo yêu cầu, xử lý đơn hàng dropshipping và các tuyến bay chuyển phát nhanh quốc tế — kết nối trực tiếp từ Đông Nam Á đến Hoa Kỳ, Châu Âu và Trung Đông.",
+            "primaryCta": "Nhận báo giá ngay",
+            "secondaryCta": "Khám phá tuyến bay",
+            "badges": {
+                "api": "Đồng bộ API thời gian thực",
+                "dispatch": "Đóng gói & Xử lý 24-48h",
+                "tracking": "Minh bạch hành trình đơn vận"
+            },
+            "preview": {
+                "title": "Vận hành trực tiếp • Bay thẳng không trung gian",
+                "status": "Đang vận chuyển (Tuyến bay thẳng)",
+                "routeLabel": "Tuyến hàng:",
+                "routeVal": "Tổng kho VN ➔ Trung tâm Los Angeles ➔ Giao chặng cuối",
+                "pkgLabel": "Kiện hàng:",
+                "pkgVal": "Hộp đóng gói may mặc POD (Mang thương hiệu riêng)",
+                "carrierLabel": "Đơn vị vận chuyển:",
+                "carrierVal": "USPS Direct Express Theo dõi chuẩn xác",
+                "step1": "Sản xuất hoàn tất",
+                "step2": "Bay xuyên biên giới",
+                "step3": "Đang giao hàng",
+                "stat1Val": "99.4%",
+                "stat1Lbl": "Cam kết đúng hạn",
+                "stat2Val": "24h",
+                "stat2Lbl": "Xử lý xuất kho",
+                "stat3Val": "0 đ",
+                "stat3Lbl": "Rủi ro ôm hàng"
+            }
+        },
+        "metrics": {
+            "title": "Được tin chọn bởi những nhà bán hàng tăng trưởng nhanh trên Shopify, TikTok Shop, Amazon & Etsy",
+            "card1Value": "100+",
+            "card1Label": "Thị trường kết nối",
+            "card2Value": "500K+",
+            "card2Label": "Đơn hàng đã hoàn tất",
+            "card3Value": "24-48h",
+            "card3Label": "Thời gian xử lý trung bình",
+            "card4Value": "15+",
+            "card4Label": "Hub trung chuyển quốc tế"
+        },
+        "solutions": {
+            "eyebrow": "Tổng quan Giải pháp",
+            "headline": "Tất cả những gì một nhà bán hàng quốc tế cần để xử lý và vận chuyển đơn hàng, tập trung tại một nơi.",
+            "subtitle": "Hệ thống vận hành linh hoạt, tối ưu cho mọi mô hình kinh doanh xuyên biên giới — từ sản xuất theo yêu cầu, dropshipping tự động đến quản lý kho thương hiệu.",
+            "pod": {
+                "tag": "Sản xuất Theo Yêu cầu",
+                "title": "POD Fulfillment",
+                "desc": "Sản xuất và đóng gói theo yêu cầu, giúp bạn không bao giờ phải ôm hàng tồn kho. In ấn, đóng gói và vận chuyển dưới chính thương hiệu của bạn.",
+                "item1": "Sản xuất theo đơn phát sinh (Zero Inventory)",
+                "item2": "Đóng gói theo nhận diện thương hiệu riêng",
+                "item3": "Tự động kết nối và giao hàng nhanh toàn cầu",
+                "fitFor": "Phù hợp cho: Sellers POD & Custom Merchandise"
+            },
+            "dropship": {
+                "tag": "Chuỗi Cung ứng Tự động",
+                "title": "Dropshipping Fulfillment",
+                "desc": "Kết nối gian hàng trực tuyến của bạn, chúng tôi đảm nhận việc tìm nguồn hàng, lưu kho và điều phối đơn hàng — bạn chỉ cần tập trung vào bán hàng.",
+                "item1": "Tích hợp đa sàn (Shopify, TikTok Shop, Amazon...)",
+                "item2": "Tìm nguồn, kiểm soát chất lượng & lưu kho tập trung",
+                "item3": "Điều phối đơn hàng tự động không độ trễ",
+                "fitFor": "Phù hợp cho: Nhà bán hàng Dropshipping đa kênh"
+            },
+            "ecommerce": {
+                "tag": "Kho Vận & Xử lý Đơn",
+                "title": "E-commerce Fulfillment",
+                "desc": "Giải pháp quản lý kho bãi tập trung, nhặt hàng, đóng gói chuẩn hóa và phân phối chặng cuối cho các thương hiệu có sẵn nguồn hàng riêng.",
+                "item1": "Lưu kho an toàn & theo dõi tồn kho thời gian thực",
+                "item2": "Quy trình Pick & Pack chuẩn xác, đóng gói bảo vệ",
+                "item3": "Tối ưu chi phí logistics và thời gian giao hàng",
+                "fitFor": "Phù hợp cho: Thương hiệu DTC & Doanh nghiệp TMĐT"
+            }
+        },
+        "laneConsole": {
+            "eyebrow": "Mạng lưới Bay Thẳng & Lợi thế Thị trường",
+            "headline": "Global Lane Console: Điều phối vận chuyển xuyên biên giới",
+            "subtitle": "Bấm chọn hành lang thị trường bên dưới để xem thời gian bay thực tế, hãng giao nhận bản địa và phân tích lợi thế biên lợi nhuận.",
+            "tabs": {
+                "us": "Hoa Kỳ (US)",
+                "eu": "Châu Âu & UK",
+                "me": "Trung Đông (GCC)",
+                "sea": "Tổng kho Đông Nam Á"
+            },
+            "labels": {
+                "transitTime": "Thời gian giao tận tay",
+                "carrier": "Hãng chuyển phát chặng cuối",
+                "customs": "Cơ chế Hải quan & Thuế",
+                "customsDesc": "Tích hợp manifest điện tử EDI truyền dữ liệu tự động, giải phóng hàng nhanh chóng không lưu kho chậm trễ.",
+                "advantage": "Lợi thế thực chiến của Seller",
+                "bestFor": "Mô hình phù hợp nhất",
+                "airRoute": "Lộ trình tuyến bay thẳng"
+            },
+            "lanes": {
+                "us": {
+                    "flag": "🇺🇸 Tuyến Hoa Kỳ",
+                    "name": "Hành lang Vận chuyển Xuyên biên giới Hoa Kỳ",
+                    "transit": "5 - 8 Ngày",
+                    "carrier": "USPS Direct Priority Express",
+                    "customs": "Miễn thuế dưới ngưỡng Section 321 (< $800)",
+                    "advantage": "Sức mua cực lớn, tỷ lệ mua lại cao, mã theo dõi toàn trình phủ khắp 50 bang với bảng cước cố định không phụ phí ẩn.",
+                    "bestFor": "Áo thun/Hoodie POD, Hàng Dropship bắt trend, Seller TikTok Shop US",
+                    "route": "Sân bay Quốc tế SGN/HAN ➔ Cửa khẩu LAX/ORD ➔ Trung tâm bưu điện USPS toàn quốc"
+                },
+                "eu": {
+                    "flag": "🇪🇺 Tuyến Châu Âu",
+                    "name": "Hành lang Thương mại Châu Âu & Anh Quốc",
+                    "transit": "6 - 9 Ngày",
+                    "carrier": "Mạng lưới DHL Express & DPD Châu Âu",
+                    "customs": "Khai báo điện tử chuẩn hóa thuế IOSS & VAT trước",
+                    "advantage": "Không bị giữ hàng hay phát sinh phí phạt tại hải quan. Gom hàng bay thẳng tới Frankfurt & Amsterdam, phân phối tới 27 nước EU.",
+                    "bestFor": "Thời trang DTC thiết kế giá trị cao, Đồ gia dụng xanh, Cửa hàng Shopify Châu Âu",
+                    "route": "Sân bay SGN/HAN ➔ Ga hàng hóa FRA/AMS ➔ Chuyển phát nhanh DPD/DHL chặng cuối"
+                },
+                "me": {
+                    "flag": "🇦🇪 Tuyến Trung Đông",
+                    "name": "Hành lang Bùng nổ Nhu cầu Trung Đông (GCC)",
+                    "transit": "4 - 7 Ngày",
+                    "carrier": "Aramex Priority Chuyển phát nhanh",
+                    "customs": "Thông quan điện tử B2C Express",
+                    "advantage": "Nhu cầu mua sắm online bùng nổ với giá trị đơn hàng (AOV) đặc biệt cao tại UAE, Ả Rập Xê Út, Qatar cùng cam kết giao nhận chuẩn xác.",
+                    "bestFor": "Đồ quà tặng độc đáo, Thời trang cao cấp, Bộ sưu tập DTC biên lợi nhuận lớn",
+                    "route": "Sân bay Tân Sơn Nhất ➔ Hub Dubai (DXB) / Riyadh (RUH) ➔ Aramex giao tận cửa"
+                },
+                "sea": {
+                    "flag": "🇻🇳 Trung tâm Xưởng",
+                    "name": "Trung tâm Sản xuất & Tìm nguồn hàng Đông Nam Á",
+                    "transit": "Sản xuất 24 - 48h",
+                    "carrier": "Bàn giao trực tiếp cổng sân bay",
+                    "customs": "Cấp chứng nhận nguồn gốc xuất khẩu chuẩn",
+                    "advantage": "Lợi thế chi phí cực lớn từ các xưởng dệt may và in ấn hiện đại tại Việt Nam, không qua khâu trung gian, tối ưu hóa lợi nhuận ròng.",
+                    "bestFor": "Lấy sỉ phôi POD, Kiểm định chất lượng tại xưởng, Gom hàng bay quốc tế",
+                    "route": "Xưởng sản xuất ➔ Trung tâm phân loại quét mã Barcode ➔ Nhà ga sân bay quốc tế"
+                }
+            }
+        },
+        "pipeline": {
+            "eyebrow": "Vận hành Tự động hóa",
+            "headline": "Dây chuyền Xử lý Đơn hàng Liền mạch",
+            "subtitle": "Một quy trình kết nối không gián đoạn từ cú click đặt hàng đến tận tay người mua.",
+            "step1": {
+                "num": "01",
+                "title": "Đồng bộ Gian hàng",
+                "desc": "Tiếp nhận đơn tức thì qua Webhook tự động từ Shopify, TikTok Shop, Amazon & Etsy."
+            },
+            "step2": {
+                "num": "02",
+                "title": "Sản xuất Theo yêu cầu",
+                "desc": "In ấn kỹ thuật số DTG / thêu sắc nét tức thì hoặc xuất hàng ngay từ kho lưu trữ."
+            },
+            "step3": {
+                "num": "03",
+                "title": "Đóng gói Nhận diện Riêng",
+                "desc": "Quét barcode kiểm định chất lượng, gắn mác thương hiệu và đóng gói bao bì riêng."
+            },
+            "step4": {
+                "num": "04",
+                "title": "Bay Xuyên biên giới",
+                "desc": "Gom chuyến tại sân bay quốc tế và cất cánh trên các đường bay thẳng chuyên dụng."
+            },
+            "step5": {
+                "num": "05",
+                "title": "Thông quan Tự động",
+                "desc": "Khai báo hải quan điện tử tốc độ cao theo chuẩn Section 321 hoặc IOSS VAT."
+            },
+            "step6": {
+                "num": "06",
+                "title": "Giao tận tay Khách",
+                "desc": "Chuyển phát bản địa tận nhà kèm định vị GPS cập nhật trạng thái thời gian thực."
+            }
+        },
+        "estimator": {
+            "eyebrow": "Tra cứu Nhanh",
+            "headline": "Ước tính Thời gian Xử lý & Giao nhận",
+            "subtitle": "Chọn loại sản phẩm và thị trường để xem trước thời gian hoàn thành đơn hàng.",
+            "catLabel": "Chọn danh mục sản phẩm:",
+            "marketLabel": "Chọn thị trường mục tiêu:",
+            "catApparel": "Thời trang & May mặc (In theo yêu cầu POD)",
+            "catGeneral": "Phụ kiện & Hàng gia dụng (Dropshipping)",
+            "catStock": "Hàng có sẵn lưu kho (Thương hiệu riêng)",
+            "marketUS": "Hoa Kỳ (Tuyến bay thẳng USPS)",
+            "marketEU": "Châu Âu & UK (Mạng lưới DHL/DPD)",
+            "marketME": "Trung Đông (Aramex Priority)",
+            "prodTime": "Thời gian sản xuất & QC",
+            "transitTime": "Thời gian bay & Thông quan",
+            "totalTime": "Tổng thời gian tới tay khách",
+            "ctaBtn": "Nhận Bảng cước Chi tiết"
+        },
+        "integrations": {
+            "eyebrow": "Hệ sinh thái Đa kênh",
+            "headline": "Tương thích hoàn hảo với các nền tảng bán hàng bạn đang dùng.",
+            "copy": "Kết nối cửa hàng chỉ trong vài phút — đơn hàng và mã tracking tự động đồng bộ 24/7."
+        },
+        "socialProof": {
+            "quote": "Hợp tác cùng VietGlobal Fulfillment giúp chúng tôi rút ngắn 4 ngày toàn trình, sở hữu bao bì mang thương hiệu riêng chuẩn chỉ và tăng 22% tỷ lệ khách hàng quay lại mua tiếp.",
+            "author": "Đại diện Thương hiệu Thời trang DTC",
+            "role": "Seller trên Shopify & TikTok Shop",
+            "onboarding": "Chúng tôi đang đồng hành cùng lứa người bán hàng toàn cầu tăng trưởng nhanh tiếp theo — Hãy trao đổi để nâng tầm thương hiệu."
+        },
+        "faq": {
+            "eyebrow": "Giải đáp Thắc mắc",
+            "headline": "Câu hỏi thường gặp",
+            "subtitle": "Mọi thông tin bạn cần biết khi bắt đầu vận hành fulfillment toàn cầu cùng VietGlobal.",
+            "q1": "Tôi có cần phải nhập hàng và lưu kho trước không?",
+            "a1": "Không bắt buộc. Với mô hình POD và Dropshipping, đơn hàng chỉ được sản xuất hoặc xử lý khi có khách đặt. Với mô hình E-commerce Fulfillment, chúng tôi hỗ trợ lưu kho số lượng linh hoạt.",
+            "q2": "Hiện tại hệ thống có thể giao hàng tới những quốc gia nào?",
+            "a2": "Chúng tôi bao phủ 4 khu vực chính: Đông Nam Á, Trung Đông (UAE, Saudi Arabia,...), toàn bộ khối Liên minh Châu Âu (EU), Vương quốc Anh và Hoa Kỳ.",
+            "q3": "Chi phí dịch vụ fulfillment POD được tính như thế nào?",
+            "a3": "Chi phí bao gồm giá phôi/sản xuất sản phẩm + phí in ấn & đóng gói + phí cước vận chuyển quốc tế. Bảng giá minh bạch, không phí ẩn.",
+            "q4": "Tôi có thể sử dụng bao bì và thương hiệu riêng không?",
+            "a4": "Hoàn toàn có thể. Chúng tôi hỗ trợ dán tem nhãn, đóng gói hộp, thiệp cảm ơn (thank-you card) theo nhận diện thương hiệu của bạn.",
+            "q5": "Thời gian vận chuyển xuyên biên giới trung bình là bao lâu?",
+            "a5": "Tuyến chuyển phát nhanh quốc tế thông thường từ 5–8 ngày làm việc tùy thuộc vào thị trường đích đến (Mỹ, Châu Âu hay Trung Đông).",
+            "q6": "Những nền tảng nào có thể kết nối tự động với hệ thống?",
+            "a6": "Hệ thống tích hợp trực tiếp qua API với Shopify, TikTok Shop, Amazon, WooCommerce và Etsy với cơ chế đồng bộ đơn & tracking tự động."
+        },
+        "cta": {
+            "headline": "Sẵn sàng đưa dịch vụ fulfillment & đơn hàng của bạn vươn ra toàn cầu?",
+            "copy": "Không yêu cầu cam kết ban đầu — hãy chia sẻ thị trường mục tiêu và sản lượng dự kiến, chúng tôi sẽ xây dựng kế hoạch fulfillment tối ưu nhất cho bạn.",
+            "primary": "Nhận báo giá chi tiết",
+            "secondary": "Trao đổi cùng chuyên gia"
+        }
     }
 }

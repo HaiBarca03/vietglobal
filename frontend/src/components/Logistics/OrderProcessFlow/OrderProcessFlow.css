@@ -1,238 +1,418 @@
-.process-container {
-  padding: 80px 20px;
-  /* Gradient từ trên xuống: Xanh da trời đậm sang nhạt dần */
-  background: linear-gradient(180deg, #0076ad 0%, #1e90ff 40%, #74b9ff 100%);
-  min-height: 80vh;
-  color: white;
+/* ==========================================================================
+   Supply Chain Pipeline Highway — Non-traditional & Highly Dynamic
+   Scoped under: .logistics-cn-vn-scope
+   ========================================================================== */
+
+.logistics-cn-vn-scope .pipeline-section-wrapper {
+  background: radial-gradient(ellipse at 50% 0%, #FFFFFF 0%, #F1F5F9 100%);
+  padding: 95px 20px 85px;
   position: relative;
   overflow: hidden;
-  border-bottom-left-radius: 400px;
-  border-bottom-right-radius: 400px;
+  border-bottom: 1px solid #E2E8F0;
 }
 
-/* Hiệu ứng mây/sáng nhẹ để nền sinh động hơn */
-.process-container::before {
-  content: '';
+.logistics-cn-vn-scope .pipeline-ambient-glow {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at 50% -20%, rgba(255,255,255,0.3) 0%, transparent 50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
   pointer-events: none;
+  filter: blur(90px);
 }
 
-.main-title {
-  text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  /* Chữ trắng bóng bẩy */
-  color: #ffffff;
-  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+.logistics-cn-vn-scope .pipeline-ambient-glow.glow-top {
+  top: -150px;
+  left: 10%;
+  background: rgba(20, 100, 196, 0.08);
 }
 
-.flow-wrapper {
-  position: relative;
-  max-width: 1200px;
+.logistics-cn-vn-scope .pipeline-ambient-glow.glow-bottom {
+  bottom: -150px;
+  right: 10%;
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.logistics-cn-vn-scope .pipeline-container {
+  max-width: 1260px;
   margin: 0 auto;
-  z-index: 1;
+  position: relative;
+  z-index: 2;
 }
 
-.connecting-lines {
+/* Header */
+.logistics-cn-vn-scope .pipeline-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.logistics-cn-vn-scope .pipeline-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #E6F4FF;
+  border: 1px solid rgba(22, 119, 255, 0.25);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1464C4;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.logistics-cn-vn-scope .pipeline-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #0A2540;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.logistics-cn-vn-scope .pipeline-desc {
+  font-size: 15.5px;
+  color: #64748B;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Stage Blocks */
+.logistics-cn-vn-scope .pipeline-stage-block {
+  margin-bottom: 24px;
+}
+
+.logistics-cn-vn-scope .stage-ribbon-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding-left: 8px;
+}
+
+.logistics-cn-vn-scope .stage-flag-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+.logistics-cn-vn-scope .stage-flag-dot.china { background-color: #EF4444; color: rgba(239, 68, 68, 0.6); }
+.logistics-cn-vn-scope .stage-flag-dot.vietnam { background-color: #10B981; color: rgba(16, 185, 129, 0.6); }
+
+.logistics-cn-vn-scope .stage-text {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #1E293B;
+  text-transform: uppercase;
+}
+
+.logistics-cn-vn-scope .stage-sub-tag {
+  font-size: 12px;
+  color: #64748B;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+/* Highway Track */
+.logistics-cn-vn-scope .pipeline-highway-track {
+  position: relative;
+  padding: 8px 0;
+}
+
+.logistics-cn-vn-scope .highway-connecting-line {
   position: absolute;
-  top: 10%;
-  left: 0;
-  width: 100%;
-  height: 80%;
-  z-index: -1;
-  opacity: 0.6;
-  /* Đường nối màu trắng sáng như vệt mây */
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
+  top: 50%;
+  left: 30px;
+  right: 30px;
+  height: 3px;
+  background: linear-gradient(90deg, #93C5FD 0%, #3B82F6 50%, #60A5FA 100%);
+  border-radius: 2px;
+  z-index: 1;
+  opacity: 0.45;
 }
 
-.steps-grid {
+.logistics-cn-vn-scope .highway-connecting-line.vn-line {
+  background: linear-gradient(90deg, #34D399 0%, #059669 50%, #10B981 100%);
+}
+
+.logistics-cn-vn-scope .highway-nodes-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px 30px;
-}
-
-.step-card {
-  /* Hiệu ứng kính trắng nhẹ trên nền xanh */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-radius: 24px;
-  padding: 40px 20px 30px;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  gap: 18px;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
 }
 
-.step-card:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  transform: translateY(-10px);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+/* Node Card (Pill / Capsule Hybrid) */
+.logistics-cn-vn-scope .highway-node-card {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 22px 20px 20px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(10, 37, 64, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
 
-.step-number {
+.logistics-cn-vn-scope .highway-node-card:hover,
+.logistics-cn-vn-scope .highway-node-card.active {
+  border-color: #3B82F6;
+  box-shadow: 0 12px 30px rgba(20, 100, 196, 0.14);
+  transform: translateY(-5px);
+}
+
+.logistics-cn-vn-scope .highway-node-card.active .node-active-bar {
   position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
-  /* Số màu trắng trên nền xanh đặc trưng của bước */
-  background: var(--step-color);
-  color: white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #1464C4;
+}
+
+.logistics-cn-vn-scope .node-top-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.logistics-cn-vn-scope .node-num-pill {
+  font-size: 12px;
+  font-weight: 800;
+  color: #1464C4;
+  background: #F0F7FF;
+  border: 1px solid #BFDBFE;
+  padding: 2px 9px;
+  border-radius: 6px;
+}
+
+.logistics-cn-vn-scope .node-badge-pill {
+  font-size: 11px;
+  font-weight: 600;
+  color: #475569;
+  background: #F1F5F9;
+  padding: 2px 8px;
   border-radius: 12px;
+}
+.logistics-cn-vn-scope .node-badge-pill.vn {
+  color: #059669;
+  background: #ECFDF5;
+}
+
+.logistics-cn-vn-scope .node-icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #F0F7FF;
+  border: 1px solid #DBEAFE;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 22px;
+  color: #1464C4;
+  margin-bottom: 14px;
+  transition: all 0.25s ease;
+}
+
+.logistics-cn-vn-scope .node-icon-circle.vn {
+  background: #ECFDF5;
+  border-color: #A7F3D0;
+  color: #059669;
+}
+
+.logistics-cn-vn-scope .highway-node-card:hover .node-icon-circle,
+.logistics-cn-vn-scope .highway-node-card.active .node-icon-circle {
+  background: #1464C4;
+  color: #FFFFFF;
+  transform: scale(1.06);
+}
+
+.logistics-cn-vn-scope .highway-node-card:hover .node-icon-circle.vn,
+.logistics-cn-vn-scope .highway-node-card.active .node-icon-circle.vn {
+  background: #059669;
+  color: #FFFFFF;
+}
+
+.logistics-cn-vn-scope .node-title {
+  font-size: 16px;
   font-weight: 800;
-  font-size: 1.4rem;
-  border: 3px solid #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: #0A2540;
+  margin-bottom: 4px;
+  line-height: 1.35;
 }
 
-.step-icon {
-  font-size: 3.8rem;
-  margin-bottom: 20px;
-  /* Icon luôn trắng để nổi bật trên nền xanh */
-  color: white;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-  transition: transform 0.3s ease;
+.logistics-cn-vn-scope .node-sub {
+  font-size: 12.5px;
+  color: #64748B;
+  line-height: 1.45;
 }
 
-.step-card:hover .step-icon {
-  transform: scale(1.1) rotate(-5deg);
-  filter: drop-shadow(0 0 12px var(--step-color));
+/* Central Border Crossing Bridge */
+.logistics-cn-vn-scope .border-crossing-bridge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 18px 0;
+  position: relative;
 }
 
-.step-title {
-  font-size: 1.2rem;
+.logistics-cn-vn-scope .bridge-track-line {
+  flex: 1;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    #CBD5E1,
+    #CBD5E1 6px,
+    transparent 6px,
+    transparent 12px
+  );
+}
+
+.logistics-cn-vn-scope .bridge-portal-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #0A2540;
+  color: #FFFFFF;
+  padding: 12px 24px;
+  border-radius: 9999px;
+  box-shadow: 0 8px 24px rgba(10, 37, 64, 0.25);
+  position: relative;
+  margin: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logistics-cn-vn-scope .bridge-pulse-beacon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.3);
+  animation: bridgePulse 2s infinite;
+}
+
+@keyframes bridgePulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.logistics-cn-vn-scope .bridge-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logistics-cn-vn-scope .bridge-icon {
+  font-size: 18px;
+  color: #38BDF8;
+}
+
+.logistics-cn-vn-scope .bridge-title {
+  font-size: 13.5px;
   font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.3px;
-  line-height: 1.4;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logistics-cn-vn-scope .bridge-sub {
+  font-size: 11.5px;
+  color: #94A3B8;
+}
+
+.logistics-cn-vn-scope .bridge-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ADE80;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 700;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.logistics-cn-vn-scope .status-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ADE80;
+}
+
+/* Step Detail Console (Bottom) */
+.logistics-cn-vn-scope .step-detail-console {
+  margin-top: 36px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 20px;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-shadow: 0 8px 24px rgba(10, 37, 64, 0.05);
+}
+
+.logistics-cn-vn-scope .detail-step-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #1464C4;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.logistics-cn-vn-scope .detail-step-name {
+  color: #0A2540;
+}
+
+.logistics-cn-vn-scope .detail-step-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0A2540;
+  margin-bottom: 4px;
+}
+
+.logistics-cn-vn-scope .detail-step-desc {
+  font-size: 14.5px;
+  color: #475569;
+  max-width: 650px;
+  line-height: 1.55;
+}
+
+.logistics-cn-vn-scope .detail-action-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logistics-cn-vn-scope .detail-action-chips .chip {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1E293B;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  padding: 6px 14px;
+  border-radius: 8px;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  .steps-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 70px 40px;
-  }
+  .logistics-cn-vn-scope .highway-nodes-row { grid-template-columns: repeat(2, 1fr); }
+  .logistics-cn-vn-scope .highway-connecting-line { display: none; }
+  .logistics-cn-vn-scope .bridge-portal-card { border-radius: 14px; flex-direction: column; align-items: flex-start; }
 }
 
-@media (max-width: 600px) {
-  .steps-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .main-title {
-    font-size: 2.2rem;
-    margin-bottom: 60px;
-  }
-  .step-card {
-    margin: 0 20px;
-  }
-}
-
-/* Thêm hiệu ứng bong bóng lơ lửng */
-.decor-bubbles {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.bubble {
-  position: absolute;
-  background: white;
-  border-radius: 50%;
-  filter: blur(40px);
-}
-
-.bubble:nth-child(1) { width: 300px; height: 300px; top: 10%; left: -5%; background: #00d2ff; }
-.bubble:nth-child(2) { width: 200px; height: 200px; bottom: 10%; right: -5%; background: #74b9ff; }
-.bubble:nth-child(3) { width: 150px; height: 150px; top: 40%; left: 45%; background: #ffffff; opacity: 0.2; }
-
-/* Nâng cấp Card */
-.step-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 30px; /* Tròn trịa hơn cho thân thiện */
-  padding: 40px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-  /* Hiệu ứng mượt mà khi ra vào */
-  will-change: transform;
-}
-
-/* Số thứ tự bay bổng */
-.step-number {
-  position: absolute;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--step-color), #fff);
-  color: #005a8d;
-  border-radius: 50% 50% 50% 10%; /* Hình giọt nước */
-  /* rotate: -45deg;  */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 1.6rem;
-  border: 4px solid #fff;
-}
-
-/* Chỉnh cho số không bị nghiêng theo giọt nước */
-.step-number::after {
-  content: attr(data-number); /* Nếu dùng attr, còn không thì cứ để text */
-  rotate: 45deg;
-}
-
-/* Icon nhảy múa */
-.step-icon {
-  font-size: 4rem;
-  margin-bottom: 20px;
-  color: white;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
-  animation: bounce-slow 4s infinite ease-in-out;
-}
-
-@keyframes bounce-slow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.step-title {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-/* Đường nối uốn lượn động */
-.connecting-lines {
-  height: 100%;
-  width: 100%;
-  overflow: visible;
-}
-
-/* Responsive tinh chỉnh */
-@media (max-width: 1024px) {
-  .steps-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 80px 40px;
-  }
+@media (max-width: 640px) {
+  .logistics-cn-vn-scope .pipeline-section-wrapper { padding: 60px 16px; }
+  .logistics-cn-vn-scope .highway-nodes-row { grid-template-columns: 1fr; }
+  .logistics-cn-vn-scope .step-detail-console { flex-direction: column; align-items: flex-start; padding: 20px; }
 }
