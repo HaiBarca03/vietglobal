@@ -11,6 +11,10 @@ import {
   SafetyOutlined,
   ClockCircleOutlined,
   TeamOutlined,
+  BranchesOutlined,
+  RocketOutlined,
+  ThunderboltOutlined,
+  ShopOutlined,
 } from "@ant-design/icons";
 import "./Logistics.css";
 import { useNavigate } from "react-router-dom";
@@ -122,6 +126,58 @@ const styles = {
     boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
     transition: "box-shadow 0.2s",
   },
+  fulfillmentCard: {
+    background: COLORS.white,
+    border: `1px solid ${COLORS.border}`,
+    borderRadius: 14,
+    padding: "28px 24px",
+    height: "100%",
+    boxShadow: "0 2px 10px rgba(0,0,0,0.04)",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    transition: "transform 0.2s ease, box-shadow 0.2s ease",
+  },
+  podBadge: {
+    width: 46,
+    height: 46,
+    borderRadius: 12,
+    background: "linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#fff",
+    fontSize: 22,
+    boxShadow: "0 4px 12px rgba(255,107,107,0.25)",
+    flexShrink: 0,
+  },
+  dropshipBadge: {
+    width: 46,
+    height: 46,
+    borderRadius: 12,
+    background: "linear-gradient(135deg, #1677FF 0%, #36CFC9 100%)",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "#fff",
+    fontSize: 22,
+    boxShadow: "0 4px 12px rgba(22,119,255,0.25)",
+    flexShrink: 0,
+  },
+  fulfillmentLinkBanner: {
+    marginTop: 24,
+    background: `linear-gradient(135deg, ${COLORS.primary} 0%, #0F2F57 100%)`,
+    borderRadius: 14,
+    padding: "22px 28px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
+    gap: 16,
+    cursor: "pointer",
+    boxShadow: "0 4px 20px rgba(10,37,64,0.12)",
+    transition: "all 0.2s ease",
+  },
 };
 
 // --- DATA ---
@@ -225,6 +281,14 @@ const logisticsRoutes = [
   {
     key: "noi-a",
     icon: <EnvironmentOutlined />
+  },
+  {
+    key: "trung-dong-nam-a",
+    icon: <BranchesOutlined />
+  },
+  {
+    key: "trung-au-my",
+    icon: <RocketOutlined />
   },
   {
     key: "trung-dong",
@@ -443,7 +507,7 @@ export default function AboutUsShipping() {
           {/* Tab Selector */}
           <Row gutter={[12, 12]} style={{ marginTop: 28 }}>
             {logisticsRoutes.map((route) => (
-              <Col xs={12} sm={6} key={route.key}>
+              <Col xs={12} sm={8} md={4} key={route.key}>
                 <div
                   style={styles.tabCard(activeRoute === route.key)}
                   onClick={() => setActiveRoute(route.key)}
@@ -515,6 +579,136 @@ export default function AboutUsShipping() {
             </div>
             <Divider style={{ margin: "16px 0" }} />
             <RouteTabContent route={currentRoute} />
+          </div>
+        </div>
+
+        {/* FULFILLMENT POD & DROPSHIPPING SECTION */}
+        <div style={{ marginBottom: 56 }}>
+          <div style={{ marginBottom: 8 }}>
+            <Tag
+              color="cyan"
+              style={{ borderRadius: 20, fontWeight: 600, fontSize: 12 }}
+            >
+              {t("fulfillmentSection.tag")}
+            </Tag>
+          </div>
+          <Title level={2} style={styles.sectionTitle}>
+            {t("fulfillmentSection.title")}
+          </Title>
+          <Text style={{ color: COLORS.textMuted, fontSize: 15 }}>
+            {t("fulfillmentSection.subtitle")}
+          </Text>
+
+          <Row gutter={[20, 20]} style={{ marginTop: 28 }}>
+            {/* POD Card */}
+            <Col xs={24} md={12}>
+              <div style={styles.fulfillmentCard}>
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 14 }}>
+                    <div style={styles.podBadge}>
+                      <ThunderboltOutlined />
+                    </div>
+                    <div>
+                      <Title level={4} style={{ margin: 0, color: COLORS.primary, fontSize: 17 }}>
+                        {t("fulfillmentSection.pod.title")}
+                      </Title>
+                      <Tag color="volcano" style={{ marginTop: 4, borderRadius: 10, fontSize: 11 }}>
+                        Zero Inventory • On-demand
+                      </Tag>
+                    </div>
+                  </div>
+                  <Paragraph style={{ color: COLORS.textMuted, fontSize: 14, lineHeight: 1.6, marginBottom: 16 }}>
+                    {t("fulfillmentSection.pod.desc")}
+                  </Paragraph>
+                  <div style={{ marginTop: 12 }}>
+                    {(t("fulfillmentSection.pod.items", { returnObjects: true }) || []).map((item, idx) => (
+                      <div key={idx} style={styles.featureItem}>
+                        <CheckCircleFilled style={{ ...styles.checkIcon, color: "#FF6B6B" }} />
+                        <Text style={{ fontSize: 13.5, color: "#334155" }}>{item}</Text>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Col>
+
+            {/* Dropshipping Card */}
+            <Col xs={24} md={12}>
+              <div style={styles.fulfillmentCard}>
+                <div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 14 }}>
+                    <div style={styles.dropshipBadge}>
+                      <ShopOutlined />
+                    </div>
+                    <div>
+                      <Title level={4} style={{ margin: 0, color: COLORS.primary, fontSize: 17 }}>
+                        {t("fulfillmentSection.dropship.title")}
+                      </Title>
+                      <Tag color="blue" style={{ marginTop: 4, borderRadius: 10, fontSize: 11 }}>
+                        Multi-platform • Global Delivery
+                      </Tag>
+                    </div>
+                  </div>
+                  <Paragraph style={{ color: COLORS.textMuted, fontSize: 14, lineHeight: 1.6, marginBottom: 16 }}>
+                    {t("fulfillmentSection.dropship.desc")}
+                  </Paragraph>
+                  <div style={{ marginTop: 12 }}>
+                    {(t("fulfillmentSection.dropship.items", { returnObjects: true }) || []).map((item, idx) => (
+                      <div key={idx} style={styles.featureItem}>
+                        <CheckCircleFilled style={styles.checkIcon} />
+                        <Text style={{ fontSize: 13.5, color: "#334155" }}>{item}</Text>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Col>
+          </Row>
+
+          {/* Banner link to dedicated fulfillment page */}
+          <div
+            style={styles.fulfillmentLinkBanner}
+            onClick={() => navigate(`/${lang}/fulfillment`)}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+              <div
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: "50%",
+                  background: "rgba(22,119,255,0.25)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#60A5FA",
+                  fontSize: 20,
+                  flexShrink: 0,
+                }}
+              >
+                <RocketOutlined />
+              </div>
+              <div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 16 }}>
+                  {t("fulfillmentSection.exploreFulfillment")}
+                </div>
+                <div style={{ color: "#94A3B8", fontSize: 13, marginTop: 2 }}>
+                  {t("fulfillmentSection.exploreFulfillmentDesc")}
+                </div>
+              </div>
+            </div>
+            <div
+              style={{
+                color: "#60A5FA",
+                fontWeight: 600,
+                fontSize: 14,
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+              }}
+            >
+              <span>{t("fulfillmentSection.actionBtn")}</span>
+              <RightOutlined style={{ fontSize: 12 }} />
+            </div>
           </div>
         </div>
 

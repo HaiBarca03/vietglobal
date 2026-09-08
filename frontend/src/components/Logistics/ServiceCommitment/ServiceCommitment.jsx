@@ -1,169 +1,186 @@
-import React from "react";
-import { Row, Col, Typography } from "antd";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { Button } from "antd";
+import { motion, AnimatePresence } from "framer-motion";
 import {
-  DollarCircleOutlined,
+  SafetyCertificateFilled,
   CustomerServiceOutlined,
-  CalendarOutlined,
+  ClockCircleFilled,
+  CheckCircleFilled,
+  RightOutlined,
+  FileProtectOutlined,
+  ThunderboltFilled,
 } from "@ant-design/icons";
-import "./ServiceCommitment.css";
-import { t } from "i18next";
 import { useTranslation } from "react-i18next";
+import { useNavigate, useParams } from "react-router-dom";
+import "./ServiceCommitment.css";
 
-const { Title, Paragraph } = Typography;
-
-const commitments = [
+const commitmentConfigs = [
   {
     id: 1,
-    title: "viChi.commitments.compensation.title",
-    content:
-      "viChi.commitments.compensation.desc",
-    icon: <DollarCircleOutlined />,
-    number: "1",
-    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-    iconColor: "#e0f7fa",
+    key: "compensation",
+    icon: <SafetyCertificateFilled />,
+    accent: "blue",
   },
   {
     id: 2,
-    title: "viChi.commitments.compensation.title",
-    content:
-      "viChi.commitments.compensation.desc",
+    key: "support",
     icon: <CustomerServiceOutlined />,
-    number: "2",
-    gradient: "linear-gradient(135deg, #00c6ff 0%, #0072ff 100%)",
-    iconColor: "#e3f2fd",
+    accent: "teal",
   },
   {
     id: 3,
-    title: "viChi.commitments.compensation.title",
-    content: "viChi.commitments.compensation.desc",
-    icon: <CalendarOutlined />,
-    number: "3",
-    gradient: "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)",
-    iconColor: "#fff3e0",
+    key: "deliveryTime",
+    icon: <ClockCircleFilled />,
+    accent: "amber",
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 60, scale: 0.92 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      delay: i * 0.2,
-      duration: 0.7,
-      type: "spring",
-      stiffness: 100,
-      damping: 12,
-    },
-  }),
-  hover: {
-    y: -15,
-    scale: 1.06,
-    boxShadow: "0 25px 60px rgba(0,0,0,0.18)",
-    transition: { duration: 0.4, ease: "easeOut" },
-  },
-};
-
-const iconVariants = {
-  rest: { rotate: 0, scale: 1 },
-  hover: {
-    rotate: 360,
-    scale: 1.25,
-    transition: { duration: 0.7, ease: "easeInOut" },
-  },
-};
-
 const ServiceCommitment = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const { lang = "en" } = useParams();
+  const [selectedId, setSelectedId] = useState(1);
+
+  const getCommitmentData = (cfg) => {
+    const rawPoints = t(`viChi.commitments.${cfg.key}.points`, { returnObjects: true });
+    return {
+      id: cfg.id,
+      key: cfg.key,
+      icon: cfg.icon,
+      accent: cfg.accent,
+      title: t(`viChi.commitments.${cfg.key}.title`),
+      tag: t(`viChi.commitments.${cfg.key}.tag`),
+      slaWindow: t(`viChi.commitments.${cfg.key}.slaWindow`),
+      statement: t(`viChi.commitments.${cfg.key}.statement`),
+      points: Array.isArray(rawPoints) ? rawPoints : [],
+    };
+  };
+
+  const commitments = commitmentConfigs.map(getCommitmentData);
+  const activeCommitment = commitments.find((c) => c.id === selectedId) || commitments[0];
+
   return (
-    <div className="commitment-section">
-      <div className="container">
-        {/* Header with animation */}
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="stats-header"
-        >
-          <div className="line-decoration left"></div>
-          <Title level={2} className="stats-main-title">
-            {t("viChi.orderServiceCommitment")}
-          </Title>
-          <div className="line-decoration right"></div>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.9 }}
-          viewport={{ once: true }}
-        >
-          <Paragraph className="commitment-desc">
+    <section className="sla-hub-section">
+      <div className="sla-hub-container">
+        {/* Header */}
+        <div className="sla-header">
+          <div className="sla-eyebrow">
+            <SafetyCertificateFilled style={{ color: "#1464C4" }} />
+            <span>{t("viChi.commitments.eyebrow", "CAM KẾT TRÁCH NHIỆM DỊCH VỤ")}</span>
+          </div>
+          <h2 className="sla-main-title">
+            {t("viChi.commitments.mainTitle", "3 Cam Kết Vàng Về Trách Nhiệm Dịch Vụ")}
+          </h2>
+          <p className="sla-subtitle">
             {t("viChi.orderServiceCommit")}
-          </Paragraph>
-        </motion.div>
+          </p>
+        </div>
 
-        {/* Cards */}
-        <div className="cards-wrapper">
-          {/* Decorative connecting lines (now animated) */}
-          <svg
-            className="svg-connector"
-            width="100%"
-            height="320"
-            viewBox="0 0 1200 320"
-            fill="none"
-          >
-            <motion.path
-              d="M 380 160 Q 500 80, 600 160 T 820 160"
-              stroke="#ffffff"
-              strokeWidth="3"
-              strokeDasharray="8 6"
-              initial={{ pathLength: 0, opacity: 0 }}
-              whileInView={{ pathLength: 1, opacity: 0.7 }}
-              transition={{ duration: 1.8, delay: 0.6, ease: "easeInOut" }}
-            />
-          </svg>
-
-          <Row gutter={[32, 64]} justify="center">
-            {commitments.map((item, index) => (
-              <Col xs={24} md={8} key={item.id}>
+        {/* Interactive 2-Column Asymmetrical Showcase */}
+        <div className="sla-showcase-grid">
+          {/* Left Column: Selector Ribbon Pillars */}
+          <div className="sla-selector-column">
+            {commitments.map((item) => {
+              const isSelected = selectedId === item.id;
+              return (
                 <motion.div
-                  className="commitment-card"
-                  style={{ background: item.gradient }}
-                  custom={index}
-                  variants={cardVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  whileHover="hover"
-                  viewport={{ once: true, margin: "-80px" }}
+                  key={item.id}
+                  className={`sla-selector-pill ${item.accent} ${isSelected ? "selected" : ""}`}
+                  onClick={() => setSelectedId(item.id)}
+                  whileHover={{ x: 6 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  <div className="card-number-bg">{item.number}</div>
+                  <div className="pill-left-meta">
+                    <div className="pill-icon-box">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <div className="pill-eyebrow">
+                        {t("viChi.commitments.commitmentPrefix", "Cam kết 0")}{item.id}
+                      </div>
+                      <div className="pill-title">{item.title}</div>
+                    </div>
+                  </div>
 
-                  <motion.div
-                    className="icon-wrapper"
-                    variants={iconVariants}
-                    initial="rest"
-                    whileHover="hover"
-                  >
-                    {React.cloneElement(item.icon, {
-                      style: { fontSize: 64, color: item.iconColor },
-                    })}
-                  </motion.div>
-
-                  <Title level={4} className="card-title">
-                    {t(item.title)}
-                  </Title>
-                  <Paragraph className="card-content">{t(item.content)}</Paragraph>
+                  <div className="pill-right-indicator">
+                    <span className="pill-tag">{item.tag}</span>
+                    <RightOutlined className="pill-arrow" />
+                  </div>
                 </motion.div>
-              </Col>
-            ))}
-          </Row>
+              );
+            })}
+
+            {/* Trust Assurance Badge */}
+            <div className="sla-trust-card">
+              <FileProtectOutlined style={{ fontSize: 24, color: "#1464C4" }} />
+              <div>
+                <div className="trust-card-title">
+                  {t("viChi.commitments.legalTitle", "Cam Kết Có Hiệu Lực Pháp Lý")}
+                </div>
+                <div className="trust-card-sub">
+                  {t("viChi.commitments.legalSub", "Kèm hợp đồng vận chuyển nguyên tắc & bảo hiểm hàng hóa rõ ràng.")}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column: Dynamic Guarantee Spotlight Panel */}
+          <div className="sla-spotlight-column">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeCommitment.id}
+                initial={{ opacity: 0, scale: 0.97, y: 15 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.97, y: -15 }}
+                transition={{ duration: 0.35 }}
+                className={`sla-display-panel accent-${activeCommitment.accent}`}
+              >
+                <div className="display-panel-top">
+                  <div className="display-badge-row">
+                    <span className="display-tag-pill">{activeCommitment.tag}</span>
+                    <span className="display-sla-chip">
+                      <ThunderboltFilled style={{ color: "#F59E0B" }} />
+                      <span>{activeCommitment.slaWindow}</span>
+                    </span>
+                  </div>
+
+                  <h3 className="display-title">{activeCommitment.title}</h3>
+                  <p className="display-statement">{activeCommitment.statement}</p>
+                </div>
+
+                <div className="display-divider" />
+
+                <div className="display-points-section">
+                  <div className="points-heading">
+                    {t("viChi.commitments.pointsHeading", "Quy chuẩn thực thi chi tiết:")}
+                  </div>
+                  <div className="points-list-grid">
+                    {activeCommitment.points.map((pt, idx) => (
+                      <div key={idx} className="point-row">
+                        <CheckCircleFilled className="point-icon" />
+                        <span className="point-text">{pt}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="display-panel-footer">
+                  <Button
+                    type="primary"
+                    size="large"
+                    className="sla-cta-btn"
+                    onClick={() => navigate(`/${lang}/shipping-contact-us`)}
+                  >
+                    <span>{t("viChi.commitments.ctaBtn", "Yêu cầu tư vấn & Nhận báo giá")}</span>
+                    <RightOutlined />
+                  </Button>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

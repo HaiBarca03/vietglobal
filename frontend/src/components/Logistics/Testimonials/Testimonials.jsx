@@ -3,6 +3,7 @@ import { Typography } from 'antd';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { motion } from 'framer-motion';
+import { MessageFilled, StarFilled, LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -10,105 +11,92 @@ import 'swiper/css/pagination';
 import './Testimonials.css';
 import { useTranslation } from 'react-i18next';
 
-const { Title, Text, Paragraph} = Typography;
-
-const testimonialData = [
-  {
-    id: 1,
-    content: "Dịch vụ ký gửi hàng hóa của VietGlobal Logistics rất đáng tin cậy. Mình đã gửi nhiều cont hàng qua VietGlobal và ít khi gặp các vấn đề phát sinh. Nhân viên luôn hỗ trợ và tư vấn một cách chuyên nghiệp.",
-    name: "Mr. Thanh Tú",
-    position: "Business Ngành Hàng Thể Thao",
-    avatar: "https://i.pravatar.cc/150?u=1"
-  },
-  {
-    id: 2,
-    content: "Nhân viên của VietGlobal Logistics luôn thân thiện và vận chuyển luôn suôn sẻ. Đặc biệt, mình cảm thấy quy trình xử lý của họ rất nhanh gọn, giúp mình tiết kiệm rất nhiều thời gian.",
-    name: "Mrs. Nhật Hạ",
-    position: "Business Ngành Hàng Linh Kiện Điện Tử",
-    avatar: "https://i.pravatar.cc/150?u=2"
-  },
-  {
-    id: 3,
-    content: "Tôi đánh giá cao sự minh bạch về giá cả và lộ trình hàng hóa tại VietGlobal. Đây là đơn vị nhập hàng Trung Quốc chính ngạch tốt nhất mà tôi từng hợp tác.",
-    name: "Mr. Hoàng Nam",
-    position: "Chủ chuỗi cửa hàng gia dụng",
-    avatar: "https://i.pravatar.cc/150?u=3"
-  },
-  {
-    id: 4,
-    content: "VietGlobal Logistics hỗ trợ mình rất tốt trong các đơn hàng số lượng lớn. Hàng về đúng tiến độ, đóng gói cẩn thận và có thông báo trạng thái liên tục.",
-    name: "Ms. Thuỳ Linh",
-    position: "Kinh doanh mỹ phẩm nhập khẩu",
-    avatar: "https://i.pravatar.cc/150?u=4"
-  },
-  {
-    id: 5,
-    content: "Điểm mình thích nhất ở VietGlobal là sự rõ ràng trong hợp đồng và chi phí. Không phát sinh thêm các khoản ngoài dự kiến, rất phù hợp để hợp tác lâu dài.",
-    name: "Mr. Đức Mạnh",
-    position: "CEO Công ty Thương mại Điện tử",
-    avatar: "https://i.pravatar.cc/150?u=5"
-  },
-  {
-    id: 6,
-    content: "Từ khi sử dụng dịch vụ của VietGlobal Logistics, việc nhập hàng Trung Quốc của bên mình trở nên dễ dàng hơn rất nhiều. Đội ngũ support phản hồi nhanh và xử lý rất có tâm.",
-    name: "Mrs. Kim Anh",
-    position: "Chủ shop kinh doanh online",
-    avatar: "https://i.pravatar.cc/150?u=6"
-  }
-];
-
+const { Title, Paragraph } = Typography;
 
 const Testimonials = () => {
   const { t } = useTranslation();
-  const testimonials = t("viChi.testimonials", { returnObjects: true });
+  const testimonials = t("viChi.testimonials", { returnObjects: true }) || [];
+
   return (
     <section className="testimonials-section">
-      <div className="container">
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="testimonials-header"
-        >
-          <Title level={2} className="main-header-title">
-            <span className="highlight-red">{t("viChi.saidMe")}</span> VietGlobal Logistics
-          </Title>
-          <div className="red-line"></div>
-        </motion.div>
+      <div className="testimonials-container">
+        {/* Header */}
+        <div className="testimonials-header-box">
+          <div className="testimonials-eyebrow">
+            <MessageFilled style={{ color: "#1464C4" }} />
+            <span>{t("viChi.testimonialsSection.eyebrow", `${t("viChi.saidMe")} VietGlobal`)}</span>
+          </div>
+          <h2 className="testimonials-title">
+            {t("viChi.testimonialsSection.title", "Khách Hàng Nói Gì Về Chúng Tôi")}
+          </h2>
+          <p className="testimonials-sub">
+            {t("viChi.testimonialsSection.sub", "Lắng nghe đánh giá thực tế từ các nhà bán hàng và doanh nghiệp nhập khẩu chính ngạch.")}
+          </p>
+        </div>
 
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
-          centeredSlides={true}
-          loop={true}
-          autoplay={{ delay: 5000 }}
-          navigation={true}
-          pagination={{ clickable: true }}
-          breakpoints={{
-            1024: { slidesPerView: 1.5, spaceBetween: 50 }
-          }}
-          className="mySwiper"
-        >
-          {testimonials.map((item) => (
-            <SwiperSlide key={item.id}>
-              <div className="testimonial-card">
-                <div className="quote-content">
-                  <div className="vertical-line"></div>
-                  <Paragraph className="comment-text">
-                    {item.content}
-                  </Paragraph>
-                </div>
-                <div className="user-info">
-                  <img src={item.avatar} alt={item.name} className="user-avatar" />
-                  <div className="user-meta">
-                    <Text className="user-name">{item.name}</Text>
-                    <Text className="user-pos">{item.position}</Text>
+        {/* Swiper Slider */}
+        <div className="testimonials-swiper-wrapper">
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            navigation={{
+              nextEl: '.testi-next-btn',
+              prevEl: '.testi-prev-btn',
+            }}
+            breakpoints={{
+              768: { slidesPerView: 2, spaceBetween: 24 },
+              1200: { slidesPerView: 3, spaceBetween: 24 },
+            }}
+            className="testi-swiper"
+          >
+            {Array.isArray(testimonials) && testimonials.map((item, idx) => (
+              <SwiperSlide key={idx}>
+                <div className="testi-card">
+                  {/* Rating Stars */}
+                  <div className="testi-stars">
+                    {[...Array(5)].map((_, sIdx) => (
+                      <StarFilled key={sIdx} style={{ color: "#F59E0B", fontSize: 13 }} />
+                    ))}
+                  </div>
+
+                  {/* Comment */}
+                  <p className="testi-content">
+                    "{item.content}"
+                  </p>
+
+                  <div className="testi-divider" />
+
+                  {/* Author */}
+                  <div className="testi-author">
+                    <img
+                      src={item.avatar || `https://i.pravatar.cc/150?u=${idx + 1}`}
+                      alt={item.name}
+                      className="testi-avatar"
+                    />
+                    <div>
+                      <div className="testi-name">{item.name}</div>
+                      <div className="testi-position">{item.position}</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          {/* External Navigation Arrows */}
+          <div className="testi-controls">
+            <button className="testi-nav-btn testi-prev-btn" aria-label="Previous">
+              <LeftOutlined />
+            </button>
+            <button className="testi-nav-btn testi-next-btn" aria-label="Next">
+              <RightOutlined />
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@ import AboutUs from "../pages/AboutUs/AboutUs";
 import AdminPageHome from "../pages/Admin/AdminPageHome/AdminPageHome";
 import HomeLogitics from "../pages/Home-Logitics/HomeLogitics";
 import HomePage from "../pages/Home/HomePage";
+import FulfillmentPage from "../pages/Fulfillment/FulfillmentPage";
 import Login from "../pages/Login/Login";
 import NotFoundPage from "../pages/NotPoundPage/NotPoundPage";
 import Policy from "../pages/Policy/Policy";
@@ -32,6 +33,12 @@ export const langRoutes = [
   {
     path: "/import-export", // Trang Import-Export (HomePage)
     page: HomePage,
+    isShowHeader: true,
+    footerType: "shipping",
+  },
+  {
+    path: "/fulfillment", // Trang Fulfillment toàn cầu
+    page: FulfillmentPage,
     isShowHeader: true,
     footerType: "shipping",
   },

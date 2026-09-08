@@ -1,128 +1,350 @@
-.commitment-section {
-  padding: 100px 0;
-  background: linear-gradient(180deg, #f0f8ff 0%, #e6f0ff 50%, #ffffff 100%);
+/* ==========================================================================
+   Service Commitment SLA Hub — Non-traditional & Interactive
+   Scoped under: .logistics-cn-vn-scope
+   ========================================================================== */
+
+.logistics-cn-vn-scope .sla-hub-section {
+  background: #F8FAFC;
+  padding: 95px 20px 90px;
   position: relative;
-  overflow: hidden;
+  border-bottom: 1px solid #E2E8F0;
 }
 
-.container {
-  position: relative;
-  z-index: 2;
-}
-
-.stats-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 40px;
-  position: relative;
-}
-
-.stats-main-title {
-  font-size: 2.8rem !important;
-  font-weight: 800 !important;
-  background: linear-gradient(90deg, #00468c, #00a2ff, #ff8c00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin: 0 30px;
-  text-align: center;
-}
-
-.line-decoration {
-  height: 4px;
-  width: 120px;
-  background: linear-gradient(90deg, transparent, #1890ff, transparent);
-  border-radius: 2px;
-}
-
-.line-decoration.left { transform: rotate(180deg); }
-.line-decoration.right { }
-
-.commitment-desc {
-  max-width: 820px;
-  margin: 0 auto 70px !important;
-  color: #444;
-  font-size: 1.05rem;
-  line-height: 1.9;
-  font-weight: 400;
-}
-
-.cards-wrapper {
-  position: relative;
-  max-width: 1240px;
+.logistics-cn-vn-scope .sla-hub-container {
+  max-width: 1260px;
   margin: 0 auto;
 }
 
-.commitment-card {
-  border-radius: 32px;
-  padding: 60px 32px 50px;
+/* Header */
+.logistics-cn-vn-scope .sla-header {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 56px;
+}
+
+.logistics-cn-vn-scope .sla-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #E6F4FF;
+  border: 1px solid rgba(22, 119, 255, 0.25);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #1464C4;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.logistics-cn-vn-scope .sla-main-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #0A2540;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+
+.logistics-cn-vn-scope .sla-subtitle {
+  font-size: 15.5px;
+  color: #64748B;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* 2-Column Asymmetrical Grid */
+.logistics-cn-vn-scope .sla-showcase-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Left Column (Pills) */
+.logistics-cn-vn-scope .sla-selector-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logistics-cn-vn-scope .sla-selector-pill {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 18px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(10, 37, 64, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logistics-cn-vn-scope .sla-selector-pill:hover {
+  border-color: #93C5FD;
+  box-shadow: 0 8px 20px rgba(20, 100, 196, 0.08);
+}
+
+.logistics-cn-vn-scope .sla-selector-pill.selected {
+  background: #0A2540;
+  border-color: #0A2540;
+  color: #FFFFFF;
+  box-shadow: 0 12px 28px rgba(10, 37, 64, 0.2);
+}
+
+.logistics-cn-vn-scope .pill-left-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logistics-cn-vn-scope .pill-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #F0F7FF;
+  border: 1px solid #DBEAFE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #1464C4;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.logistics-cn-vn-scope .sla-selector-pill.selected .pill-icon-box {
+  background: #1464C4;
+  border-color: #1464C4;
+  color: #FFFFFF;
+}
+
+.logistics-cn-vn-scope .pill-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.logistics-cn-vn-scope .sla-selector-pill.selected .pill-eyebrow {
+  color: #93C5FD;
+}
+
+.logistics-cn-vn-scope .pill-title {
+  font-size: 15.5px;
+  font-weight: 800;
+  color: #0A2540;
+  line-height: 1.3;
+}
+
+.logistics-cn-vn-scope .sla-selector-pill.selected .pill-title {
+  color: #FFFFFF;
+}
+
+.logistics-cn-vn-scope .pill-right-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logistics-cn-vn-scope .pill-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #1464C4;
+  background: #E6F4FF;
+  padding: 3px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.logistics-cn-vn-scope .sla-selector-pill.selected .pill-tag {
+  background: rgba(255, 255, 255, 0.15);
+  color: #93C5FD;
+}
+
+.logistics-cn-vn-scope .pill-arrow {
+  font-size: 12px;
+  color: #94A3B8;
+  transition: transform 0.2s ease;
+}
+
+.logistics-cn-vn-scope .sla-selector-pill.selected .pill-arrow {
+  color: #60A5FA;
+  transform: translateX(3px);
+}
+
+/* Trust Card (Bottom Left) */
+.logistics-cn-vn-scope .sla-trust-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.logistics-cn-vn-scope .trust-card-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0A2540;
+  margin-bottom: 2px;
+}
+
+.logistics-cn-vn-scope .trust-card-sub {
+  font-size: 12px;
+  color: #64748B;
+  line-height: 1.4;
+}
+
+/* Right Column: Display Panel */
+.logistics-cn-vn-scope .sla-spotlight-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.logistics-cn-vn-scope .sla-display-panel {
+  background: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 24px;
+  padding: 38px 36px;
   height: 100%;
-  position: relative;
-  overflow: hidden;
-  color: white;
-  box-shadow: 0 18px 50px rgba(0,0,0,0.15);
-  border: none;
-  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 16px 40px rgba(10, 37, 64, 0.07);
 }
 
-.commitment-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.18) 0%, transparent 60%);
-  pointer-events: none;
-  z-index: 0;
+.logistics-cn-vn-scope .display-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
-.card-number-bg {
-  position: absolute;
-  font-size: 180px;
+.logistics-cn-vn-scope .display-tag-pill {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #1464C4;
+  background: #E6F4FF;
+  border: 1px solid #BFDBFE;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.logistics-cn-vn-scope .display-sla-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FEF3C7;
+  border: 1px solid #FDE68A;
+  color: #B45309;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.logistics-cn-vn-scope .display-title {
+  font-size: 26px;
   font-weight: 900;
-  color: rgba(255,255,255,0.12);
-  bottom: -40px;
-  right: 20px;
-  z-index: -1;
-  line-height: 1;
-  pointer-events: none;
+  color: #0A2540;
+  margin: 0 0 12px;
+  line-height: 1.25;
 }
 
-.icon-wrapper {
-  margin-bottom: 28px;
-  display: inline-block;
-  line-height: 1;
-}
-
-.card-title {
-  color: white !important;
-  font-size: 1.45rem !important;
-  font-weight: 700 !important;
-  margin-bottom: 20px !important;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-}
-
-.card-content {
-  color: rgba(255,255,255,0.92) !important;
-  font-size: 1rem;
+.logistics-cn-vn-scope .display-statement {
+  font-size: 16px;
+  color: #334155;
   line-height: 1.7;
+  margin: 0 0 24px;
 }
 
-.svg-connector {
-  position: absolute;
-  top: 45%;
-  left: 0;
-  width: 100%;
-  height: 340px;
-  z-index: 1;
-  pointer-events: none;
+.logistics-cn-vn-scope .display-divider {
+  height: 1px;
+  background: #F1F5F9;
+  margin-bottom: 24px;
 }
 
-@media (max-width: 992px) {
-  .svg-connector { display: none; }
-  .commitment-card { padding: 50px 28px 40px; }
-  .card-number-bg { font-size: 140px; bottom: -30px; }
+.logistics-cn-vn-scope .points-heading {
+  font-size: 13px;
+  font-weight: 800;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
 }
 
-@media (max-width: 576px) {
-  .stats-main-title { font-size: 2.2rem !important; }
-  .commitment-card { padding: 40px 24px 36px; }
+.logistics-cn-vn-scope .points-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 20px;
+  margin-bottom: 32px;
+}
+
+.logistics-cn-vn-scope .point-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.logistics-cn-vn-scope .point-icon {
+  font-size: 16px;
+  color: #1464C4;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.logistics-cn-vn-scope .point-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1E293B;
+  line-height: 1.5;
+}
+
+.logistics-cn-vn-scope .display-panel-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #F1F5F9;
+}
+
+.logistics-cn-vn-scope .sla-cta-btn {
+  background: #1464C4 !important;
+  border-color: #1464C4 !important;
+  height: 48px;
+  padding: 0 28px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(20, 100, 196, 0.25);
+  transition: all 0.2s ease;
+}
+
+.logistics-cn-vn-scope .sla-cta-btn:hover {
+  background: #0F52A3 !important;
+  border-color: #0F52A3 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(20, 100, 196, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .logistics-cn-vn-scope .sla-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  .logistics-cn-vn-scope .points-list-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .logistics-cn-vn-scope .sla-hub-section { padding: 55px 16px; }
+  .logistics-cn-vn-scope .sla-main-title { font-size: 24px; }
+  .logistics-cn-vn-scope .display-title { font-size: 20px; }
 }

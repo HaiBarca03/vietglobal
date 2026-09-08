@@ -1,7 +1,7 @@
 import { Breadcrumb } from "antd";
 import { RightOutlined } from "@ant-design/icons";
 
-const TEAL = "#00B5B8";
+const PRIMARY = "#1464C4";
 
 /**
  * PageBreadcrumb — thanh breadcrumb dưới PageHeader
@@ -9,19 +9,18 @@ const TEAL = "#00B5B8";
  *   items: Array<{ label: string, href?: string, active?: boolean }>
  */
 export default function PageBreadcrumb({ items = [] }) {
-  console.log("Rendering PageBreadcrumb with items:", items);
   return (
     <div
       style={{
         background: "#fff",
         padding: "14px 80px",
-        borderBottom: "1px solid #eee",
+        borderBottom: "1px solid #E2E8F0",
       }}
     >
       <Breadcrumb
         separator={
           <RightOutlined
-            style={{ fontSize: 10, color: "#aaa", margin: "0 4px" }}
+            style={{ fontSize: 10, color: "#94A3B8", margin: "0 4px" }}
           />
         }
         items={items.map((item) => ({
@@ -29,12 +28,17 @@ export default function PageBreadcrumb({ items = [] }) {
             <a
               href={item.href}
               style={{
-                color: item.active ? "#888" : TEAL,
+                color: item.active ? "#64748B" : PRIMARY,
                 fontWeight: item.active ? 400 : 600,
                 fontFamily: "'Barlow', sans-serif",
                 fontSize: 13,
                 textDecoration: "none",
+                transition: "color 0.2s ease",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#0F52A3")}
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.color = item.active ? "#64748B" : PRIMARY)
+              }
             >
               {item.label}
             </a>

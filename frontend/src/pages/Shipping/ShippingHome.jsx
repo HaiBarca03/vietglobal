@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Button, Card, Carousel, Typography, Row, Col, Space } from "antd";
+import { motion } from "framer-motion";
 import {
   ArrowRightOutlined,
   LeftOutlined,
@@ -14,33 +15,35 @@ import i18next, { t } from "i18next";
 
 const { Title, Paragraph, Text } = Typography;
 
-const TEAL = "#00B5B8";
-const DARK = "#1a1a2e";
+const PRIMARY = "#1464C4";
+const PRIMARY_HOVER = "#0F52A3";
+const NAVY = "#0A2540";
+const SKY = "#E6F4FF";
 
 const services = [
   {
-    icon: <GlobalOutlined style={{ fontSize: 32, color: TEAL }} />,
+    icon: <GlobalOutlined style={{ fontSize: 26, color: PRIMARY }} />,
     title: "services.seaFreight.title",
     link: "sea-freight",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-1920x600.jpg",
     desc: "services.seaFreight.desc",
   },
   {
-    icon: <CarOutlined style={{ fontSize: 32, color: TEAL }} />,
+    icon: <CarOutlined style={{ fontSize: 26, color: PRIMARY }} />,
     title: "services.truckingDelivery.title",
     link: "trucking-delivery",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/Trucking-Delivery-1920x600.jpeg",
     desc: "services.truckingDelivery.desc",
   },
   {
-    icon: <SendOutlined style={{ fontSize: 32, color: TEAL }} />,
+    icon: <SendOutlined style={{ fontSize: 26, color: PRIMARY }} />,
     title: "services.airFreight.title",
     link: "air-freight",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-Air-Freight-Benefits-1920x600.jpg",
     desc: "services.airFreight.desc",
   },
   {
-    icon: <AuditOutlined style={{ fontSize: 32, color: TEAL }} />,
+    icon: <AuditOutlined style={{ fontSize: 26, color: PRIMARY }} />,
     title: "services.customsClearance.title",
     link: "customs-clearance",
     img: "https://tpshipping.com.vn/wp-content/uploads/2021/06/banner-customs-clearance-service-1-1920x600.jpg",
@@ -215,32 +218,56 @@ export default function ShippingHome() {
           overflow: "hidden",
         }}
       >
-        <Carousel autoplay ref={carouselRef}>
+        <Carousel autoplay ref={carouselRef} effect="fade">
           {services.map((svc, idx) => (
             <div key={idx}>
               <div
                 style={{
                   height: 550,
-                  background: `url(${svc.img}) center/cover no-repeat`,
+                  background: `linear-gradient(to right, rgba(10,37,64,0.85) 0%, rgba(10,37,64,0.4) 60%, rgba(10,37,64,0.2) 100%), url(${svc.img}) center/cover no-repeat`,
                   display: "flex",
                   alignItems: "center",
                   paddingLeft: 80,
                   paddingRight: 40,
                 }}
               >
-                <div style={{ maxWidth: 580, color: "#fff" }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6 }}
+                  style={{ maxWidth: 620, color: "#fff" }}
+                >
+                  <div
+                    style={{
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: 8,
+                      background: "rgba(20, 100, 196, 0.25)",
+                      border: "1px solid rgba(255, 255, 255, 0.25)",
+                      borderRadius: 20,
+                      padding: "4px 14px",
+                      fontSize: 12,
+                      fontWeight: 700,
+                      letterSpacing: "0.05em",
+                      color: "#93C5FD",
+                      marginBottom: 16,
+                    }}
+                  >
+                    <span>VIETGLOBAL LOGISTICS SOLUTION</span>
+                  </div>
+
                   <Title
                     level={1}
                     style={{
                       color: "#fff",
                       fontFamily: "'Barlow Condensed', sans-serif",
                       fontWeight: 900,
-                      fontSize: 56,
+                      fontSize: 54,
                       margin: 0,
-                      lineHeight: 1.05,
+                      lineHeight: 1.1,
                       textTransform: "uppercase",
-                      letterSpacing: 2,
-                      textShadow: "0 4px 12px rgba(0,0,0,0.7)",
+                      letterSpacing: 1.5,
+                      textShadow: "0 4px 16px rgba(0,0,0,0.5)",
                     }}
                   >
                     {t(svc.title)}
@@ -248,33 +275,37 @@ export default function ShippingHome() {
 
                   <Paragraph
                     style={{
-                      color: "rgba(255,255,255,0.95)",
-                      fontSize: 17,
-                      margin: "20px 0 32px 0",
+                      color: "rgba(255,255,255,0.9)",
+                      fontSize: 16,
+                      margin: "18px 0 28px 0",
                       lineHeight: 1.7,
-                      maxWidth: 520,
+                      maxWidth: 540,
                     }}
                   >
                     {t(svc.desc)}
                   </Paragraph>
 
-                  <Button
-                    onClick={() => handleClickContactUs()}
-                    type="primary"
-                    size="large"
-                    style={{
-                      background: TEAL,
-                      border: "none",
-                      borderRadius: 0,
-                      height: 52,
-                      fontSize: 16,
-                      padding: "0 40px",
-                    }}
-                    icon={<ArrowRightOutlined />}
-                  >
-                    {t("contact.title")}
-                  </Button>
-                </div>
+                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+                    <Button
+                      onClick={() => handleClickContactUs()}
+                      type="primary"
+                      size="large"
+                      style={{
+                        background: PRIMARY,
+                        borderColor: PRIMARY,
+                        borderRadius: 8,
+                        height: 50,
+                        fontSize: 15,
+                        fontWeight: 700,
+                        padding: "0 36px",
+                        boxShadow: "0 8px 24px rgba(20, 100, 196, 0.4)",
+                      }}
+                      icon={<ArrowRightOutlined />}
+                    >
+                      {t("contact.title")}
+                    </Button>
+                  </motion.div>
+                </motion.div>
               </div>
             </div>
           ))}
@@ -294,15 +325,24 @@ export default function ShippingHome() {
           <button
             onClick={() => carouselRef.current.prev()}
             style={{
-              background: "rgba(255,255,255,0.2)",
-              border: "none",
+              background: "rgba(10, 37, 64, 0.5)",
+              border: "1px solid rgba(255,255,255,0.2)",
               color: "#fff",
               width: 44,
               height: 44,
               borderRadius: "50%",
               cursor: "pointer",
               fontSize: 20,
-              backdropFilter: "blur(4px)",
+              backdropFilter: "blur(6px)",
+              transition: "all 0.25s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = PRIMARY;
+              e.currentTarget.style.transform = "scale(1.08)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(10, 37, 64, 0.5)";
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             ‹
@@ -310,15 +350,24 @@ export default function ShippingHome() {
           <button
             onClick={() => carouselRef.current.next()}
             style={{
-              background: "rgba(255,255,255,0.2)",
-              border: "none",
+              background: "rgba(10, 37, 64, 0.5)",
+              border: "1px solid rgba(255,255,255,0.2)",
               color: "#fff",
               width: 44,
               height: 44,
               borderRadius: "50%",
               cursor: "pointer",
               fontSize: 20,
-              backdropFilter: "blur(4px)",
+              backdropFilter: "blur(6px)",
+              transition: "all 0.25s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = PRIMARY;
+              e.currentTarget.style.transform = "scale(1.08)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "rgba(10, 37, 64, 0.5)";
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
             ›
@@ -326,39 +375,45 @@ export default function ShippingHome() {
         </div>
       </div>
 
+      {/* 4 Overlapping Service Cards */}
       <div
         style={{
           padding: "40px 60px 60px",
           marginTop: -120,
           position: "relative",
           zIndex: 10,
-          boxShadow: "0 12px 40px rgba(0,0,0,0.12)",
-          borderRadius: "0 0 12px 12px",
         }}
       >
         <Row gutter={[24, 24]}>
           {services.map((svc, idx) => (
             <Col xs={24} sm={12} md={6} key={idx}>
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: idx * 0.1 }}
+                whileHover={{ y: -8 }}
                 onClick={() => handleClick(svc.link)}
                 style={{
                   cursor: "pointer",
                   height: "100%",
                   background: "#fff",
-                  borderRadius: 8,
+                  borderRadius: 14,
                   overflow: "hidden",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.06)",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  border: "1px solid #E2E8F0",
+                  boxShadow: "0 6px 20px rgba(10, 37, 64, 0.06)",
+                  display: "flex",
+                  flexDirection: "column",
+                  position: "relative",
+                  transition: "border-color 0.25s ease, box-shadow 0.25s ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-8px)";
-                  e.currentTarget.style.boxShadow =
-                    "0 12px 40px rgba(0,181,184,0.2)";
+                  e.currentTarget.style.borderColor = PRIMARY;
+                  e.currentTarget.style.boxShadow = "0 16px 36px rgba(20, 100, 196, 0.14)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow =
-                    "0 4px 20px rgba(0,0,0,0.06)";
+                  e.currentTarget.style.borderColor = "#E2E8F0";
+                  e.currentTarget.style.boxShadow = "0 6px 20px rgba(10, 37, 64, 0.06)";
                 }}
               >
                 <div
@@ -375,49 +430,91 @@ export default function ShippingHome() {
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
-                      transition: "transform 0.5s ease",
+                      transition: "transform 0.6s ease",
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.08)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "linear-gradient(to top, rgba(10,37,64,0.4) 0%, transparent 60%)",
                     }}
                   />
                 </div>
-                <div style={{ padding: "24px 20px" }}>
-                  <Space align="center" style={{ marginBottom: 12 }}>
-                    {svc.icon}
+                <div style={{ padding: "24px 20px", display: "flex", flexDirection: "column", flex: 1 }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 12 }}>
+                    <div
+                      style={{
+                        width: 44,
+                        height: 44,
+                        borderRadius: 10,
+                        background: SKY,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexShrink: 0,
+                        border: "1px solid #BFDBFE",
+                      }}
+                    >
+                      {svc.icon}
+                    </div>
                     <Title
                       level={5}
                       style={{
                         fontFamily: "'Barlow Condensed', sans-serif",
                         fontWeight: 800,
-                        fontSize: 20,
-                        color: DARK,
+                        fontSize: 19,
+                        color: NAVY,
                         textTransform: "uppercase",
-                        letterSpacing: 1,
+                        letterSpacing: 0.8,
                         margin: 0,
                       }}
                     >
                       {t(svc.title)}
                     </Title>
-                  </Space>
+                  </div>
+
                   <Paragraph
                     style={{
-                      color: "#555",
-                      fontSize: 14,
+                      color: "#64748B",
+                      fontSize: 13.5,
                       lineHeight: 1.6,
+                      flex: 1,
+                      margin: "0 0 16px 0",
                     }}
                   >
                     {t(svc.desc)}
                   </Paragraph>
+
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 6,
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: PRIMARY,
+                      marginTop: "auto",
+                    }}
+                  >
+                    <span>{t("common.viewDetails", "Xem chi tiết")}</span>
+                    <ArrowRightOutlined style={{ fontSize: 11 }} />
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </Col>
           ))}
         </Row>
       </div>
 
+      {/* Partners Section */}
       <div
         style={{
           background: "#fff",
           padding: "60px 60px 80px",
-          // borderTop: "1px solid #eee",
+          borderTop: "1px solid #E2E8F0",
         }}
       >
         <div style={{ textAlign: "center", marginBottom: 48 }}>
@@ -426,8 +523,8 @@ export default function ShippingHome() {
             style={{
               fontFamily: "'Barlow Condensed', sans-serif",
               fontWeight: 800,
-              fontSize: 36,
-              color: DARK,
+              fontSize: 34,
+              color: NAVY,
               textTransform: "uppercase",
               letterSpacing: 2,
               margin: "0 0 8px 0",
@@ -439,13 +536,13 @@ export default function ShippingHome() {
             <div
               style={{
                 position: "absolute",
-                bottom: -12,
+                bottom: -10,
                 left: "50%",
                 transform: "translateX(-50%)",
-                width: 180,
-                height: 3,
-                background: TEAL,
-                borderRadius: 2,
+                width: 140,
+                height: 3.5,
+                background: `linear-gradient(90deg, ${PRIMARY}, #38BDF8)`,
+                borderRadius: 9999,
               }}
             />
           </Title>
@@ -468,10 +565,11 @@ export default function ShippingHome() {
                 background: "none",
                 border: "none",
                 fontSize: 36,
-                color: partnerIndex === 0 ? "#ddd" : "#999",
+                color: partnerIndex === 0 ? "#ddd" : PRIMARY,
                 cursor: partnerIndex === 0 ? "default" : "pointer",
                 padding: "0 12px",
                 lineHeight: 1,
+                transition: "transform 0.2s ease",
               }}
             >
               ‹
@@ -487,10 +585,9 @@ export default function ShippingHome() {
               <div
                 style={{
                   display: "flex",
-                  gap: 24, // khoảng cách giữa các card
-                  transform: `translateX(-${partnerIndex * 20.833}%)`, // giả sử 6 items visible, điều chỉnh nếu thay đổi visibleCount
-                  transition: "transform 0.5s ease",
-                  // width: `${(partners.length / visibleCount) * 100}%`, // để slide mượt
+                  gap: 24,
+                  transform: `translateX(-${partnerIndex * 20.833}%)`,
+                  transition: "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
                 }}
               >
                 {partners.map((p, i) => (
@@ -498,46 +595,47 @@ export default function ShippingHome() {
                     key={i}
                     style={{
                       flex: "0 0 auto",
-                      width: "calc(100% / 6)", // hiển thị 6 items (như ảnh), responsive nếu cần
+                      width: "calc(100% / 6)",
                       minWidth: 160,
                       padding: "0 12px",
                       boxSizing: "border-box",
                     }}
                   >
-                    <div
+                    <motion.div
+                      whileHover={{ y: -4 }}
                       style={{
                         background: "#fff",
-                        border: "1px solid #e0e0e0",
-                        borderRadius: 8,
+                        border: "1.5px solid #E2E8F0",
+                        borderRadius: 10,
                         padding: "20px 0",
                         height: 100,
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        transition: "box-shadow 0.3s, transform 0.3s",
-                        boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+                        transition: "border-color 0.25s, box-shadow 0.25s",
+                        boxShadow: "0 2px 8px rgba(10,37,64,0.04)",
                       }}
                       onMouseEnter={(e) => {
+                        e.currentTarget.style.borderColor = PRIMARY;
                         e.currentTarget.style.boxShadow =
-                          "0 8px 24px rgba(0,181,184,0.15)";
-                        e.currentTarget.style.transform = "translateY(-4px)";
+                          "0 10px 24px rgba(20, 100, 196, 0.12)";
                       }}
                       onMouseLeave={(e) => {
+                        e.currentTarget.style.borderColor = "#E2E8F0";
                         e.currentTarget.style.boxShadow =
-                          "0 2px 8px rgba(0,0,0,0.04)";
-                        e.currentTarget.style.transform = "translateY(0)";
+                          "0 2px 8px rgba(10,37,64,0.04)";
                       }}
                     >
                       <img
                         src={p.url}
                         alt={p.name}
                         style={{
-                          maxWidth: "100%",
-                          maxHeight: "100%",
+                          maxWidth: "80%",
+                          maxHeight: "80%",
                           objectFit: "contain",
                         }}
                       />
-                    </div>
+                    </motion.div>
                   </div>
                 ))}
               </div>
@@ -551,10 +649,11 @@ export default function ShippingHome() {
                 background: "none",
                 border: "none",
                 fontSize: 36,
-                color: partnerIndex >= maxIndex ? "#ddd" : "#999",
+                color: partnerIndex >= maxIndex ? "#ddd" : PRIMARY,
                 cursor: partnerIndex >= maxIndex ? "default" : "pointer",
                 padding: "0 12px",
                 lineHeight: 1,
+                transition: "transform 0.2s ease",
               }}
             >
               ›
@@ -566,7 +665,7 @@ export default function ShippingHome() {
             style={{
               display: "flex",
               justifyContent: "center",
-              gap: 10,
+              gap: 8,
               marginTop: 32,
             }}
           >
@@ -575,13 +674,12 @@ export default function ShippingHome() {
                 key={i}
                 onClick={() => setPartnerIndex(i)}
                 style={{
-                  width: 12,
-                  height: 12,
-                  borderRadius: "50%",
-                  background: i === partnerIndex ? TEAL : "#d0d0d0",
+                  width: i === partnerIndex ? 24 : 8,
+                  height: 8,
+                  borderRadius: 9999,
+                  background: i === partnerIndex ? PRIMARY : "#CBD5E1",
                   cursor: "pointer",
-                  transition: "background 0.3s, transform 0.3s",
-                  transform: i === partnerIndex ? "scale(1.3)" : "scale(1)",
+                  transition: "all 0.3s ease",
                 }}
               />
             ))}
