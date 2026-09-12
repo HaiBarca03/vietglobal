@@ -5,7 +5,7 @@
    ========================================================================== */
 
 #fulfillment-page-root {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: #1c2b3a;
   background-color: #ffffff;
   overflow-x: hidden;
@@ -400,20 +400,20 @@
 
 #fulfillment-page-root .ffp-solutions-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
 }
 
 #fulfillment-page-root .ffp-solution-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 16px;
-  padding: 36px 28px;
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   box-shadow: 0 4px 16px rgba(20, 100, 196, 0.03);
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
   position: relative;
 }
 
@@ -422,21 +422,27 @@
   box-shadow: 0 16px 36px -10px rgba(20, 100, 196, 0.1);
 }
 
+#fulfillment-page-root .ffp-solution-card-featured {
+  border-color: #93c5fd;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f7ff 100%);
+  box-shadow: 0 6px 20px rgba(20, 100, 196, 0.06);
+}
+
 #fulfillment-page-root .ffp-solution-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 #fulfillment-page-root .ffp-solution-icon-box {
-  width: 52px;
-  height: 52px;
+  width: 50px;
+  height: 50px;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 1.45rem;
 }
 
 #fulfillment-page-root .ffp-solution-icon-box.pod-accent {
@@ -457,12 +463,18 @@
   border: 1px solid #e2e8f0;
 }
 
+#fulfillment-page-root .ffp-solution-icon-box.omni-accent {
+  background: #f0fdf4;
+  color: #059669;
+  border: 1px solid #bbf7d0;
+}
+
 #fulfillment-page-root .ffp-solution-tag {
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 5px 12px;
+  letter-spacing: 0.04em;
+  padding: 5px 11px;
   border-radius: 9999px;
 }
 
@@ -482,35 +494,41 @@
   border: 1px solid #e2e8f0;
 }
 
+#fulfillment-page-root .ffp-solution-tag.omni-tag {
+  background: #f0fdf4;
+  color: #047857;
+  border: 1px solid #bbf7d0;
+}
+
 #fulfillment-page-root .ffp-solution-title {
-  font-size: 1.45rem;
+  font-size: 1.325rem;
   font-weight: 800;
   color: #1c2b3a;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   line-height: 1.3;
 }
 
 #fulfillment-page-root .ffp-solution-desc {
-  font-size: 0.95rem;
+  font-size: 0.915rem;
   color: #475569;
-  line-height: 1.6;
-  margin-bottom: 24px;
+  line-height: 1.55;
+  margin-bottom: 20px;
 }
 
 #fulfillment-page-root .ffp-solution-features {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
-  padding-top: 18px;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding-top: 16px;
   border-top: 1px solid #f1f5f9;
 }
 
 #fulfillment-page-root .ffp-feature-item {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  font-size: 0.885rem;
+  gap: 9px;
+  font-size: 0.855rem;
   color: #334155;
   line-height: 1.45;
 }
@@ -523,19 +541,551 @@
 }
 
 #fulfillment-page-root .ffp-solution-footer {
-  padding-top: 18px;
+  padding-top: 16px;
   border-top: 1px dashed #e2e8f0;
   margin-top: auto;
 }
 
 #fulfillment-page-root .ffp-solution-fit {
-  font-size: 0.785rem;
+  font-size: 0.765rem;
   font-weight: 600;
   color: #64748b;
   display: block;
 }
 
-/* 4. GLOBAL LANE CONSOLE */
+/* 4. DEDICATED OMNICHANNEL SALES OPERATIONS (Bento Grid Architecture) */
+#fulfillment-page-root .ffp-omnichannel-section {
+  padding: 96px 0;
+  background: radial-gradient(circle at 10% 15%, #f0f7ff 0%, #ffffff 50%), radial-gradient(circle at 90% 85%, #f8fbfe 0%, #ffffff 50%);
+  border-top: 1px solid #eef2f6;
+  position: relative;
+}
+
+#fulfillment-page-root .ffp-omni-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 40px;
+}
+
+#fulfillment-page-root .ffp-bento-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(20, 100, 196, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+#fulfillment-page-root .ffp-bento-card:hover {
+  border-color: #93c5fd;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -8px rgba(20, 100, 196, 0.12);
+}
+
+#fulfillment-page-root .ffp-bento-card.bento-span-2 {
+  grid-column: span 2;
+}
+
+#fulfillment-page-root .ffp-bento-card-body {
+  display: grid;
+  grid-template-columns: 1.15fr 1.05fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* Bento Badges */
+#fulfillment-page-root .ffp-bento-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  margin-bottom: 14px;
+}
+
+#fulfillment-page-root .ffp-bento-badge.badge-cyan {
+  background: #ecfeff;
+  color: #0891b2;
+  border: 1px solid #cffafe;
+}
+
+#fulfillment-page-root .ffp-bento-badge.badge-blue {
+  background: #eff6ff;
+  color: #1464c4;
+  border: 1px solid #dbeafe;
+}
+
+#fulfillment-page-root .ffp-bento-badge.badge-orange {
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #ffedd5;
+}
+
+#fulfillment-page-root .ffp-bento-badge.badge-emerald {
+  background: #f0fdf4;
+  color: #059669;
+  border: 1px solid #bbf7d0;
+}
+
+#fulfillment-page-root .ffp-bento-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #1c2b3a;
+  margin-bottom: 10px;
+  line-height: 1.32;
+  letter-spacing: -0.015em;
+}
+
+#fulfillment-page-root .ffp-bento-card.bento-span-2 .ffp-bento-title {
+  font-size: 1.55rem;
+}
+
+#fulfillment-page-root .ffp-bento-desc {
+  font-size: 0.935rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+#fulfillment-page-root .ffp-bento-features-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#fulfillment-page-root .ffp-bento-feat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.885rem;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+#fulfillment-page-root .ffp-bento-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#fulfillment-page-root .ffp-care-badge-chip {
+  font-size: 0.775rem;
+  font-weight: 600;
+  background: #f0fdf4;
+  color: #047857;
+  border: 1px solid #bbf7d0;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+/* Embedded Micro-Widgets in Cards */
+#fulfillment-page-root .ffp-bento-embedded-widget {
+  background: #f8fbfe;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(20, 100, 196, 0.04);
+}
+
+/* Widget 1: Routing Hub */
+#fulfillment-page-root .ffp-widget-hub-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+#fulfillment-page-root .ffp-hub-core-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: #1464c4;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+#fulfillment-page-root .ffp-hub-latency-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #047857;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+#fulfillment-page-root .ffp-pulse-green {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: ffpPulseDot 1.8s infinite;
+}
+
+#fulfillment-page-root .ffp-widget-channels-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+#fulfillment-page-root .ffp-widget-ch-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 8px;
+  text-align: center;
+}
+
+#fulfillment-page-root .ch-box-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+#fulfillment-page-root .ch-name {
+  font-size: 0.735rem;
+  font-weight: 700;
+  color: #1c2b3a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#fulfillment-page-root .ch-live-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  flex-shrink: 0;
+}
+
+#fulfillment-page-root .ch-orders-count {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1464c4;
+  margin-bottom: 2px;
+}
+
+#fulfillment-page-root .ch-status-pill {
+  font-size: 0.65rem;
+  color: #64748b;
+  display: block;
+}
+
+#fulfillment-page-root .ffp-widget-hub-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.785rem;
+  font-weight: 600;
+  color: #1e40af;
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+#fulfillment-page-root .auto-sync-tag {
+  color: #047857;
+  font-weight: 700;
+}
+
+/* Widget 2: Setup Score */
+#fulfillment-page-root .ffp-score-ring-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+#fulfillment-page-root .ffp-score-ring-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1464c4, #0ea5e9);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(20, 100, 196, 0.25);
+}
+
+#fulfillment-page-root .score-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+#fulfillment-page-root .score-grade {
+  font-size: 0.625rem;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+#fulfillment-page-root .ffp-score-ring-info strong {
+  font-size: 0.885rem;
+  color: #1c2b3a;
+  display: block;
+  margin-bottom: 2px;
+}
+
+#fulfillment-page-root .ffp-score-ring-info span {
+  font-size: 0.765rem;
+  color: #64748b;
+  display: block;
+}
+
+#fulfillment-page-root .ffp-setup-tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+#fulfillment-page-root .setup-tag-chip.active {
+  font-size: 0.725rem;
+  font-weight: 600;
+  background: #eff6ff;
+  color: #1464c4;
+  border: 1px solid #bfdbfe;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* Widget 3: Growth & ROAS */
+#fulfillment-page-root .ffp-growth-kpi-duo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+#fulfillment-page-root .kpi-block {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+#fulfillment-page-root .kpi-label {
+  font-size: 0.7rem;
+  color: #64748b;
+  display: block;
+  margin-bottom: 2px;
+}
+
+#fulfillment-page-root .kpi-number {
+  font-size: 1.25rem;
+  font-weight: 800;
+  display: block;
+}
+
+#fulfillment-page-root .roas-block .kpi-number {
+  color: #059669;
+}
+
+#fulfillment-page-root .scale-block .kpi-number {
+  color: #1464c4;
+}
+
+#fulfillment-page-root .ffp-growth-mini-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#fulfillment-page-root .growth-bar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+}
+
+#fulfillment-page-root .bar-ch-name {
+  font-weight: 600;
+  color: #1c2b3a;
+}
+
+#fulfillment-page-root .bar-ch-roas {
+  font-weight: 700;
+  color: #047857;
+  background: #f0fdf4;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Widget 4: Chat Desk */
+#fulfillment-page-root .ffp-chat-desk-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+#fulfillment-page-root .desk-kpi-chip {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1464c4;
+}
+
+#fulfillment-page-root .desk-kpi-chip.csat {
+  color: #059669;
+}
+
+#fulfillment-page-root .ffp-chat-desk-dialogue {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#fulfillment-page-root .chat-row.user-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#fulfillment-page-root .chat-row.agent-row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#fulfillment-page-root .chat-bubble-mini {
+  max-width: 90%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  font-size: 0.785rem;
+  line-height: 1.45;
+}
+
+#fulfillment-page-root .user-bubble {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+#fulfillment-page-root .agent-bubble {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e3a8a;
+}
+
+#fulfillment-page-root .agent-tag {
+  font-size: 0.675rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-bottom: 2px;
+}
+
+#fulfillment-page-root .resolved-tag {
+  font-size: 0.675rem;
+  font-weight: 700;
+  color: #059669;
+  margin-top: 4px;
+}
+
+/* Bottom SLA & Banner Box */
+#fulfillment-page-root .ffp-omni-banner-box {
+  background: linear-gradient(135deg, #0a2540 0%, #144272 100%);
+  border-radius: 18px;
+  padding: 36px 40px;
+  color: #ffffff;
+  box-shadow: 0 16px 36px rgba(10, 37, 64, 0.16);
+}
+
+#fulfillment-page-root .ffp-omni-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+#fulfillment-page-root .ffp-omni-stat-item {
+  text-align: center;
+}
+
+#fulfillment-page-root .ffp-omni-stat-num {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #38bdf8;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+#fulfillment-page-root .ffp-omni-stat-lbl {
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+#fulfillment-page-root .ffp-omni-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+#fulfillment-page-root .ffp-omni-action-info h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 6px 0;
+}
+
+#fulfillment-page-root .ffp-omni-action-info p {
+  font-size: 0.935rem;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.5;
+}
+
+#fulfillment-page-root .ffp-btn-omni {
+  background-color: #0ea5e9;
+  border-color: #0ea5e9;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+#fulfillment-page-root .ffp-btn-omni:hover {
+  background-color: #0284c7;
+  border-color: #0284c7;
+}
+
+/* 5. GLOBAL LANE CONSOLE */
 #fulfillment-page-root .ffp-console-section {
   padding: 88px 0;
   background: #f8fbfe;
@@ -1091,7 +1641,16 @@
     gap: 40px;
   }
   #fulfillment-page-root .ffp-solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  #fulfillment-page-root .ffp-omni-nav-tabs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #fulfillment-page-root .ffp-omni-stage-grid {
     grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 32px 24px;
   }
   #fulfillment-page-root .ffp-console-tabs-bar {
     grid-template-columns: repeat(2, 1fr);
@@ -1117,6 +1676,44 @@
   }
   #fulfillment-page-root .ffp-heading-center h2 {
     font-size: 1.85rem;
+  }
+  #fulfillment-page-root .ffp-solutions-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  #fulfillment-page-root .ffp-omni-nav-tabs {
+    grid-template-columns: 1fr;
+  }
+  #fulfillment-page-root .ffp-omni-stage-grid {
+    padding: 24px 16px;
+    gap: 24px;
+  }
+  #fulfillment-page-root .ffp-omni-module-title {
+    font-size: 1.35rem;
+  }
+  #fulfillment-page-root .ffp-mockup-content {
+    padding: 16px;
+  }
+  #fulfillment-page-root .ffp-mockup-channel-orders-grid {
+    grid-template-columns: 1fr;
+  }
+  #fulfillment-page-root .ffp-mockup-metrics-duo {
+    grid-template-columns: 1fr;
+  }
+  #fulfillment-page-root .ffp-mockup-support-kpis {
+    flex-direction: column;
+  }
+  #fulfillment-page-root .ffp-omni-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  #fulfillment-page-root .ffp-omni-action-row {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  #fulfillment-page-root .ffp-omni-banner-box {
+    padding: 28px 20px;
   }
   #fulfillment-page-root .ffp-pipeline-stations-grid {
     grid-template-columns: 1fr;

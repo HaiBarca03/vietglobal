@@ -87,7 +87,7 @@ export default function ServiceDetailPage() {
   return (
     <div
       style={{
-        fontFamily: "'Barlow', sans-serif",
+        fontFamily: "'Barlow', 'Be Vietnam Pro', sans-serif",
         minHeight: "100vh",
         background: "#fff",
       }}

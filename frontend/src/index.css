@@ -1,5 +1,9 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --vg-font-sans: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --vg-font-heading: 'Be Vietnam Pro', 'Barlow', -apple-system, BlinkMacSystemFont, sans-serif;
+  --vg-font-condensed: 'Barlow Condensed', 'Be Vietnam Pro', sans-serif;
+
+  font-family: var(--vg-font-sans);
   line-height: 1.5;
   font-weight: 400;
 
@@ -13,6 +17,13 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: var(--vg-font-sans);
+  color: #1e293b;
+  background-color: #ffffff;
+}
+
+button, input, select, textarea, optgroup {
+  font-family: inherit;
 }
 
 a,
@@ -21,9 +32,11 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   margin: 0;
   text-decoration: none;
+  font-family: inherit;
 }
 
 li,

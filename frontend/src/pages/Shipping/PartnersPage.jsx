@@ -96,14 +96,10 @@ const partners = [
 ];
 
 const styles = `
-  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap');
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
   .partners-section {
     background: #f8f9fb;
     min-height: 100vh;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Barlow', 'Be Vietnam Pro', sans-serif;
   }
 
   .section-header {
@@ -113,7 +109,7 @@ const styles = `
 
   .section-eyebrow {
     display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Be Vietnam Pro', sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.2em;
@@ -127,7 +123,7 @@ const styles = `
   }
 
   .section-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Be Vietnam Pro', sans-serif;
     font-size: 38px;
     font-weight: 700;
     color: #0d1b2e;

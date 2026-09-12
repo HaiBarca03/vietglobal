@@ -8,15 +8,11 @@ import { useEffect } from 'react';
 import { getAllContactUs } from '../../stores/ContactUs/ContactUsApi';
 
 const styles = `
-  @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap');
-
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
   .contact-section {
     background: #f8f9fb;
     min-height: 100vh;
     padding: 72px 48px;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Barlow', 'Be Vietnam Pro', sans-serif;
   }
 
   .contact-inner {
@@ -33,7 +29,7 @@ const styles = `
 
   .form-eyebrow {
     display: inline-block;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Be Vietnam Pro', sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.2em;
@@ -47,7 +43,7 @@ const styles = `
   }
 
   .form-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Barlow Condensed', 'Be Vietnam Pro', sans-serif;
     font-size: 40px;
     font-weight: 800;
     color: #0d1b2e;

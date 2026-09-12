@@ -693,7 +693,131 @@
                 "item2": "Quy trình Pick & Pack chuẩn xác, đóng gói bảo vệ",
                 "item3": "Tối ưu chi phí logistics và thời gian giao hàng",
                 "fitFor": "Phù hợp cho: Thương hiệu DTC & Doanh nghiệp TMĐT"
+            },
+            "omnichannel": {
+                "tag": "Vận hành Toàn diện",
+                "title": "Vận hành Bán hàng Đa kênh",
+                "desc": "Giải pháp quản trị & tối ưu gian hàng trọn gói: từ setup shop, chuẩn hóa SEO, chạy ads/khuyến mãi, CSKH 24/7 đến đồng bộ tồn kho đa sàn.",
+                "item1": "Setup & Tối ưu gian hàng TikTok Shop, Shopee, Amazon, Shopify...",
+                "item2": "Đồng bộ đơn hàng & tồn kho thời gian thực, chống lệch kho",
+                "item3": "Tối ưu quảng cáo, chiến dịch Mega Sale & CSKH 24/7 đa ngôn ngữ",
+                "fitFor": "Phù hợp cho: Doanh nghiệp, Brand & Seller muốn bứt phá doanh số"
             }
+        },
+        "omnichannelSection": {
+            "eyebrow": "Dịch vụ Vận hành Gian hàng Trọn gói",
+            "headline": "Trung Tâm Vận Hành Bán Hàng Đa Kênh Cho Khách Hàng",
+            "subtitle": "Giải phóng đội ngũ của bạn khỏi áp lực vận hành thủ công. VietGlobal quản trị toàn diện: từ thiết lập shop chuẩn SEO, đồng bộ tồn kho thời gian thực, tối ưu chiến dịch marketing đến trực chat CSKH 24/7.",
+            "tabs": {
+                "setup": "1. Setup & Tối Ưu Shop",
+                "inventory": "2. Đồng Bộ Tồn Kho & Đơn",
+                "growth": "3. Marketing & Ads Scale",
+                "support": "4. CSKH 24/7 & Hậu Mãi"
+            },
+            "modules": {
+                "setup": {
+                    "badge": "Chuẩn hóa & Visual",
+                    "title": "Thiết lập & Tối ưu Gian hàng Chuẩn Thuật Toán Sàn",
+                    "desc": "Khởi tạo, định vị gian hàng chuyên nghiệp trên TikTok Shop (US/SEA), Amazon, Shopee, Lazada, Shopify, Etsy. Thiết kế visual bắt mắt, nghiên cứu từ khóa và tối ưu SEO tiêu đề/mô tả giúp đẩy sản phẩm lên TOP tìm kiếm.",
+                    "highlights": [
+                        "Đăng tải & chuẩn hóa danh mục sản phẩm (Listing Optimization chuẩn A+)",
+                        "Thiết kế banner trang trí gian hàng, thumbnail sản phẩm tăng CVR",
+                        "Nghiên cứu từ khóa SEO đa ngôn ngữ (Việt, Anh, v.v.)",
+                        "Xác minh tài khoản, đăng ký Brand Registry & mở ngành hàng nhanh chóng"
+                    ],
+                    "mockup": {
+                        "header": "Trình Quản Trị Gian Hàng Chuẩn Hóa",
+                        "scoreLabel": "Điểm Chuẩn Hóa Listing",
+                        "scoreVal": "98/100 (A+)",
+                        "channelsActive": "4 Sàn Đã Đồng Bộ",
+                        "statusText": "Đã Tối Ưu Thuật Toán Search & Recommendation",
+                        "recentItem": "Áo Thun Unisex Premium Heavyweight POD",
+                        "recentCategory": "Apparel & Streetwear",
+                        "tagSeo": "SEO Score 99%",
+                        "tagMedia": "Rich 4K Visuals",
+                        "tagAlgorithm": "Algorithm Ready"
+                    }
+                },
+                "inventory": {
+                    "badge": "Real-Time Sync",
+                    "title": "Quản Trị Tồn Kho & Điều Phối Đơn Hàng Tự Động",
+                    "desc": "Kết nối trực tiếp 1 tổng kho với toàn bộ gian hàng trực tuyến. Mỗi khi phát sinh đơn trên bất kỳ sàn nào, hệ thống tự động trừ kho tức thì (< 2s), định tuyến xuất xưởng và cập nhật tracking tự động.",
+                    "highlights": [
+                        "Đồng bộ tồn kho đa sàn thời gian thực, loại bỏ hoàn toàn rủi ro lệch kho / Overselling",
+                        "Tự động gom đơn và định tuyến thông minh tới kho/xưởng gần nhất",
+                        "Cảnh báo ngưỡng tồn kho an toàn và đề xuất số lượng nhập hàng",
+                        "Tự động xuất mã vận đơn và đẩy trạng thái giao hàng về sàn"
+                    ],
+                    "mockup": {
+                        "header": "Hệ Thống Định Tuyến Đơn Hàng Đa Kênh",
+                        "warehouseLabel": "Tổng Kho VietGlobal Hub",
+                        "syncLatency": "Tốc Độ Đồng Bộ: 1.2s",
+                        "channels": [
+                            { "name": "TikTok Shop US", "orders": "142 đơn mới", "status": "Đang đồng bộ..." },
+                            { "name": "Amazon FBM", "orders": "86 đơn mới", "status": "Đang nhặt hàng" },
+                            { "name": "Shopee Mall", "orders": "210 đơn mới", "status": "Đã xuất mã vận đơn" },
+                            { "name": "Shopify Store", "orders": "65 đơn mới", "status": "Hoàn tất đóng gói" }
+                        ],
+                        "totalDispatched": "503 đơn / hôm nay"
+                    }
+                },
+                "growth": {
+                    "badge": "Scale Doanh Số",
+                    "title": "Marketing, Mega Campaign & Tối Ưu Quảng Cáo",
+                    "desc": "Đội ngũ chuyên gia lên chiến lược khuyến mãi đón đầu các đợt Mega Sale (9.9, Black Friday, Tết), tối ưu chi phí quảng cáo (ROAS) trên TikTok Ads, Amazon PPC, Shopee Ads và kết nối mạng lưới Affiliate KOC.",
+                    "highlights": [
+                        "Lên kế hoạch và tham gia các chiến dịch Mega Sale, Flash Sale của sàn",
+                        "Quản trị & tối ưu chiến dịch quảng cáo Paid Ads đạt ROAS 4.5x - 6.0x",
+                        "Phối hợp mạng lưới Affiliate KOC/KOL livestream bùng nổ doanh số",
+                        "Tối ưu voucher, combo khuyến mãi và chương trình khách hàng thân thiết"
+                    ],
+                    "mockup": {
+                        "header": "Báo Cáo Hiệu Suất Chiến Dịch Marketing",
+                        "roasMetric": "4.8x ROAS",
+                        "revenueMetric": "+328% Doanh thu",
+                        "activeCampaign": "Mega Sale Chiến Dịch Xuyên Biên Giới",
+                        "channelsStats": [
+                            { "name": "TikTok Shop Ads", "spend": "$1,200", "revenue": "$6,100", "roas": "5.08x" },
+                            { "name": "Amazon PPC", "spend": "$2,400", "revenue": "$11,280", "roas": "4.70x" },
+                            { "name": "Shopee Ads", "spend": "₫15.5M", "revenue": "₫76.2M", "roas": "4.91x" }
+                        ]
+                    }
+                },
+                "support": {
+                    "badge": "24/7 Response",
+                    "title": "Chăm Sóc Khách Hàng 24/7 & Xử Lý Khiếu Nại Chuyên Nghiệp",
+                    "desc": "Đội ngũ nhân sự CSKH túc trực 24/7 trên tất cả các sàn, tốc độ phản hồi < 5 phút, giải đáp thắc mắc, tư vấn chốt đơn, xử lý hoàn tiền/khiếu nại nhanh chóng để giữ vững tỷ lệ đánh giá 4.9★ và danh hiệu Shop Uy Tín.",
+                    "highlights": [
+                        "Trực chat đa kênh 24/7, phản hồi trung bình < 3 - 5 phút",
+                        "Tư vấn up-sell / cross-sell tăng giá trị trung bình trên mỗi đơn hàng",
+                        "Xử lý khiếu nại, đổi trả và hoàn tiền chuyên nghiệp, hạn chế tối đa tranh chấp",
+                        "Chăm sóc sau bán hàng, kêu gọi đánh giá 5 sao và bảo vệ uy tín shop"
+                    ],
+                    "mockup": {
+                        "header": "Bàn Trực Chat CSKH Đa Kênh Thời Gian Thực",
+                        "responseTime": "Tốc Độ Phản Hồi: 1m 15s",
+                        "satisfaction": "Tỷ Lệ Hài Lòng: 99.4%",
+                        "sampleChat": {
+                            "user": "Kiện hàng của mình ở California dự kiến khi nào giao đến vậy shop?",
+                            "agent": "Dạ VietGlobal xin chào! Đơn hàng của bạn đang được USPS chuyển phát hỏa tốc tại Hub Los Angeles, dự kiến sẽ giao tận tay bạn vào chiều mai ạ! 📦✨",
+                            "status": "Đã giải quyết • Đánh giá 5★"
+                        },
+                        "badgesList": ["Phản hồi < 5p", "Shop Yêu thích", "Rating 4.9★", "Bảo vệ tài khoản"]
+                    }
+                }
+            },
+            "metrics": {
+                "stat1Val": "3.5x",
+                "stat1Lbl": "Tăng trưởng Doanh số",
+                "stat2Val": "< 2s",
+                "stat2Lbl": "Tốc độ Đồng bộ Tồn kho",
+                "stat3Val": "< 5 phút",
+                "stat3Lbl": "Phản hồi Chat 24/7",
+                "stat4Val": "0%",
+                "stat4Lbl": "Rủi ro Lệch kho Hủy đơn"
+            },
+            "cta": "Nhận Tư Vấn Vận Hành Bán Hàng Đa Kênh",
+            "exploreBtn": "Tư Vấn Trực Tiếp"
         },
         "laneConsole": {
             "eyebrow": "Mạng lưới Bay Thẳng & Lợi thế Thị trường",
@@ -835,7 +959,9 @@
             "q5": "Thời gian vận chuyển xuyên biên giới trung bình là bao lâu?",
             "a5": "Tuyến chuyển phát nhanh quốc tế thông thường từ 5–8 ngày làm việc tùy thuộc vào thị trường đích đến (Mỹ, Châu Âu hay Trung Đông).",
             "q6": "Những nền tảng nào có thể kết nối tự động với hệ thống?",
-            "a6": "Hệ thống tích hợp trực tiếp qua API với Shopify, TikTok Shop, Amazon, WooCommerce và Etsy với cơ chế đồng bộ đơn & tracking tự động."
+            "a6": "Hệ thống tích hợp trực tiếp qua API với Shopify, TikTok Shop, Amazon, WooCommerce và Etsy với cơ chế đồng bộ đơn & tracking tự động.",
+            "q7": "Dịch vụ vận hành bán hàng đa kênh của VietGlobal gồm những gì?",
+            "a7": "Chúng tôi cung cấp giải pháp vận hành toàn diện A-Z: từ khởi tạo & trang trí gian hàng, tối ưu listing chuẩn SEO, đồng bộ tồn kho đa sàn thời gian thực, chạy quảng cáo/khuyến mãi đến trực chat CSKH 24/7 và giải quyết khiếu nại, giúp bạn an tâm tăng trưởng doanh thu mà không cần nuôi bộ máy nhân sự cồng kềnh."
         },
         "cta": {
             "headline": "Sẵn sàng đưa dịch vụ fulfillment & đơn hàng của bạn vươn ra toàn cầu?",

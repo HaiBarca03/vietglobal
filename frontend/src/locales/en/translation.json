@@ -694,129 +694,253 @@
                 "item2": "Standardized pick & pack operations with barcode verification",
                 "item3": "Consolidated shipping rates and verified last-mile handover",
                 "fitFor": "Best for: DTC brands & established e-commerce sellers"
+            },
+            "omnichannel": {
+                "tag": "End-to-End Operations",
+                "title": "Omnichannel Store Operations",
+                "desc": "Full-suite store management: from store setup, SEO listing optimization, ad campaigns, 24/7 customer care to real-time multi-channel inventory sync.",
+                "item1": "Setup & optimize TikTok Shop, Shopee, Amazon, Shopify stores...",
+                "item2": "Real-time order & multi-channel inventory sync (zero overselling)",
+                "item3": "Campaign ads optimization, Mega Sales & 24/7 multilingual CS",
+                "fitFor": "Best for: Brands & Sellers looking to scale across channels"
             }
+        },
+        "omnichannelSection": {
+            "eyebrow": "Full-Suite Growth Operations",
+            "headline": "Omnichannel Store Operations & Sales Management Center",
+            "subtitle": "Free your team from daily operational burdens. VietGlobal takes full charge of multi-platform store setup, real-time inventory synchronization, growth marketing, and 24/7 customer care.",
+            "tabs": {
+                "setup": "1. Store Setup & SEO",
+                "inventory": "2. Real-Time Inventory",
+                "growth": "3. Growth Marketing & Ads",
+                "support": "4. 24/7 Customer Care"
+            },
+            "modules": {
+                "setup": {
+                    "badge": "Setup & Visuals",
+                    "title": "Multi-Platform Store Launch & Algorithm SEO",
+                    "desc": "Build algorithm-ready stores on TikTok Shop (US/SEA), Amazon, Shopee, Lazada, Shopify, and Etsy. Premium graphic design, rich media listings, and keyword optimization to maximize conversion rates (CVR).",
+                    "highlights": [
+                        "Product catalog creation & A+ listing optimization",
+                        "High-converting storefront banners & 4K product thumbnails",
+                        "Multilingual SEO keyword research (English, Vietnamese, etc.)",
+                        "Fast account verification & brand registry assistance"
+                    ],
+                    "mockup": {
+                        "header": "Standardized Storefront Console",
+                        "scoreLabel": "Listing Optimization Score",
+                        "scoreVal": "98/100 (A+)",
+                        "channelsActive": "4 Channels Synced",
+                        "statusText": "Algorithm Search & Recommendation Optimized",
+                        "recentItem": "Premium Heavyweight Unisex POD T-Shirt",
+                        "recentCategory": "Apparel & Streetwear",
+                        "tagSeo": "SEO Score 99%",
+                        "tagMedia": "Rich 4K Visuals",
+                        "tagAlgorithm": "Algorithm Ready"
+                    }
+                },
+                "inventory": {
+                    "badge": "Real-Time Sync",
+                    "title": "Centralized Inventory & Automated Order Routing",
+                    "desc": "One unified fulfillment hub connected directly to all sales channels. Orders placed on any marketplace trigger instant inventory deductions (< 2s), automated dispatch routing, and real-time tracking updates.",
+                    "highlights": [
+                        "Real-time multi-channel inventory sync with zero overselling risk",
+                        "Automated order consolidation & intelligent routing to closest fulfillment hub",
+                        "Safety stock threshold alerts and automated restocking forecasts",
+                        "Instant airway bill generation & carrier tracking callbacks"
+                    ],
+                    "mockup": {
+                        "header": "Omnichannel Order Routing Engine",
+                        "warehouseLabel": "VietGlobal Central Hub",
+                        "syncLatency": "Sync Latency: 1.2s",
+                        "channels": [
+                            { "name": "TikTok Shop US", "orders": "142 New Orders", "status": "Syncing..." },
+                            { "name": "Amazon FBM", "orders": "86 New Orders", "status": "Picking..." },
+                            { "name": "Shopee Mall", "orders": "210 New Orders", "status": "Waybill Generated" },
+                            { "name": "Shopify Store", "orders": "65 New Orders", "status": "Packed & Ready" }
+                        ],
+                        "totalDispatched": "503 Dispatched / Today"
+                    }
+                },
+                "growth": {
+                    "badge": "Revenue Scale",
+                    "title": "Marketing, Mega Campaigns & Paid Ads Management",
+                    "desc": "Our e-commerce strategists orchestrate flash sales and mega campaigns (9.9, Black Friday, Q4 Peak), manage TikTok Ads, Amazon PPC, Shopee Ads, and coordinate affiliate KOC/KOL networks to maximize ROAS.",
+                    "highlights": [
+                        "Strategic campaign planning for marketplace Mega Sales & Flash Sales",
+                        "Paid ads management delivering 4.5x - 6.0x ROAS",
+                        "Affiliate KOC/KOL creator coordination for livestream sales",
+                        "Promotional bundle structuring and retention loyalty setup"
+                    ],
+                    "mockup": {
+                        "header": "Marketing Campaign Performance Dashboard",
+                        "roasMetric": "4.8x ROAS",
+                        "revenueMetric": "+328% Revenue",
+                        "activeCampaign": "Cross-Border Mega Q4 Campaign",
+                        "channelsStats": [
+                            { "name": "TikTok Shop Ads", "spend": "$1,200", "revenue": "$6,100", "roas": "5.08x" },
+                            { "name": "Amazon PPC", "spend": "$2,400", "revenue": "$11,280", "roas": "4.70x" },
+                            { "name": "Shopee Ads", "spend": "$650", "revenue": "$3,190", "roas": "4.91x" }
+                        ]
+                    }
+                },
+                "support": {
+                    "badge": "24/7 Response",
+                    "title": "24/7 Customer Care & Dispute Resolution Desk",
+                    "desc": "Dedicated bilingual customer support specialists answering inquiries in under 5 minutes, resolving dispute cases, handling fast returns/refunds, and safeguarding 4.9★ store ratings and preferred badges.",
+                    "highlights": [
+                        "24/7 multi-channel live chat with avg. response time < 3 - 5 minutes",
+                        "Pre-sales up-sell and cross-sell consultation to boost basket size",
+                        "Fast returns, refunds, and proactive dispute resolution",
+                        "Post-purchase follow-up and 5-star review acceleration"
+                    ],
+                    "mockup": {
+                        "header": "Live Omnichannel Support Terminal",
+                        "responseTime": "Response Time: 1m 15s",
+                        "satisfaction": "CSAT Score: 99.4%",
+                        "sampleChat": {
+                            "user": "Hi, when will my parcel to California be delivered?",
+                            "agent": "Hello! Your package is currently out for priority delivery with USPS from our LA Hub and is scheduled to arrive tomorrow afternoon! 📦✨",
+                            "status": "Resolved • 5★ Customer Rating"
+                        },
+                        "badgesList": ["< 5m Response", "Preferred Seller", "4.9★ Rating", "Account Safe"]
+                    }
+                }
+            },
+            "metrics": {
+                "stat1Val": "3.5x",
+                "stat1Lbl": "Average GMV Growth",
+                "stat2Val": "< 2s",
+                "stat2Lbl": "Real-time Stock Sync",
+                "stat3Val": "< 5 min",
+                "stat3Lbl": "24/7 Chat Response",
+                "stat4Val": "0%",
+                "stat4Lbl": "Overselling Cancellation"
+            },
+            "cta": "Get Omnichannel Operations Consultation",
+            "exploreBtn": "Talk to an Expert"
         },
         "laneConsole": {
             "eyebrow": "Direct Shipping Network & Market Advantages",
-            "headline": "Global Lane Console: Fast Cross-Border Delivery",
-            "subtitle": "Click any trade corridor below to explore transit times, certified last-mile carriers, and distinct seller profit advantages.",
+            "headline": "Global Lane Console: Routing Cross-Border Trade",
+            "subtitle": "Select a market corridor below to review direct-flight transit times, local last-mile carriers, and gross margin advantages.",
             "tabs": {
-                "us": "United States",
+                "us": "United States (US)",
                 "eu": "Europe & UK",
                 "me": "Middle East (GCC)",
-                "sea": "Southeast Asia Hub"
+                "sea": "SEA Manufacturing Hub"
             },
             "labels": {
-                "transitTime": "Doorstep Transit Time",
-                "carrier": "Last-Mile Carrier",
-                "customs": "Customs & Duty Mode",
-                "customsDesc": "Automated EDI manifest integration ensures immediate cargo release without terminal delays.",
-                "advantage": "Seller Market Advantage",
-                "bestFor": "Recommended For",
-                "airRoute": "Direct Air Cargo Lane"
+                "transitTime": "Door-to-Door Delivery SLA",
+                "carrier": "Last-Mile Delivery Carrier",
+                "customs": "Customs & Tax Clearance Mechanism",
+                "customsDesc": "Pre-cleared electronic EDI manifest transmission with zero port congestion and instant local injection.",
+                "advantage": "Seller Margin Advantage",
+                "bestFor": "Best Suited Merchant Model",
+                "airRoute": "Direct Air Route Pipeline"
             },
             "lanes": {
                 "us": {
-                    "flag": "🇺🇸 US Lane",
+                    "flag": "🇺🇸 US Corridor",
                     "name": "United States Cross-Border Corridor",
                     "transit": "5 - 8 Days",
                     "carrier": "USPS Direct Priority Express",
-                    "customs": "Section 321 Duty-Free Compliant (< $800)",
-                    "advantage": "High purchasing power, high repeat rate, nationwide last-mile tracking with stable fixed commercial line pricing.",
-                    "bestFor": "POD Streetwear, Dropship Trending Goods, TikTok Shop US sellers",
-                    "route": "SGN/HAN International Airport ➔ LAX/ORD Gateway ➔ USPS Nationwide Hubs"
+                    "customs": "Duty-free clearance under Section 321 (< $800 threshold)",
+                    "advantage": "High consumer purchasing power, nationwide tracked coverage across all 50 states with transparent fixed tier pricing.",
+                    "bestFor": "POD Apparel, Fast-Moving Trending Goods, US TikTok Shop Sellers",
+                    "route": "SGN/HAN Int'l Airport ➔ LAX/ORD Port of Entry ➔ USPS National Sort Facility"
                 },
                 "eu": {
-                    "flag": "🇪🇺 EU Lane",
-                    "name": "Central Europe & UK Trade Corridor",
+                    "flag": "🇪🇺 EU Corridor",
+                    "name": "European Union & United Kingdom Gateway",
                     "transit": "6 - 9 Days",
-                    "carrier": "DHL Express / DPD Continental Network",
-                    "customs": "Automated IOSS VAT Pre-cleared Electronic Filing",
-                    "advantage": "Zero customs holdups at destination. Direct consolidated air cargo into Frankfurt & Amsterdam distributing to 27 EU nations.",
-                    "bestFor": "High-AOV DTC Apparel, Sustainable Goods, Shopify Europe stores",
-                    "route": "SGN/HAN Airport ➔ FRA/AMS Freight Terminal ➔ DPD/DHL Continental Last-Mile"
+                    "carrier": "DHL Express & DPD European Network",
+                    "customs": "Standardized IOSS pre-paid VAT electronic clearance",
+                    "advantage": "No customs delays or customer-side tax surprises. Direct air cargo into Frankfurt & Amsterdam with seamless distribution to 27 EU nations.",
+                    "bestFor": "Premium DTC Fashion, Eco-friendly Home Goods, European Shopify Brands",
+                    "route": "SGN/HAN Int'l Airport ➔ FRA/AMS Air Cargo Hub ➔ DPD/DHL Final Mile Ground"
                 },
                 "me": {
-                    "flag": "🇦🇪 GCC Lane",
-                    "name": "Middle East Fast-Growth Corridor",
+                    "flag": "🇦🇪 GCC Corridor",
+                    "name": "Middle East High-Growth Corridor (GCC)",
                     "transit": "4 - 7 Days",
-                    "carrier": "Aramex Priority Direct Delivery",
-                    "customs": "B2C Express Air Clearance",
-                    "advantage": "Booming consumer demand with exceptional basket values across UAE, Saudi Arabia, and Qatar with reliable local carrier SLA.",
-                    "bestFor": "Gift products, Premium Fashion, High-margin DTC collections",
-                    "route": "SGN Airport ➔ DXB/RUH Hub ➔ Aramex Regional Doorstep Delivery"
+                    "carrier": "Aramex Priority Express",
+                    "customs": "Express B2C Electronic Clearance",
+                    "advantage": "High average order value (AOV) across UAE, Saudi Arabia, and Qatar with reliable express delivery.",
+                    "bestFor": "Personalized Gift Items, High-Ticket Apparel, High-Margin DTC Collections",
+                    "route": "SGN Int'l Airport ➔ Dubai (DXB) / Riyadh (RUH) Hub ➔ Aramex Doorstep Delivery"
                 },
                 "sea": {
-                    "flag": "🇻🇳 Production Hub",
-                    "name": "Southeast Asia Production & Sourcing Center",
+                    "flag": "🇻🇳 Factory Hub",
+                    "name": "Southeast Asia Sourcing & Production Hub",
                     "transit": "24 - 48h Production",
-                    "carrier": "Direct Airport Tarmac Handoff",
-                    "customs": "Certified Export Manifest Clearing",
-                    "advantage": "Massive supply chain and cost advantage directly from Vietnamese textile factories and printing houses without middleman markups.",
-                    "bestFor": "POD Blank Sourcing, Quality Control, Consolidated Container Freight",
-                    "route": "Factory Floor ➔ Barcode QC Sorting Hub ➔ International Airport Terminals"
+                    "carrier": "Direct Airport Terminal Handover",
+                    "customs": "Standard Export Certificate of Origin",
+                    "advantage": "Cost-efficient manufacturing from top apparel and print facilities in Vietnam with zero intermediary markup.",
+                    "bestFor": "Wholesale POD Blanks, In-Factory QC Inspections, Direct Air Cargo Dispatch",
+                    "route": "Factory Floor ➔ Barcode Verification Hub ➔ Airport Cargo Terminal"
                 }
             }
         },
         "pipeline": {
-            "eyebrow": "Intelligent Operations",
-            "headline": "The Connected Fulfillment Pipeline",
-            "subtitle": "A synchronized, transparent journey from checkout click to customer doorstep.",
+            "eyebrow": "Automated Operations",
+            "headline": "End-to-End Fulfillment Pipeline",
+            "subtitle": "A fully connected operational workflow from order placement to final doorstep delivery.",
             "step1": {
                 "num": "01",
-                "title": "Store Sync",
-                "desc": "Real-time webhook ingestion from Shopify, TikTok Shop, Amazon & Etsy."
+                "title": "Store Synchronization",
+                "desc": "Instant order ingestion via automated webhooks from Shopify, TikTok Shop, Amazon & Etsy."
             },
             "step2": {
                 "num": "02",
                 "title": "On-Demand Production",
-                "desc": "High-precision DTG / embroidery printing or instant pick from warehouse stock."
+                "desc": "High-definition DTG digital printing, embroidery, or immediate pick from localized stock."
             },
             "step3": {
                 "num": "03",
-                "title": "Custom Brand Pack",
-                "desc": "Automated QC scan, custom neck label attachment, and branded polymailers."
+                "title": "Branded Custom Packing",
+                "desc": "Barcode-verified quality control, custom branded mailers, and personalized thank-you inserts."
             },
             "step4": {
                 "num": "04",
-                "title": "Direct Express Flight",
-                "desc": "Consolidated airport tarmac handoff for direct cross-border air takeoff."
+                "title": "Cross-Border Air Transit",
+                "desc": "Daily airport consolidation and scheduled departures on direct-line cargo routes."
             },
             "step5": {
                 "num": "05",
-                "title": "Digital Customs",
-                "desc": "Pre-cleared electronic customs filing (Section 321 / IOSS VAT)."
+                "title": "Automated Clearance",
+                "desc": "High-speed electronic customs processing under Section 321 or IOSS VAT compliance."
             },
             "step6": {
                 "num": "06",
                 "title": "Doorstep Delivery",
-                "desc": "Delivered by trusted local carriers with 100% end-to-end GPS tracking."
+                "desc": "Trusted domestic postal delivery with real-time GPS tracking status updates."
             }
         },
         "estimator": {
-            "eyebrow": "Instant Calculation",
-            "headline": "Calculate Your Fulfillment Lead Time",
-            "subtitle": "Select your product and market to preview estimated production and delivery timelines.",
+            "eyebrow": "Instant Estimate",
+            "headline": "Fulfillment & Delivery Time Calculator",
+            "subtitle": "Select product type and target destination market to view estimated turnaround timelines.",
             "catLabel": "Select Product Category:",
-            "marketLabel": "Select Target Market:",
-            "catApparel": "Apparel & Streetwear (POD)",
-            "catGeneral": "Accessories & General Goods",
-            "catStock": "Stocked Inventory (Warehoused)",
-            "marketUS": "United States (USPS Direct)",
-            "marketEU": "Europe / UK (DHL/DPD)",
+            "marketLabel": "Select Destination Market:",
+            "catApparel": "Apparel & Textiles (On-Demand POD)",
+            "catGeneral": "Accessories & Home Goods (Dropshipping)",
+            "catStock": "Stocked Inventory (Private Label)",
+            "marketUS": "United States (USPS Direct Line)",
+            "marketEU": "Europe & UK (DHL/DPD Network)",
             "marketME": "Middle East (Aramex Priority)",
             "prodTime": "Production & QC Time",
-            "transitTime": "Air Freight & Clearance",
-            "totalTime": "Total Doorstep Delivery",
-            "ctaBtn": "Request Full Price Sheet"
+            "transitTime": "Air Transit & Customs",
+            "totalTime": "Total Turnaround Time",
+            "ctaBtn": "Get Comprehensive Rate Card"
         },
         "integrations": {
-            "eyebrow": "Omnichannel Ecosystem",
-            "headline": "Works seamlessly with the platforms you already sell on.",
-            "copy": "Connect your store in minutes — orders sync automatically without code."
+            "eyebrow": "Multi-Channel Ecosystem",
+            "headline": "Native integration with the platforms you already use.",
+            "copy": "Connect your storefronts in minutes — orders and tracking numbers synchronize automatically 24/7."
         },
         "socialProof": {
-            "quote": "Working with VietGlobal Fulfillment cut our cross-border cycle by 4 days, gave us custom branded packaging, and boosted our repurchase rate by 22%.",
+            "quote": "Partnering with VietGlobal Fulfillment cut 4 days off our international delivery SLA, gave us custom-branded packaging, and lifted our repeat customer rate by 22%.",
             "author": "Global DTC Merchant",
             "role": "Shopify & TikTok Shop Seller",
             "onboarding": "We are onboarding our next cohort of high-growth global sellers — talk to us to scale your brand."
@@ -836,7 +960,9 @@
             "q5": "How long does cross-border delivery usually take?",
             "a5": "Direct line express cross-border delivery typically takes between 5 to 8 business days depending on destination market.",
             "q6": "Which platforms do you integrate with?",
-            "a6": "We integrate directly with Shopify, TikTok Shop, Amazon, WooCommerce, and Etsy with automatic order & tracking sync."
+            "a6": "We integrate directly with Shopify, TikTok Shop, Amazon, WooCommerce, and Etsy with automatic order & tracking sync.",
+            "q7": "What does VietGlobal's Omnichannel Store Operations service include?",
+            "a7": "We offer complete end-to-end management: store creation & decoration, SEO-optimized listings, real-time multi-platform inventory sync, ad campaigns & promotions, and 24/7 customer chat support & dispute resolution, allowing you to scale revenue without heavy internal staffing."
         },
         "cta": {
             "headline": "Ready to scale your fulfillment globally?",

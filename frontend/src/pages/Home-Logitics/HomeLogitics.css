@@ -15,7 +15,7 @@
   --lcv-surface: #F8FAFC;
   --lcv-accent-orange: #FF7A45;
 
-  font-family: 'IBM Plex Sans', 'Be Vietnam Pro', -apple-system, sans-serif;
+  font-family: 'Be Vietnam Pro', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   color: var(--lcv-slate-text);
   background-color: var(--lcv-surface);
   overflow-x: hidden;

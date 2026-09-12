@@ -117,12 +117,12 @@ const FooterShipping = () => {
                                     Vietglobal8@gmail.com
                                 </a>
                             </div>
-                            <div>
+                            {/* <div>
                                 <Paragraph style={{ color: '#fff', marginBottom: 4, fontWeight: 600 }}>Department (Ngọc):</Paragraph>
                                 <a href="mailto:myngocvietgobal@gmail.com" style={{ color: '#d0e8ff', textDecoration: 'none' }}>
                                     myngocvietgobal@gmail.com
                                 </a>
-                            </div>
+                            </div> */}
                             <div>
                                 <Paragraph style={{ color: '#fff', marginBottom: 4, fontWeight: 600 }}>Official Website:</Paragraph>
                                 <Space>

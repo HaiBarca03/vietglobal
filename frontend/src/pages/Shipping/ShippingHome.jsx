@@ -206,7 +206,7 @@ export default function ShippingHome() {
   return (
     <div
       style={{
-        fontFamily: "'Barlow', sans-serif",
+        fontFamily: "'Barlow', 'Be Vietnam Pro', sans-serif",
         background: "#f7f7f7",
         minHeight: "100vh",
       }}

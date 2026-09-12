@@ -19,7 +19,13 @@ import {
   FiPackage,
   FiTag,
   FiFileText,
-  FiCompass
+  FiCompass,
+  FiTrendingUp,
+  FiMessageSquare,
+  FiRepeat,
+  FiBarChart2,
+  FiGrid,
+  FiHeadphones
 } from 'react-icons/fi'
 import './FulfillmentPage.css'
 
@@ -68,6 +74,7 @@ const FulfillmentPage = () => {
   const { lang = 'en' } = useParams()
 
   const [activeLane, setActiveLane] = useState('us')
+  const [omniActiveTab, setOmniActiveTab] = useState('setup')
   const [openFaq, setOpenFaq] = useState(0)
 
   // Estimator State
@@ -162,10 +169,11 @@ const FulfillmentPage = () => {
     { q: t('fulfillmentPage.faq.q3'), a: t('fulfillmentPage.faq.a3') },
     { q: t('fulfillmentPage.faq.q4'), a: t('fulfillmentPage.faq.a4') },
     { q: t('fulfillmentPage.faq.q5'), a: t('fulfillmentPage.faq.a5') },
-    { q: t('fulfillmentPage.faq.q6'), a: t('fulfillmentPage.faq.a6') }
+    { q: t('fulfillmentPage.faq.q6'), a: t('fulfillmentPage.faq.a6') },
+    { q: t('fulfillmentPage.faq.q7'), a: t('fulfillmentPage.faq.a7') }
   ]
 
-  const platforms = ['Shopify', 'TikTok Shop', 'Amazon', 'WooCommerce', 'Etsy']
+  const platforms = ['Shopify', 'TikTok Shop', 'Amazon', 'Shopee', 'Lazada', 'WooCommerce', 'Etsy']
 
   return (
     <div id="fulfillment-page-root" className="fulfillment-page-root">
@@ -460,11 +468,297 @@ const FulfillmentPage = () => {
                 <span className="ffp-solution-fit">{t('fulfillmentPage.solutions.ecommerce.fitFor')}</span>
               </div>
             </motion.div>
+
+            {/* Card 4: Omnichannel Store Operations */}
+            <motion.div
+              className="ffp-solution-card ffp-solution-card-featured"
+              variants={itemVariant}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+            >
+              <div className="ffp-solution-card-top">
+                <div className="ffp-solution-icon-box omni-accent">
+                  <FiTrendingUp />
+                </div>
+                <span className="ffp-solution-tag omni-tag">{t('fulfillmentPage.solutions.omnichannel.tag')}</span>
+              </div>
+              <h3 className="ffp-solution-title">{t('fulfillmentPage.solutions.omnichannel.title')}</h3>
+              <p className="ffp-solution-desc">{t('fulfillmentPage.solutions.omnichannel.desc')}</p>
+
+              <div className="ffp-solution-features">
+                <div className="ffp-feature-item">
+                  <FiCheckCircle className="ffp-check-icon" />
+                  <span>{t('fulfillmentPage.solutions.omnichannel.item1')}</span>
+                </div>
+                <div className="ffp-feature-item">
+                  <FiCheckCircle className="ffp-check-icon" />
+                  <span>{t('fulfillmentPage.solutions.omnichannel.item2')}</span>
+                </div>
+                <div className="ffp-feature-item">
+                  <FiCheckCircle className="ffp-check-icon" />
+                  <span>{t('fulfillmentPage.solutions.omnichannel.item3')}</span>
+                </div>
+              </div>
+
+              <div className="ffp-solution-footer">
+                <span className="ffp-solution-fit">{t('fulfillmentPage.solutions.omnichannel.fitFor')}</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* 4. GLOBAL LANE CONSOLE (Merged Network + Markets) */}
+      {/* 4. DEDICATED OMNICHANNEL SALES OPERATIONS (Bento Grid Architecture) */}
+      <section className="ffp-omnichannel-section" id="omnichannel-operations">
+        <div className="ffp-container">
+          <motion.div
+            className="ffp-heading-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.25 }}
+            variants={fadeInUp}
+          >
+            <div className="ffp-section-eyebrow">
+              <FiTrendingUp /> {t('fulfillmentPage.omnichannelSection.eyebrow')}
+            </div>
+            <h2>{t('fulfillmentPage.omnichannelSection.headline')}</h2>
+            <p>{t('fulfillmentPage.omnichannelSection.subtitle')}</p>
+          </motion.div>
+
+          {/* Bento Grid Layout (Asymmetric, Multi-dimensional, No Top-Tabs) */}
+          <motion.div
+            className="ffp-omni-bento-grid"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.15 }}
+            variants={staggerContainer}
+          >
+            {/* Bento Card 1 (Span 2 / Wide Hub): Live Centralized Inventory & Multi-Channel Routing */}
+            <motion.div className="ffp-bento-card bento-span-2 bento-inventory-hub" variants={itemVariant}>
+              <div className="ffp-bento-card-body">
+                <div className="ffp-bento-card-meta">
+                  <span className="ffp-bento-badge badge-cyan">
+                    <span className="ffp-pulse-dot"></span>
+                    {t('fulfillmentPage.omnichannelSection.modules.inventory.badge')}
+                  </span>
+                  <h3 className="ffp-bento-title">
+                    {t('fulfillmentPage.omnichannelSection.modules.inventory.title')}
+                  </h3>
+                  <p className="ffp-bento-desc">
+                    {t('fulfillmentPage.omnichannelSection.modules.inventory.desc')}
+                  </p>
+                  <div className="ffp-bento-features-row">
+                    {(t('fulfillmentPage.omnichannelSection.modules.inventory.highlights', { returnObjects: true }) || []).slice(0, 2).map((item, idx) => (
+                      <div key={idx} className="ffp-bento-feat-item">
+                        <FiCheckCircle className="ffp-check-icon" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Embedded Live Interactive Hub Visual */}
+                <div className="ffp-bento-embedded-widget widget-routing-hub">
+                  <div className="ffp-widget-hub-top">
+                    <div className="ffp-hub-core-chip">
+                      <FiBox />
+                      <span>{t('fulfillmentPage.omnichannelSection.modules.inventory.mockup.warehouseLabel')}</span>
+                    </div>
+                    <div className="ffp-hub-latency-chip">
+                      <span className="ffp-pulse-green"></span>
+                      {t('fulfillmentPage.omnichannelSection.modules.inventory.mockup.syncLatency')}
+                    </div>
+                  </div>
+
+                  <div className="ffp-widget-channels-grid">
+                    {(t('fulfillmentPage.omnichannelSection.modules.inventory.mockup.channels', { returnObjects: true }) || []).map((ch, idx) => (
+                      <div key={idx} className="ffp-widget-ch-box">
+                        <div className="ch-box-hdr">
+                          <span className="ch-name">{ch.name}</span>
+                          <span className="ch-live-indicator"></span>
+                        </div>
+                        <div className="ch-orders-count">{ch.orders}</div>
+                        <span className="ch-status-pill">{ch.status}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="ffp-widget-hub-footer">
+                    <span>{t('fulfillmentPage.omnichannelSection.modules.inventory.mockup.totalDispatched')}</span>
+                    <span className="auto-sync-tag">⚡ Automated Route Engine</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Bento Card 2: Store Setup & Algorithm SEO */}
+            <motion.div className="ffp-bento-card bento-setup-card" variants={itemVariant}>
+              <div className="ffp-bento-card-meta">
+                <span className="ffp-bento-badge badge-blue">
+                  <FiGrid /> {t('fulfillmentPage.omnichannelSection.modules.setup.badge')}
+                </span>
+                <h3 className="ffp-bento-title">
+                  {t('fulfillmentPage.omnichannelSection.modules.setup.title')}
+                </h3>
+                <p className="ffp-bento-desc">
+                  {t('fulfillmentPage.omnichannelSection.modules.setup.desc')}
+                </p>
+              </div>
+
+              {/* Embedded Listing Score & Visual Widget */}
+              <div className="ffp-bento-embedded-widget widget-setup-box">
+                <div className="ffp-score-ring-row">
+                  <div className="ffp-score-ring-badge">
+                    <div className="score-val">98</div>
+                    <div className="score-grade">A+</div>
+                  </div>
+                  <div className="ffp-score-ring-info">
+                    <strong>{t('fulfillmentPage.omnichannelSection.modules.setup.mockup.scoreLabel')}</strong>
+                    <span>{t('fulfillmentPage.omnichannelSection.modules.setup.mockup.statusText')}</span>
+                  </div>
+                </div>
+
+                <div className="ffp-setup-tags-cloud">
+                  <span className="setup-tag-chip active">{t('fulfillmentPage.omnichannelSection.modules.setup.mockup.tagSeo')}</span>
+                  <span className="setup-tag-chip active">{t('fulfillmentPage.omnichannelSection.modules.setup.mockup.tagMedia')}</span>
+                  <span className="setup-tag-chip active">{t('fulfillmentPage.omnichannelSection.modules.setup.mockup.tagAlgorithm')}</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Bento Card 3: Growth Marketing & Paid Ads */}
+            <motion.div className="ffp-bento-card bento-growth-card" variants={itemVariant}>
+              <div className="ffp-bento-card-meta">
+                <span className="ffp-bento-badge badge-orange">
+                  <FiBarChart2 /> {t('fulfillmentPage.omnichannelSection.modules.growth.badge')}
+                </span>
+                <h3 className="ffp-bento-title">
+                  {t('fulfillmentPage.omnichannelSection.modules.growth.title')}
+                </h3>
+                <p className="ffp-bento-desc">
+                  {t('fulfillmentPage.omnichannelSection.modules.growth.desc')}
+                </p>
+              </div>
+
+              {/* Embedded ROAS & Channel Performance Widget */}
+              <div className="ffp-bento-embedded-widget widget-growth-box">
+                <div className="ffp-growth-kpi-duo">
+                  <div className="kpi-block roas-block">
+                    <span className="kpi-label">Avg. ROAS</span>
+                    <span className="kpi-number">{t('fulfillmentPage.omnichannelSection.modules.growth.mockup.roasMetric')}</span>
+                  </div>
+                  <div className="kpi-block scale-block">
+                    <span className="kpi-label">GMV Lift</span>
+                    <span className="kpi-number">{t('fulfillmentPage.omnichannelSection.modules.growth.mockup.revenueMetric')}</span>
+                  </div>
+                </div>
+
+                <div className="ffp-growth-mini-bars">
+                  {(t('fulfillmentPage.omnichannelSection.modules.growth.mockup.channelsStats', { returnObjects: true }) || []).slice(0, 3).map((st, idx) => (
+                    <div key={idx} className="growth-bar-row">
+                      <span className="bar-ch-name">{st.name}</span>
+                      <span className="bar-ch-roas">{st.roas}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Bento Card 4 (Span 2 / Wide Care Desk): 24/7 CSKH & Dispute Shield */}
+            <motion.div className="ffp-bento-card bento-span-2 bento-support-desk" variants={itemVariant}>
+              <div className="ffp-bento-card-body">
+                <div className="ffp-bento-card-meta">
+                  <span className="ffp-bento-badge badge-emerald">
+                    <FiHeadphones /> {t('fulfillmentPage.omnichannelSection.modules.support.badge')}
+                  </span>
+                  <h3 className="ffp-bento-title">
+                    {t('fulfillmentPage.omnichannelSection.modules.support.title')}
+                  </h3>
+                  <p className="ffp-bento-desc">
+                    {t('fulfillmentPage.omnichannelSection.modules.support.desc')}
+                  </p>
+                  <div className="ffp-bento-badges-row">
+                    {(t('fulfillmentPage.omnichannelSection.modules.support.mockup.badgesList', { returnObjects: true }) || []).map((b, idx) => (
+                      <span key={idx} className="ffp-care-badge-chip">✓ {b}</span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Embedded Live Chat Dialogue Widget */}
+                <div className="ffp-bento-embedded-widget widget-chat-desk">
+                  <div className="ffp-chat-desk-header">
+                    <div className="desk-kpi-chip">
+                      <FiClock />
+                      <span>{t('fulfillmentPage.omnichannelSection.modules.support.mockup.responseTime')}</span>
+                    </div>
+                    <div className="desk-kpi-chip csat">
+                      <FiCheckCircle />
+                      <span>{t('fulfillmentPage.omnichannelSection.modules.support.mockup.satisfaction')}</span>
+                    </div>
+                  </div>
+
+                  <div className="ffp-chat-desk-dialogue">
+                    <div className="chat-row user-row">
+                      <div className="chat-bubble-mini user-bubble">
+                        <span>{t('fulfillmentPage.omnichannelSection.modules.support.mockup.sampleChat.user')}</span>
+                      </div>
+                    </div>
+                    <div className="chat-row agent-row">
+                      <div className="chat-bubble-mini agent-bubble">
+                        <div className="agent-tag">🛡️ VietGlobal Desk</div>
+                        <span>{t('fulfillmentPage.omnichannelSection.modules.support.mockup.sampleChat.agent')}</span>
+                        <div className="resolved-tag">
+                          {t('fulfillmentPage.omnichannelSection.modules.support.mockup.sampleChat.status')}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Bottom Operational SLA Strip & CTA Bar */}
+          <motion.div
+            className="ffp-omni-banner-box"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+            variants={fadeInScale}
+          >
+            <div className="ffp-omni-stats-grid">
+              <div className="ffp-omni-stat-item">
+                <div className="ffp-omni-stat-num">{t('fulfillmentPage.omnichannelSection.metrics.stat1Val')}</div>
+                <div className="ffp-omni-stat-lbl">{t('fulfillmentPage.omnichannelSection.metrics.stat1Lbl')}</div>
+              </div>
+              <div className="ffp-omni-stat-item">
+                <div className="ffp-omni-stat-num">{t('fulfillmentPage.omnichannelSection.metrics.stat2Val')}</div>
+                <div className="ffp-omni-stat-lbl">{t('fulfillmentPage.omnichannelSection.metrics.stat2Lbl')}</div>
+              </div>
+              <div className="ffp-omni-stat-item">
+                <div className="ffp-omni-stat-num">{t('fulfillmentPage.omnichannelSection.metrics.stat3Val')}</div>
+                <div className="ffp-omni-stat-lbl">{t('fulfillmentPage.omnichannelSection.metrics.stat3Lbl')}</div>
+              </div>
+              <div className="ffp-omni-stat-item">
+                <div className="ffp-omni-stat-num">{t('fulfillmentPage.omnichannelSection.metrics.stat4Val')}</div>
+                <div className="ffp-omni-stat-lbl">{t('fulfillmentPage.omnichannelSection.metrics.stat4Lbl')}</div>
+              </div>
+            </div>
+
+            <div className="ffp-omni-action-row">
+              <div className="ffp-omni-action-info">
+                <h4>{t('fulfillmentPage.omnichannelSection.headline')}</h4>
+                <p>{t('fulfillmentPage.omnichannelSection.subtitle')}</p>
+              </div>
+              <Link to={`/${lang}/shipping-contact-us`} className="ffp-btn-primary ffp-btn-omni">
+                <FiSend />
+                {t('fulfillmentPage.omnichannelSection.cta')}
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 5. GLOBAL LANE CONSOLE (Merged Network + Markets) */}
       <section className="ffp-console-section" id="console">
         <div className="ffp-container">
           <motion.div
